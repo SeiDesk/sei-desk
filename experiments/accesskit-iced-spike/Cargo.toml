@@ -1,0 +1,21 @@
+[package]
+name = "accesskit-iced-spike"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+publish = false
+
+# Standalone experiment: the production workspace and lockfile stay unchanged.
+[workspace]
+
+[dependencies]
+iced = { version = "=0.14.0", default-features = false, features = ["tiny-skia", "thread-pool", "crisp", "advanced"] }
+accesskit = "=0.25.1"
+accesskit_windows = "=0.35.1"
+windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_System_Threading", "Win32_UI_HiDpi"] }
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[lints.clippy]
+undocumented_unsafe_blocks = "deny"

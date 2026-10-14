@@ -1,0 +1,2 @@
+send_input_count=0 expected=2
+probe_blocked: SendInput incomplete (UIPI/session cause is not established)

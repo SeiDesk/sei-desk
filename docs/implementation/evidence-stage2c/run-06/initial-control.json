@@ -1,0 +1,326 @@
+﻿[
+    {
+        "Depth":  0,
+        "Name":  "AccessKit iced spike",
+        "AutomationId":  "",
+        "Type":  "ControlType.Window",
+        "PID":  28596,
+        "HWND":  78645796,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       130,
+                       130,
+                       656,
+                       439
+                   ],
+        "Patterns":  [
+                         "WindowPatternIdentifiers.Pattern",
+                         "TransformPatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "AccessKit iced spike",
+        "AutomationId":  "TitleBar",
+        "Type":  "ControlType.TitleBar",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       138,
+                       138,
+                       640,
+                       23
+                   ],
+        "Patterns":  [
+
+                     ],
+        "RuntimeId":  [
+                          4,
+                          78645796,
+                          0
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "Sample text",
+        "AutomationId":  "spike-2",
+        "Type":  "ControlType.Text",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       162,
+                       228,
+                       72,
+                       18
+                   ],
+        "Patterns":  [
+
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796,
+                          4,
+                          0,
+                          2,
+                          0,
+                          0
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "Sample text",
+        "AutomationId":  "spike-3",
+        "Type":  "ControlType.Edit",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  true,
+        "Bounds":  [
+                       162,
+                       258,
+                       592,
+                       38
+                   ],
+        "Patterns":  [
+                         "ValuePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796,
+                          4,
+                          0,
+                          3,
+                          0,
+                          0
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "Validate",
+        "AutomationId":  "spike-4",
+        "Type":  "ControlType.Button",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  false,
+        "Bounds":  [
+                       162,
+                       308,
+                       82,
+                       38
+                   ],
+        "Patterns":  [
+                         "InvokePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796,
+                          4,
+                          0,
+                          4,
+                          0,
+                          0
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "Prefer reduced motion",
+        "AutomationId":  "spike-5",
+        "Type":  "ControlType.CheckBox",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  false,
+        "Bounds":  [
+                       256,
+                       309,
+                       199,
+                       36
+                   ],
+        "Patterns":  [
+                         "TogglePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796,
+                          4,
+                          0,
+                          5,
+                          0,
+                          0
+                      ]
+    },
+    {
+        "Depth":  1,
+        "Name":  "Close",
+        "AutomationId":  "spike-6",
+        "Type":  "ControlType.Button",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  false,
+        "Bounds":  [
+                       162,
+                       416,
+                       65,
+                       38
+                   ],
+        "Patterns":  [
+                         "InvokePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          42,
+                          78645796,
+                          4,
+                          0,
+                          6,
+                          0,
+                          0
+                      ]
+    },
+    {
+        "Depth":  2,
+        "Name":  "System Menu Bar",
+        "AutomationId":  "SystemMenuBar",
+        "Type":  "ControlType.MenuBar",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  true,
+        "Bounds":  [
+                       138,
+                       138,
+                       22,
+                       22
+                   ],
+        "Patterns":  [
+
+                     ],
+        "RuntimeId":  [
+                          1,
+                          78645796,
+                          797182503
+                      ]
+    },
+    {
+        "Depth":  2,
+        "Name":  "Minimize",
+        "AutomationId":  "Minimize",
+        "Type":  "ControlType.Button",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       639,
+                       131,
+                       47,
+                       30
+                   ],
+        "Patterns":  [
+                         "InvokePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          4,
+                          78645796,
+                          0,
+                          2
+                      ]
+    },
+    {
+        "Depth":  2,
+        "Name":  "Maximize",
+        "AutomationId":  "Maximize",
+        "Type":  "ControlType.Button",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       686,
+                       131,
+                       46,
+                       30
+                   ],
+        "Patterns":  [
+                         "InvokePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          4,
+                          78645796,
+                          0,
+                          3
+                      ]
+    },
+    {
+        "Depth":  2,
+        "Name":  "Close",
+        "AutomationId":  "Close",
+        "Type":  "ControlType.Button",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  false,
+        "Focused":  false,
+        "Bounds":  [
+                       732,
+                       131,
+                       47,
+                       30
+                   ],
+        "Patterns":  [
+                         "InvokePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          4,
+                          78645796,
+                          0,
+                          5
+                      ]
+    },
+    {
+        "Depth":  3,
+        "Name":  "System",
+        "AutomationId":  "Item 1",
+        "Type":  "ControlType.MenuItem",
+        "PID":  28596,
+        "HWND":  0,
+        "Enabled":  true,
+        "Focusable":  true,
+        "Focused":  false,
+        "Bounds":  [
+                       138,
+                       138,
+                       22,
+                       22
+                   ],
+        "Patterns":  [
+                         "ExpandCollapsePatternIdentifiers.Pattern"
+                     ],
+        "RuntimeId":  [
+                          1,
+                          78645796,
+                          797182503,
+                          0
+                      ]
+    }
+]

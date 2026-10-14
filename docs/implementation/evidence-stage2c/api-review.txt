@@ -1,0 +1,25 @@
+API review 2026-10-14; released cached sources, not a fork
+accesskit-0.25.1/Cargo.toml SHA256=4622B7E8E02906E376AC9F4EB5D954237D35477ED760476CC0F97188A56DA1A5
+accesskit-0.25.1/src/lib.rs SHA256=F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD
+accesskit_windows-0.35.1/Cargo.toml SHA256=C054F68241F033DAF9BD5086D44CE310D672D94A234C23C5AE2566A8796059F4
+accesskit_windows-0.35.1/src/subclass.rs SHA256=69BB742D5451F2CFF1C2110E77782948CB751AAAD3302C5B1453EBF8B3D20A9E
+accesskit_windows-0.35.1/src/node.rs SHA256=160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67
+accesskit_consumer-0.39.1/Cargo.toml SHA256=732661AAE7ADF7A550986DF2A1C39796B0CC00A9BA47D0912909836C3D2EAD27
+iced_core-0.14.0/src/window/settings.rs SHA256=A1ACC5C7CA6925668E92A6430D403030695FB710818038C36A30F9B76C93948F
+iced_winit-0.14.1/src/lib.rs SHA256=BA9FC11DF9BC27959D5F26633BB81B42C47F459A3D4F8609CDACEFDDB133DCE8
+Microsoft Windows NT 10.0.26300.0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+rustc 1.99.0 (b940084d7 2026-09-28)
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+cargo 1.99.0 (5f94df478 2026-08-27)
+AccessKit core/Windows: metadata license MIT OR Apache-2.0; rust-version 1.87. Chromium-derived notices also apply.
+Windows adapter lifecycle: owning thread, before show/focus; action callback may be on another thread; event raising outside our borrows.
+UIA labels use Role::Label value; author_id maps to AutomationId; LabeledBy property absent from this adapter mapping.
+UIA_E_ELEMENTNOTAVAILABLE = 0x80040201, signed -2147220991; verified released windows 0.62.2 constant and actual .NET exception.
+Windows normal package/version entries: spike 114, baseline 99. Spike standalone lock: 240 all-target packages.

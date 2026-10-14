@@ -1,0 +1,69 @@
+﻿{
+    "UTC":  "2026-10-14T11:44:26.7432205Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "BinarySHA256":  "4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5",
+    "BuildMode":  "release",
+    "Narrator":  "Not run",
+    "PhysicalKeyboard":  "Not run",
+    "TextSelection":  "Not advertised",
+    "LiveAnnouncement":  "Not advertised",
+    "Checks":  [
+                   {
+                       "Name":  "Correct PID/title/Window root discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Required names and roles discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Editable initially empty ValuePattern",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Input has real label relationship",
+                       "Passed":  false
+                   }
+               ],
+    "PID":  28564,
+    "HWND":  94309048,
+    "Failure":  "Check failed: Input has real label relationship",
+    "ExitCode":  0,
+    "ChildRemaining":  false,
+    "PreShowAttachmentConfirmed":  true,
+    "ProviderDetached":  true,
+    "UIAActionsPassed":  false,
+    "AccessibilityGate":  "Not passed: Narrator/physical keyboard not run; no live or text-selection claim"
+}

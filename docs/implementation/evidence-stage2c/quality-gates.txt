@@ -1,0 +1,282 @@
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml
+exit=0
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.28s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.27s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 10 tests
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+error: this `let...else` may be rewritten with the `?` operator
+  --> src\native.rs:97:9
+   |
+97 | /         let Some(owner) = owner.as_mut() else {
+98 | |             return None;
+99 | |         };
+   | |__________^ help: replace it with: `let owner = owner.as_mut()?;`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#question_mark
+   = note: `-D clippy::question-mark` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::question_mark)]`
+
+error: could not compile `accesskit-iced-spike` (bin "accesskit-iced-spike") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `accesskit-iced-spike` (bin "accesskit-iced-spike" test) due to 1 previous error
+exit=101
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.34s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.25s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 10 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.45s
+exit=0
+cargo build --manifest-path experiments/accesskit-iced-spike/Cargo.toml --release --locked --offline
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling pin-project-lite v0.2.17
+   Compiling libm v0.2.16
+   Compiling windows-link v0.2.1
+   Compiling once_cell v1.21.4
+   Compiling futures-sink v0.3.34
+   Compiling autocfg v1.5.1
+   Compiling futures-core v0.3.34
+   Compiling bitflags v2.13.2
+   Compiling log v0.4.34
+   Compiling thiserror v2.0.21
+   Compiling futures-io v0.3.34
+   Compiling smol_str v0.2.2
+   Compiling slab v0.4.12
+   Compiling futures-task v0.3.34
+   Compiling memchr v2.8.3
+   Compiling version_check v0.9.5
+   Compiling futures-channel v0.3.34
+   Compiling web-time v1.1.0
+   Compiling lilt v0.8.2
+   Compiling glam v0.25.0
+   Compiling bytes v1.12.1
+   Compiling raw-window-handle v0.6.2
+   Compiling rustc-hash v2.1.3
+   Compiling smallvec v1.16.3
+   Compiling zerocopy v0.8.63
+   Compiling unicode-segmentation v1.13.3
+   Compiling memmap2 v0.9.11
+   Compiling slotmap v1.1.1
+   Compiling zeno v0.3.3
+   Compiling num-traits v0.2.19
+   Compiling tinyvec v1.13.3
+   Compiling yazi v0.2.1
+   Compiling cfg-if v1.0.5
+   Compiling tracing-core v0.1.36
+   Compiling rustc-hash v1.1.0
+   Compiling rangemap v1.8.0
+   Compiling unicode-script v0.5.8
+   Compiling self_cell v1.3.0
+   Compiling linebender_resource_handle v0.1.1
+   Compiling syn v3.0.9
+   Compiling syn v2.0.119
+   Compiling sys-locale v0.3.2
+   Compiling unicode-linebreak v0.1.5
+   Compiling unicode-bidi v0.3.18
+   Compiling windows_x86_64_msvc v0.52.6
+   Compiling windows-strings v0.5.1
+   Compiling windows-result v0.4.1
+   Compiling core_maths v0.1.1
+   Compiling arrayref v0.3.9
+   Compiling arrayvec v0.7.8
+   Compiling ttf-parser v0.25.1
+   Compiling strict-num v0.1.1
+   Compiling windows-sys v0.61.2
+   Compiling cfg_aliases v0.2.2
+   Compiling winit v0.30.13
+   Compiling windows-targets v0.52.6
+   Compiling kurbo v0.10.4
+   Compiling error-code v3.4.0
+   Compiling windows-threading v0.2.1
+   Compiling windows-sys v0.52.0
+   Compiling clipboard-win v5.4.1
+   Compiling dpi v0.1.2
+   Compiling cursor-icon v1.2.0
+   Compiling foldhash v0.2.0
+   Compiling uuid v1.26.1
+   Compiling static_assertions v1.1.0
+   Compiling hashbrown v0.17.1
+   Compiling accesskit v0.25.1
+   Compiling accesskit_consumer v0.39.1
+   Compiling fontdb v0.23.0
+   Compiling bytemuck_derive v1.12.1
+   Compiling futures-macro v0.3.34
+   Compiling thiserror-impl v2.0.21
+   Compiling futures-util v0.3.34
+   Compiling bytemuck v1.25.2
+   Compiling zerocopy-derive v0.8.63
+   Compiling tracing-attributes v0.1.31
+   Compiling windows-interface v0.59.3
+   Compiling windows-implement v0.60.2
+   Compiling iced_core v0.14.0
+   Compiling window_clipboard v0.5.1
+   Compiling font-types v0.10.1
+   Compiling font-types v0.12.6
+   Compiling tiny-skia-path v0.11.4
+   Compiling read-fonts v0.35.0
+   Compiling windows-core v0.62.2
+   Compiling read-fonts v0.41.0
+   Compiling tiny-skia v0.11.4
+   Compiling tracing v0.1.44
+   Compiling softbuffer v0.4.8
+   Compiling windows-future v0.3.2
+   Compiling windows-numerics v0.3.1
+   Compiling windows-collections v0.3.2
+   Compiling windows v0.62.2
+   Compiling futures-executor v0.3.34
+   Compiling futures v0.3.34
+   Compiling iced_futures v0.14.0
+   Compiling iced_debug v0.14.0
+   Compiling iced_runtime v0.14.0
+   Compiling half v2.7.1
+   Compiling skrifa v0.37.0
+   Compiling harfrust v0.3.2
+   Compiling skrifa v0.44.0
+   Compiling swash v0.2.10
+   Compiling accesskit_windows v0.35.1
+   Compiling cosmic-text v0.15.0
+   Compiling iced_graphics v0.14.0
+   Compiling iced_tiny_skia v0.14.1
+   Compiling iced_program v0.14.0
+   Compiling iced_winit v0.14.1
+   Compiling iced_renderer v0.14.0
+   Compiling iced_widget v0.14.2
+   Compiling iced v0.14.0
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `release` profile [optimized] target(s) in 31.02s
+exit=0
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.28s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.43s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 10 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.39s
+exit=0
+cargo build --manifest-path experiments/accesskit-iced-spike/Cargo.toml --release --locked --offline
+    Finished `release` profile [optimized] target(s) in 0.20s
+exit=0
+cargo test --workspace --locked --offline
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running unittests src\main.rs (target\debug\deps\sei_desk-c3876a2dd95ab83a.exe)
+
+running 9 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test tests::modifier_shortcuts_and_repeated_activation_are_ignored ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test tests::captured_text_enter_does_not_validate_twice ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\sei_windows-8bf31af200572d9c.exe)
+
+running 2 tests
+test tests::native_error_keeps_operation_and_code ... ok
+test tests::restoration_requires_ownership_and_live_matching_identity ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests sei_windows
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+Final review: removed unused direct Win32_Graphics_Gdi feature (renderer retains its own requirements).
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.36s
+cargo build --manifest-path experiments/accesskit-iced-spike/Cargo.toml --release --locked --offline
+    Finished `release` profile [optimized] target(s) in 0.21s
+final_binary_sha256=4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5
+
+Final scope checks (2026-10-14):
+git diff --check: exit 0.
+4 new Markdown documents/instructions: zero missing local link targets.
+New source/docs: zero trailing-whitespace lines.
+Windows UIA client script: parser errors 0; final actual run 29/29 checks passed.
+147 pre-existing tracked/untracked files: SHA256 unchanged, including Stage 2B.
+Experiment processes remaining: 0.
+No root code, lockfile, manifest, previous evidence or design change.
+Final resource sample is nonzero CPU: 0.515625 s over 30.0164156 s (1.717810% one core); zero CPU is not promised.
+Final capture refused when not foreground; identical-binary Run 06 captures retained.

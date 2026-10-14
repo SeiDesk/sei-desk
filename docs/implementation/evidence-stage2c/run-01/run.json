@@ -1,0 +1,57 @@
+﻿{
+    "UTC":  "2026-10-14T11:40:01.4340241Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "BinarySHA256":  "50B2DD3E96A91D11DB53AA55C7DA327BF2A1AE0B78A1A31556B97F6D6DA14797",
+    "BuildMode":  "release",
+    "Narrator":  "Not run",
+    "PhysicalKeyboard":  "Not run",
+    "TextSelection":  "Not advertised",
+    "LiveAnnouncement":  "Not advertised",
+    "Checks":  [
+                   {
+                       "Name":  "Correct PID/title/Window root discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Required names and roles discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Close",
+                       "Passed":  false
+                   }
+               ],
+    "PID":  2108,
+    "HWND":  52627338,
+    "Failure":  "Check failed: Enabled/focusable: Close",
+    "ExitCode":  0,
+    "ChildRemaining":  false,
+    "PreShowAttachmentConfirmed":  true,
+    "ProviderDetached":  true,
+    "UIAActionsPassed":  false,
+    "AccessibilityGate":  "Not passed: Narrator/physical keyboard not run; no live or text-selection claim"
+}

@@ -1,0 +1,92 @@
+Released cached source reviewed; no dependency added:
+iced_core-0.14.0/src/widget.rs SHA256=5D6A3E278C10F63F828315D5C2DD117A63E1EDE810898168C4B6A009DCDF8A82
+iced_core-0.14.0/src/widget/operation.rs SHA256=60E249CBEE072F48ECB7E4C7DC9B5BEBB507CF7E7CB57B6309CB61BA62408DBA
+iced_core-0.14.0/src/widget/operation/text_input.rs SHA256=F09888BDD53E327BE47C20EBAAC0BE9F6F80C2EDDE657CA67A9888FAB55B492F
+iced_widget-0.14.2/src/button.rs SHA256=A8019FEE3AD691FB2395AFCDF302BEC5F9E1CC592552AFF4D8C8BBD1C6149F5A
+iced_widget-0.14.2/src/checkbox.rs SHA256=4409C11D6473BAF4BAEFAFBB3ED253CD9353F04136CAC6009422A876A84EC6B1
+iced_runtime-0.14.0/src/window.rs SHA256=B7D025D087631600056F7BBADB66A483BC18EEA177D07ACD822F91A83159D010
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs:463:pub fn run<T>(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-464-    id: Id,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-465-    f: impl FnOnce(&dyn Window) -> T + Send + 'static,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-466-) -> Task<T>
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-467-where
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-468-    T: Send + 'static,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-469-{
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-470-    task::oneshot(move |channel| {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-471-        crate::Action::Window(Action::Run(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-472-            id,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-473-            Box::new(move |handle| {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-474-                let _ = channel.send(f(handle));
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_runtime-0.14.0/src/window.rs-475-            }),
+--
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs:257:    fn operate(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-258-        &mut self,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-259-        tree: &mut Tree,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-260-        layout: Layout<'_>,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-261-        renderer: &Renderer,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-262-        operation: &mut dyn Operation,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-263-    ) {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs:264:        operation.container(None, layout.bounds());
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-265-        operation.traverse(&mut |operation| {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-266-            self.content.as_widget_mut().operate(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-267-                &mut tree.children[0],
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-268-                layout.children().next().unwrap(),
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-269-                renderer,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-270-                operation,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-271-            );
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-272-        });
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-273-    }
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-274-
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-275-    fn update(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/button.rs-276-        &mut self,
+--
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs:464:    fn operate(
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-465-        &mut self,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-466-        _tree: &mut Tree,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-467-        layout: Layout<'_>,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-468-        _renderer: &Renderer,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-469-        operation: &mut dyn widget::Operation,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-470-    ) {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-471-        if let Some(label) = self.label.as_deref() {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs:472:            operation.text(None, layout.bounds(), label);
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-473-        }
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-474-    }
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-475-}
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-476-
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-477-impl<'a, Message, Theme, Renderer> From<Checkbox<'a, Message, Theme, Renderer>>
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-478-    for Element<'a, Message, Theme, Renderer>
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-479-where
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-480-    Message: 'a,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-481-    Theme: 'a + Catalog,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-482-    Renderer: 'a + text::Renderer,
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-483-{
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_widget-0.14.2/src/checkbox.rs-484-    fn from(
+--
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs:7:pub trait TextInput {
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-8-    /// Returns the current _visible_ text of the text input
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-9-    ///
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-10-    /// Normally, this is either its value or its placeholder.
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-11-    fn text(&self) -> &str;
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-12-
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-13-    /// Moves the cursor of the text input to the front of the input text.
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-14-    fn move_cursor_to_front(&mut self);
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-15-
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-16-    /// Moves the cursor of the text input to the end of the input text.
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-17-    fn move_cursor_to_end(&mut self);
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-18-
+C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f/iced_core-0.14.0/src/widget/operation/text_input.rs-19-    /// Moves the cursor of the text input to an arbitrary location.
+Windows/runtime tooling:
+Microsoft Windows NT 10.0.26300.0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+rustc 1.99.0 (b940084d7 2026-09-28)
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+cargo 1.99.0 (5f94df478 2026-08-27)
+logical_processors=16
+7aced5c64c3658b9fbd5d8b3c42dae46e1af1929
+Locked normal dependency graph:

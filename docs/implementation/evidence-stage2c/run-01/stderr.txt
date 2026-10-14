@@ -1,0 +1,3 @@
+provider_attached_before_show hwnd=52627338
+state focus=Input error=false checked=false closing=true
+provider_detached

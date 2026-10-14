@@ -1,0 +1,149 @@
+﻿{
+    "UTC":  "2026-10-14T11:45:20.2397313Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "BinarySHA256":  "4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5",
+    "BuildMode":  "release",
+    "Narrator":  "Not run",
+    "PhysicalKeyboard":  "Not run",
+    "TextSelection":  "Not advertised",
+    "LiveAnnouncement":  "Not advertised",
+    "Checks":  [
+                   {
+                       "Name":  "Correct PID/title/Window root discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Required names and roles discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Editable initially empty ValuePattern",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "ValuePattern.SetValue synchronized",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Nonempty validation has no error action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Value cleared",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "UIA focus request reaches real Validate focus",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Invoke Validate exposes error action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Error text exposed",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Error preserves initiating Validate focus",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Dismiss Invoke removes action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Dismiss removes error text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Retained removed Dismiss fails safely",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "TogglePattern updates checked state",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Toggle restores checked state",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Resize updates real input layout bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Restore size restores input bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Move updates screen-space bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Restore position restores bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Close Invoke exits process",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Closed-window input rejects stale action",
+                       "Passed":  true
+                   }
+               ],
+    "PID":  21304,
+    "HWND":  53544842,
+    "UIALabeledBy":  "Not exposed by this provider",
+    "ValueScreenshot":  "Captured own client",
+    "ErrorScreenshot":  "Captured own client",
+    "StaleDismissException":  "Exception calling \"Invoke\" with \"0\" argument(s): \"Could not open the process token\"",
+    "ToggleScreenshot":  "Captured own client",
+    "ResizeScreenshot":  "Captured own client",
+    "IdleSeconds":  30.0065934,
+    "CPUSeconds":  0,
+    "SingleCoreCPUPercent":  0,
+    "WorkingSetBytes":  21999616,
+    "PrivateCommitBytes":  5328896,
+    "PeakWorkingSetBytes":  22749184,
+    "StaleClosedException":  "Exception calling \"SetValue\" with \"1\" argument(s): \"Could not open the process token\"",
+    "ExitCode":  0,
+    "ChildRemaining":  false,
+    "PreShowAttachmentConfirmed":  true,
+    "ProviderDetached":  true,
+    "UIAActionsPassed":  true,
+    "AccessibilityGate":  "Not passed: Narrator/physical keyboard not run; no live or text-selection claim"
+}

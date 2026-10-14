@@ -1,0 +1,17 @@
+provider_attached_before_show hwnd=6226034
+uia_action=Focus node=#3
+state focus=Input error=false checked=false closing=false
+uia_action=SetValue node=#3
+uia_action=Focus node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Click node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Focus node=#3
+state focus=Input error=false checked=false closing=false
+uia_action=SetValue node=#3
+uia_action=Focus node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Click node=#4
+state focus=Validate error=true checked=false closing=false
+state focus=Validate error=true checked=false closing=true
+provider_detached
