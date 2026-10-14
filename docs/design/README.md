@@ -1,10 +1,11 @@
 # Sei-Desk design review package
 
-Start with the [design overview](SEI-DESK-DESIGN-OVERVIEW.png), then read the [UI/UX specification](SEI-DESK-UI-UX-SPEC.md).
+For the latest revision, start with the [auto-hiding dock overview](AUTO-HIDING-DOCK-OVERVIEW.png), then read [section 9 of the UI/UX specification](SEI-DESK-UI-UX-SPEC.md#9-auto-hiding-top-dock-and-control-panels). The [complete design overview](SEI-DESK-DESIGN-OVERVIEW.png) includes all eleven plates.
 
 | Plate | PNG preview | Editable vector design |
 | --- | --- | --- |
-| 01 · Complete desktop | [PNG](mockups/01-desktop-composition.png) | [SVG](mockups/01-desktop-composition.svg) |
+| 01 · Desktop, dock hidden | [PNG](mockups/01-desktop-composition.png) | [SVG](mockups/01-desktop-composition.svg) |
+| 01B · Desktop, dock revealed | [PNG](mockups/01b-desktop-dock-revealed.png) | [SVG](mockups/01b-desktop-dock-revealed.svg) |
 | 02 · Taskbar states | [PNG](mockups/02-taskbar-states.png) | [SVG](mockups/02-taskbar-states.svg) |
 | 03 · Start launcher states | [PNG](mockups/03-start-launcher-states.png) | [SVG](mockups/03-start-launcher-states.svg) |
 | 04 · Dock and quick controls | [PNG](mockups/04-quick-control-dock.png) | [SVG](mockups/04-quick-control-dock.svg) |
@@ -12,8 +13,18 @@ Start with the [design overview](SEI-DESK-DESIGN-OVERVIEW.png), then read the [U
 | 06 · Applications catalog | [PNG](mockups/06-applications-catalog.png) | [SVG](mockups/06-applications-catalog.svg) |
 | 07 · Appearance and behavior | [PNG](mockups/07-appearance-behavior-settings.png) | [SVG](mockups/07-appearance-behavior-settings.svg) |
 | 08 · Future optimizer | [PNG](mockups/08-future-optimization-concept.png) | [SVG](mockups/08-future-optimization-concept.svg) |
+| 09 · Six auto-hide states | [PNG](mockups/09-auto-hide-dock-states.png) | [SVG](mockups/09-auto-hide-dock-states.svg) |
+| 10 · Expanded volume interaction | [PNG](mockups/10-expanded-dock-interaction.png) | [SVG](mockups/10-expanded-dock-interaction.svg) |
 
 All deliverables are static design documents. SVGs contain vector artwork, text and presentation-board annotations; they contain no scripts or application components. No app was scaffolded and no application logic or original assets were changed. PNGs are raster previews of those vector plates. Use the specification’s DIP dimensions when reviewing future implementation; board pixels are presentation measurements.
+
+## Auto-hide revision — 14 October 2026
+
+The dock is hidden by default with no visible strip. Proposed behavior: one-physical-pixel top-edge sensor over the centered dock width, 180 ms reveal/hide, 450 ms dismissal grace, cancellation on return. Pointer travel through defined gaps is protected; slider capture, keyboard interaction and pending power confirmations hold visibility. Hover does not steal app focus. Reduced motion removes the slide while preserving the grace period. The expanded-control plate uses a pale focus ring on the slider and a muted-mint expanded cue on its owner.
+
+Section 9 is authoritative for dock states, physical-edge geometry, timer rules, keyboard/menu access, focus restoration, full-screen suppression, maximized windows and mixed-DPI monitors. Ctrl+Alt+Q is a proposed keyboard shortcut requiring validation, with an existing control-menu access route as fallback. No permanent top workspace is reserved. Full-screen/secure-desktop suppression must not discard an unresolved confirmation.
+
+Only dock-related compositions, annotations, specification sections and overview images changed. Existing taskbar, Start-state, monitoring, catalog, settings and optimizer plates retain their committed content (SVG comparisons normalize Git line endings); their PNGs are byte-for-byte unchanged. No application code was added. The task remains design-only.
 
 ## Reference and intentional adaptations
 
@@ -21,7 +32,7 @@ The original assets folder was inspected and both images were opened. The 1536 �
 
 ## Design verification
 
-All eight full-resolution PNGs were opened and inspected. SVG files parsed successfully as static XML without scripts. One correction batch moved an overlapping tooltip and desktop caption, aligned shared pin labels/catalog ordering, added chart scale labels and matching current endpoints, and outlined Cancel in the restart confirmation. Final previews were inspected after rendering those changes.
+The original eight full-resolution PNGs were inspected during the initial design pass. In this revision, all five new/updated plates were rendered and opened at full resolution. One correction batch improved the intermediate slide framing and distinguished expanded-owner styling from actual keyboard focus. Final previews were inspected after rendering. Static SVG/XML and local-document links were checked, and unchanged module plates were compared against the initial commit. These are artifact checks, not runtime interaction tests.
 
 Calculated opaque sRGB contrast ratios for representative token pairs:
 
