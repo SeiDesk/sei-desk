@@ -36,7 +36,7 @@ No window tiling, marketplace, assistant, gaming features, extra system utilitie
 | --- | --- | --- |
 | 01 | [Desktop — dock hidden](mockups/01-desktop-composition.svg) | Default desktop, no top strip, unchanged Start and taskbar |
 | 01B | [Desktop — dock revealed](mockups/01b-desktop-dock-revealed.svg) | Same composition after non-activating top-edge reveal |
-| 02 | [Taskbar states](mockups/02-taskbar-states.svg) | Default, running, active, hover, keyboard focus |
+| 02 | [Taskbar states](mockups/02-taskbar-states.svg) | Default, running, active, hover, keyboard focus; minimized, grouped and narrow-layout behavior is specified in section 7 |
 | 03 | [Start states](mockups/03-start-launcher-states.svg) | Empty query with pins, matches, moved selection, no results |
 | 04 | [Quick-control dock](mockups/04-quick-control-dock.svg) | Revealed dock, brightness, volume/mute, power, confirmation, unavailable |
 | 05 | [Monitoring](mockups/05-system-overview.svg) | Four metrics, histories, basic health and data-failure rule |
@@ -127,6 +127,7 @@ Start button opens/closes the application launcher. Search button opens the same
 | Pinned, not running | App icon; no underline |
 | Running, inactive | Small centered pale dot below icon |
 | Active | Short mint underline plus tinted tile; no glow |
+| Minimized | Running dot remains; active underline clears; expose “Minimized” in the window chooser/accessibility state |
 | Hover | Slightly lighter slate tile; app-name tooltip after 500 ms |
 | Pressed | Stronger local tint until release; no layout shift |
 | Keyboard focus | 2 DIP light outline on dark surface; independent of active underline |
@@ -135,9 +136,13 @@ Start button opens/closes the application launcher. Search button opens the same
 | Launch failure | Anchored message with app name and Retry; no endless spinner |
 | Missing pinned app | Neutral placeholder with label and Remove pin action |
 
-Click a non-running app to launch; click a running app to request activation; click a group with multiple windows to choose a window. Do not assume clicking an active app minimizes it; v1 requests activation consistently. Right-click / Shift+F10 exposes Launch and Pin/Unpin, plus supported window selection. No jump-list, thumbnail-preview or task termination feature is introduced. Pins persist in user-defined order; manage ordering through a bounded “Move left / Move right” action in the catalog/taskbar context menu, avoiding a required drag implementation.
+Click a non-running app to launch; click a running app to request activation or restore it if minimized; click a group with multiple windows to choose a window. Do not assume clicking an active app minimizes it; v1 requests activation consistently. Right-click / Shift+F10 exposes Launch and Pin/Unpin, plus supported window selection and **Minimize** for the selected eligible window. The window chooser labels minimized entries and selecting one requests restore/activation. These actions are requests subject to Windows foreground and ownership rules; do not report success if activation is denied. No jump-list, thumbnail-preview or task termination feature is introduced. Pins persist in user-defined order; manage ordering through a bounded “Move left / Move right” action in the catalog/taskbar context menu, avoiding a required drag implementation.
 
-Focus cycling uses Tab/Shift+Tab between groups, Left/Right within app slots, Enter/Space activate, Escape close a menu. When app slots overflow, preserve Start/status and offer a “More apps” menu rather than shrink icons. Third-party tray hosting is a separate engineering problem: initial status icons may be Sei-Desk-owned network/audio/battery indicators. Do not claim full Explorer notification-area parity until validated; preserve access to the Windows tray if it cannot be replicated safely.
+Focus cycling uses Tab/Shift+Tab between groups, Left/Right within app slots, Enter/Space activate, Escape close a menu, and Shift+F10 opens the focused item’s context menu. The menu and window chooser keep visible focus and expose window/app names plus running, minimized and active states to assistive technology. Unavailable or missing pinned apps retain their neutral placeholder and Remove pin action; a launch rejection uses the anchored Retry state. When app slots overflow, preserve Start, the active-window route and clock, then place remaining app slots behind “More apps”; do not shrink icons. In a narrow layout, keep clock/date visible and move lower-priority status indicators into a keyboard-accessible tray overflow in stable order. Escape closes that overflow and returns focus to its invoking tray control.
+
+Taskbar status glyphs are compact read-only indicators. The top dock owns brightness, volume/mute and power/session controls; activating the taskbar volume glyph reveals the dock and opens its existing volume panel, so there is one adjustment surface and one state source. Network/battery may be echoed in both places for at-a-glance status, but must not gain separate controls. The clock/date stays passive and does not open a calendar. Third-party tray hosting is a separate engineering problem: initial status icons may be Sei-Desk-owned network/audio/battery indicators. Do not claim full Explorer notification-area parity until validated; preserve access to the Windows tray if it cannot be replicated safely.
+
+The mockups show one taskbar on the primary monitor. Initial multi-monitor fallback keeps Windows’ taskbar available on secondary monitors rather than implying replicated custom bars. On exclusive or borderless full-screen content, suppress the custom taskbar surface and do not show it over the application or queue a delayed appearance. Leave Windows’ own taskbar/full-screen policy untouched. After full-screen ends, normal taskbar availability resumes; no activation or focus change is caused by that transition. Reliable full-screen detection, shell coexistence and work-area/appbar behavior are engineering requirements, not guaranteed by the mockup.
 
 ## 8. Start launcher behavior
 
@@ -152,17 +157,21 @@ Typing filters installed application names only. Proposed matching: case-insensi
 | Typing / IME composition | Edit query; do not launch or move selection while composition is active |
 | Up / Down with results | Move active result without moving text caret; scroll it into view; clamp at ends |
 | First results for new query | Select first match; selection changes announced when accessibility permits |
-| Enter | Launch selected result; close only on accepted launch request |
+| Enter | Request launch for the selected result; close when Windows accepts the request, otherwise retain the launcher and show the inline failure |
 | Enter with no results | No action; retain useful no-results message |
-| Escape | Close launcher and restore prior window focus if permitted |
-| Windows key while open | Desired close behavior, subject to shortcut handling validation |
+| Escape | Close launcher; request focus restoration under the conditions below |
+| Windows key while open | Desired close behavior, subject to shortcut handling validation; do not interfere with an active composition or modifier shortcut |
 | Tab / Shift+Tab | Move among search, pins/results and All applications; maintain visible focus |
 | Left / Right in search | Normal text-caret behavior |
 | Mouse hover on result | Hover tint only; does not silently replace the keyboard-selected result |
-| Mouse click on result | Select and launch that result |
+| Mouse click on result | Select and launch that result; leave query and result selected if launching fails |
 | Click outside / genuine focus loss | Dismiss launcher; never cancel a pointer interaction inside its own popup |
 
-Each result row: 32 DIP application icon, name, “Application” subtitle and Enter hint only on the active row. Selected fill uses slate-blue, mint rail and semibold name; selection is not communicated by color alone. Empty-search means empty query with pins; no-results means a non-empty query with zero matches. No-results copy: **“No applications found”**, followed by **“Try a different application name or check spelling.”** Launch failure appears inline, retaining query and selection for retry.
+Each result row: 32 DIP application icon, name, “Application” subtitle and Enter hint only on the active row. Selected fill uses slate-blue, mint rail and semibold name; selection is not communicated by color alone. Empty-search means empty query with pins; no-results means a non-empty query with zero matches. No-results copy: **“No applications found”**, followed by **“Try a different application name or check spelling.”** Launch failure appears immediately below the selected result as a muted-blush inline status with concise copy and a Retry button. Show it only when the OS launch request is rejected; do not wait for the new application window to appear or claim that it became foreground. Keep query and result selection. Announce the status politely without moving focus; Tab reaches Retry, and Enter retries only when Retry is focused. A failed attempt never closes Start or clears the query. Plate 03 now illustrates this fifth state in the existing launcher mockup.
+
+When Start opens, record the previously foreground application/window and, where supported, its focused control. Escape closes Start and requests restoration only while Sei-Desk still owns foreground/focus and the recorded target remains valid; if the user has activated another application, never force the stale target back to the front. A click on an application that dismisses Start lets Windows activate the clicked target normally. On a rejected or failed launch request, keep Start open, keep the query and selected result, retain the initiating keyboard/pointer context, and announce the inline status; a successful launch closes Start after acceptance and lets normal Windows foreground policy decide whether the launched app takes focus. Do not restore the previous application over a newly launched app. Restore behavior is an intent subject to Windows foreground rules, not a guarantee.
+
+Full-screen policy: do not overlay the custom launcher over exclusive or borderless full-screen content, steal foreground, or queue a delayed appearance. While full-screen is active, leave the bare Windows key to Windows; do not intercept or swallow it for custom Start activation. After full-screen exits, require a fresh Windows-key press or deliberate clickable Start/search action. Windowed/maximized apps retain the normal launcher design, subject to separately validated positioning. Lock/UAC/secure desktop always suppresses Sei-Desk surfaces. Detecting full-screen soon enough to leave the bare Windows key untouched is an engineering requirement and must be validated alongside the interception work below.
 
 Windows-key interception must be designed around press/release timing, left/right Windows keys, repeat suppression, modifier combinations, focus policy and recovery from failed hooks. Validate it in an isolated future technical investigation. Provide clickable Start/search access regardless; show the settings row as unavailable until this capability is validated. These are requirements, not a claim that iced can capture global keys.
 
@@ -325,10 +334,11 @@ Current official iced window settings expose decoration, positioning, transparen
 
 | Design decision | OS behavior requiring validation | Fallback / release condition |
 | --- | --- | --- |
-| Windows key opens Start | Global key interception, modifier preservation, hook timing and Windows Start suppression | Clickable Start/search; do not mark keyboard interception complete without testing |
-| Persistent bottom taskbar | Appbar reservation, native taskbar coexistence/hiding and restoration, Explorer restart | Keep native taskbar accessible until coexistence/recovery is proven |
-| Running app indicators / activate | Window enumeration, ownership/grouping, foreground restrictions, elevated windows | Show supported windows; explain unavailable activation rather than claim success |
-| Tray icons | Explorer notification-area behavior / third-party tray hosting | Sei-Desk-owned status indicators; retain Windows tray access |
+| Windows key opens Start | Global key interception, modifier preservation, hook timing, Windows Start suppression, fullscreen detection before key suppression | Clickable Start/search; leave bare Windows key to Windows during full-screen; validate section 8 before enabling interception |
+| Persistent bottom taskbar | Appbar reservation, native taskbar coexistence/hiding and restoration, Explorer restart; custom taskbar suppression over exclusive/borderless full-screen; primary/secondary monitor policy | Keep native taskbar accessible until coexistence/recovery is proven; do not force a fullscreen overlay |
+| Sei-Desk crash / forced termination | Cleanup and recovery for keyboard hooks, appbar/work-area reservations, topmost windows, pointer capture and owned confirmations; restart without duplicate shell surfaces | Windows desktop remains usable through the native taskbar; do not replay power/session actions or restore stale focus/dialog state; verify cleanup after process termination and Explorer restart |
+| Running app indicators / activate / minimize | Window enumeration, ownership/grouping, minimized state, foreground restrictions, elevated windows | Show supported windows; explain unavailable activation rather than claim success; retain normal window controls as fallback |
+| Tray icons and dock shortcuts | Explorer notification-area behavior / third-party tray hosting, status refresh and panel handoff to a non-activating dock | Keep taskbar indicators read-only; dock owns adjustments; retain Windows tray access |
 | Slate glass | Compositor backdrop blur, transparency, reduced transparency preferences, performance | Opaque slate with same borders and hierarchy |
 | Auto-hiding top dock | Physical-edge sensing, non-activating/topmost window, monitor clipping, owned-popover focus, capture, full-screen suppression | No permanent top reservation; suppress unsupported automatic reveal, retain explicit keyboard/menu access; validate section 9 scenarios |
 | Brightness | Built-in display versus external monitor interfaces and capability detection | Disabled control with display-specific explanation |
@@ -360,8 +370,10 @@ Plate 08 uses “Example change A” deliberately; it illustrates the interactio
 - [x] Sampled palette recorded with coordinates; derived colors distinguished from evidence.
 - [x] Pastel wallpaper and light application surfaces remain coherent with slate floating overlays.
 - [x] Taskbar switches/launches; Start searches apps; top dock controls hardware/session actions.
-- [x] Eleven plates include the original module designs plus dock-hidden/revealed compositions, six auto-hide states and expanded-control interaction.
+- [x] Eleven plates include launcher launch failure alongside the original states, dock-hidden/revealed compositions, six auto-hide states and expanded-control interaction.
+- [x] Start fullscreen policy, failure focus and safe restoration behavior documented.
 - [x] Dock timing, activation zone, keyboard ownership, slider capture and non-dismissing confirmations documented.
+- [x] Desktop shell coordination, shared quick-control ownership, fullscreen/monitor fallbacks and crash recovery requirements documented.
 - [x] Component geometry, focus, pointer/keyboard routes, layers, fallback behavior and scaling documented.
 - [x] Rust + iced constraints respected; unverified Windows behaviors explicitly separated.
 - [x] Optimizer clearly outside initial release; no unrelated features introduced.

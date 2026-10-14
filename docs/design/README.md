@@ -18,6 +18,14 @@ For the latest revision, start with the [auto-hiding dock overview](AUTO-HIDING-
 
 All deliverables are static design documents. SVGs contain vector artwork, text and presentation-board annotations; they contain no scripts or application components. No app was scaffolded and no application logic or original assets were changed. PNGs are raster previews of those vector plates. Use the specification’s DIP dimensions when reviewing future implementation; board pixels are presentation measurements.
 
+## Launcher review — 14 October 2026
+
+The existing launcher plate now shows its fifth state: a failed launch with query and selection retained, a polite inline error and an explicit Retry action. Section 8 defines fullscreen suppression, native key fallback, safe focus restoration, launch success/failure and accessibility behavior. No duplicate launcher artifact was added. The launcher’s colors and component style continue to match the pastel reference and adjacent desktop surfaces.
+
+## Taskbar audit — 14 October 2026
+
+The existing taskbar plate already covers pinned/running, active, hover and keyboard-focus visuals. Section 7 now clarifies minimized-window restoration and the explicit Minimize menu action, keyboard-accessible tray overflow, read-only taskbar status with volume routed to the dock’s single control panel, and full-screen suppression. It also states the primary-monitor mockup and secondary-monitor fallback. The existing plate remains unchanged; no duplicate mockup was needed. Shell coexistence, appbar reservation, window activation/minimize requests, tray hosting, full-screen detection and mixed-DPI behavior remain Windows engineering validation items in section 15.
+
 ## Auto-hide revision — 14 October 2026
 
 The dock is hidden by default with no visible strip. Proposed behavior: one-physical-pixel top-edge sensor over the centered dock width, 180 ms reveal/hide, 450 ms dismissal grace, cancellation on return. Pointer travel through defined gaps is protected; slider capture, keyboard interaction and pending power confirmations hold visibility. Hover does not steal app focus. Reduced motion removes the slide while preserving the grace period. The expanded-control plate uses a pale focus ring on the slider and a muted-mint expanded cue on its owner.
@@ -32,7 +40,7 @@ The original assets folder was inspected and both images were opened. The 1536 �
 
 ## Design verification
 
-The original eight full-resolution PNGs were inspected during the initial design pass. In this revision, all five new/updated plates were rendered and opened at full resolution. One correction batch improved the intermediate slide framing and distinguished expanded-owner styling from actual keyboard focus. Final previews were inspected after rendering. Static SVG/XML and local-document links were checked, and unchanged module plates were compared against the initial commit. These are artifact checks, not runtime interaction tests.
+The original eight full-resolution PNGs were inspected during the initial design pass. The launcher and full desktop reference assets were opened and reviewed for this Start design audit. In this revision, all five new/updated plates were rendered and opened at full resolution. One correction batch improved the intermediate slide framing and distinguished expanded-owner styling from actual keyboard focus. Final previews were inspected after rendering. Static SVG/XML and local-document links were checked, and unchanged module plates were compared against the initial commit. For this launcher review, the existing launcher PNG and combined overview were refreshed; the updated launcher PNG was rendered and inspected. No second launcher mockup was created. These are artifact checks, not runtime interaction tests.
 
 Calculated opaque sRGB contrast ratios for representative token pairs:
 
