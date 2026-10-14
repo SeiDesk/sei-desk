@@ -1,0 +1,15 @@
+[
+    {
+        "Depth":  0,
+        "Name":  "",
+        "Type":  "ControlType.Pane",
+        "Class":  "Winit Thread Event Target",
+        "AutomationId":  "",
+        "KeyboardFocusable":  false,
+        "HasKeyboardFocus":  false,
+        "Enabled":  true,
+        "Patterns":  [
+
+                     ]
+    }
+]

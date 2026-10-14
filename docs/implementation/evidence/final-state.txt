@@ -1,0 +1,12 @@
+UTC=2026-10-14T08:18:22.6187631Z final read-only state
+mode=snapshot duration_limit_seconds=5
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+snapshot_exit_code=0
+remaining_spike_processes=0

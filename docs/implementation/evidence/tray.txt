@@ -1,0 +1,15 @@
+UTC=2026-10-14T07:53:59.1037576Z command=tray 2
+mode=tray duration_limit_seconds=2
+monitor_0: physical=(0, 0, 1920, 1080) work=(0, 0, 1920, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=271 eligible_heuristic=3 minimized=0 unknown_cloak=0
+foreground: available=true maximized=true covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+cleanup_console_handler=1
+cleanup_window=1
+cleanup_class=1
+probe_failed: NIM_ADD rejected (no trustworthy GetLastError contract)
+exit_code=1

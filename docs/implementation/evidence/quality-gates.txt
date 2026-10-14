@@ -1,0 +1,44 @@
+UTC=2026-10-14T08:11:50.9440276Z build-tool-only filesystem sandbox exception, no runtime probes
+cargo_fmt_exit=0
+cargo_fmt_check_exit=0
+    Checking sei-windows-integration-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.56s
+cargo_clippy_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+    Checking sei-windows-integration-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike\target\debug\incremental\sei_windows_integration_spike-0vzkis7sne6qp\s-hn75ld2gk2-0b35gyf-working`
+
+warning: `sei-windows-integration-spike` (bin "sei-windows-integration-spike") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.37s
+cargo_check_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+   Compiling sei-windows-integration-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike\target\debug\incremental\sei_windows_integration_spike-2te70andrhmkp\s-hn75ld9pud-0qzxuhs-working`
+
+warning: `sei-windows-integration-spike` (bin "sei-windows-integration-spike" test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.03s
+     Running unittests src\main.rs (experiments\windows-integration-spike\target\debug\deps\sei_windows_integration_spike-80b570012b2add81.exe)
+
+running 2 tests
+test native::tests::narrow_monitor_clamps_sensor_width ... ok
+test native::tests::negative_origin_and_one_physical_pixel ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+cargo_test_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+   Compiling sei-windows-integration-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\windows-integration-spike)
+    Finished `release` profile [optimized] target(s) in 0.74s
+cargo_release_build_exit=0
+git_diff_check_exit=0
+existing_design_asset_diff_exit=0
+Local Markdown link check: 5 new Markdown documents, no missing relative targets. New text-file whitespace scan: no trailing spaces/tabs found. No runtime probe executed outside the restricted session.

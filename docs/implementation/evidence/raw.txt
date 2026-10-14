@@ -1,0 +1,24 @@
+UTC=2026-10-14T08:13:21.3616262Z command=raw 30 final_release_sha256=D78E4C8FBB0842198DFEBA9C4FC9B35F525E330E2571E52EAD311EEE1F18B580
+mode=raw duration_limit_seconds=30
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+raw_mouse_registered=true (no keyboard, no NOLEGACY)
+probe_window_dpi=96
+measurement: elapsed_s=30.020 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9818112 private_bytes=1404928 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_raw=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=30.1217713

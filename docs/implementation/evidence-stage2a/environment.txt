@@ -1,0 +1,19 @@
+UTC=2026-10-14T10:54:23.4553520Z
+baseline_commit=0400d174367c68a083b791f811e7889fde7b3162
+branch=main
+rustc=rustc 1.99.0 (b940084d7 2026-09-28)
+cargo=cargo 1.99.0 (5f94df478 2026-08-27)
+logical_processors_visible=16
+runtime=Windows x64/MSVC; ordinary session, no UAC/RunAs requested
+Inspect.exe installed: Windows SDK 10.0.26100.0 x64; visual Inspect/Narrator tests not executed
+Narrator.exe installed; speech not evaluated
+mode=snapshot duration_limit_seconds=5
+monitor_0: physical=(0, 0, 1920, 1080) work=(0, 0, 1920, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=274 eligible_heuristic=4 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=false
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+read_only_stage1_snapshot_exit=0

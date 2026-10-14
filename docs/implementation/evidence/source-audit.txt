@@ -1,0 +1,9 @@
+UTC=2026-10-14T08:10:41.9553672Z
+Reviewed cached iced 0.14.0, iced_winit 0.14.1, iced_widget 0.14.2 (not harness dependencies).
+Query: rg -n accesskit|UIAutomation|accessibility on Rust/TOML files in those three crate source directories.
+rg_exit=1 (1=no matches; not a Narrator/UIA runtime test)
+Cached iced_runtime 0.14.0 src/window.rs lines 460-479: window::run callback receives &dyn Window; Window exposes raw-window-handle traits. Native callback/message interception and UIA integration are not proved by this API.
+iced-0.14.0 Cargo.toml SHA256=22643883D0955AF9243D3357AC7C572061E17E7B2F30E5C3B6132CE44E846EFB
+iced_winit-0.14.1 Cargo.toml SHA256=1931E5F26D014A2B17A74028AE5D73F0D155AA2D1BC265B8DB43FD43198835F1
+iced_widget-0.14.2 Cargo.toml SHA256=E8E6B9A72FC0F97C84B8FB2703FE6CDCCD738C6C01D2FADF018A012182DE93B5
+Broader follow-up: rg -n -i accesskit|uiautomation|WM_GETOBJECT|UiaReturnRawElementProvider|accessibility across all cached iced* crate Rust/TOML sources returned exit 1 (no matches). This remains source research, not proof from Windows assistive tools.

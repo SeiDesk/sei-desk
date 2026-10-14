@@ -1,0 +1,186 @@
+UTC=2026-10-14T08:12:31.4834348Z rebuilt_binary_sha256=D78E4C8FBB0842198DFEBA9C4FC9B35F525E330E2571E52EAD311EEE1F18B580
+case=observe 1
+mode=observe duration_limit_seconds=1
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+measurement: elapsed_s=1.012 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9846784 private_bytes=1470464 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=1.1029044
+case=observe 2
+mode=observe duration_limit_seconds=2
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+measurement: elapsed_s=1.990 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9850880 private_bytes=1478656 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+foreground_same_at_end=true
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=2.0234113
+case=raw 1
+mode=raw duration_limit_seconds=1
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+raw_mouse_registered=true (no keyboard, no NOLEGACY)
+probe_window_dpi=96
+measurement: elapsed_s=0.998 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9863168 private_bytes=1482752 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_raw=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=1.0309384
+case=raw 2
+mode=raw duration_limit_seconds=2
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+raw_mouse_registered=true (no keyboard, no NOLEGACY)
+probe_window_dpi=96
+measurement: elapsed_s=2.012 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9854976 private_bytes=1462272 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_raw=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=2.0455635
+case=poll 1
+mode=poll duration_limit_seconds=1
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+measurement: elapsed_s=1.009 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9846784 private_bytes=1462272 messages=17 cursor_queries=16 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=1.0434542
+case=poll 2
+mode=poll duration_limit_seconds=2
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+measurement: elapsed_s=2.017 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9850880 private_bytes=1466368 messages=33 cursor_queries=32 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=2.0519559
+case=close 1
+mode=close duration_limit_seconds=1
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+fixture_requested_wm_close=true
+received_wm_quit=true
+measurement: elapsed_s=0.000 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9867264 private_bytes=1470464 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+work_areas_match_baseline=true
+exit_code=0 parent_wall_seconds=0.0320238
+case=panic 1
+mode=panic duration_limit_seconds=1
+monitor_0: physical=(0, 0, 1440, 1080) work=(0, 0, 1440, 1080) primary=true
+spike_window_found=false
+native_taskbar: found=true visible=true
+windows: total=270 eligible_heuristic=3 minimized=1 unknown_cloak=0
+foreground: available=true maximized=false covers_monitor_heuristic=true
+notification_state: hr=0 state=2 (not a fullscreen oracle)
+client_area_animation: query_ok=true enabled=false
+token_elevated=false
+winevent_hooks_registered=3
+probe_window_dpi=96
+measurement: elapsed_s=1.003 cpu_ms=0.000 single_core_cpu_percent=0.00000 working_set_bytes=9842688 private_bytes=1458176 messages=2 cursor_queries=0 edge_entries=0 raw_messages=0 winevent_callbacks=0 hotkey_messages=0 tray_callbacks=0 topology_messages=0
+
+thread 'main' (29240) panicked at src\native.rs:765:9:
+Deliberate Rust unwind test; no AppBar/hotkey/tray owned
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+foreground_same_at_end=true
+cleanup_console_handler=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_winevent=1
+cleanup_window=1
+cleanup_class=1
+exit_code=101 parent_wall_seconds=1.036998

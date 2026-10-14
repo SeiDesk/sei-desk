@@ -1,0 +1,4 @@
+window_opened renderer=tiny-skia
+window_active=true
+state focus=Input feedback=Idle closing=true local_reduce=false
+graceful_exit restoration=Denied

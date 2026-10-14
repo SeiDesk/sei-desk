@@ -1,0 +1,28 @@
+├── iced v0.14.0
+│   ├── iced_core v0.14.0
+│   ├── iced_debug v0.14.0
+│   │   ├── iced_core v0.14.0 (*)
+│   │   ├── iced_futures v0.14.0
+│   │   │   ├── iced_core v0.14.0 (*)
+│   ├── iced_futures v0.14.0 (*)
+│   ├── iced_renderer v0.14.0
+│   │   ├── iced_graphics v0.14.0
+│   │   │   ├── iced_core v0.14.0 (*)
+│   │   │   ├── iced_futures v0.14.0 (*)
+│   │   ├── iced_tiny_skia v0.14.1
+│   │   │   ├── iced_debug v0.14.0 (*)
+│   │   │   ├── iced_graphics v0.14.0 (*)
+│   │   │   │   └── windows-sys v0.61.2
+│   ├── iced_runtime v0.14.0
+│   │   ├── iced_core v0.14.0 (*)
+│   │   ├── iced_futures v0.14.0 (*)
+│   ├── iced_widget v0.14.2
+│   │   ├── iced_renderer v0.14.0 (*)
+│   ├── iced_winit v0.14.1
+│   │   ├── iced_debug v0.14.0 (*)
+│   │   ├── iced_program v0.14.0
+│   │   │   ├── iced_graphics v0.14.0 (*)
+│   │   │   └── iced_runtime v0.14.0 (*)
+│   │   └── winit v0.30.13
+│   │       └── windows-sys v0.52.0
+    └── windows-sys v0.61.2 (*)

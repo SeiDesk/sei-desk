@@ -1,0 +1,10 @@
+UTC=2026-10-14T07:58:24.2392360Z
+os=Microsoft Windows 10.0.26300
+architecture=X64
+logical_processors_visible=16
+branch=main
+baseline=0400d174367c68a083b791f811e7889fde7b3162
+rustc=rustc 1.99.0 (b940084d7 2026-09-28)
+cargo=cargo 1.99.0 (5f94df478 2026-08-27)
+cached_binding=windows-sys 0.61.2
+reviewed_iced=0.14.0 (not a dependency of this harness)

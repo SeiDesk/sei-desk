@@ -1,0 +1,18 @@
+{
+    "UTC":  "2026-10-14T10:38:38.9426350Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "Binary":  "sei-desk.exe",
+    "BinarySHA256":  "5C10C11FDD91A7563A635B2E0D23BB8F9053F4B196FEAD108630DD537F695F45",
+    "BuildMode":  "release (verify supplied binary path)",
+    "Renderer":  "tiny-skia",
+    "RequestedIdleSeconds":  30,
+    "KeyboardRequested":  true,
+    "UIAQuery":  "Not run",
+    "KeyboardDelivery":  "Not run",
+    "Close":  "Failed graceful exit: exact owned child forcibly stopped",
+    "ScreenReaderSpeech":  "Not run",
+    "Conformance":  "Not established",
+    "Failure":  "Exception calling \"Match\" with \"2\" argument(s): \"Value cannot be null.\r\nParameter name: input\"",
+    "ExitCode":  null,
+    "ChildRemaining":  false
+}

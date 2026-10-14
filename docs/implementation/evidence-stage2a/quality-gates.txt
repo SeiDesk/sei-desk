@@ -1,0 +1,93 @@
+UTC=2026-10-14T10:53:22.8881880Z build-tool-only filesystem sandbox exception
+cargo_fmt_exit=0
+cargo_fmt_check_exit=0
+    Checking windows-sys v0.61.2
+    Checking softbuffer v0.4.8
+    Checking sei-windows v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-windows)
+    Checking iced_tiny_skia v0.14.1
+    Checking iced_renderer v0.14.0
+    Checking iced_widget v0.14.2
+    Checking iced v0.14.0
+    Checking sei-desk v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-desk)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.84s
+cargo_clippy_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `X:\Project\SeiDesk\sei-desk\target\debug\incremental\sei_windows-27jz9x1ikt60w\s-hn79m25ktt-129o4vk-working`
+
+warning: `sei-windows` (lib) generated 1 warning
+    Checking sei-desk v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-desk)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `X:\Project\SeiDesk\sei-desk\target\debug\incremental\sei_desk-06mwd8pgqz4s7\s-hn7a1mzp6w-15be4o8-working`
+
+warning: `sei-desk` (bin "sei-desk") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.46s
+cargo_check_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+   Compiling windows-sys v0.61.2
+   Compiling softbuffer v0.4.8
+   Compiling sei-windows v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-windows)
+   Compiling iced_tiny_skia v0.14.1
+   Compiling iced_renderer v0.14.0
+   Compiling iced_widget v0.14.2
+   Compiling iced v0.14.0
+   Compiling sei-desk v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-desk)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.10s
+     Running unittests src\main.rs (target\debug\deps\sei_desk-c3876a2dd95ab83a.exe)
+
+running 9 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test tests::modifier_shortcuts_and_repeated_activation_are_ignored ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test tests::captured_text_enter_does_not_validate_twice ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (target\debug\deps\sei_windows-8bf31af200572d9c.exe)
+
+running 2 tests
+test tests::native_error_keeps_operation_and_code ... ok
+test tests::restoration_requires_ownership_and_live_matching_identity ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests sei_windows
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+cargo_test_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+   Compiling sei-desk v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-desk)
+    Finished `release` profile [optimized] target(s) in 3.25s
+cargo_release_exit=0
+warn: could not canonicalize path X:\Project\SeiDesk\sei-desk
+warn: could not canonicalize path X:\Project\SeiDesk
+warn: could not canonicalize path X:\Project
+warn: could not canonicalize path X:\
+   Compiling sei-windows v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-windows)
+    Finished `release` profile [optimized] target(s) in 0.47s
+cargo_probe_build_exit=0
+
+Final documentation/scope checks (2026-10-14):
+invalid CLI argument: usage printed, exit 2; no window started
+local Markdown links: 4 files checked, 0 missing targets
+new source/document whitespace: 14 files checked, 0 trailing-whitespace lines
+git diff --check: exit 0
+git diff --exit-code HEAD -- docs/design assets: exit 0
+Stage 1 SHA256 preservation: 29 files, 0 altered
+runtime sei-desk/stage2a_probe processes remaining: 0
+Final release runtime run-07-final: exit 0, iced HWND confirmed, no owned child remaining
