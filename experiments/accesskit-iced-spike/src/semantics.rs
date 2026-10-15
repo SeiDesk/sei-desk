@@ -1,7 +1,7 @@
 //! Experiment-specific mapping, not a second editable model or widget framework.
 use crate::model::{Action as ModelAction, Feedback, Focus, Model};
 use accesskit::{
-    Action, ActionData, ActionRequest, Node, NodeId, Rect, Role, Toggled, TreeId, TreeInfo,
+    Action, ActionData, ActionRequest, Live, Node, NodeId, Rect, Role, Toggled, TreeId, TreeInfo,
     TreeUpdate,
 };
 use std::collections::BTreeMap;
@@ -120,7 +120,8 @@ pub fn tree(state: &State, bounds: &Bounds, scale: f64) -> TreeUpdate {
     add(MOTION, Role::CheckBox, "Prefer reduced motion", true);
     add(CLOSE, Role::Button, "Close", true);
     if error {
-        // No Live or Text/selection patterns are advertised without validation.
+        // Released Windows adapter maps Live::Polite to LiveRegionChanged.
+        // Actual Narrator speech remains a separate manual acceptance test.
         add(
             state.error_id(),
             Role::Label,
@@ -128,6 +129,14 @@ pub fn tree(state: &State, bounds: &Bounds, scale: f64) -> TreeUpdate {
             false,
         );
         add(state.dismiss_id(), Role::Button, "Dismiss error", true);
+    }
+    if error {
+        nodes
+            .iter_mut()
+            .find(|(id, _)| *id == state.error_id())
+            .unwrap()
+            .1
+            .set_live(Live::Polite);
     }
     let input = &mut nodes.iter_mut().find(|(id, _)| *id == INPUT).unwrap().1;
     input.set_labelled_by(vec![LABEL]);
@@ -237,5 +246,30 @@ mod tests {
             Some(Toggled::True)
         );
         assert!(!node.supports_action(Action::SetTextSelection));
+    }
+    #[test]
+    fn polite_error_does_not_move_focus_or_repeat_unchanged_updates() {
+        let mut state = State::default();
+        state.apply(ModelAction::Focus(Focus::Validate));
+        state.apply(ModelAction::Validate);
+        let before = tree(&state, &Bounds::new(), 1.0);
+        let error = &before
+            .nodes
+            .iter()
+            .find(|(id, _)| *id == state.error_id())
+            .unwrap()
+            .1;
+        assert_eq!(error.live(), Some(Live::Polite));
+        assert_eq!(before.focus, VALIDATE);
+        state.apply(ModelAction::Validate);
+        let same = tree(&state, &Bounds::new(), 1.0);
+        assert!(incremental(&before, &same).nodes.is_empty());
+        state.apply(ModelAction::DismissError);
+        assert!(
+            !tree(&state, &Bounds::new(), 1.0)
+                .nodes
+                .iter()
+                .any(|(_, node)| node.live().is_some())
+        );
     }
 }

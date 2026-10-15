@@ -1,0 +1,44 @@
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.87s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.97s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 10 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.29s
+exit=0
+cargo build --manifest-path experiments/accesskit-iced-spike/Cargo.toml --release --locked --offline
+    Finished `release` profile [optimized] target(s) in 1.97s
+exit=0
+
+Algorithm : SHA256
+Hash      : 4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5
+Path      : X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike\target\release\accesskit-iced-spike.exe
+
+
+
+Acceptance scope verification, 15 October 2026:
+All 234 pre-existing tracked files retain their SHA256; no production/spike source change.
+New report/evidence only; local Markdown links checked (0 missing), trailing whitespace (0).
+git diff --check: exit 0; tracked diff empty; new files remain uncommitted.
+No spike process remains after UIA and separate synthetic-keyboard runs.
+Physical keyboard BLOCKED; Narrator speech/operation BLOCKED, not executed.
+Native Computer Use available and used for synthetic input; no physical-input claim.

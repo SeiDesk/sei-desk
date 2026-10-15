@@ -18,14 +18,14 @@ use semantics::{Bounds, INPUT_ID, State};
 enum Message {
     Opened(window::Id),
     Attached(Result<(), String>),
-    Bounds(Bounds),
+    Bounds { generation: u64, bounds: Bounds },
     Published,
     Action(Action),
     Pointer(Action, Focus),
     Native(accesskit::ActionRequest),
     Geometry,
     CheckInput,
-    InputFocused(bool),
+    InputFocused { generation: u64, focused: bool },
     Exit,
 }
 struct App {
@@ -34,6 +34,7 @@ struct App {
     sender: mpsc::Sender<accesskit::ActionRequest>,
     attached: bool,
     shown: bool,
+    generation: u64,
 }
 impl App {
     fn boot(sender: mpsc::Sender<accesskit::ActionRequest>) -> (Self, Task<Message>) {
@@ -44,6 +45,7 @@ impl App {
                 sender,
                 attached: false,
                 shown: false,
+                generation: 0,
             },
             Task::none(),
         )
@@ -52,7 +54,9 @@ impl App {
         if !self.attached {
             return Task::none();
         }
-        iced::advanced::widget::operate(wrapper::Collect::default()).map(Message::Bounds)
+        let generation = self.generation;
+        iced::advanced::widget::operate(wrapper::Collect::default())
+            .map(move |bounds| Message::Bounds { generation, bounds })
     }
     fn focus(&self) -> Task<Message> {
         widget::operation::focus(if self.state.model.focus == Focus::Input {
@@ -66,6 +70,7 @@ impl App {
         if !self.state.apply(action) {
             return Task::none();
         }
+        self.generation += 1;
         eprintln!(
             "state focus={:?} error={} checked={} closing={}",
             self.state.model.focus,
@@ -121,7 +126,10 @@ impl App {
                 eprintln!("attachment_failed: {error}");
                 iced::exit()
             }
-            Message::Bounds(bounds) => {
+            Message::Bounds { generation, bounds } => {
+                if generation != self.generation {
+                    return Task::none();
+                }
                 let state_tree = semantics::tree(&self.state, &bounds, 1.0);
                 let id = self.id.unwrap();
                 window::run(id, move |_| {
@@ -137,7 +145,7 @@ impl App {
                             ));
                         }
                     }
-                    native::publish(update);
+                    native::publish(generation, update);
                     Message::Published
                 })
             }
@@ -146,7 +154,10 @@ impl App {
                 window::set_mode(self.id.unwrap(), window::Mode::Windowed)
             }
             Message::Published => Task::none(),
-            Message::Geometry => self.collect(),
+            Message::Geometry => {
+                self.generation += 1;
+                self.collect()
+            }
             Message::Action(action) => self.action(action),
             Message::Pointer(action, focus) => {
                 self.state.apply(Action::Focus(focus));
@@ -166,19 +177,28 @@ impl App {
                     let focus = self.state.model.focus;
                     self.state.apply(action);
                     self.state.apply(Action::Focus(focus));
+                    self.generation += 1;
                     self.collect()
                 } else {
                     self.action(action)
                 }
             }
             Message::CheckInput => {
-                widget::operation::is_focused(INPUT_ID).map(Message::InputFocused)
+                let generation = self.generation;
+                widget::operation::is_focused(INPUT_ID).map(move |focused| Message::InputFocused {
+                    generation,
+                    focused,
+                })
             }
-            Message::InputFocused(true) => {
+            Message::InputFocused {
+                generation,
+                focused: true,
+            } if generation == self.generation => {
                 self.state.apply(Action::Focus(Focus::Input));
+                self.generation += 1;
                 self.collect()
             }
-            Message::InputFocused(false) => Task::none(),
+            Message::InputFocused { .. } => Task::none(),
             Message::Exit => iced::exit(),
         }
     }
@@ -271,6 +291,7 @@ impl App {
         container(column![text("AccessKit + iced feasibility").size(24),wrap(LABEL,text("Sample text").size(14)),input,row![action(VALIDATE,"Validate",Action::Validate,Focus::Validate),motion].spacing(12).align_y(iced::Alignment::Center),text(if self.state.model.effective_reduced_motion(Some(false)){"Local motion preference: reduced · no animations"}else{"Local motion preference: default · no animations"}).size(12),feedback,action(CLOSE,"Close",Action::Close,Focus::Close),text("Tab / Shift+Tab: focus · Enter / Space: action\nEscape: dismiss error, then close").size(12)].spacing(12).padding(24)).width(iced::Length::Fill).height(iced::Length::Fill).into()
     }
 }
+
 fn event(event: Event, status: iced::event::Status, id: window::Id) -> Option<Message> {
     use keyboard::{Key, key::Named};
     match event {
@@ -364,5 +385,64 @@ fn main() -> std::process::ExitCode {
         std::process::ExitCode::FAILURE
     } else {
         std::process::ExitCode::SUCCESS
+    }
+}
+
+#[cfg(test)]
+mod closure_tests {
+    use super::*;
+    fn app() -> App {
+        let (sender, _) = mpsc::channel(2);
+        App::boot(sender).0
+    }
+    #[test]
+    fn stale_layout_and_pointer_focus_cannot_override_new_error_state() {
+        let mut app = app();
+        app.state.apply(Action::Focus(Focus::Validate));
+        let _ = app.action(Action::Validate);
+        assert_eq!(app.generation, 1);
+        assert_eq!(
+            app.update(Message::Bounds {
+                generation: 0,
+                bounds: Bounds::new()
+            })
+            .units(),
+            0
+        );
+        assert_eq!(
+            app.update(Message::InputFocused {
+                generation: 0,
+                focused: true
+            })
+            .units(),
+            0
+        );
+        assert_eq!(app.state.model.focus, Focus::Validate);
+        assert_eq!(app.state.model.feedback, Feedback::Empty);
+    }
+    #[test]
+    fn late_layout_focus_and_accessibility_actions_after_close_are_ignored() {
+        let mut app = app();
+        app.state.apply(Action::Close);
+        for message in [
+            Message::Bounds {
+                generation: 0,
+                bounds: Bounds::new(),
+            },
+            Message::InputFocused {
+                generation: 0,
+                focused: true,
+            },
+            Message::Native(accesskit::ActionRequest {
+                action: accesskit::Action::Click,
+                target_tree: accesskit::TreeId::ROOT,
+                target_node: semantics::VALIDATE,
+                data: None,
+            }),
+        ] {
+            assert_eq!(app.update(message).units(), 0);
+        }
+        assert!(app.state.model.closing);
+        assert_eq!(app.state.model.feedback, Feedback::Idle);
     }
 }

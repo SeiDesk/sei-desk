@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-15",
+  "method": "@oai/sky synthetic input, not physical keyboard",
+  "initial": {
+    "app": "AccessKit iced spike",
+    "hwnd": 264406,
+    "focus": "spike-3"
+  },
+  "observations": [
+    {
+      "step": "type abcd",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text Value: abcd ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text Value: abcd ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text Value: abcd ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Left",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text Value: abcd ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text Value: abcd ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text Value: abcd ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "type X after Left",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text Value: abcXd ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text Value: abcXd ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text Value: abcXd ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Ctrl+A",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text Value: abcXd ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text Value: abcXd ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text Value: abcXd ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Backspace clears selection",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Tab to Validate",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"9 button Validate ID: spike-4\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 9 button Validate ID: spike-4.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Enter produces error, focus remains Validate",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"9 button Validate ID: spike-4\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 9 button Validate ID: spike-4.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Tab to Motion",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"10 check box Prefer reduced motion ID: spike-5\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 10 check box Prefer reduced motion ID: spike-5.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Space checks Motion",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"10 check box Prefer reduced motion ID: spike-5\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 10 check box Prefer reduced motion ID: spike-5.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "current screenshot observation after Space",
+      "text": [
+        {
+          "type": "text",
+          "text": "{\"focused_element\":\"10 check box Prefer reduced motion ID: spike-5\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 10 check box Prefer reduced motion ID: spike-5.\"}"
+        }
+      ]
+    },
+    {
+      "step": "Shift+Tab back to Validate",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"9 button Validate ID: spike-4\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 9 button Validate ID: spike-4.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Tab forward to Motion again",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"10 check box Prefer reduced motion ID: spike-5\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 10 check box Prefer reduced motion ID: spike-5.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Tab to Dismiss error",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"13 button Dismiss error ID: spike-103\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t12 text Enter some text before validating. ID: spike-102\\n\\t\\t13 button Dismiss error ID: spike-103\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 13 button Dismiss error ID: spike-103.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Enter dismisses error and restores Input focus",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"focused_element\":\"8 edit (settable, string) Sample text ID: spike-3\",\"tree\":\"Window: \\\"AccessKit iced spike\\\", App: accesskit-iced-spike.exe.\\n\\t0 region AccessKit iced spike Secondary Actions: Raise\\n\\t\\t1 title bar (settable, string) Value: AccessKit iced spike\\n\\t\\t\\t2 menu bar System ID: MenuBar\\n\\t\\t\\t\\t3 menu item System\\n\\t\\t\\t4 button Minimize\\n\\t\\t\\t5 button Maximize\\n\\t\\t\\t6 button Close\\n\\t\\t7 text Sample text ID: spike-2\\n\\t\\t8 edit (settable, string) Sample text ID: spike-3\\n\\t\\t9 button Validate ID: spike-4\\n\\t\\t10 check box Prefer reduced motion ID: spike-5\\n\\t\\t11 button Close ID: spike-6\\n\\nThe focused UI element is 8 edit (settable, string) Sample text ID: spike-3.\"}"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Escape requested; immediate enumeration still returned the closing window",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "[{\"app\":\"process:X:\\\\Project\\\\SeiDesk\\\\sei-desk\\\\experiments\\\\accesskit-iced-spike\\\\target\\\\release\\\\accesskit-iced-spike.exe\",\"id\":264406,\"title\":\"AccessKit iced spike\"}]"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "step": "Subsequent enumeration confirms no spike window; process check zero",
+      "returnedWindows": []
+    }
+  ],
+  "visualObservation": "Fresh window capture after Space showed checked Motion control and visible blue focus outline.",
+  "physicalKeyboard": "BLOCKED: no human physical-keyboard session",
+  "narrator": "BLOCKED: no human/audio speech observation; not launched"
+}

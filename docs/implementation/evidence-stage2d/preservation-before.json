@@ -1,0 +1,1006 @@
+[
+  {
+    "Path": ".gitignore",
+    "Hash": "306FD52E74FCA6746E12ACC750F232DE15E71DA917756A1270D74C91F5EB7368"
+  },
+  {
+    "Path": "Cargo.lock",
+    "Hash": "EF57ABF86B94B58339C0BD651773AB14E0A297E0DFADC32D183EC763D4612EBC"
+  },
+  {
+    "Path": "Cargo.toml",
+    "Hash": "C93B5C390D988D440B6096E230DD690395055B05B3A844A80750B5C4E49A7093"
+  },
+  {
+    "Path": "README.md",
+    "Hash": "07BF1D0499D28712D7282C1E0DB746FB402163BA42C4A0EA701870B6924DFAA4"
+  },
+  {
+    "Path": "assets/Sei-Desk Pastel Desktop UI Showcase.png",
+    "Hash": "5EB428AE981D21749CBAF59C7CCA2D8460CB7EAA5781210F43B4AE2B910BF25F"
+  },
+  {
+    "Path": "assets/icon.png",
+    "Hash": "35BC0241ADFA5467964CE27D67C0AD98FD7422D6430A3D281C88C8E8FD796EEA"
+  },
+  {
+    "Path": "crates/sei-desk/Cargo.toml",
+    "Hash": "DB25FFC96E9A9187DE913E9F2C81283789AFF704D90012C73EEBFF9D423CB67F"
+  },
+  {
+    "Path": "crates/sei-desk/src/main.rs",
+    "Hash": "814F8311AE599CA30BCDBA33321587AF5DFEA28C8BE039D2CAFFB902B20BA40F"
+  },
+  {
+    "Path": "crates/sei-desk/src/model.rs",
+    "Hash": "87DCE3926505BB94D2BAF16B83D9EE57426E34EA3B29CA600F4127A455D40345"
+  },
+  {
+    "Path": "crates/sei-desk/src/view.rs",
+    "Hash": "4F8F16EF0983C5A650F7954AC07163309DA86A08FCCCADB2CA24947AEC0D991A"
+  },
+  {
+    "Path": "crates/sei-windows/Cargo.toml",
+    "Hash": "30ED06AD7F1763BD58126BB2E6CAE97179A7C9D8256C28CCF0C659F01E89170B"
+  },
+  {
+    "Path": "crates/sei-windows/examples/stage2a_probe.rs",
+    "Hash": "7A350E5C10B7ED83DCF340794780182D6E05EDF1086F5269026FCEDE76004AB4"
+  },
+  {
+    "Path": "crates/sei-windows/src/lib.rs",
+    "Hash": "73C17B7A8CA8A1F6DD2A2F00F8A132C5947F2CF3933A746214284B113517D489"
+  },
+  {
+    "Path": "docs/design/AUTO-HIDING-DOCK-OVERVIEW.png",
+    "Hash": "1438A9797426DACB6AFD4E71FD064192AACDD08DE730D782ED1ACE996E8DE4F4"
+  },
+  {
+    "Path": "docs/design/README.md",
+    "Hash": "170A8A515CF704ED63DAAC41A293A35265170E261FA7A46735CC2C452A0917F9"
+  },
+  {
+    "Path": "docs/design/SEI-DESK-DESIGN-OVERVIEW.png",
+    "Hash": "58B447744F16FEAEAEF02F4031288B0E33FAEBE2EF9183EBCF7BB23BB640DB32"
+  },
+  {
+    "Path": "docs/design/SEI-DESK-UI-UX-SPEC.md",
+    "Hash": "5AF287E67F90567B0D3F2FDEE6CA3CFFDBB6E35627FCA5EBCB57FB46E92CA559"
+  },
+  {
+    "Path": "docs/design/mockups/01-desktop-composition.png",
+    "Hash": "7564B53C4DD8D6AD3F793FF5F5D2B4CEA76E58D961354092624159958F216123"
+  },
+  {
+    "Path": "docs/design/mockups/01-desktop-composition.svg",
+    "Hash": "B743ECBA037805B2B6E403FD45D56F25FB75DD034D2420ED1508EE48A4CF1F12"
+  },
+  {
+    "Path": "docs/design/mockups/01b-desktop-dock-revealed.png",
+    "Hash": "F220972FC41F8F0656743C865CAF0115B9427E7A56810283FC521CBD7B1A5040"
+  },
+  {
+    "Path": "docs/design/mockups/01b-desktop-dock-revealed.svg",
+    "Hash": "E901F79C068CAABEFBF0D2A9149C759070D8EF4B6373C3C87E8307BAB022239E"
+  },
+  {
+    "Path": "docs/design/mockups/02-taskbar-states.png",
+    "Hash": "CC8F0D23090285D90E6762B220652E58A31F2730D54973F3CBF2A01B1FEF170A"
+  },
+  {
+    "Path": "docs/design/mockups/02-taskbar-states.svg",
+    "Hash": "826C91170A9D3D1D2429623607548FD767C90F584B09041F849869968215A78A"
+  },
+  {
+    "Path": "docs/design/mockups/03-start-launcher-states.png",
+    "Hash": "74109CEB960374CBDB7D8C073CE083A38F64C1795034C5129816D92A852291A4"
+  },
+  {
+    "Path": "docs/design/mockups/03-start-launcher-states.svg",
+    "Hash": "BB0B31AD8865C931E7C5C2E4D050179333FB5A3558B3489B64CA6DB4D074B6B5"
+  },
+  {
+    "Path": "docs/design/mockups/04-quick-control-dock.png",
+    "Hash": "94ACCCF336DE7F291D64E3F4B23468102650CB6C1A895DDAD8F249502AF4E27C"
+  },
+  {
+    "Path": "docs/design/mockups/04-quick-control-dock.svg",
+    "Hash": "C094B1496A1ED44FC5E59230149DDEBBBE99E5872F23B6F84354CCA3E5749648"
+  },
+  {
+    "Path": "docs/design/mockups/05-system-overview.png",
+    "Hash": "8711C4FB83D490B7A4D9039C3311B6C187E5C8546C33A30EB1D7A39CC685F77D"
+  },
+  {
+    "Path": "docs/design/mockups/05-system-overview.svg",
+    "Hash": "1CB2D4C8224302C48D0F4F4F91E76470FDDBF211B87BF1C9F911E58918265C1B"
+  },
+  {
+    "Path": "docs/design/mockups/06-applications-catalog.png",
+    "Hash": "F47E17F608F34F6C8AC8D0FF3CAB7DC8A3DCBE152FE9165D620C5FE2E3049599"
+  },
+  {
+    "Path": "docs/design/mockups/06-applications-catalog.svg",
+    "Hash": "B1FF108AD4688293E68B6645F6A053CFC85915EF5DB569CAB4387B0BC1D8A22B"
+  },
+  {
+    "Path": "docs/design/mockups/07-appearance-behavior-settings.png",
+    "Hash": "BF720955A24EC22A37C5177789473E5828BDC7800565972CC0EA8C51540C8455"
+  },
+  {
+    "Path": "docs/design/mockups/07-appearance-behavior-settings.svg",
+    "Hash": "B420B21FC379BECF8778D56140344F42C3247DB21AF90BF30052AE58668BE300"
+  },
+  {
+    "Path": "docs/design/mockups/08-future-optimization-concept.png",
+    "Hash": "C462C4B860E2624305DA60B37F11921A0AE2FB5C9ECF5BBA5BE42EDBBFA1B5DF"
+  },
+  {
+    "Path": "docs/design/mockups/08-future-optimization-concept.svg",
+    "Hash": "3003A65136945DBB1771EC9420420E484809ECB0EEA1E7C1BF38C74D6D0CA55C"
+  },
+  {
+    "Path": "docs/design/mockups/09-auto-hide-dock-states.png",
+    "Hash": "B4C0F8399FEAACD84D4A3C8B83FAEBC3316694698A32B3295CE295F5F8070FD6"
+  },
+  {
+    "Path": "docs/design/mockups/09-auto-hide-dock-states.svg",
+    "Hash": "84F8710CC9EA347FB658B6C3A0A752557B5B0A21CEF1D131E8FA32E44A13F0C1"
+  },
+  {
+    "Path": "docs/design/mockups/10-expanded-dock-interaction.png",
+    "Hash": "9AC68714BA525D815158DC4BC0E432B8901E60E0DEC791503F9A7006A5220230"
+  },
+  {
+    "Path": "docs/design/mockups/10-expanded-dock-interaction.svg",
+    "Hash": "3CA9F588B339C0279668041D08805207485FC155BC5939A4ECEF233FC49263E6"
+  },
+  {
+    "Path": "docs/implementation/STAGE-1-RISK-REGISTER.md",
+    "Hash": "7A48C0FEABA37B41CB8FEB8869343F7BF17958492152AB8DCBCF39894394058C"
+  },
+  {
+    "Path": "docs/implementation/STAGE-1-TEST-MATRIX.md",
+    "Hash": "06752202E12145A67C5304A07A879E6690C5DD80C8F400C0CB108F577D02492A"
+  },
+  {
+    "Path": "docs/implementation/STAGE-1-WINDOWS-INTEGRATION-REPORT.md",
+    "Hash": "5AD54E87BD7088CC5F8940B34C37C2FF8559F40893BD52E95059BA9CE8C1308F"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2A-ACCESSIBILITY-REPORT.md",
+    "Hash": "75B4AD18FB80E882C88601BC6A837B4A5DBCFBE0B8D32FA1ACC15B96B63E4851"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2A-ARCHITECTURE.md",
+    "Hash": "5B6555A76853C142D9FCC56259E5EA59DCC12EC89CABBDCBE60038842DC0A2EC"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2B-ACCESSIBILITY-REPORT.md",
+    "Hash": "E1ACCB22D8BB6EAA22B5A9010679AC80617976260EC1F3A1914AECCC27504D48"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2B-TEST-MATRIX.md",
+    "Hash": "11222DF14042EDF26D5BF0537F26F8992BA43CB2AA188A86BE6D1659059E9A39"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2C-ACCESSKIT-REPORT.md",
+    "Hash": "8C21754DD1EC09725205838DBD7759D2A8B3C5240DDC793BEBAD62BD143010FF"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2C-TEST-MATRIX.md",
+    "Hash": "418293DC029317A263BDA313C396C9F05540969E5A99CBC00CE919E3CB0A7A85"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/README.md",
+    "Hash": "EFC730115A9B909164A2463140CB6D6E6ED585AC2D0DD9058730FA1DCE0E6DD0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/dependency-scope.txt",
+    "Hash": "BC12AED6240006147B744B04F2952B2EE8013BDF7154FF23AD1F66643A95FDF9"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/environment.txt",
+    "Hash": "33F3270410246452C342DB8D3A46B18D5243339CC3D137A6CBDBB91F9AC26646"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/preservation.json",
+    "Hash": "F769D77E72517DCB98A7840B3AB0CD151E471BAE1DC84EF47E775DE8D97A5F4B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/quality-gates.txt",
+    "Hash": "13590D9CFF4A28B0643B4224D003E5302C2C2AB453CA8E72FB737B5E5C87B05B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/app-stderr.txt",
+    "Hash": "EACDC51AC9145DA72AC06EE1AACCA660E5434CFAF432107CDA3F97D98D4CF7A1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/app-stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/error-focus.png",
+    "Hash": "A22D26BAE06AC8E22351D9022A2368FCB929FB6AAACADBBC8C69FF0C94E39672"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/run.json",
+    "Hash": "36879B5B3CE3FE20F0001A0F2402CA9CF029CF30B753124D9C09E353D5449B8B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/uia-control.json",
+    "Hash": "729171B26234B17C504068AA31DE685747544349D9F9FBC19C6354B465F894AC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/uia-error.json",
+    "Hash": "729171B26234B17C504068AA31DE685747544349D9F9FBC19C6354B465F894AC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/uia-raw.json",
+    "Hash": "729171B26234B17C504068AA31DE685747544349D9F9FBC19C6354B465F894AC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-01/window.png",
+    "Hash": "A22D26BAE06AC8E22351D9022A2368FCB929FB6AAACADBBC8C69FF0C94E39672"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-02/app-stderr.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-02/app-stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-02/run.json",
+    "Hash": "891453DFF480C320669EF52FC841A82E3071D075A0B2DD2EAA3D3A7432684CAC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/app-stderr.txt",
+    "Hash": "BEC485256CD403748B710CAC56F50C07E17A1E984F2BDA98BC256090C6C1EE34"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/app-stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/error-focus.png",
+    "Hash": "644CB1288F1B6183A50A7BEE50D04DB354E224F409BE166FC6392FE00C1051B1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/run.json",
+    "Hash": "23421A0D28512DA75ABC200BF2075BF546102285ED1535B01A525D20B0A9D9D2"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/uia-control.json",
+    "Hash": "94C81111A10762E6552E8F12FDB67FAC51411998E4FBB2A8E1D4B683256F4B7E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/uia-error.json",
+    "Hash": "94C81111A10762E6552E8F12FDB67FAC51411998E4FBB2A8E1D4B683256F4B7E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/uia-raw.json",
+    "Hash": "94C81111A10762E6552E8F12FDB67FAC51411998E4FBB2A8E1D4B683256F4B7E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-03/window.png",
+    "Hash": "644CB1288F1B6183A50A7BEE50D04DB354E224F409BE166FC6392FE00C1051B1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/app-stderr.txt",
+    "Hash": "6F0BFA2089F41F6C303C67D74AEF916A4C87060B7F77420D7D35CED4FC070551"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/app-stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/keyboard-probe.txt",
+    "Hash": "4AE946EF88E20EFC49F7BC70B616105059A60B8F4F103A30D5159813967B371F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/run.json",
+    "Hash": "61233FCF97159560305CC438F086E8FF66B6CF8813B75E8F8067E2E12FAC49AF"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/uia-control.json",
+    "Hash": "94C81111A10762E6552E8F12FDB67FAC51411998E4FBB2A8E1D4B683256F4B7E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-04/uia-raw.json",
+    "Hash": "94C81111A10762E6552E8F12FDB67FAC51411998E4FBB2A8E1D4B683256F4B7E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/app-stderr.txt",
+    "Hash": "11E8FB045BEA71732EC995092E8FFF771A4F4CD7EA51C45FA1D8319BB2B01764"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/keyboard-probe.txt",
+    "Hash": "1B173632B62319C3A43A738007E7963B767BEF8BDF6592862B761882AAC83873"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/run.json",
+    "Hash": "5D319D7C03F79777AC251F682D15D425EC7D910FB9BE5B46EB1F67F218B67BA2"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-05/window.png",
+    "Hash": "C5F942F64696A9C63EE1416F16C8F37FA542C0F4000706BCE534DABC4D2E2CE7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/app-stderr.txt",
+    "Hash": "A3FD6D5E6C435E203216D3AE7B0CDC12CAF3BE69DACCFB47240E98A85A3F22DE"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/run.json",
+    "Hash": "03643B31869E092AE128597E05B2E4490D110EE9C7FE54862F03D6169399BA29"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-06-error/window.png",
+    "Hash": "6D2B469EDAA04C06E9D197E2456516CC4168FB521D80162A8A68A12968ABE662"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/app-stderr.txt",
+    "Hash": "572798B665BCA51BFC9EF47A5ACC2766F029297F8207FB6F2E29EFABCD1884EC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/run.json",
+    "Hash": "383879986DF75E660101436D573181F1A7C69D6A2F0FFBB302CDD00ADCAA2752"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2a/run-07-final/window.png",
+    "Hash": "C5F942F64696A9C63EE1416F16C8F37FA542C0F4000706BCE534DABC4D2E2CE7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/README.md",
+    "Hash": "DDF13583338E8A09C83E3296C19882FD78D9E06ECFA2B3867BC14C482FE8351B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/dependencies.txt",
+    "Hash": "EA86E617B1C5834F0BA04BAA01A7DB4F3FFE8A96F67680A416555790B611ED6F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/app-stderr.txt",
+    "Hash": "E810827EEEAC7E14572FF33EA5C9ABF1A1F67EC284C1EC986CD79A852D72F811"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/run.json",
+    "Hash": "684B70569611C5265B206923F1C80D5E5057A5891A289D05E5A18849A5A1400B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/error/window.png",
+    "Hash": "E5CF938A7887FB8AA8DD9D3A07DBB942457D0DAE87EBF3ED3BF1E37DD4E30E31"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/app-stderr.txt",
+    "Hash": "CDEDBD9808B8BCF670882559FBA82BBB1CBA814E310E9C1CE9ADC53F69E679DA"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/keyboard-probe.txt",
+    "Hash": "1B173632B62319C3A43A738007E7963B767BEF8BDF6592862B761882AAC83873"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/run.json",
+    "Hash": "4375BB93CD67D67DB4B653A6B77A702F4F124CC8D952210E5F4A1966BBD193A7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/keyboard/window.png",
+    "Hash": "A53D40811E4F44EF80C2F3180B3ABB50305AB428C8A8FC9D5544A4667A10C6A3"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/local-source-review.txt",
+    "Hash": "9D0AB1B2D3789AD63B78F0E3BBE2ABC49254BC0C86ABA87E371D378984A35222"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/app-stderr.txt",
+    "Hash": "B3CE2889313B658F5933A4034FF2E9CDCCC628422A8BA7DDECAF6075C2C32E60"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/app-stdout.txt",
+    "Hash": "F01A374E9C81E3DB89B3A42940C4D6A5447684986A1296E42BF13F196EED6295"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/run.json",
+    "Hash": "65EE8B4473A4AA52C44F643A5A2BA2508D2C6992D7CB1137D9381C9D49337C21"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/uia-control.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/uia-raw.json",
+    "Hash": "59AA7EC12BC7E41566589285DB6218715C91DA5DB6C59F838193DC6F1985E596"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/normal/window.png",
+    "Hash": "7B38FD07585F729167277CE3CA2541DC081F564F6D897493D42635DFB2F797D0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/pre-existing-files.json",
+    "Hash": "A7959AF6CA1975E3B7FCDC7C25005DA359267524A71800B08B5A84B0D60E74FD"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/preservation.json",
+    "Hash": "EE387F3E6BF8D156EABAF87C5A3A331704B70FA7878D89085D079262B00A7E31"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2b/quality-gates.txt",
+    "Hash": "942BAE013633890438A86BCA1B50B14B4AC7EB175E3965C0EE40F2EF4243B71F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/README.md",
+    "Hash": "91DECB8A9E88AD44B6DC7FC00A3A0D584F5B5D48F2BF54C5633BCE2BF1E94F04"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/api-review.txt",
+    "Hash": "0BDAF8921EB2484E7A1948216FEB5929963093D26EE4FF8FD13F2C60E3FB9292"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/dependencies.txt",
+    "Hash": "C5C209759B440B235CBE6D93F4ED6C6637B61BA9DD892BC7AD3E9D4DABFC3E8B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/preservation-after.json",
+    "Hash": "C54ADFF5C15E2E58FD5F4544551080865368F5CD38D32100E5FC7B6D0ED347B1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/preservation-before.json",
+    "Hash": "CB87D3D872C6197007C210BCB8AEB2467980F746EBEF4FE2E0BD5A1BFF0FD2D7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/quality-gates.txt",
+    "Hash": "EC299D7775C0B0F366F3241805FF304048A41CDFEE75325BCAF8E1FD211C3CFD"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-01/initial-control.json",
+    "Hash": "4D5AFDC0050407BBA4E981A3D4B8229B53BFDDE767C3206A960B843ACA6A73F0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-01/initial-raw.json",
+    "Hash": "4D5AFDC0050407BBA4E981A3D4B8229B53BFDDE767C3206A960B843ACA6A73F0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-01/run.json",
+    "Hash": "33CC1C52AD0D144A8CB434F40CD5D4D7C79E983C818391752F03E9318C43130B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-01/stderr.txt",
+    "Hash": "1F06373C4F2BB120928E1FC60C163AEED2ADDDB61CE453719E778A10D95BA99F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-01/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/initial-control.json",
+    "Hash": "6562E2927D53DC4452AB48C0F985B85B2E3881B89597150F5F1B2052F3C6973D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/initial-raw.json",
+    "Hash": "6562E2927D53DC4452AB48C0F985B85B2E3881B89597150F5F1B2052F3C6973D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/run.json",
+    "Hash": "B758F57EEC26915264768B7CF1C0E2EDD1D5AB3E2AF4E95935A0CAE88236D6AD"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/stderr.txt",
+    "Hash": "AF2A43EA5BC592B72939E6393643521B002703F42FCB91EE5B2C16A54EB7513A"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-02/value.png",
+    "Hash": "9F8939800FA891C8D14E2BD5F585EC9561B0A6B0F81D20E7DB9D6486529A0E56"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/checked-control.json",
+    "Hash": "06276EDFC5C762E6B3154AFB158F2073F21179311B41291F498345BD3C447588"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/checked.png",
+    "Hash": "A99E595FFBB3FABDA6CCA314F85F858DDF651DC2B4E26C48CAFC2128B4713CE1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/error-control.json",
+    "Hash": "AECEF9FB481FC72E0529A44BBDB8D7961C6EFBED2D275606770F8AD10D9FE073"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/error-raw.json",
+    "Hash": "AECEF9FB481FC72E0529A44BBDB8D7961C6EFBED2D275606770F8AD10D9FE073"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/error.png",
+    "Hash": "879BE4CF842ED83894A2AD28D15F8FC86D64E81BDCFFBD623F9D75B1B8D9184A"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/final-control.json",
+    "Hash": "06276EDFC5C762E6B3154AFB158F2073F21179311B41291F498345BD3C447588"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/final-raw.json",
+    "Hash": "06276EDFC5C762E6B3154AFB158F2073F21179311B41291F498345BD3C447588"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/initial-control.json",
+    "Hash": "9502226AB1AFFA53EE05487D36FE6D4AB4A4FDFF6EFF9C82AE8816EFE4B0E720"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/initial-raw.json",
+    "Hash": "9502226AB1AFFA53EE05487D36FE6D4AB4A4FDFF6EFF9C82AE8816EFE4B0E720"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/run.json",
+    "Hash": "662B6E936B9B0278EA5E05FBE4F0115BCEB3CA2983E836845FD65251411F9714"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/stderr.txt",
+    "Hash": "1BB24691FCEF7F0BDC172021C7E70616BA0754078C14088A890482D95294EAF6"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-03/value.png",
+    "Hash": "AE85FFDCAFF566846B05880771645956E07F8E4492EECF2EA4E8F7D0572B809F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-04/initial-control.json",
+    "Hash": "1F6492509C6CD1A13BBB6F43141EEEC20A7C6146692BC6326538E6AA0BB11A50"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-04/initial-raw.json",
+    "Hash": "1F6492509C6CD1A13BBB6F43141EEEC20A7C6146692BC6326538E6AA0BB11A50"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-04/run.json",
+    "Hash": "8D35F1BB6ED0BD9C3D149E58C22456A1FA36929D115AA953233105B01DAF2C25"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-04/stderr.txt",
+    "Hash": "F5501AEEF397A6118024D4910B96E56A82FE479B53CE3D817D931200E8E26A1D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-04/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/checked-control.json",
+    "Hash": "90C16A0C3E09E167E3488DA746E7775F4E860A64DC13C3DD65DFEB5556F81ABC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/checked.png",
+    "Hash": "6B4848467E06D7AE8C5008574054FE9669CA3E4419F955B797ED6DBDAD075DC4"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/error-control.json",
+    "Hash": "D4C9F583D30CFE710C4D89F1C56FB117DCF1C0C405DB590441ED6BF44A59DA9D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/error-raw.json",
+    "Hash": "D4C9F583D30CFE710C4D89F1C56FB117DCF1C0C405DB590441ED6BF44A59DA9D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/error.png",
+    "Hash": "B9CE7F81CA9F595230C1593650DB0BBE384DE5FE0C8D2550F41B607A9034D55A"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/final-control.json",
+    "Hash": "90C16A0C3E09E167E3488DA746E7775F4E860A64DC13C3DD65DFEB5556F81ABC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/final-raw.json",
+    "Hash": "90C16A0C3E09E167E3488DA746E7775F4E860A64DC13C3DD65DFEB5556F81ABC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/initial-control.json",
+    "Hash": "BADE0673E968DA538240CD3A93F3AA541694DABBD8547E4697AC8DF7B761E4E1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/initial-raw.json",
+    "Hash": "BADE0673E968DA538240CD3A93F3AA541694DABBD8547E4697AC8DF7B761E4E1"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/resized-control.json",
+    "Hash": "8D8763B39ECF5FD8C81B7E8F2CD018A1A55193B4501C95D0F099DF9A24175FF7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/resized.png",
+    "Hash": "1BCC5EA6D91C7B3E233112403908405E3338238874E1942D7155D9B05F7BD693"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/run.json",
+    "Hash": "C0A533BC7CA34AD36A4E3CC677A51B359D730FB8F8884CFD5F0A21F6136C1D95"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/stderr.txt",
+    "Hash": "A9E13E1DC4EA9C18B8801E79DA9D775EBDD2143A424C84C7F05C59B15529833C"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-05/value.png",
+    "Hash": "AFAC2267BD2EDB66A0C59C8FB55E9DF2109875ECD1BE9ADD50936BEF64B5C949"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/checked-control.json",
+    "Hash": "56D2A8E47A5F443569B64FEEABC5359A142734BB35D702EAD779ABD34B159C6B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/checked.png",
+    "Hash": "7616ECB6BB94550EA7C5D661C475D62E816740B41EB33271480451860F67067B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/error-control.json",
+    "Hash": "D85C2404546DA8B6D2B111F21B4CC49A609FD8B3498F074D93F5079478820DE0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/error-raw.json",
+    "Hash": "D85C2404546DA8B6D2B111F21B4CC49A609FD8B3498F074D93F5079478820DE0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/error.png",
+    "Hash": "611E3BC87F4D68AA63D04FCBDF827B33346E8F74B3E9AA4E97F98F28C16791BE"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/final-control.json",
+    "Hash": "56D2A8E47A5F443569B64FEEABC5359A142734BB35D702EAD779ABD34B159C6B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/final-raw.json",
+    "Hash": "56D2A8E47A5F443569B64FEEABC5359A142734BB35D702EAD779ABD34B159C6B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/initial-control.json",
+    "Hash": "C1C03C21E9ED5F7AF6685D94D5C26673B8CE93FC3258725D2C32549C42A56070"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/initial-raw.json",
+    "Hash": "C1C03C21E9ED5F7AF6685D94D5C26673B8CE93FC3258725D2C32549C42A56070"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/resized-control.json",
+    "Hash": "CCF0405F15DE551A22D03B509126D1535E9FE7119D97D0611549F89308E8531F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/resized.png",
+    "Hash": "9941CD3832DFA7F632CE6242DE6C702CFCE0EDDE27C99CAA66778441E0047D78"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/run.json",
+    "Hash": "CE02A0DF38D4FF93CB7FA35FCD18E1D70F21E54B6FD90BD97A7D6403AA464054"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/stderr.txt",
+    "Hash": "78CBC1D18E4EB37BB495157BC4713E33A8E2138A98856795FF0352C67EB7D91E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-06/value.png",
+    "Hash": "1DFC940FA27C34D6ED04720E766A19F1FFEC96F1741575B1A1ED8415DA7BEC3A"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/checked-control.json",
+    "Hash": "0AB5B2255F38A5C34AA31E4485FCDF04A5F522408C27C5617BF4297D5EAF1165"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/error-control.json",
+    "Hash": "295275EAA06CFE7C35ECA359BE8AB7BFE36E40988680964A52DB3A1DDB140FEB"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/error-raw.json",
+    "Hash": "295275EAA06CFE7C35ECA359BE8AB7BFE36E40988680964A52DB3A1DDB140FEB"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/final-control.json",
+    "Hash": "0AB5B2255F38A5C34AA31E4485FCDF04A5F522408C27C5617BF4297D5EAF1165"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/final-raw.json",
+    "Hash": "0AB5B2255F38A5C34AA31E4485FCDF04A5F522408C27C5617BF4297D5EAF1165"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/initial-control.json",
+    "Hash": "29A87EAF189D6A101EE86DD25F6B5D12062A10D961EFAACEF1EB048547B56F9C"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/initial-raw.json",
+    "Hash": "29A87EAF189D6A101EE86DD25F6B5D12062A10D961EFAACEF1EB048547B56F9C"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/resized-control.json",
+    "Hash": "699A4743F8251644FFC1D25AA8DB5CAB4D565674DBE11C2056E261D87AB63153"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/run.json",
+    "Hash": "B789042B9BF9E518326018161B985C4AA51CC7D3AC4690D718C8D9E8E13E86FC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/stderr.txt",
+    "Hash": "7DF3C737A9C02546C66187E7A1CF6C5343D5A803D6F5622A1F1301471DF893C0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence/README.md",
+    "Hash": "97E5074DD1332C5116BAC5F55D1281D8653F08747008FF4ADDB15DE7341ACF61"
+  },
+  {
+    "Path": "docs/implementation/evidence/appbar.txt",
+    "Hash": "9CD8D07E3F222FB98F53BAA030098DBF2620F8F7145819D6FEDB8E405B91E469"
+  },
+  {
+    "Path": "docs/implementation/evidence/close.txt",
+    "Hash": "E3A1D418243313041B2A661D61DA158FBCBCD91470EB371DCAD0A3CAD3532265"
+  },
+  {
+    "Path": "docs/implementation/evidence/environment.txt",
+    "Hash": "55F2C759035B9855ACEC531C0B9D1C095601FC54B62B92880BD808C4E73AA1B0"
+  },
+  {
+    "Path": "docs/implementation/evidence/final-state.txt",
+    "Hash": "7F771C9D801481418C608351116007CC95DCE84DD0E4DF66C5625405CC144142"
+  },
+  {
+    "Path": "docs/implementation/evidence/forced-observer-stderr.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  },
+  {
+    "Path": "docs/implementation/evidence/forced-observer-stdout.txt",
+    "Hash": "F97E768D985DB98367B28ECBC3751F23783CA6FE47FDA5DEDAC23B6D0B63FAAB"
+  },
+  {
+    "Path": "docs/implementation/evidence/forced-observer.txt",
+    "Hash": "D9E429DAB1A1E2169B7A8CA451B261632450E426A1A28C3CEBBA846343BA3585"
+  },
+  {
+    "Path": "docs/implementation/evidence/hotkey.txt",
+    "Hash": "B441DE07BF67AC5346C7DD1C72F3B12E3791BA5A4621A8EC99B4774F4223872B"
+  },
+  {
+    "Path": "docs/implementation/evidence/lifetime-regression.txt",
+    "Hash": "EAAC6858082458C9E189D28E14248E2DBD86E50076DA05B1C8C1F0539BBAD973"
+  },
+  {
+    "Path": "docs/implementation/evidence/observe.txt",
+    "Hash": "AC9F231A59D14B83E371686CBC7C9B5C3F51089556D16E3152995A77E0456C80"
+  },
+  {
+    "Path": "docs/implementation/evidence/panic.txt",
+    "Hash": "05F1AF08F685AD129F0A26B603C590E41B907060FD0268DD5EA6FA270AB123B3"
+  },
+  {
+    "Path": "docs/implementation/evidence/poll.txt",
+    "Hash": "173A295B510A2CE169638A025CBB650C9E3FD022E022AA8532D6D87C6DB0695E"
+  },
+  {
+    "Path": "docs/implementation/evidence/quality-gates.txt",
+    "Hash": "2C8C91FD8D5BDE2E6D31D31BF372BB9E9CA3BD38B2085C9E6F12BF2EA4A2B3EC"
+  },
+  {
+    "Path": "docs/implementation/evidence/raw-pre-fix-lifetime.txt",
+    "Hash": "3442AE07E0D356D1E8660CCD8EA4ADB50582C6E1D38221D06F3FE9D68161ACA9"
+  },
+  {
+    "Path": "docs/implementation/evidence/raw.txt",
+    "Hash": "6618F607CBE4B7137A9BE7DCC0B5D2E74A390E48E54972EBCC9E5F1472697181"
+  },
+  {
+    "Path": "docs/implementation/evidence/snapshot.txt",
+    "Hash": "B720F40609E54FC16330A5AE7435867B87517923290BF6B6B8B99A29E7EBC3EE"
+  },
+  {
+    "Path": "docs/implementation/evidence/source-audit.txt",
+    "Hash": "BB0F7E558AB435DAF644C21A0AA54B77F09340E5161CDBD11BB2F8E31F163379"
+  },
+  {
+    "Path": "docs/implementation/evidence/tray.txt",
+    "Hash": "74EEE608296F872AF4F71BF0EF37B149647C66719D13E76D6B57D05A5FECBF69"
+  },
+  {
+    "Path": "docs/implementation/evidence/window.txt",
+    "Hash": "64AFC68ECE746ED454BCD234DD01A58E7B426C05D421CCA05779015FD3A557A6"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/.gitignore",
+    "Hash": "306FD52E74FCA6746E12ACC750F232DE15E71DA917756A1270D74C91F5EB7368"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/Cargo.lock",
+    "Hash": "DD0C3375503DE0F56DF2CD3F860201D2BFA789D38C342033093139DA03DF760B"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/Cargo.toml",
+    "Hash": "1B17F8EA307C574BF40C84A8CDBB0267016528D4A9E8CA088E37BA9C83E9C812"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/README.md",
+    "Hash": "1089CFB18CFBF113A634E2847CF315901AB58CC2D370AE6EC4990F6558E0F4CE"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/Test-UIA.ps1",
+    "Hash": "D49E38AC0EE2784EE9EBB787BC7D2FA38757B2C9DCDFD6428A77B06F0BEEB476"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/src/main.rs",
+    "Hash": "D9CEA060FF0E0E3CFCDE351DE05F179E8E479C83591A6A7E0F7D6E88718E0E25"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/src/native.rs",
+    "Hash": "1A8A58E2862EC163AEDC7F5D03E4A467F37C3F7F2220172643965F30CD2115D8"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/src/semantics.rs",
+    "Hash": "245062D708A3076B45DC0C2D4F2687A3F3B11AC454B166098CE8AB58F30FCEFD"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/src/wrapper.rs",
+    "Hash": "72626116752D642DEC6967C69D8822FC4A7C0C0ADB2D6CE2F98CF613AA11FDE5"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/.gitignore",
+    "Hash": "306FD52E74FCA6746E12ACC750F232DE15E71DA917756A1270D74C91F5EB7368"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/Cargo.lock",
+    "Hash": "C60DBC07F1C16044B43B46DF60E3B2A05DC4736D746C009B7C6B57E70516032D"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/Cargo.toml",
+    "Hash": "BE8E17723F7D673F423EDF4347805B9A31447102D8535282028923AC1A6785D8"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/README.md",
+    "Hash": "7D14E3422C17496463663E7C2224DFC808FFA0AE689915704777F64385B9EAE6"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/src/main.rs",
+    "Hash": "9D5AA623EE280A8399CBA6501E75A3AE84E32EADE3DA49CA2830A6CD240F62F2"
+  },
+  {
+    "Path": "experiments/windows-integration-spike/src/native.rs",
+    "Hash": "D069679C03DAF6DEFF1570FF9D55A9AC4A2D8B94132830D66FC10C74E7847840"
+  },
+  {
+    "Path": "tools/Test-Stage2A.ps1",
+    "Hash": "F453A90DBAE617FAB8D8EB6C7FFB93CBBDDFF5A88E4FBFE6433C725C1FB95D8F"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2C-ACCEPTANCE-REPORT.md",
+    "Hash": "CCCE68D36690B22D2BD28A2C4AE6828899A1536392D1835011634CE34798DAB0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/README.md",
+    "Hash": "A8C4F9B05B38AD4D754E85AF44148625FC53226C412D35269F6EC5017E6210D0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/preservation-after.json",
+    "Hash": "AC70F74D5CBB514147890AAB9B158FDBAD126FF0A3ABB35B17748422CD3533E3"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/preservation-before.json",
+    "Hash": "38FE188E0BD8DFC6394AB151F7D2D5197FE648C62D926751B3BB4E55100DA8E4"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/quality-gates.txt",
+    "Hash": "659A98E6129053C97A63CFB7F013B93B9F2B635CDFCF451235AC07EE4F828426"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/synthetic-keyboard.json",
+    "Hash": "849A55D9B408237BD01AC1143106D8B40919FBB2F7BD6F98A59632ED0CD579DE"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/checked-control.json",
+    "Hash": "409D67E265C177FD8625E88FEE5EC76725EA457A168BE32BE51B47B0DD92FEE5"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/error-control.json",
+    "Hash": "C97B68F640496E5BF9E71E4F2434A83A0E3A2CF868DA28203F55DE69C3BB8EE7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/error-raw.json",
+    "Hash": "C97B68F640496E5BF9E71E4F2434A83A0E3A2CF868DA28203F55DE69C3BB8EE7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/final-control.json",
+    "Hash": "409D67E265C177FD8625E88FEE5EC76725EA457A168BE32BE51B47B0DD92FEE5"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/final-raw.json",
+    "Hash": "409D67E265C177FD8625E88FEE5EC76725EA457A168BE32BE51B47B0DD92FEE5"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/initial-control.json",
+    "Hash": "A8044A5C15DE7DE57B1AAD888711917BEA21EB04D9AD3BCB7F54E33726D27499"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/initial-raw.json",
+    "Hash": "A8044A5C15DE7DE57B1AAD888711917BEA21EB04D9AD3BCB7F54E33726D27499"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/resized-control.json",
+    "Hash": "F0B63D7766212D0D459363993C92CBF33DA06C331D4D778FEA03D62CE70FB85F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/run.json",
+    "Hash": "4CE8244FD80EE5283E43D2208D785EAC61F3CA56D59D1830A246DCB2E1B90641"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/stderr.txt",
+    "Hash": "74A50A21FB63242AC6D54A7D32DFDA98D970449F7C5E59D1C04C1D60A45FC230"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/stdout.txt",
+    "Hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+  }
+]

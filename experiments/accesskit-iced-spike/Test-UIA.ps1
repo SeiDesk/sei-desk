@@ -33,7 +33,7 @@ $output = [IO.Path]::GetFullPath((Join-Path (Get-Location) $OutputDirectory))
 if ((Test-Path $output) -and @(Get-ChildItem -Force $output).Count -gt 0) { throw 'Output must be new/empty' }
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 $binary = (Resolve-Path $BinaryPath).Path
-$result = [ordered]@{ UTC=[DateTime]::UtcNow.ToString('o'); OS=[Environment]::OSVersion.VersionString; BinarySHA256=(Get-FileHash $binary).Hash; BuildMode='release'; Narrator='Not run'; PhysicalKeyboard='Not run'; TextSelection='Not advertised'; LiveAnnouncement='Not advertised'; Checks=@() }
+$result = [ordered]@{ UTC=[DateTime]::UtcNow.ToString('o'); OS=[Environment]::OSVersion.VersionString; BinarySHA256=(Get-FileHash $binary).Hash; BuildMode='release'; Narrator='Not run'; PhysicalKeyboard='Not run'; TextSelection='Not advertised'; LiveAnnouncement='Not evaluated by this harness'; Checks=@() }
 $child=$null; $root=$null; $windowHandle=[IntPtr]::Zero; $stdoutTask=$null; $stderrTask=$null; $failed=$false
 function Check([bool]$Condition,[string]$Name) {
     $result.Checks += [pscustomobject]@{ Name=$Name; Passed=$Condition }
@@ -174,7 +174,7 @@ try {
         $child.Dispose()
     }
     $result.UIAActionsPassed=!$failed
-    $result.AccessibilityGate='Not passed: Narrator/physical keyboard not run; no live or text-selection claim'
+    $result.AccessibilityGate='Manual keyboard/Narrator acceptance is recorded separately'
     ConvertTo-Json -InputObject $result -Depth 6 | Set-Content (Join-Path $output 'run.json') -Encoding UTF8
     ConvertTo-Json -InputObject $result -Depth 6
 }

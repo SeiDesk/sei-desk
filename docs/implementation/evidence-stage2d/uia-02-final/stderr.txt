@@ -1,0 +1,34 @@
+provider_attached_before_show hwnd=4327736
+uia_action=Focus node=#3
+state focus=Input error=false checked=false closing=false
+uia_action=SetValue node=#3
+uia_action=Focus node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Click node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Focus node=#3
+state focus=Input error=false checked=false closing=false
+uia_action=SetValue node=#3
+uia_action=Focus node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Focus node=#4
+state focus=Validate error=false checked=false closing=false
+uia_action=Click node=#4
+state focus=Validate error=true checked=false closing=false
+uia_action=Focus node=#103
+state focus=DismissError error=true checked=false closing=false
+uia_action=Click node=#103
+state focus=Input error=false checked=false closing=false
+uia_action=Focus node=#5
+state focus=Motion error=false checked=false closing=false
+uia_action=Click node=#5
+state focus=Motion error=false checked=true closing=false
+uia_action=Focus node=#5
+state focus=Motion error=false checked=true closing=false
+uia_action=Click node=#5
+state focus=Motion error=false checked=false closing=false
+uia_action=Focus node=#6
+state focus=Close error=false checked=false closing=false
+uia_action=Click node=#6
+state focus=Close error=false checked=false closing=true
+provider_detached

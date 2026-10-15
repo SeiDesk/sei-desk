@@ -1,5 +1,7 @@
 # Isolated AccessKit + iced Windows spike
 
+**Stage 2D update (15 October 2026):** the current experiment adds polite error live-region semantics and generation guards for asynchronous layout/focus results. Physical keyboard and Narrator checklist use passed by human user attestation; exact speech was not recorded. Programmatic TextPattern/caret/selection remains absent and is explicitly deferred only for a headless Stage 3 service, not production launcher UI. See [closure and approval boundary](../../docs/implementation/STAGE-2D-ACCESSIBILITY-CLOSURE.md). The Stage 2C capability/acceptance descriptions below are retained as historical context, including its original non-live error and then-open manual gate.
+
 One ordinary validation window, not the Sei-Desk shell. Its own `[workspace]` and Cargo.lock keep dependencies out of the root application. Requires Windows x64/MSVC, Rust 1.88+ (tested 1.99.0), Windows SDK/linker and an ordinary user desktop. No UAC, Explorer/taskbar changes, registry writes, hooks, tray host or startup service. Keep the native taskbar available.
 
 Pinned released components: iced 0.14.0, accesskit 0.25.1, accesskit_windows 0.35.1, windows-sys 0.61.2. See the [technical report](../../docs/implementation/STAGE-2C-ACCESSKIT-REPORT.md) for licenses, resolved versions and limitations. No fork/patch or `accesskit_winit` adapter is used.

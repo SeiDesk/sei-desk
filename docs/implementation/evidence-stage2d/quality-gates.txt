@@ -1,0 +1,98 @@
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml
+exit=0
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.76s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.93s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 13 tests
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test closure_tests::late_layout_focus_and_accessibility_actions_after_close_are_ignored ... ok
+test closure_tests::stale_layout_and_pointer_focus_cannot_override_new_error_state ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test semantics::tests::polite_error_does_not_move_focus_or_repeat_unchanged_updates ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+error: items after a test module
+   --> src\main.rs:296:1
+    |
+296 | mod closure_tests {
+    | ^^^^^^^^^^^^^^^^^
+...
+353 | fn event(event: Event, status: iced::event::Status, id: window::Id) -> Option<Message> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+398 | struct OneWorker(iced::futures::executor::ThreadPool);
+    | ^^^^^^^^^^^^^^^^
+399 | impl iced::Executor for OneWorker {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+413 | fn main() -> std::process::ExitCode {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#items_after_test_module
+    = note: `-D clippy::items-after-test-module` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::items_after_test_module)]`
+    = help: move the items to before the test module was defined
+
+error: could not compile `accesskit-iced-spike` (bin "accesskit-iced-spike" test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+exit=101
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml
+exit=0
+cargo fmt --manifest-path experiments/accesskit-iced-spike/Cargo.toml --check
+exit=0
+cargo check --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.36s
+exit=0
+cargo test --manifest-path experiments/accesskit-iced-spike/Cargo.toml --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.95s
+     Running unittests src\main.rs (experiments\accesskit-iced-spike\target\debug\deps\accesskit_iced_spike-16d0103f9e4e7fdb.exe)
+
+running 13 tests
+test model::tests::close_is_terminal_and_does_not_accept_late_actions ... ok
+test semantics::tests::removed_and_recreated_error_rejects_stale_action ... ok
+test closure_tests::late_layout_focus_and_accessibility_actions_after_close_are_ignored ... ok
+test model::tests::editing_clears_stale_feedback_then_validates ... ok
+test model::tests::escape_dismisses_error_before_closing ... ok
+test closure_tests::stale_layout_and_pointer_focus_cannot_override_new_error_state ... ok
+test model::tests::validation_retains_value_and_initiating_focus ... ok
+test model::tests::active_composition_preserves_text_focus_and_window ... ok
+test model::tests::forward_reverse_and_conditional_error_control ... ok
+test semantics::tests::delta_removes_children_without_resending_deleted_nodes ... ok
+test model::tests::system_or_unknown_motion_preference_cannot_be_overridden ... ok
+test semantics::tests::state_value_toggle_and_scaled_layout_are_authoritative ... ok
+test semantics::tests::polite_error_does_not_move_focus_or_repeat_unchanged_updates ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+exit=0
+cargo clippy --manifest-path experiments/accesskit-iced-spike/Cargo.toml --all-targets --locked --offline -- -D warnings
+    Checking accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.41s
+exit=0
+cargo build --manifest-path experiments/accesskit-iced-spike/Cargo.toml --release --locked --offline
+   Compiling accesskit-iced-spike v0.1.0 (X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike)
+    Finished `release` profile [optimized] target(s) in 4.73s
+exit=0
+Final git diff --check exit=0; preservation 251 files checked; unexpected alterations=0; remaining spike processes=0; local documentation links/whitespace failures=0

@@ -19,6 +19,7 @@ struct Owner {
     hwnd: usize,
     adapter: SubclassingAdapter,
     snapshot: Arc<Mutex<TreeUpdate>>,
+    generation: u64,
 }
 struct Initial(Arc<Mutex<TreeUpdate>>);
 impl ActivationHandler for Initial {
@@ -77,6 +78,7 @@ pub fn install(
             hwnd,
             adapter,
             snapshot,
+            generation: 0,
         });
         eprintln!("provider_attached_before_show hwnd={hwnd}");
         Ok(())
@@ -91,10 +93,14 @@ pub fn scale() -> f64 {
         })
     })
 }
-pub fn publish(next: TreeUpdate) {
+pub fn publish(generation: u64, next: TreeUpdate) {
     let events = OWNER.with(|owner| {
         let mut owner = owner.borrow_mut();
         let owner = owner.as_mut()?;
+        if generation < owner.generation {
+            return None;
+        }
+        owner.generation = generation;
         let delta = {
             let mut snapshot = owner.snapshot.lock().expect("snapshot poisoned");
             let delta = crate::semantics::incremental(&snapshot, &next);

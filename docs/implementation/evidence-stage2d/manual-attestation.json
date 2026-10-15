@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-15",
+  "method": "Human user report from this conversation; not assistant-injected keyboard input or assistant-observed speech",
+  "binary_sha256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+  "window_title": "AccessKit iced spike",
+  "window_handle_at_launch": 1048598,
+  "physical_checklist": [
+    "Type abcd, Left, X -> abcXd; visually select and replace; clear using Ctrl+A/Backspace",
+    "Tab and Shift+Tab; Enter on Validate; error appears while focus stays on Validate",
+    "Space toggles Motion; Enter dismisses error and returns focus to Sample text",
+    "Normal close"
+  ],
+  "narrator_checklist": [
+    "Identify and operate input, Validate and checkbox with names/roles and state speech",
+    "Read value and edit/navigate without reported inability",
+    "Hear error feedback; check missing/duplicate announcements and unexpected focus movement",
+    "Dismiss then validate again to test a new error occurrence"
+  ],
+  "first_user_response": "PASS",
+  "clarification_asked": "Does PASS cover both physical keyboard and actual Narrator navigation/operation, including error speech, duplication and focus?",
+  "clarification_user_response": "EVERYTHING WORKS",
+  "physical_keyboard_result": "PASS (user-attested)",
+  "narrator_result": "PASS (user-attested)",
+  "error_feedback_and_focus_result": "PASS (user-attested against checklist)",
+  "exact_spoken_utterances": "Not supplied; do not invent or quote control announcements",
+  "audio_recording_or_independent_speech_observation": "None",
+  "duplicate_announcement_count": "Not supplied; no problem reported in global confirmation",
+  "uia_text_range_or_selected_text_pattern": "Not implemented; manual usability pass does not establish these APIs",
+  "limited_deferral_question": "Defer programmatic UIA text-range/caret/selected-text APIs for a headless Stage 3 catalog/launch service only, keeping them as a gate before production launcher UI?",
+  "limited_deferral_user_response": "Approve that limited deferral",
+  "approval_boundary": "Headless Stage 3 recommendation only; no production UI approval or implementation"
+}
