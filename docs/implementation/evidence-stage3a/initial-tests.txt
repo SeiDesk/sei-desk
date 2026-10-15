@@ -1,0 +1,42 @@
+   Compiling windows-strings v0.5.1
+   Compiling windows-result v0.4.1
+   Compiling windows-threading v0.2.1
+   Compiling windows-core v0.62.2
+   Compiling windows-numerics v0.3.1
+   Compiling windows-future v0.3.2
+   Compiling windows-collections v0.3.2
+   Compiling windows v0.62.2
+   Compiling sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.41s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-279807e74029ac03.exe)
+
+running 11 tests
+test tests::launch_error_mapping_preserves_code ... ok
+test tests::missing_target_and_invalid_request_are_structured_errors ... ok
+test tests::missing_and_inaccessible_sources_are_explicit ... ok
+test tests::overflowing_directory_is_not_an_arbitrary_prefix ... ok
+test tests::cancelled_refresh_does_not_read_or_launch ... ok
+test tests::progress_backpressure_never_blocks_refresh ... ok
+test tests::depth_and_file_size_limits_are_enforced ... ok
+test tests::user_source_wins_duplicate_independent_of_input_order ... ok
+test tests::normalized_identity_dedup_and_order_are_repeatable ... FAILED
+test tests::malformed_stale_and_denied_entries_do_not_abort_refresh ... ok
+test native::tests::real_com_shortcut_read_and_malformed_rejection ... ok
+
+failures:
+
+---- tests::normalized_identity_dedup_and_order_are_repeatable stdout ----
+
+thread 'tests::normalized_identity_dedup_and_order_are_repeatable' (19028) panicked at crates\sei-apps\src\tests.rs:87:5:
+assertion `left == right` failed
+  left: "different"
+ right: "Z App"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::normalized_identity_dedup_and_order_are_repeatable
+
+test result: FAILED. 10 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+error: test failed, to rerun pass `-p sei-apps --lib`

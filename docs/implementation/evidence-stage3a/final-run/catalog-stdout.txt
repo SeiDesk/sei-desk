@@ -1,0 +1,3 @@
+refresh_ms=1342.486 entries=78 visited=252 issues=83 truncated=false
+second_refresh_ms=208.450 entries_identical=true
+issue_kinds={"Invalid": 51, "Unsupported": 32}

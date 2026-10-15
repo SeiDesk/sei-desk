@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/sei-desk", "crates/sei-windows"]
+members = ["crates/sei-desk", "crates/sei-windows", "crates/sei-apps"]
 exclude = ["experiments/windows-integration-spike"]
 resolver = "3"
 
