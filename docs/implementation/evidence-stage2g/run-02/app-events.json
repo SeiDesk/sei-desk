@@ -1,0 +1,38 @@
+[
+  {
+    "epoch": 1,
+    "event": "Open(Id(1))"
+  },
+  {
+    "epoch": 2,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 3,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 4,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 5,
+    "event": "Key(F12)"
+  },
+  {
+    "epoch": 6,
+    "event": "Key(F7)"
+  },
+  {
+    "epoch": 7,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 8,
+    "event": "Key(F4)"
+  },
+  {
+    "epoch": 9,
+    "event": "Key(F10)"
+  }
+]

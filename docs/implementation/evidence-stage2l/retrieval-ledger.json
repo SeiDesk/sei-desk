@@ -1,0 +1,383 @@
+[
+  {
+    "ID": "R01",
+    "URL": "https://crates.io/api/v1/crates/accesskit",
+    "Kind": "StableRegistry",
+    "Package": "accesskit",
+    "StartedAtUtc": "2026-10-17T07:51:43.2637778Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:44.4760892Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "3C39D6FC5F89C1B04F2DE9AB2E6D0612E5DD564C0268614DBBC392DFAA354634",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r01-response.json",
+    "StoredEvidenceSHA256": "855C2507B1BD4123F94BC4DEAF61C88F96487BD1C094DDFB9A59039C79725D78",
+    "Result": {
+      "Package": "accesskit",
+      "MaxStableVersion": "0.25.1",
+      "NewestVersion": "0.25.1",
+      "Versions": [
+        {
+          "num": "0.25.1",
+          "yanked": false,
+          "created_at": "2026-09-25T19:40:54.207184Z",
+          "checksum": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932"
+        },
+        {
+          "num": "0.25.0",
+          "yanked": false,
+          "created_at": "2026-08-29T09:18:11.07223Z",
+          "checksum": "438a7081a65b95c668db56591a4fef9bc5dad275f448bd6223fc6949d823db38"
+        },
+        {
+          "num": "0.24.1",
+          "yanked": false,
+          "created_at": "2026-06-12T13:23:59.640896Z",
+          "checksum": "d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320"
+        }
+      ]
+    }
+  },
+  {
+    "ID": "R02",
+    "URL": "https://crates.io/api/v1/crates/accesskit_consumer",
+    "Kind": "StableRegistry",
+    "Package": "accesskit_consumer",
+    "StartedAtUtc": "2026-10-17T07:51:44.489169Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:45.3572844Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "C9EA636B71841552E99704D85321985ACE3477ECB2FCF8CAEBE77596FD371A6E",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r02-response.json",
+    "StoredEvidenceSHA256": "7C6DC1C3B4365667D4B661CED7BE90EBFC7AE71E8BAB2D8D5D269AAF059BFC5C",
+    "Result": {
+      "Package": "accesskit_consumer",
+      "MaxStableVersion": "0.39.1",
+      "NewestVersion": "0.39.1",
+      "Versions": [
+        {
+          "num": "0.39.1",
+          "yanked": false,
+          "created_at": "2026-09-25T19:40:56.422234Z",
+          "checksum": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344"
+        },
+        {
+          "num": "0.39.0",
+          "yanked": false,
+          "created_at": "2026-08-29T09:18:13.539189Z",
+          "checksum": "cc882fa0c9c24c53649e256311b51046cf36eca9a8f7e54ff4ef682160b0cb27"
+        },
+        {
+          "num": "0.38.0",
+          "yanked": false,
+          "created_at": "2026-07-14T17:05:45.16875Z",
+          "checksum": "5d10a236f96f87d70732e44520046785431ef01d5bcd6b041317bfadd2f88245"
+        }
+      ]
+    }
+  },
+  {
+    "ID": "R03",
+    "URL": "https://crates.io/api/v1/crates/accesskit_windows",
+    "Kind": "StableRegistry",
+    "Package": "accesskit_windows",
+    "StartedAtUtc": "2026-10-17T07:51:45.36928Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:46.2431608Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "4BB23DD680991F367028B2183E39073ADAF0911353E21E308412BBA3E8BCC670",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r03-response.json",
+    "StoredEvidenceSHA256": "BFF569EAEC944592B58CC28CCA8D644CA19CC2C9FB1EB0B0D07CDDA7A1DA64F9",
+    "Result": {
+      "Package": "accesskit_windows",
+      "MaxStableVersion": "0.35.1",
+      "NewestVersion": "0.35.1",
+      "Versions": [
+        {
+          "num": "0.35.1",
+          "yanked": false,
+          "created_at": "2026-09-25T19:41:00.899523Z",
+          "checksum": "ce63f35d6bdcf59f26b76b3379063f738e6412cef46999cc772d46aa3de35adb"
+        },
+        {
+          "num": "0.35.0",
+          "yanked": false,
+          "created_at": "2026-08-29T09:18:18.185843Z",
+          "checksum": "a59e8d7160cbac991c1345c99153783ab96423644ccb1f20617cf80c97596aa1"
+        },
+        {
+          "num": "0.34.0",
+          "yanked": false,
+          "created_at": "2026-07-14T17:07:47.908459Z",
+          "checksum": "106c2b961215864d1c2e703ee63269c25c4e80a577ffb2c1017b9c17dcdf83a1"
+        }
+      ]
+    }
+  },
+  {
+    "ID": "R04",
+    "URL": "https://api.github.com/repos/AccessKit/accesskit/releases/tags/accesskit_windows-v0.35.1",
+    "Kind": "OfficialPinnedRelease",
+    "Package": "accesskit_windows",
+    "StartedAtUtc": "2026-10-17T07:51:46.252921Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:46.6577272Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "5BC0E6524924786B62B900CDCD3DBFE3FC7E776BDD4E50E96AC2247D8267C39E",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r04-response.json",
+    "StoredEvidenceSHA256": "C3A3A3954E539BBE3255A236D358E2FA0E2DF03836F47DED7C4D5EE73CAA0D15",
+    "Result": {
+      "Tag": "accesskit_windows-v0.35.1",
+      "PageURL": "https://github.com/AccessKit/accesskit/releases/tag/accesskit_windows-v0.35.1",
+      "Draft": false,
+      "Prerelease": false,
+      "PublishedAt": "2026-09-25T19:28:25Z",
+      "Body": "## [0.35.1](https://github.com/AccessKit/accesskit/compare/accesskit_windows-v0.35.0...accesskit_windows-v0.35.1) (2026-09-25)\n\n\n### Bug Fixes\n\n* Update minimum supported Rust version to 1.87 ([#808](https://github.com/AccessKit/accesskit/issues/808)) ([08c6ada](https://github.com/AccessKit/accesskit/commit/08c6ada3594ab12f57844c25d6a16dc8955ff640))\n\n\n### Dependencies\n\n* The following workspace dependencies were updated\n  * dependencies\n    * accesskit bumped from 0.25.0 to 0.25.1\n    * accesskit_consumer bumped from 0.39.0 to 0.39.1"
+    }
+  },
+  {
+    "ID": "R05",
+    "URL": "https://api.github.com/search/issues?q=repo%3AAccessKit%2Faccesskit%20LabeledBy&per_page=10",
+    "Kind": "DirectIssueSearch",
+    "Package": "accesskit_windows",
+    "StartedAtUtc": "2026-10-17T07:51:46.6694945Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:47.1771385Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "1DF49B297AFD35C89081C4D678331B7BF228732433E59C9B63A9F4307ADFD148",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r05-response.json",
+    "StoredEvidenceSHA256": "7F1E8A2D49A484D0A0781526FEB404E0456CCABF71A9A587FCBB2429FAFB58C0",
+    "Result": {
+      "TotalCount": 1,
+      "Incomplete": false,
+      "Items": [
+        {
+          "number": 78,
+          "title": "Generate node name from `labelled_by` relationship",
+          "state": "closed",
+          "html_url": "https://github.com/AccessKit/accesskit/pull/78",
+          "updated_at": "2021-12-17T20:45:56Z",
+          "pull_request": {
+            "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/78",
+            "html_url": "https://github.com/AccessKit/accesskit/pull/78",
+            "diff_url": "https://github.com/AccessKit/accesskit/pull/78.diff",
+            "patch_url": "https://github.com/AccessKit/accesskit/pull/78.patch",
+            "merged_at": "2021-12-17T20:45:55Z"
+          }
+        }
+      ],
+      "Interpretation": "Bounded metadata context only; title/closure is not source or released capability proof"
+    }
+  },
+  {
+    "ID": "R06",
+    "URL": "https://api.github.com/search/issues?q=repo%3AAccessKit%2Faccesskit%20ScrollPattern&per_page=10",
+    "Kind": "DirectIssueSearch",
+    "Package": "accesskit_windows",
+    "StartedAtUtc": "2026-10-17T07:51:47.1930256Z",
+    "RetrievedAtUtc": "2026-10-17T07:51:47.6480459Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "E87BDEFF06F2ADB11DE85026E92D5809A524AB7D6FF198F59AC78B645D0F8761",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/r06-response.json",
+    "StoredEvidenceSHA256": "C575A3CAD986D4CF8B928146869A9846A35739F453F6DAEE53DECDACCB91E274",
+    "Result": {
+      "TotalCount": 1,
+      "Incomplete": false,
+      "Items": [
+        {
+          "number": 816,
+          "title": "feat(windows): expose a localized switch type and ScrollPattern",
+          "state": "open",
+          "html_url": "https://github.com/AccessKit/accesskit/pull/816",
+          "updated_at": "2026-10-07T12:34:11Z",
+          "pull_request": {
+            "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/816",
+            "html_url": "https://github.com/AccessKit/accesskit/pull/816",
+            "diff_url": "https://github.com/AccessKit/accesskit/pull/816.diff",
+            "patch_url": "https://github.com/AccessKit/accesskit/pull/816.patch",
+            "merged_at": null
+          }
+        }
+      ],
+      "Interpretation": "Bounded metadata context only; title/closure is not source or released capability proof"
+    }
+  },
+  {
+    "ID": "R78",
+    "URL": "https://api.github.com/repos/AccessKit/accesskit/pulls/78",
+    "Kind": "DirectRelevantPullMetadata",
+    "RetrievedAtUtc": "2026-10-17T07:53:33.2765432Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "B4AC90B1B76361165824A1A4B5C3A002AC1140D827D5AB412D7819FBFB271178",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/pr-78-metadata.json",
+    "StoredEvidenceSHA256": "9C3BBA82D1C9AB238DF1A4A05EB102C52A6B4D757BAE915213C4E926549EBAD6",
+    "Result": {
+      "Number": 78,
+      "PageURL": "https://github.com/AccessKit/accesskit/pull/78",
+      "Title": "Generate node name from `labelled_by` relationship",
+      "State": "closed",
+      "Draft": false,
+      "Merged": true,
+      "MergedAt": "2021-12-17T20:45:55Z",
+      "UpdatedAt": "2021-12-17T20:45:56Z",
+      "HeadSHA": "bf8886c1b4529605bfe729325b77d8e369fa4bb5",
+      "BaseSHA": "d61be0aa1a72055931070fa3aaece3e50aa63ad4",
+      "Classification": "Merged upstream change; release inclusion must be proved separately"
+    }
+  },
+  {
+    "ID": "R816",
+    "URL": "https://api.github.com/repos/AccessKit/accesskit/pulls/816",
+    "Kind": "DirectRelevantPullMetadata",
+    "RetrievedAtUtc": "2026-10-17T07:53:33.9061318Z",
+    "Attempt": 1,
+    "Success": true,
+    "StatusCode": 200,
+    "ResponseUtf8SHA256": "E38FEFEB97A5D388451645B3B261C15D6AFC91C0DAADAB23EC5546D6BE432B05",
+    "FullResponseRetained": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/pr-816-metadata.json",
+    "StoredEvidenceSHA256": "1F880199FB1E726DFBBFA9DF318A4E31522085F64BB19DACB2DBCDCE06E2818F",
+    "Result": {
+      "Number": 816,
+      "PageURL": "https://github.com/AccessKit/accesskit/pull/816",
+      "Title": "feat(windows): expose a localized switch type and ScrollPattern",
+      "State": "open",
+      "Draft": false,
+      "Merged": false,
+      "MergedAt": null,
+      "UpdatedAt": "2026-10-07T12:34:11Z",
+      "HeadSHA": "29f2ec503e98f1afcbbd1a26d11a1986b5198d5e",
+      "BaseSHA": "466e24e252103f4d82bd6fbab98141b551e46e0c",
+      "Classification": "Open/unmerged proposal; not stable release or source qualification"
+    }
+  },
+  {
+    "ID": "W01",
+    "URL": "https://github.com/AccessKit/accesskit/pull/816",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": false,
+    "Result": "Web tool failed: Cache miss. Page not retried. Separate official API endpoint R816 succeeded; distinct first attempt, not a successful page fetch.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "No same-day retry; at most one later-day retry within seven days per J; none scheduled"
+  },
+  {
+    "ID": "W02",
+    "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nn-uiautomationcore-iscrollprovider",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": true,
+    "Result": "Official SDK interface lists axis scrollability, percentages/view sizes and Scroll/SetScrollPercent; not evidence AccessKit implements them.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "Not needed"
+  },
+  {
+    "ID": "W03",
+    "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-setscrollpercent",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": true,
+    "Result": "Official SDK describes percentage parameters and UIA_ScrollPatternNoScroll for an axis; no AccessKit implementation inferred.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "Not needed"
+  },
+  {
+    "ID": "W04",
+    "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-get_horizontalscrollpercent",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": false,
+    "Result": "Web tool URL not accessible. Not retried; this page did not establish sentinel/value semantics.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "No same-day retry; at most one later-day retry within seven days per J; none scheduled"
+  },
+  {
+    "ID": "W05",
+    "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-get_horizontalviewsize",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": false,
+    "Result": "Web tool URL not accessible. Not retried; this page did not establish view-size/axis semantics.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "No same-day retry; at most one later-day retry within seven days per J; none scheduled"
+  },
+  {
+    "ID": "W06",
+    "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-scroll",
+    "Kind": "OfficialWebContractOrProposalPage",
+    "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+    "ExactRetrievalTimestampUtc": null,
+    "RetrievalWindowUtc": {
+      "NotAfter": "2026-10-17T07:58:27.4758675Z",
+      "NotBefore": "2026-10-17T07:51:02.8448295Z"
+    },
+    "Attempt": 1,
+    "Success": true,
+    "Result": "Official SDK defines horizontal/vertical ScrollAmount arguments and HRESULT success/failure; missing provider still has no such method.",
+    "FullResponseRetained": false,
+    "ResponseTextHashAvailable": false,
+    "StoredEvidencePath": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "StoredEvidenceSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Retry": "Not needed"
+  }
+]

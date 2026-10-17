@@ -1,0 +1,25 @@
+{
+  "Package": "accesskit_consumer",
+  "MaxStableVersion": "0.39.1",
+  "NewestVersion": "0.39.1",
+  "Versions": [
+    {
+      "num": "0.39.1",
+      "yanked": false,
+      "created_at": "2026-09-25T19:40:56.422234Z",
+      "checksum": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344"
+    },
+    {
+      "num": "0.39.0",
+      "yanked": false,
+      "created_at": "2026-08-29T09:18:13.539189Z",
+      "checksum": "cc882fa0c9c24c53649e256311b51046cf36eca9a8f7e54ff4ef682160b0cb27"
+    },
+    {
+      "num": "0.38.0",
+      "yanked": false,
+      "created_at": "2026-07-14T17:05:45.16875Z",
+      "checksum": "5d10a236f96f87d70732e44520046785431ef01d5bcd6b041317bfadd2f88245"
+    }
+  ]
+}

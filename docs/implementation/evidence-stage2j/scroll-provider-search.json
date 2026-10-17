@@ -1,0 +1,8 @@
+{
+  "UTC": "2026-10-17T07:24:49.6630708Z",
+  "Package": "accesskit_windows 0.35.1",
+  "Search": "IScrollProvider|UIA_ScrollPatternId|ScrollPercent|SetScrollPercent",
+  "FilesSearched": 12,
+  "Matches": [],
+  "Conclusion": "No container ScrollPattern implementation found in inspected released Windows Rust sources; ScrollItem exists separately. Source inspection, not runtime proof."
+}

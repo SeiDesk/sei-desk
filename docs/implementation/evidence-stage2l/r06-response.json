@@ -1,0 +1,21 @@
+{
+  "TotalCount": 1,
+  "Incomplete": false,
+  "Items": [
+    {
+      "number": 816,
+      "title": "feat(windows): expose a localized switch type and ScrollPattern",
+      "state": "open",
+      "html_url": "https://github.com/AccessKit/accesskit/pull/816",
+      "updated_at": "2026-10-07T12:34:11Z",
+      "pull_request": {
+        "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/816",
+        "html_url": "https://github.com/AccessKit/accesskit/pull/816",
+        "diff_url": "https://github.com/AccessKit/accesskit/pull/816.diff",
+        "patch_url": "https://github.com/AccessKit/accesskit/pull/816.patch",
+        "merged_at": null
+      }
+    }
+  ],
+  "Interpretation": "Bounded metadata context only; title/closure is not source or released capability proof"
+}

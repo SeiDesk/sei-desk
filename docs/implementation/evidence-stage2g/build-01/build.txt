@@ -1,0 +1,27 @@
+rustfmt --edition 2024 --check X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\observe.rs
+exit=0
+rustc --edition=2024 X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs --extern iced=X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike\target\debug\deps\libiced-5752bf559ff9ed40.rlib -L dependency=X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike\target\debug\deps -L native=C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\windows_x86_64_msvc-0.52.6\lib -D warnings --test -o X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\target\observer-tests.exe
+error[E0432]: unresolved import `iced::InputMethod`
+ --> X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\observe.rs:9:28
+  |
+9 | use iced::{Element, Event, InputMethod, Length, Rectangle, Size, Vector};
+  |                            ^^^^^^^^^^^ no `InputMethod` in the root
+
+error: use of deprecated method `std::sync::atomic::Atomic::<u64>::fetch_update`: renamed to `try_update` for consistency
+   --> X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\observe.rs:130:14
+    |
+130 |             .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |v| v.checked_add(1))
+    |              ^^^^^^^^^^^^
+    |
+    = note: `-D deprecated` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(deprecated)]`
+help: replace the use of the deprecated method
+    |
+130 -             .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |v| v.checked_add(1))
+130 +             .try_update(Ordering::Relaxed, Ordering::Relaxed, |v| v.checked_add(1))
+    |
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0432`.
+exit=1

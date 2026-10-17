@@ -1,0 +1,833 @@
+{
+  "schema_version": 1,
+  "stage": "2K",
+  "production_accessibility": "BLOCKED",
+  "evidence_key_paths": {
+    "C": [
+      "docs/implementation/evidence-stage2c/run-07-final/run.json",
+      "docs/implementation/evidence-stage2c/run-04/run.json"
+    ],
+    "CA": [
+      "docs/implementation/evidence-stage2c-acceptance/uia-01/run.json"
+    ],
+    "D": [
+      "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+      "docs/implementation/evidence-stage2d/manual-attestation.json"
+    ],
+    "E": [
+      "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+      "docs/implementation/evidence-stage2e/README.md"
+    ],
+    "G": [
+      "docs/implementation/evidence-stage2g/runtime-summary.json",
+      "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md"
+    ],
+    "H": [
+      "docs/implementation/evidence-stage2h/operator-readiness.json"
+    ],
+    "I": [
+      "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+    ],
+    "J": [
+      "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+      "docs/implementation/evidence-stage2j/list-source-excerpts.txt"
+    ],
+    "S": [
+      "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+      "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+      "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+    ]
+  },
+  "requirements": [
+    {
+      "requirement": "R01",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "C",
+        "D",
+        "J"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+        "docs/implementation/evidence-stage2j/list-source-excerpts.txt"
+      ],
+      "current_evidence_and_provenance": "Historical fixed controls exposed; list constituents source-supported; candidate unverified.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "Narrator"
+      ],
+      "remaining_requirement": "Correct actual hierarchy/names/roles/states and truthful full Unicode content.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O04",
+        "O05"
+      ],
+      "test_ids": [
+        "Q01",
+        "Q04",
+        "Q15",
+        "Q17",
+        "Q22"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R02",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "C",
+        "E",
+        "J"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md",
+        "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+        "docs/implementation/evidence-stage2j/list-source-excerpts.txt"
+      ],
+      "current_evidence_and_provenance": "Actual LabeledBy absent; provider mapping unresolved, no candidate label proof.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation"
+      ],
+      "remaining_requirement": "Approved upstream support and actual reference to visible associated label; do not remove label.",
+      "blocking_status": "SOURCE_AND_ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O05",
+        "O06"
+      ],
+      "test_ids": [
+        "Q00",
+        "Q01"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R03",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "G"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md"
+      ],
+      "current_evidence_and_provenance": "D manual attestation and G synthetic navigation are historical different controls.",
+      "required_evidence_types": [
+        "Physical keyboard",
+        "native UI Automation"
+      ],
+      "remaining_requirement": "New list/action traversal, activation, focus/selection distinction and Escape.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q02",
+        "Q03",
+        "Q08",
+        "Q13",
+        "Q14",
+        "Q18",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R04",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "I",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "External restoration/safe denial unverified; headless has no foreground policy.",
+      "required_evidence_types": [
+        "Physical keyboard",
+        "native UI Automation"
+      ],
+      "remaining_requirement": "No focus theft; valid/closed/changed target and denied restore scenarios.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q16",
+        "Q21",
+        "Q25"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R05",
+      "applicability": "Excluded conditionally: no editable control",
+      "evidence_keys": [
+        "D",
+        "E"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md"
+      ],
+      "current_evidence_and_provenance": "ValuePattern whole-string historical pass; complete editor remains blocked.",
+      "required_evidence_types": [
+        "Source; native UI Automation",
+        "physical keyboard",
+        "Narrator",
+        "real IME if scope changes"
+      ],
+      "remaining_requirement": "Do not expose editable value, command editor or composition-capable input; future editable gate retained.",
+      "blocking_status": "EDITABLE_LAUNCHER_BLOCKED_NOT_WAIVED",
+      "owner_decisions": [
+        "O05"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R06",
+      "applicability": "Excluded conditionally: no editable control",
+      "evidence_keys": [
+        "E",
+        "G"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md",
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md"
+      ],
+      "current_evidence_and_provenance": "Logical caret/direction partial source/API/runtime; no end-to-end text selection provider.",
+      "required_evidence_types": [
+        "Source; native UI Automation",
+        "physical keyboard",
+        "Narrator",
+        "real IME if scope changes"
+      ],
+      "remaining_requirement": "List selection is not text selection; do not claim programmatic caret support.",
+      "blocking_status": "EDITABLE_LAUNCHER_BLOCKED_NOT_WAIVED",
+      "owner_decisions": [
+        "O05"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R07",
+      "applicability": "Excluded conditionally: no editable control",
+      "evidence_keys": [
+        "E",
+        "G"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md",
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md"
+      ],
+      "current_evidence_and_provenance": "Stock retained paragraph private; shared IME anchor/invalidation inadequate.",
+      "required_evidence_types": [
+        "Source; native UI Automation and real editor geometry if scope changes"
+      ],
+      "remaining_requirement": "No fabricated range geometry or proxy; conditional exclusion reviewed at entry.",
+      "blocking_status": "EDITABLE_LAUNCHER_BLOCKED_NOT_WAIVED",
+      "owner_decisions": [
+        "O05"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R08",
+      "applicability": "Excluded conditionally: no editable control",
+      "evidence_keys": [
+        "E",
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "TextPattern absent; visible/caret-range provider gaps unresolved.",
+      "required_evidence_types": [
+        "Source; native UI Automation and client coverage if scope changes"
+      ],
+      "remaining_requirement": "No TextPattern/TextRange claim; applicable static text contracts remain required.",
+      "blocking_status": "EDITABLE_LAUNCHER_BLOCKED_NOT_WAIVED",
+      "owner_decisions": [
+        "O05",
+        "O06"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R09",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "Error removal/stale action scoped historical pass; candidate states untested.",
+      "required_evidence_types": [
+        "Native UI Automation",
+        "Narrator"
+      ],
+      "remaining_requirement": "Current errors, removed row/action, launch-failure feedback and explicit retry.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O05"
+      ],
+      "test_ids": [
+        "Q04",
+        "Q05",
+        "Q07",
+        "Q08",
+        "Q12",
+        "Q13",
+        "Q15",
+        "Q23",
+        "Q26",
+        "Q27",
+        "Q28"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R10",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "Error speech human-attested; independent native live-event counting absent.",
+      "required_evidence_types": [
+        "Native UI Automation events",
+        "Narrator"
+      ],
+      "remaining_requirement": "Correlate native occurrence/events with separate actual heard status/error feedback.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q07",
+        "Q12",
+        "Q13",
+        "Q15",
+        "Q28"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R11",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "C",
+        "I",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "Bridge queue drops unresolved; consumer bounds do not repair provider acknowledgement.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "resource measurement"
+      ],
+      "remaining_requirement": "Bounded truthful overload/rejection, exactly-once intents and no blocking UI/callback.",
+      "blocking_status": "SOURCE_AND_ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O05",
+        "O06"
+      ],
+      "test_ids": [
+        "Q00",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q09",
+        "Q10",
+        "Q11",
+        "Q23",
+        "Q24",
+        "Q25",
+        "Q27",
+        "Q28"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R12",
+      "applicability": "Applicable to metadata/actions, not editable SetValue",
+      "evidence_keys": [
+        "E",
+        "I",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+        "docs/implementation/evidence-stage2e/README.md",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "4096-byte edit path not applicable only if absent; long metadata/rejection not qualified.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "Narrator",
+        "resource measurement"
+      ],
+      "remaining_requirement": "Approved limits, checked units, N/N+1 and malformed data; complete truthful names.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q11",
+        "Q22",
+        "Q23"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R13",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "G",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "Partial async/normal cleanup passes and accepted headless guard; not whole UI proof.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "resource measurement"
+      ],
+      "remaining_requirement": "Stale UI replies, closed actions, checked identities, off-GUI joining and lifecycle.",
+      "blocking_status": "ENTRY_AND_RELEASE_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O05"
+      ],
+      "test_ids": [
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10",
+        "Q11",
+        "Q13",
+        "Q16",
+        "Q20",
+        "Q21",
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R14",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "High contrast and actual composite contrast unverified.",
+      "required_evidence_types": [
+        "Display configuration",
+        "physical keyboard",
+        "Narrator"
+      ],
+      "remaining_requirement": "Measured readable actual surfaces and independent visible focus/selection.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q18",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R15",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "Native query/local preference partial; dynamic actual behavior unverified.",
+      "required_evidence_types": [
+        "Display/accessibility configuration",
+        "physical keyboard"
+      ],
+      "remaining_requirement": "No essential animation; actual approved motion preference/reactivation evidence.",
+      "blocking_status": "ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q19",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R16",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "C",
+        "D",
+        "G",
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "Current-DPI widget resize partial; mixed/negative/changed display unverified.",
+      "required_evidence_types": [
+        "Display configuration",
+        "native UI Automation",
+        "physical keyboard"
+      ],
+      "remaining_requirement": "Actual bounds/offscreen/action/focus under nondefault DPI, mixed-scale and negative origin.",
+      "blocking_status": "ENTRY_AND_RELEASE_BLOCKED",
+      "owner_decisions": [
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q00",
+        "Q17",
+        "Q20",
+        "Q21",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R17",
+      "applicability": "Excluded conditionally: no editable/composition-capable control",
+      "evidence_keys": [
+        "G",
+        "H"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2g/runtime-summary.json",
+        "docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+        "docs/implementation/evidence-stage2h/operator-readiness.json"
+      ],
+      "current_evidence_and_provenance": "No real OS IME session; null preedit inconclusive; operator unavailable in H.",
+      "required_evidence_types": [
+        "Real IME if editable scope introduced; Unicode/keyboard configuration still applicable"
+      ],
+      "remaining_requirement": "No type-ahead input or composition contract; preserve editable IME blocker.",
+      "blocking_status": "EDITABLE_LAUNCHER_BLOCKED_NOT_WAIVED",
+      "owner_decisions": [
+        "O03",
+        "O05"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R18",
+      "applicability": "Applicable: catalog list only",
+      "evidence_keys": [
+        "J",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+        "docs/implementation/evidence-stage2j/list-source-excerpts.txt",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "Source list patterns and accepted headless selection, not actual UI/list accessibility.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "physical keyboard",
+        "Narrator"
+      ],
+      "remaining_requirement": "Selection/count/positions, clear on successful refresh, status and zero-launch selection.",
+      "blocking_status": "SOURCE_AND_ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O04",
+        "O05",
+        "O06"
+      ],
+      "test_ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q12",
+        "Q14",
+        "Q15",
+        "Q17",
+        "Q22",
+        "Q23",
+        "Q27",
+        "Q28",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R19",
+      "applicability": "Applicable: buttons/list scroll controls only",
+      "evidence_keys": [
+        "C",
+        "D",
+        "J"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+        "docs/implementation/evidence-stage2j/list-source-excerpts.txt"
+      ],
+      "current_evidence_and_provenance": "Buttons scoped pass; container ScrollPattern absent in audited pinned source; ScrollItem separate.",
+      "required_evidence_types": [
+        "Source",
+        "native UI Automation",
+        "physical keyboard",
+        "Narrator"
+      ],
+      "remaining_requirement": "Actual container scrolling and item visibility; no new menus/toggles/sliders without scope approval.",
+      "blocking_status": "SOURCE_AND_ENTRY_BLOCKED",
+      "owner_decisions": [
+        "O05",
+        "O06"
+      ],
+      "test_ids": [
+        "Q17"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R20",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "D",
+        "H"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/evidence-stage2h/operator-readiness.json"
+      ],
+      "current_evidence_and_provenance": "Historical aggregate attestation; no candidate-specific operator/speech evidence.",
+      "required_evidence_types": [
+        "Physical keyboard",
+        "Narrator"
+      ],
+      "remaining_requirement": "Named willing operators, exact changed binary and per-step observations; no synthetic substitution.",
+      "blocking_status": "ENTRY_AND_RELEASE_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q00",
+        "Q12",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q18",
+        "Q19",
+        "Q20",
+        "Q22",
+        "Q28",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R21",
+      "applicability": "Applicable",
+      "evidence_keys": [
+        "C",
+        "D",
+        "S",
+        "I"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2c/run-07-final/run.json",
+        "docs/implementation/evidence-stage2c/run-04/run.json",
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md",
+        "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md"
+      ],
+      "current_evidence_and_provenance": "One-host short samples; no declared build/display/AT support or candidate budgets.",
+      "required_evidence_types": [
+        "Resource measurement",
+        "native UI Automation",
+        "physical keyboard",
+        "Narrator",
+        "display configuration"
+      ],
+      "remaining_requirement": "Approved profiles/numeric budgets, finite sessions, responsiveness and clean owned lifetimes.",
+      "blocking_status": "ENTRY_AND_RELEASE_BLOCKED",
+      "owner_decisions": [
+        "O02",
+        "O03",
+        "O05"
+      ],
+      "test_ids": [
+        "Q00",
+        "Q10",
+        "Q11",
+        "Q21",
+        "Q23",
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q29"
+      ],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    },
+    {
+      "requirement": "R22",
+      "applicability": "Headless-only deferral retained, not applicable as UI approval",
+      "evidence_keys": [
+        "D",
+        "S"
+      ],
+      "evidence_paths": [
+        "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+        "docs/implementation/evidence-stage2d/manual-attestation.json",
+        "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+        "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+        "docs/implementation/STAGE-3B-PATCH-REVIEW.md"
+      ],
+      "current_evidence_and_provenance": "Explicit limited deferral and headless acceptance recorded.",
+      "required_evidence_types": [
+        "Owner decision",
+        "source/evidence audit"
+      ],
+      "remaining_requirement": "New scope approval plus independent UI-entry review; never reinterpret headless permission.",
+      "blocking_status": "NO_UI_AUTHORIZATION",
+      "owner_decisions": [
+        "O04",
+        "O05"
+      ],
+      "test_ids": [],
+      "candidate_runtime_status": "NOT RUN",
+      "stage2k_status": "PLANNING ONLY"
+    }
+  ]
+}

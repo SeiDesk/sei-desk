@@ -1,0 +1,86 @@
+[
+  {
+    "Path": "docs/implementation/evidence-stage2l/archive-verification.json",
+    "SHA256": "F0F374A62DED01841370494CEEF6992A1465DDE3674201E3866767875B606DC9"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/baseline.json",
+    "SHA256": "1D1200BD436935B089ADAFFD527A8AFF466079B75F7FE0BC9C15DF5F3B68A82B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/labeledby-audit.json",
+    "SHA256": "BB279C5DB51E3CBEDB1E1CDC862783CFF111F234F1F9A0C9381DF5541993CAD7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/pr-78-metadata.json",
+    "SHA256": "9C3BBA82D1C9AB238DF1A4A05EB102C52A6B4D757BAE915213C4E926549EBAD6"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/pr-816-metadata.json",
+    "SHA256": "1F880199FB1E726DFBBFA9DF318A4E31522085F64BB19DACB2DBCDCE06E2818F"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/preservation-before.json",
+    "SHA256": "03842FC72973D65BE38FA03C886AB17CFE79E535BC0B4F7641BFB26F4E63B5F9"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/provider-search-inventory.json",
+    "SHA256": "760CC7B73F8BE1C166F0998D36A38593DC88C331183A02DF1891CEED34ABA95C"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/published-identities.json",
+    "SHA256": "B6E6AA69A130B1026B6DB53C3FEAF1B2BFFB9224802DE8DD9ABD85F631D8C412"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r01-response.json",
+    "SHA256": "855C2507B1BD4123F94BC4DEAF61C88F96487BD1C094DDFB9A59039C79725D78"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r02-response.json",
+    "SHA256": "7C6DC1C3B4365667D4B661CED7BE90EBFC7AE71E8BAB2D8D5D269AAF059BFC5C"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r03-response.json",
+    "SHA256": "BFF569EAEC944592B58CC28CCA8D644CA19CC2C9FB1EB0B0D07CDDA7A1DA64F9"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r04-response.json",
+    "SHA256": "C3A3A3954E539BBE3255A236D358E2FA0E2DF03836F47DED7C4D5EE73CAA0D15"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r05-response.json",
+    "SHA256": "7F1E8A2D49A484D0A0781526FEB404E0456CCABF71A9A587FCBB2429FAFB58C0"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/r06-response.json",
+    "SHA256": "C575A3CAD986D4CF8B928146869A9846A35739F453F6DAEE53DECDACCB91E274"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/README.md",
+    "SHA256": "A319C28DD3159A53DB02D27EA8DADFD656F64595494CECE0D90C971A39CD5445"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/retrieval-ledger.json",
+    "SHA256": "5E1155FE3FF2BF2F2B0A155893FD8FDD286D615CF65CF7D1E3F499AE2508EC9E"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/scrollpattern-audit.json",
+    "SHA256": "B81ED5EAABF877FE2B85827B94911A558D7341B5700B04A68EAF7F772463E57A"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/source-excerpts.txt",
+    "SHA256": "0EE7E23B07B4767E7EB2C2280069EA45405178E127B6D3A990FA915DF8CACCD4"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/source-inventory.json",
+    "SHA256": "951C3EE6640C26ED232351820EF5CB07749C64C3981F051AD0AF4CBDFF38AB63"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "SHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2L-UPSTREAM-PROVIDER-CAPABILITY-REVIEW.md",
+    "SHA256": "2800929CFE19BFBB45B0ADEBD401F7AB2952330F75CC860967ADF47C1964C72C"
+  }
+]

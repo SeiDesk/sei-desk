@@ -1,0 +1,181 @@
+//! Isolated public-API observer. No AccessKit provider or replacement input.
+mod observe;
+use iced::{
+    Element, Event, Subscription, Task, keyboard,
+    widget::{self, column, container, text, text_input},
+    window,
+};
+use observe::{Logger, Observer};
+use std::sync::{Arc, Mutex};
+#[derive(Debug, Clone)]
+pub enum Message {
+    Edit(usize, String),
+    Open(window::Id),
+    Key(keyboard::key::Named),
+    Geometry,
+    Show,
+    Mode(window::Mode),
+    Exit,
+}
+struct App {
+    values: [String; 2],
+    epoch: u64,
+    window: Option<window::Id>,
+    narrow: bool,
+    moved: bool,
+    log: Arc<Mutex<Logger>>,
+}
+impl App {
+    fn boot(log: Arc<Mutex<Logger>>) -> (Self, Task<Message>) {
+        (
+            Self {
+                values: [String::new(), String::new()],
+                epoch: 0,
+                window: None,
+                narrow: false,
+                moved: false,
+                log,
+            },
+            Task::none(),
+        )
+    }
+    fn update(&mut self, m: Message) -> Task<Message> {
+        self.epoch = self.epoch.checked_add(1).expect("harness epoch exhausted");
+        self.log
+            .lock()
+            .unwrap()
+            .event(&format!("{m:?}"), self.epoch);
+        match m {
+            Message::Edit(i, s) => self.values[i] = s,
+            Message::Open(id) => {
+                self.window = Some(id);
+                return widget::operation::focus("observe-A");
+            }
+            Message::Key(key) => {
+                use keyboard::key::Named::*;
+                match key {
+                    F1 => return widget::operation::focus("observe-A"),
+                    F2 => return widget::operation::focus("observe-B"),
+                    F3 => return widget::operation::select_range("observe-A", 1, 4),
+                    F4 => return widget::operation::select_range("observe-A", 4, 1),
+                    F5 => return widget::operation::move_cursor_to("observe-A", 1),
+                    F6 => self.values[0] = "aé😀e\u{301}👩\u{200d}💻".into(),
+                    F7 => {
+                        self.narrow = !self.narrow;
+                        if let Some(id) = self.window {
+                            return window::resize(
+                                id,
+                                iced::Size::new(if self.narrow { 390.0 } else { 740.0 }, 520.0),
+                            );
+                        }
+                    }
+                    F8 => {
+                        if let Some(id) = self.window {
+                            return window::set_mode(id, window::Mode::Hidden)
+                                .chain(window::mode(id).map(Message::Mode));
+                        }
+                    }
+                    F9 => self.moved = !self.moved,
+                    F10 => return iced::exit(),
+                    F11 => self.log.lock().unwrap().replay(),
+                    _ => {}
+                }
+            }
+            Message::Show => {
+                if let Some(id) = self.window {
+                    return window::set_mode(id, window::Mode::Windowed)
+                        .chain(window::mode(id).map(Message::Mode));
+                }
+            }
+            Message::Mode(window::Mode::Hidden) => {
+                return Task::perform(
+                    async {
+                        std::thread::sleep(std::time::Duration::from_millis(400));
+                    },
+                    |()| Message::Show,
+                );
+            }
+            Message::Mode(_) => {}
+            Message::Exit => return iced::exit(),
+            Message::Geometry => {}
+        }
+        Task::none()
+    }
+    fn view(&self) -> Element<'_, Message> {
+        let input = |i, id| {
+            Observer::wrap(
+                i,
+                self.epoch,
+                self.values[i].clone(),
+                self.log.clone(),
+                text_input(if i == 0 { "Input A" } else { "Input B" }, &self.values[i])
+                    .id(id)
+                    .on_input(move |s| Message::Edit(i, s))
+                    .padding(10),
+            )
+        };
+        container(
+            column![
+                text("Stage 2G public API observer").size(22),
+                text("F1 A | F2 B | F3 forward | F4 reverse | F5 caret 1"),
+                text("F6 Unicode model write | F7 resize | F8 hide/show | F9 move | F10 close"),
+                text("F11 replay a captured old model epoch. No TextPattern provider."),
+                text("Input A"),
+                input(0, "observe-A"),
+                text("Input B"),
+                input(1, "observe-B")
+            ]
+            .spacing(12),
+        )
+        .padding(if self.moved { 70 } else { 22 })
+        .width(iced::Length::Fill)
+        .into()
+    }
+    fn subscription(&self) -> Subscription<Message> {
+        iced::event::listen_with(|event, _, id| match event {
+            Event::Window(window::Event::Opened { .. }) => Some(Message::Open(id)),
+            Event::Window(window::Event::CloseRequested) => Some(Message::Exit),
+            Event::Window(
+                window::Event::Resized(_)
+                | window::Event::Rescaled(_)
+                | window::Event::Moved(_)
+                | window::Event::Focused
+                | window::Event::Unfocused,
+            ) => Some(Message::Geometry),
+            Event::Keyboard(keyboard::Event::KeyPressed {
+                key: keyboard::Key::Named(n),
+                ..
+            }) if matches!(
+                n,
+                keyboard::key::Named::F1
+                    | keyboard::key::Named::F2
+                    | keyboard::key::Named::F3
+                    | keyboard::key::Named::F4
+                    | keyboard::key::Named::F5
+                    | keyboard::key::Named::F6
+                    | keyboard::key::Named::F7
+                    | keyboard::key::Named::F8
+                    | keyboard::key::Named::F9
+                    | keyboard::key::Named::F10
+                    | keyboard::key::Named::F11
+            ) =>
+            {
+                Some(Message::Key(n))
+            }
+            _ => None,
+        })
+    }
+}
+fn main() -> iced::Result {
+    let path = std::env::args().nth(1).expect("fresh log path required");
+    let log = Arc::new(Mutex::new(Logger::new(&path).expect("create-new log")));
+    iced::application(move || App::boot(log.clone()), App::update, App::view)
+        .title("Sei-Desk Stage 2G IME observer")
+        .subscription(App::subscription)
+        .window(window::Settings {
+            size: iced::Size::new(740.0, 520.0),
+            exit_on_close_request: false,
+            ..Default::default()
+        })
+        .run()
+}

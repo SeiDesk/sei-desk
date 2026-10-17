@@ -1,0 +1,290 @@
+[
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs/implementation/evidence-stage2k/README.md",
+    "RecordedSHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362",
+    "CurrentSHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+    "RecordedSHA256": "1AF3693BB94E3B8286398C43203CBC81A31C19E3512C2D23D04385D6F71DD7A0",
+    "CurrentSHA256": "1AF3693BB94E3B8286398C43203CBC81A31C19E3512C2D23D04385D6F71DD7A0",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs/implementation/STAGE-2K-OWNER-DECISIONS.md",
+    "RecordedSHA256": "37D6523F476F15EC49F69D2533F82C2C0A80242EA380F10A3F79D9EE2F44BBC1",
+    "CurrentSHA256": "37D6523F476F15EC49F69D2533F82C2C0A80242EA380F10A3F79D9EE2F44BBC1",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\baseline.json",
+    "RecordedSHA256": "48E0602C9553B6532208358EAF3657A45EB97079E274529584EF1145DF7A21CA",
+    "CurrentSHA256": "48E0602C9553B6532208358EAF3657A45EB97079E274529584EF1145DF7A21CA",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\decision-provenance.json",
+    "RecordedSHA256": "80F1F0CE10E3B046206D73259B562EF719E43DF5286DE2C775B4EBAEDCECD38A",
+    "CurrentSHA256": "80F1F0CE10E3B046206D73259B562EF719E43DF5286DE2C775B4EBAEDCECD38A",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\headless-source-identity-check.json",
+    "RecordedSHA256": "000D052664E98C7932759F0B4287D1C1966D63A169FEBE71BF1BE3BA636140C8",
+    "CurrentSHA256": "000D052664E98C7932759F0B4287D1C1966D63A169FEBE71BF1BE3BA636140C8",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\ignored-binary-identity-check.json",
+    "RecordedSHA256": "37D6BAC24CA6DA9137F2C3F142048D19005717C18F61F30EB522017486AB9DD8",
+    "CurrentSHA256": "37D6BAC24CA6DA9137F2C3F142048D19005717C18F61F30EB522017486AB9DD8",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\owner-decision-record.json",
+    "RecordedSHA256": "5A189C5D1F30DE82F2308E7B5FD2E029F48906534C2AB4E06C701A67FA8D27D3",
+    "CurrentSHA256": "5A189C5D1F30DE82F2308E7B5FD2E029F48906534C2AB4E06C701A67FA8D27D3",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\preservation-before.json",
+    "RecordedSHA256": "F95746EFB8E7283B33E1DF96EBD246F8CE45E448C2DB0F46D28D0190DB7CDB71",
+    "CurrentSHA256": "F95746EFB8E7283B33E1DF96EBD246F8CE45E448C2DB0F46D28D0190DB7CDB71",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\qualification-cases.json",
+    "RecordedSHA256": "A39BAAC980915CF776C3EA6F889D352C054BF1733DF2F5259D984FB928A594FF",
+    "CurrentSHA256": "A39BAAC980915CF776C3EA6F889D352C054BF1733DF2F5259D984FB928A594FF",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\README.md",
+    "RecordedSHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362",
+    "CurrentSHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\review-inputs.json",
+    "RecordedSHA256": "33D30496BDADC46C2F76658A4D9CAF5BFE73B94B46312B69D0DF28EC66105175",
+    "CurrentSHA256": "33D30496BDADC46C2F76658A4D9CAF5BFE73B94B46312B69D0DF28EC66105175",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\stage2j-integrity-check.json",
+    "RecordedSHA256": "71BF668F740151C06AB64CC618D1FBD6E66BA8A4B7E00DC579A23C7B6CEB0A43",
+    "CurrentSHA256": "71BF668F740151C06AB64CC618D1FBD6E66BA8A4B7E00DC579A23C7B6CEB0A43",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\traceability-validation.json",
+    "RecordedSHA256": "F64BF2605093F44BE500664416FFAFA06B5248BB55D7448D9991BE82269DCA52",
+    "CurrentSHA256": "F64BF2605093F44BE500664416FFAFA06B5248BB55D7448D9991BE82269DCA52",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2k/checksums.json",
+    "Path": "docs\\implementation\\evidence-stage2k\\traceability.json",
+    "RecordedSHA256": "8C0AB0E05250DA8ECEB52C22FEF39C41E43A802E619C92EA854C0E055246D4C2",
+    "CurrentSHA256": "8C0AB0E05250DA8ECEB52C22FEF39C41E43A802E619C92EA854C0E055246D4C2",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/archive-verification.json",
+    "RecordedSHA256": "F0F374A62DED01841370494CEEF6992A1465DDE3674201E3866767875B606DC9",
+    "CurrentSHA256": "F0F374A62DED01841370494CEEF6992A1465DDE3674201E3866767875B606DC9",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/baseline.json",
+    "RecordedSHA256": "1D1200BD436935B089ADAFFD527A8AFF466079B75F7FE0BC9C15DF5F3B68A82B",
+    "CurrentSHA256": "1D1200BD436935B089ADAFFD527A8AFF466079B75F7FE0BC9C15DF5F3B68A82B",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/labeledby-audit.json",
+    "RecordedSHA256": "BB279C5DB51E3CBEDB1E1CDC862783CFF111F234F1F9A0C9381DF5541993CAD7",
+    "CurrentSHA256": "BB279C5DB51E3CBEDB1E1CDC862783CFF111F234F1F9A0C9381DF5541993CAD7",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/pr-78-metadata.json",
+    "RecordedSHA256": "9C3BBA82D1C9AB238DF1A4A05EB102C52A6B4D757BAE915213C4E926549EBAD6",
+    "CurrentSHA256": "9C3BBA82D1C9AB238DF1A4A05EB102C52A6B4D757BAE915213C4E926549EBAD6",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/pr-816-metadata.json",
+    "RecordedSHA256": "1F880199FB1E726DFBBFA9DF318A4E31522085F64BB19DACB2DBCDCE06E2818F",
+    "CurrentSHA256": "1F880199FB1E726DFBBFA9DF318A4E31522085F64BB19DACB2DBCDCE06E2818F",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/preservation-before.json",
+    "RecordedSHA256": "03842FC72973D65BE38FA03C886AB17CFE79E535BC0B4F7641BFB26F4E63B5F9",
+    "CurrentSHA256": "03842FC72973D65BE38FA03C886AB17CFE79E535BC0B4F7641BFB26F4E63B5F9",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/provider-search-inventory.json",
+    "RecordedSHA256": "760CC7B73F8BE1C166F0998D36A38593DC88C331183A02DF1891CEED34ABA95C",
+    "CurrentSHA256": "760CC7B73F8BE1C166F0998D36A38593DC88C331183A02DF1891CEED34ABA95C",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/published-identities.json",
+    "RecordedSHA256": "B6E6AA69A130B1026B6DB53C3FEAF1B2BFFB9224802DE8DD9ABD85F631D8C412",
+    "CurrentSHA256": "B6E6AA69A130B1026B6DB53C3FEAF1B2BFFB9224802DE8DD9ABD85F631D8C412",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r01-response.json",
+    "RecordedSHA256": "855C2507B1BD4123F94BC4DEAF61C88F96487BD1C094DDFB9A59039C79725D78",
+    "CurrentSHA256": "855C2507B1BD4123F94BC4DEAF61C88F96487BD1C094DDFB9A59039C79725D78",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r02-response.json",
+    "RecordedSHA256": "7C6DC1C3B4365667D4B661CED7BE90EBFC7AE71E8BAB2D8D5D269AAF059BFC5C",
+    "CurrentSHA256": "7C6DC1C3B4365667D4B661CED7BE90EBFC7AE71E8BAB2D8D5D269AAF059BFC5C",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r03-response.json",
+    "RecordedSHA256": "BFF569EAEC944592B58CC28CCA8D644CA19CC2C9FB1EB0B0D07CDDA7A1DA64F9",
+    "CurrentSHA256": "BFF569EAEC944592B58CC28CCA8D644CA19CC2C9FB1EB0B0D07CDDA7A1DA64F9",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r04-response.json",
+    "RecordedSHA256": "C3A3A3954E539BBE3255A236D358E2FA0E2DF03836F47DED7C4D5EE73CAA0D15",
+    "CurrentSHA256": "C3A3A3954E539BBE3255A236D358E2FA0E2DF03836F47DED7C4D5EE73CAA0D15",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r05-response.json",
+    "RecordedSHA256": "7F1E8A2D49A484D0A0781526FEB404E0456CCABF71A9A587FCBB2429FAFB58C0",
+    "CurrentSHA256": "7F1E8A2D49A484D0A0781526FEB404E0456CCABF71A9A587FCBB2429FAFB58C0",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/r06-response.json",
+    "RecordedSHA256": "C575A3CAD986D4CF8B928146869A9846A35739F453F6DAEE53DECDACCB91E274",
+    "CurrentSHA256": "C575A3CAD986D4CF8B928146869A9846A35739F453F6DAEE53DECDACCB91E274",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/README.md",
+    "RecordedSHA256": "A319C28DD3159A53DB02D27EA8DADFD656F64595494CECE0D90C971A39CD5445",
+    "CurrentSHA256": "A319C28DD3159A53DB02D27EA8DADFD656F64595494CECE0D90C971A39CD5445",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/retrieval-ledger.json",
+    "RecordedSHA256": "5E1155FE3FF2BF2F2B0A155893FD8FDD286D615CF65CF7D1E3F499AE2508EC9E",
+    "CurrentSHA256": "5E1155FE3FF2BF2F2B0A155893FD8FDD286D615CF65CF7D1E3F499AE2508EC9E",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/scrollpattern-audit.json",
+    "RecordedSHA256": "B81ED5EAABF877FE2B85827B94911A558D7341B5700B04A68EAF7F772463E57A",
+    "CurrentSHA256": "B81ED5EAABF877FE2B85827B94911A558D7341B5700B04A68EAF7F772463E57A",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/source-excerpts.txt",
+    "RecordedSHA256": "0EE7E23B07B4767E7EB2C2280069EA45405178E127B6D3A990FA915DF8CACCD4",
+    "CurrentSHA256": "0EE7E23B07B4767E7EB2C2280069EA45405178E127B6D3A990FA915DF8CACCD4",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/source-inventory.json",
+    "RecordedSHA256": "951C3EE6640C26ED232351820EF5CB07749C64C3981F051AD0AF4CBDFF38AB63",
+    "CurrentSHA256": "951C3EE6640C26ED232351820EF5CB07749C64C3981F051AD0AF4CBDFF38AB63",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/evidence-stage2l/web-source-observations.json",
+    "RecordedSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "CurrentSHA256": "4DA82E1988F0F37213C7A67A3CD4BAD800442995BB5C065C0C06F67AB453A1F0",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  },
+  {
+    "Manifest": "docs/implementation/evidence-stage2l/checksums.json",
+    "Path": "docs/implementation/STAGE-2L-UPSTREAM-PROVIDER-CAPABILITY-REVIEW.md",
+    "RecordedSHA256": "2800929CFE19BFBB45B0ADEBD401F7AB2952330F75CC860967ADF47C1964C72C",
+    "CurrentSHA256": "2800929CFE19BFBB45B0ADEBD401F7AB2952330F75CC860967ADF47C1964C72C",
+    "Matches": true,
+    "EvidenceClass": "Checksum inspection only; not runtime/source acceptance rerun"
+  }
+]

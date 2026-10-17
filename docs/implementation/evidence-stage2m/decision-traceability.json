@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "stage": "2M",
+  "status": "PREPARED FOR ACTUAL OWNER; NO CONSENT RECORDED",
+  "source_owner_schema_version": 1,
+  "source_owner_record_unchanged": true,
+  "experiment": "NO-GO",
+  "production_accessibility": "BLOCKED",
+  "production_ui_shell": "UNAUTHORIZED",
+  "decisions": [
+    {
+      "id": "O01",
+      "exact_stage2k_question": "Review cadence and finite horizon",
+      "stage2k_required_record_verbatim": "Explicit approval or revised finite dates, reviewer effort limit, start/end and missed-review/extension policy.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/0/subject",
+        "required_record_pointer": "/decisions/0/required_record",
+        "status_pointer": "/decisions/0/status"
+      },
+      "why_now": "Further reviews need a finite effort/checkpoint policy; prior dates are recommendations and no review automation is authorized.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2K-OWNER-DECISIONS.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2l/retrieval-ledger.json",
+          "class": "Historical source/release evidence; no refresh in M"
+        }
+      ],
+      "remaining_unknown": "Whether owner ratifies cadence, effort cap, checkpoint, missed reviews and renewal; no approved calendar or continuing review budget.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE J's proposed bounded policy explicitly, with an accountable reviewer and recorded scope.",
+          "consequence": "Manual requested reviews follow the ratified limits; no scheduling or dependency approval."
+        },
+        {
+          "id": "B",
+          "choice": "APPROVE a different explicit finite interval/horizon and effort limit.",
+          "consequence": "New written policy required; does not erase historical review dates."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT the recurring review proposal or DEFER the decision; keep research request-by-request/no-go.",
+          "consequence": "No recurring commitment; pins and experiment gates unchanged."
+        }
+      ],
+      "consequence_or_effort_basis": "J recommends half an engineer-day per monthly review and a three-calendar-month horizon; these are planning recommendations, not approved time/spending or upstream promises.",
+      "authority_required": "Actual project owner or explicitly authorized delegate for review scope/time; name and delegation are not established here.",
+      "prerequisites": "Name reviewer, ratify bounded dates/effort, specify failure/retry/checkpoint handling without creating automation.",
+      "exact_closure_information": "An attributable APPROVE/REJECT/DEFER for O01, exact start/interval/end or no-recurring policy, reviewer effort limit, missed/failed review treatment and owner checkpoint/extension rule.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O02",
+      "exact_stage2k_question": "Named accountable roles",
+      "stage2k_required_record_verbatim": "Actual names or explicit role identifiers accepted by owner, responsibilities and independence; no assignment from local account or Git identity.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/1/subject",
+        "required_record_pointer": "/decisions/1/required_record",
+        "status_pointer": "/decisions/1/status"
+      },
+      "why_now": "No candidate experiment can rely on invented staff or unavailable physical/AT operators; independent review is a distinct role.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2d/manual-attestation.json",
+          "class": "Historical automated/human evidence; no new AT acceptance"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2h/operator-readiness.json",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        }
+      ],
+      "remaining_unknown": "Actual owner/delegates, named willing maintainer/reviewer/operator, independence, availability and authority boundaries.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE named role assignments and delegation boundaries after confirming availability.",
+          "consequence": "Assignments create responsibility only, not experiment or spending approval."
+        },
+        {
+          "id": "B",
+          "choice": "APPROVE a limited research-only team while leaving operator-dependent work no-go.",
+          "consequence": "No native qualification without appropriately assigned available testers and separate approval."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT proposed staffing or DEFER until people/authority are available.",
+          "consequence": "No personnel assigned by this package; runtime remains no-go."
+        }
+      ],
+      "consequence_or_effort_basis": "No staffing capacity, hiring cost or budget is established in the record; no new estimate.",
+      "authority_required": "Actual owner or authorized personnel/resource delegate; independent reviewer must actually be independent of the implementation under review.",
+      "prerequisites": "Verify authority and willing availability; do not derive owner or staff from local username, Git identity or previous aggregate test attestation.",
+      "exact_closure_information": "Named Rust/Windows maintainer, independent evidence reviewer, human accessibility operator and project owner/delegate; responsibilities, availability, independence and authority evidence.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O03",
+      "exact_stage2k_question": "Supported configurations and accessibility modalities",
+      "stage2k_required_record_verbatim": "Versioned support matrix and unavailable mandatory cases, operator availability, configuration-change consent if any, resource/geometry thresholds. No existing host sample qualifies all Windows 10/11.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/2/subject",
+        "required_record_pointer": "/decisions/2/required_record",
+        "status_pointer": "/decisions/2/status"
+      },
+      "why_now": "Current native evidence covers a specific host; proposed catalog acceptance needs explicit build/display/input/AT scope and measurable limits.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2k/qualification-cases.json",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2d/README.md",
+          "class": "Historical automated/human evidence; no new AT acceptance"
+        }
+      ],
+      "remaining_unknown": "Exact supported builds/architectures, layouts/languages, AT versions, display profiles, tester access and numeric resource/geometry thresholds.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE a versioned entry-test matrix plus distinct release matrix, with all mandatory K cases retained.",
+          "consequence": "A scoped qualification target, not a claim those configurations already pass."
+        },
+        {
+          "id": "B",
+          "choice": "APPROVE only a research-host inventory; reserve product support commitments.",
+          "consequence": "Inventory may inform planning but cannot close release or experiment profile requirements."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT support commitment or DEFER until hosts/operators are available.",
+          "consequence": "No unsupported Windows/AT coverage claims; qualification blocked."
+        }
+      ],
+      "consequence_or_effort_basis": "Historical one-host short measurements are not performance budgets or support cost estimates; broader qualification effort is not quantified.",
+      "authority_required": "Actual owner or expressly delegated product/support authority, informed by Windows/accessibility reviewers; none is assigned here.",
+      "prerequisites": "Available approved test environments/operators, documented entry/release split; separate consent for any configuration changes.",
+      "exact_closure_information": "Versioned exact Windows edition/build/architecture, keyboard/layout/language, monitor/origin/DPI, contrast/motion and AT matrix; mandatory versus excluded cases, numeric queue/metadata/resource/geometry limits and evidence/change-consent plan.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O04",
+      "exact_stage2k_question": "Product value of a limited noneditable catalog",
+      "stage2k_required_record_verbatim": "Actual product-value decision and exact candidate scope/design exception; existing approved grid/search catalog is not silently replaced.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/3/subject",
+        "required_record_pointer": "/decisions/3/required_record",
+        "status_pointer": "/decisions/3/status"
+      },
+      "why_now": "The noneditable catalog is a conditional product hypothesis, distinct from the approved searchable catalog design.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2J-NONEDITABLE-UI-FEASIBILITY.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/design/SEI-DESK-UI-UX-SPEC.md",
+          "class": "Existing design contract; no modification"
+        }
+      ],
+      "remaining_unknown": "Whether no-search browsing has enough user value, target users and acceptable usability trade-offs; no user validation or scope exception approval.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE the limited catalog's value and exact qualification-scope exception, not implementation.",
+          "consequence": "Allows consideration of O05; does not approve the experiment or replace approved designs."
+        },
+        {
+          "id": "B",
+          "choice": "DEFER product-value decision pending a separately requested owner/user assessment.",
+          "consequence": "No user research, feature build or design change is started here."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT the limited catalog and retain headless scope.",
+          "consequence": "No reduced product UI; editable launcher and shell remain independently blocked."
+        }
+      ],
+      "consequence_or_effort_basis": "J records modest conditional benefit and large-catalog usability risk, not validated benefit, ROI or a delivery estimate.",
+      "authority_required": "Actual product/project owner or explicitly delegated scope authority.",
+      "prerequisites": "Acknowledge no editable input/search/type-ahead/global activation and existing grid/search design distinction.",
+      "exact_closure_information": "Explicit value decision, intended users/use case, scope and constraints, reason for any isolated design exception, and whether O05 should even be considered.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O05",
+      "exact_stage2k_question": "Authorize an isolated experiment with bounded scope",
+      "stage2k_required_record_verbatim": "Explicit phase approval, allowed paths/versions, named reviewer/operator, start/stop dates or engineer-hour/run cap, queue/metadata/resource limits, fixture permission separately for B, stop/resume criteria. No authority recorded yet.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/4/subject",
+        "required_record_pointer": "/decisions/4/required_record",
+        "status_pointer": "/decisions/4/status"
+      },
+      "why_now": "A request to prepare or approve plans is not permission to implement a dependency-changing experiment; known provider prerequisites still fail.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2k/qualification-cases.json",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2L-UPSTREAM-PROVIDER-CAPABILITY-REVIEW.md",
+          "class": "Historical source/release evidence; no refresh in M"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        }
+      ],
+      "remaining_unknown": "No actual authorization, exact candidate versions/paths, approved effort/run limits, operator/profile/resource budgets or real-fixture phase permission.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE a precisely bounded conditional Phase A authorization only after named prerequisites and source compatibility evidence exist.",
+          "consequence": "No execution while O06/provider/operator/profile gates remain unmet; fixed nonpersonal data and zero real app launches initially."
+        },
+        {
+          "id": "B",
+          "choice": "Approve only a separately requested read-only candidate audit; DEFER experiment authorization.",
+          "consequence": "No manifests/locks/runtime changed and no native tests."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT or DEFER any experiment; remain no-go.",
+          "consequence": "Existing services/evidence retained; no spend or implementation inferred."
+        }
+      ],
+      "consequence_or_effort_basis": "K's ten-minute per-owned-run cap and fixed fixture sizes are proposals, not approved total effort/budget; no experiment cost is established.",
+      "authority_required": "Actual owner or expressly delegated authority for the exact code/dependency/time/test scope; not automatic authority of a tester or reviewer.",
+      "prerequisites": "Applicable O01-O04/O06 decisions; stable provider support, license/MSRV/transitive review, available testers, bounded command/cleanup design and exact allowed paths/dependency changes.",
+      "exact_closure_information": "Explicit phase A decision with exact source/dependency/lock scope, named reviewers/operator, dates or engineer-hour/run cap, approved numeric limits/stop conditions and cleanup; Phase B exact harmless-fixture launch requires separate authorization.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O06",
+      "exact_stage2k_question": "Approved upstream resolution of label/container scrolling gaps",
+      "stage2k_required_record_verbatim": "Exact cooperating versions/revisions/checksums, source/API/license/MSRV audit and approved adoption scope; no label removal, ScrollItem substitution or silent pagination.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/5/subject",
+        "required_record_pointer": "/decisions/5/required_record",
+        "status_pointer": "/decisions/5/status"
+      },
+      "why_now": "L found neither required Windows-provider path in the pinned stable stack; owner approval cannot turn an absent mapping into a verified capability.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2L-UPSTREAM-PROVIDER-CAPABILITY-REVIEW.md",
+          "class": "Historical source/release evidence; no refresh in M"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2l/labeledby-audit.json",
+          "class": "Historical source/release evidence; no refresh in M"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2l/scrollpattern-audit.json",
+          "class": "Historical source/release evidence; no refresh in M"
+        },
+        {
+          "path": "docs/implementation/evidence-stage2l/pr-816-metadata.json",
+          "class": "Historical source/release evidence; no refresh in M"
+        },
+        {
+          "path": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        }
+      ],
+      "remaining_unknown": "No adequate stable candidate or approved candidate-adoption scope; native target/lifecycle/scroll properties/actions remain untested.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE the evidence requirements for a future upstream-supported candidate, retaining both blockers until satisfied.",
+          "consequence": "Policy acceptance is not adoption; requires exact published source then separate isolated authorization/runtime evidence."
+        },
+        {
+          "id": "B",
+          "choice": "Request a bounded read-only recheck only if a concrete relevant artifact/change justifies it.",
+          "consequence": "Requires its own research request; no monitoring or PR contact created."
+        },
+        {
+          "id": "C",
+          "choice": "REJECT adoption or DEFER remediation decision and retain pins/no-go.",
+          "consequence": "No label removal, ScrollItem substitution, native override or silent pagination."
+        }
+      ],
+      "consequence_or_effort_basis": "L supplied focused source evidence, not remediation cost or release timing; no engineering estimate for an absent candidate.",
+      "authority_required": "Actual owner or explicitly delegated dependency/compatibility authority, with source and native evidence review.",
+      "prerequisites": "Exact stable cooperating versions/revisions/checksums, truthful label-target and complete container-scroll semantics, license/MSRV/transitive/Windows compatibility audit.",
+      "exact_closure_information": "Explicit remediation/adoption-policy decision identifying required evidence and review authority; exact candidate if one exists, isolated change scope and native acceptance prerequisites. Unresolved technical capability must remain blocked regardless of approval.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O07",
+      "exact_stage2k_question": "Triggers for reconsidering Options B or C",
+      "stage2k_required_record_verbatim": "Explicit research authorization, maintenance owner/budget, bounded scope and stop gates; no custom widget/native-control/framework alternative approved.",
+      "source": {
+        "path": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+        "subject_pointer": "/decisions/6/subject",
+        "required_record_pointer": "/decisions/6/required_record",
+        "status_pointer": "/decisions/6/status"
+      },
+      "why_now": "Finite waiting needs a decision trigger, but no architecture alternative or implementation is authorized by expiry or an open PR.",
+      "available_evidence": [
+        {
+          "path": "docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2K-OWNER-DECISIONS.md",
+          "class": "Existing decision/plan; not owner consent or runtime proof"
+        },
+        {
+          "path": "docs/implementation/STAGE-2L-UPSTREAM-PROVIDER-CAPABILITY-REVIEW.md",
+          "class": "Historical source/release evidence; no refresh in M"
+        }
+      ],
+      "remaining_unknown": "Whether and when owner would fund B/C investigation, who maintains it, acceptable scope/cost and stop rules.",
+      "options": [
+        {
+          "id": "A",
+          "choice": "APPROVE explicit reconsideration triggers only, retaining A until a new scoped decision.",
+          "consequence": "A trigger requests a decision; it does not authorize custom input/native boundary/framework work."
+        },
+        {
+          "id": "B",
+          "choice": "REJECT B/C for now and continue only bounded upstream-first/headless choices.",
+          "consequence": "No automatic framework switch or workaround."
+        },
+        {
+          "id": "C",
+          "choice": "DEFER reconsideration policy; retain current no-go and seek owner input at an explicitly chosen checkpoint.",
+          "consequence": "No new checkpoint or review is scheduled here; no response is not approval."
+        }
+      ],
+      "consequence_or_effort_basis": "I has historical rough A/B/C planning estimates with assumptions; they are not measured quotes, current budgets, spending consent or guaranteed timelines. No fresh estimate.",
+      "authority_required": "Actual architecture/product/resource owner or explicit delegate; identity/authority not inferred here.",
+      "prerequisites": "Named maintenance ownership, approved finite investigation budget/scope, gate-preserving acceptance criteria; any dependency/framework/implementation change needs its own explicit authorization.",
+      "exact_closure_information": "Trigger conditions, decision authority, optional evidence/review date, permitted research-only scope, maintenance/budget/stop prerequisites; separate future approval needed to start B or C.",
+      "current_status": "UNRESOLVED",
+      "owner_decision": null,
+      "authorized_person_or_role": null,
+      "approval_date": null,
+      "authority_reference": null
+    }
+  ]
+}

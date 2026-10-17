@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "instructions": "Blank preparation template only. Actual authorized owner supplies a separate attributable response for one decision. All null values mean blank; no consent is recorded. Decisions remain UNRESOLVED until actual authority and exact scope are recorded in a separately authorized follow-up.",
+  "allowed_decision_values": [
+    "APPROVE",
+    "REJECT",
+    "DEFER"
+  ],
+  "owner_input": {
+    "decision_id": null,
+    "decision": null,
+    "rationale": null,
+    "scope_and_constraints": null,
+    "authorized_person_or_role": null,
+    "approval_date": null,
+    "required_evidence": null,
+    "review_date_if_applicable": null,
+    "authority_or_delegation_reference": null
+  }
+}

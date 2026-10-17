@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "experiments/iced-ime-observer/target/iced-ime-observer.exe",
+    "RecordedSource": "docs/implementation/evidence-stage2g/build-05/identity.json",
+    "HistoricalSHA256": "FBFD9C5F93767E2C45A886A553DF0DC243FF2FABD4675167499B04C7F67B1481",
+    "ActualSHA256": "FBFD9C5F93767E2C45A886A553DF0DC243FF2FABD4675167499B04C7F67B1481",
+    "Matches": true,
+    "Execution": "Not run"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/target/release/accesskit-iced-spike.exe",
+    "RecordedSource": "docs/implementation/evidence-stage2e/pattern-observation/observations.json",
+    "HistoricalSHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "ActualSHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Matches": true,
+    "Execution": "Not run"
+  }
+]

@@ -1,0 +1,11 @@
+# Synthetic driver notes
+
+These notes reconstruct the executed Computer Use calls and checked runtime logs; they are not physical input or a new UIA test. The computer-use skill was read, @oai/sky initialized, and the unique returned harness window selected. Screenshots were observed in tool outputs, not duplicated into evidence.
+
+Run 01: window 918932, own PID in identity.json. Observed empty focused A; clicked the displayed input. sky.type_text("abcd") attempted clipboard-style input but actual A remained empty (Edit(0, "") appeared); not a successful abcd entry. F6 set the explicit Unicode fixture through harness model logic, not typing or IME. Direct synthetic a inserted at beginning; F5 moved to grapheme 1 through public operation; b inserted in middle; End and c inserted at end. F3/F4 issued public directional selection operations, Right collapsed selection. Shift+Left made a real keyboard selection, x replaced it. End then three BackSpace calls removed c, the ZWJ emoji, then combining e+acute as editing units. F7 resized; F9 moved content by changing padding; F2 focused B; z typed into B. F8 hid/reshowed, confirmed by public mode readback. F11 referenced an actual earlier captured model epoch and rejected that deliberate replay. F10 closed normally.
+
+One attempted state refresh used both screenshot/text=false and was rejected by Computer Use AFTER its F5 action. Reobserved without retrying F5. This is retained as a driver error, not a runtime failure or duplicate action.
+
+Run 02: reopened as a new process/window 395400. Same observation methods, source version build-05. F12 wrote the bounded long fixture via model logic and public move-to-end operation. F7 narrowed; Home moved to beginning; F4 selected reverse (4,1); Left collapsed to 1; F10 closed normally. Immediate post-close enumeration briefly returned a closing window; runner subsequently observed exit 0 and a later list_windows returned none. Do not equate immediate enumeration with hanging shutdown.
+
+Real OS IME begin/update/commit/cancel, physical keyboard and Narrator were not performed. Configuration query in input-method-configuration.json yielded null fields; it is inconclusive, NOT proof that no IME is installed. No synthetic InputMethod::Preedit event or system input-setting change was used.

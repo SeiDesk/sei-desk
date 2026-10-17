@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "stage": "2K",
+  "recorded_on": "2026-10-17",
+  "known_limited_prior_decisions": [
+    {
+      "decision": "Option A upstream-first selected",
+      "authority": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+      "scope": "Holding strategy; not cadence or experiment ratification"
+    },
+    {
+      "decision": "Programmatic text capabilities deferred for headless Stage 3 only",
+      "authority": "docs/implementation/evidence-stage2d/manual-attestation.json",
+      "scope": "No production UI permission"
+    }
+  ],
+  "roles": {
+    "rust_windows_maintainer": null,
+    "independent_evidence_reviewer": null,
+    "human_accessibility_operator": null,
+    "project_owner": null
+  },
+  "experiment_authorized": false,
+  "experiment_go": false,
+  "production_accessibility": "BLOCKED",
+  "decisions": [
+    {
+      "id": "O01",
+      "subject": "Review cadence and finite horizon",
+      "recommendation": "Ratify monthly reviews on 2026-11-17 and 2026-12-17 with final owner checkpoint 2027-01-17, per Stage 2J; no automation.",
+      "required_record": "Explicit approval or revised finite dates, reviewer effort limit, start/end and missed-review/extension policy.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O02",
+      "subject": "Named accountable roles",
+      "recommendation": "Name Rust/Windows maintainer, independent evidence reviewer, human accessibility operator and project owner; verify willing availability.",
+      "required_record": "Actual names or explicit role identifiers accepted by owner, responsibilities and independence; no assignment from local account or Git identity.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O03",
+      "subject": "Supported configurations and accessibility modalities",
+      "recommendation": "Approve exact Windows editions/build ranges, architectures, keyboard layouts/languages, DPI/monitors, high contrast/motion profiles, Narrator versions and other declared AT; distinguish entry and release coverage.",
+      "required_record": "Versioned support matrix and unavailable mandatory cases, operator availability, configuration-change consent if any, resource/geometry thresholds. No existing host sample qualifies all Windows 10/11.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O04",
+      "subject": "Product value of a limited noneditable catalog",
+      "recommendation": "Decide whether browsing without search or shell activation warrants a qualification effort; otherwise retain headless scope.",
+      "required_record": "Actual product-value decision and exact candidate scope/design exception; existing approved grid/search catalog is not silently replaced.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O05",
+      "subject": "Authorize an isolated experiment with bounded scope",
+      "recommendation": "Only consider a fixed nonpersonal single-selection list with separate Launch/Refresh/status in an ordinary window after provider prerequisites; no actual application launch initially.",
+      "required_record": "Explicit phase approval, allowed paths/versions, named reviewer/operator, start/stop dates or engineer-hour/run cap, queue/metadata/resource limits, fixture permission separately for B, stop/resume criteria. No authority recorded yet.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O06",
+      "subject": "Approved upstream resolution of label/container scrolling gaps",
+      "recommendation": "Require exact stable published provider source proving LabeledBy and container ScrollPattern; approve any isolated dependency experiment separately and verify native runtime properties/methods.",
+      "required_record": "Exact cooperating versions/revisions/checksums, source/API/license/MSRV audit and approved adoption scope; no label removal, ScrollItem substitution or silent pagination.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    },
+    {
+      "id": "O07",
+      "subject": "Triggers for reconsidering Options B or C",
+      "recommendation": "Owner checkpoint, rejected adequate upstream candidate or explicit unacceptable waiting cost can trigger a new decision; never automatic adoption.",
+      "required_record": "Explicit research authorization, maintenance owner/budget, bounded scope and stop gates; no custom widget/native-control/framework alternative approved.",
+      "status": "UNRESOLVED",
+      "decision": null,
+      "approved_by": null,
+      "approved_at": null,
+      "authority_reference": null
+    }
+  ]
+}

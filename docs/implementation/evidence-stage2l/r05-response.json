@@ -1,0 +1,21 @@
+{
+  "TotalCount": 1,
+  "Incomplete": false,
+  "Items": [
+    {
+      "number": 78,
+      "title": "Generate node name from `labelled_by` relationship",
+      "state": "closed",
+      "html_url": "https://github.com/AccessKit/accesskit/pull/78",
+      "updated_at": "2021-12-17T20:45:56Z",
+      "pull_request": {
+        "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/78",
+        "html_url": "https://github.com/AccessKit/accesskit/pull/78",
+        "diff_url": "https://github.com/AccessKit/accesskit/pull/78.diff",
+        "patch_url": "https://github.com/AccessKit/accesskit/pull/78.patch",
+        "merged_at": "2021-12-17T20:45:55Z"
+      }
+    }
+  ],
+  "Interpretation": "Bounded metadata context only; title/closure is not source or released capability proof"
+}

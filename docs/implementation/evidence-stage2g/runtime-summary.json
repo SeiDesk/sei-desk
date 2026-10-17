@@ -1,0 +1,72 @@
+[
+  {
+    "Run": "run-01",
+    "Rows": 2048,
+    "PreeditNotNull": 0,
+    "Attributed": 559,
+    "InheritedAmbiguous": 485,
+    "StaleModelEpoch": 0,
+    "ReplayChecks": [
+      {
+        "kind": "deliberate_stale_delivery_probe",
+        "original_seq": 1729,
+        "original_epoch": 27,
+        "accepted_model_epoch": false
+      }
+    ],
+    "ActualModeEvents": [
+      {
+        "kind": "app_event",
+        "epoch": 23,
+        "event": "Mode(Hidden)"
+      },
+      {
+        "kind": "app_event",
+        "epoch": 26,
+        "event": "Mode(Windowed)"
+      }
+    ],
+    "LastRecord": {
+      "kind": "logger_closed",
+      "rows": 2048
+    },
+    "Identity": {
+      "UTC": "2026-10-17T05:25:29.2916761Z",
+      "OS": "Microsoft Windows NT 10.0.26300.0",
+      "BinarySHA256": "CA3F9F4B1562DEE8FF18C96C3890582A05316F8C47C257B105EDB8D6D13BD8A4",
+      "Pid": 10768,
+      "BoundSeconds": 600,
+      "InputMethod": "Record actual driver separately; no synthetic IME events"
+    },
+    "Cleanup": {
+      "ExitCode": 0,
+      "ChildRemaining": false
+    }
+  },
+  {
+    "Run": "run-02",
+    "Rows": 56,
+    "PreeditNotNull": 0,
+    "Attributed": 7,
+    "InheritedAmbiguous": 7,
+    "StaleModelEpoch": 0,
+    "ReplayChecks": [],
+    "ActualModeEvents": [],
+    "LastRecord": {
+      "kind": "logger_closed",
+      "rows": 56
+    },
+    "Identity": {
+      "UTC": "2026-10-17T05:31:52.1515207Z",
+      "OS": "Microsoft Windows NT 10.0.26300.0",
+      "BinarySHA256": "FBFD9C5F93767E2C45A886A553DF0DC243FF2FABD4675167499B04C7F67B1481",
+      "Pid": 23148,
+      "BoundSeconds": 600,
+      "InputMethod": "Record actual driver separately; no synthetic IME events"
+    },
+    "Cleanup": {
+      "ExitCode": 0,
+      "ChildRemaining": false
+    }
+  }
+]

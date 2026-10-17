@@ -1,0 +1,224 @@
+[
+  {
+    "Kind": "PublishedRegistryMetadata",
+    "URL": "https://crates.io/api/v1/crates/iced",
+    "UTC": "2026-10-17T07:23:57.9017743Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "17650AF8CC597394589525946D87A4EB805386116B1974F22BBE8202A1AA56E3",
+    "Package": "iced",
+    "MaxStableVersion": "0.14.0",
+    "NewestVersion": "0.14.0",
+    "Versions": [
+      {
+        "num": "0.14.0",
+        "yanked": false,
+        "created_at": "2025-12-07T20:51:51.386769Z",
+        "checksum": "000e01026c93ba643f8357a3db3ada0e6555265a377f6f9291c472f6dd701fb3"
+      },
+      {
+        "num": "0.13.1",
+        "yanked": false,
+        "created_at": "2024-09-19T05:24:46.818914Z",
+        "checksum": "88acfabc84ec077eaf9ede3457ffa3a104626d79022a9bf7f296093b1d60c73f"
+      },
+      {
+        "num": "0.13.0",
+        "yanked": false,
+        "created_at": "2024-09-18T01:37:03.774574Z",
+        "checksum": "44ccdb0d1a25ff7581e75991229857c353c87d79c199d375af37d264f6fbd06d"
+      }
+    ]
+  },
+  {
+    "Kind": "PublishedRegistryMetadata",
+    "URL": "https://crates.io/api/v1/crates/iced_widget",
+    "UTC": "2026-10-17T07:23:58.7794748Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "78B466DD6215104498820FD713F39B53D66B587028423D29C2A695E44CF06280",
+    "Package": "iced_widget",
+    "MaxStableVersion": "0.14.2",
+    "NewestVersion": "0.14.2",
+    "Versions": [
+      {
+        "num": "0.14.2",
+        "yanked": false,
+        "created_at": "2025-12-11T04:58:04.240434Z",
+        "checksum": "b1596afa0d3109c2618e8bc12bae6c11d3064df8f95c42dfce570397dbe957ab"
+      },
+      {
+        "num": "0.14.1",
+        "yanked": false,
+        "created_at": "2025-12-08T20:39:35.311478Z",
+        "checksum": "f86f6948998a5e031849afae1bb852f3b100c71572befa0be70b19075dcb2163"
+      },
+      {
+        "num": "0.14.0",
+        "yanked": false,
+        "created_at": "2025-12-07T20:51:40.752787Z",
+        "checksum": "b698f173f370d959cac589c2000268b44862543d6995cf8f2934cf07afad2e54"
+      }
+    ]
+  },
+  {
+    "Kind": "PublishedRegistryMetadata",
+    "URL": "https://crates.io/api/v1/crates/accesskit",
+    "UTC": "2026-10-17T07:23:59.6411023Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "3C39D6FC5F89C1B04F2DE9AB2E6D0612E5DD564C0268614DBBC392DFAA354634",
+    "Package": "accesskit",
+    "MaxStableVersion": "0.25.1",
+    "NewestVersion": "0.25.1",
+    "Versions": [
+      {
+        "num": "0.25.1",
+        "yanked": false,
+        "created_at": "2026-09-25T19:40:54.207184Z",
+        "checksum": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932"
+      },
+      {
+        "num": "0.25.0",
+        "yanked": false,
+        "created_at": "2026-08-29T09:18:11.07223Z",
+        "checksum": "438a7081a65b95c668db56591a4fef9bc5dad275f448bd6223fc6949d823db38"
+      },
+      {
+        "num": "0.24.1",
+        "yanked": false,
+        "created_at": "2026-06-12T13:23:59.640896Z",
+        "checksum": "d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320"
+      }
+    ]
+  },
+  {
+    "Kind": "PublishedRegistryMetadata",
+    "URL": "https://crates.io/api/v1/crates/accesskit_windows",
+    "UTC": "2026-10-17T07:24:00.5071232Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "4BB23DD680991F367028B2183E39073ADAF0911353E21E308412BBA3E8BCC670",
+    "Package": "accesskit_windows",
+    "MaxStableVersion": "0.35.1",
+    "NewestVersion": "0.35.1",
+    "Versions": [
+      {
+        "num": "0.35.1",
+        "yanked": false,
+        "created_at": "2026-09-25T19:41:00.899523Z",
+        "checksum": "ce63f35d6bdcf59f26b76b3379063f738e6412cef46999cc772d46aa3de35adb"
+      },
+      {
+        "num": "0.35.0",
+        "yanked": false,
+        "created_at": "2026-08-29T09:18:18.185843Z",
+        "checksum": "a59e8d7160cbac991c1345c99153783ab96423644ccb1f20617cf80c97596aa1"
+      },
+      {
+        "num": "0.34.0",
+        "yanked": false,
+        "created_at": "2026-07-14T17:07:47.908459Z",
+        "checksum": "106c2b961215864d1c2e703ee63269c25c4e80a577ffb2c1017b9c17dcdf83a1"
+      }
+    ]
+  },
+  {
+    "Kind": "PublishedRegistryMetadata",
+    "URL": "https://crates.io/api/v1/crates/accesskit_consumer",
+    "UTC": "2026-10-17T07:24:01.3818087Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "C9EA636B71841552E99704D85321985ACE3477ECB2FCF8CAEBE77596FD371A6E",
+    "Package": "accesskit_consumer",
+    "MaxStableVersion": "0.39.1",
+    "NewestVersion": "0.39.1",
+    "Versions": [
+      {
+        "num": "0.39.1",
+        "yanked": false,
+        "created_at": "2026-09-25T19:40:56.422234Z",
+        "checksum": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344"
+      },
+      {
+        "num": "0.39.0",
+        "yanked": false,
+        "created_at": "2026-08-29T09:18:13.539189Z",
+        "checksum": "cc882fa0c9c24c53649e256311b51046cf36eca9a8f7e54ff4ef682160b0cb27"
+      },
+      {
+        "num": "0.38.0",
+        "yanked": false,
+        "created_at": "2026-07-14T17:05:45.16875Z",
+        "checksum": "5d10a236f96f87d70732e44520046785431ef01d5bcd6b041317bfadd2f88245"
+      }
+    ]
+  },
+  {
+    "Kind": "DevelopmentTrackingNotRelease",
+    "URL": "https://api.github.com/repos/iced-rs/iced/issues/552",
+    "PageURL": "https://github.com/iced-rs/iced/issues/552",
+    "UTC": "2026-10-17T07:24:01.8339491Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "9DAE8989B306E10115C97B49FB50E75A85D0DA0963DE4DE92A46EDEDFA8064DE",
+    "Number": 552,
+    "Title": "Implement accessibility support",
+    "State": "open",
+    "Draft": null,
+    "Merged": null,
+    "MergedAt": null,
+    "ClosedAt": null,
+    "UpdatedAt": "2026-02-04T08:56:09Z",
+    "HeadSHA": null,
+    "BaseSHA": null
+  },
+  {
+    "Kind": "DevelopmentTrackingNotRelease",
+    "URL": "https://api.github.com/repos/iced-rs/iced/pulls/3111",
+    "PageURL": "https://github.com/iced-rs/iced/pull/3111",
+    "UTC": "2026-10-17T07:24:02.3265096Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "6027CD4DE57D71E8F179036AF57DCDC7CC99A023BAFEFE8808A2079D24FC5642",
+    "Number": 3111,
+    "Title": "draft: Accesskit integration",
+    "State": "open",
+    "Draft": true,
+    "Merged": false,
+    "MergedAt": null,
+    "ClosedAt": null,
+    "UpdatedAt": "2026-09-18T11:31:00Z",
+    "HeadSHA": "2a693ddc9eddd71e0ca635f832301e4ab765b8ed",
+    "BaseSHA": "778c128489c4e4f506a3ed86fd85ba191c03ec15"
+  },
+  {
+    "Kind": "DevelopmentTrackingNotRelease",
+    "URL": "https://api.github.com/repos/iced-rs/iced/pulls/1849",
+    "PageURL": "https://github.com/iced-rs/iced/pull/1849",
+    "UTC": "2026-10-17T07:24:02.8604346Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "873B0A01AF8CE33422AA4FD58BC0E161553F6C37FEFE35D54F21EB15BF8BB332",
+    "Number": 1849,
+    "Title": "WIP: Iced accessibility",
+    "State": "open",
+    "Draft": true,
+    "Merged": false,
+    "MergedAt": null,
+    "ClosedAt": null,
+    "UpdatedAt": "2026-09-18T11:31:01Z",
+    "HeadSHA": "bf0deae0f291698eef2dc1330131bd2984ba56aa",
+    "BaseSHA": "778c128489c4e4f506a3ed86fd85ba191c03ec15"
+  },
+  {
+    "Kind": "DevelopmentTrackingNotRelease",
+    "URL": "https://api.github.com/repos/iced-rs/iced/pulls/3281",
+    "PageURL": "https://github.com/iced-rs/iced/pull/3281",
+    "UTC": "2026-10-17T07:24:03.4370432Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "763FADC721FECCBF00E33F4CA82A94C080074808EA187C4C02ABAEFBD0E2AC3B",
+    "Number": 3281,
+    "Title": "Accessibility support",
+    "State": "closed",
+    "Draft": false,
+    "Merged": false,
+    "MergedAt": null,
+    "ClosedAt": "2026-03-14T19:26:35Z",
+    "UpdatedAt": "2026-03-15T09:04:53Z",
+    "HeadSHA": "1fcaca78f8ffd8d5a4790cd22e93cb56b46c8f8e",
+    "BaseSHA": "3fd974f54a294b2396f68e691703140c61e1e9e5"
+  }
+]

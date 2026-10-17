@@ -1,0 +1,8 @@
+{
+  "Tag": "accesskit_windows-v0.35.1",
+  "PageURL": "https://github.com/AccessKit/accesskit/releases/tag/accesskit_windows-v0.35.1",
+  "Draft": false,
+  "Prerelease": false,
+  "PublishedAt": "2026-09-25T19:28:25Z",
+  "Body": "## [0.35.1](https://github.com/AccessKit/accesskit/compare/accesskit_windows-v0.35.0...accesskit_windows-v0.35.1) (2026-09-25)\n\n\n### Bug Fixes\n\n* Update minimum supported Rust version to 1.87 ([#808](https://github.com/AccessKit/accesskit/issues/808)) ([08c6ada](https://github.com/AccessKit/accesskit/commit/08c6ada3594ab12f57844c25d6a16dc8955ff640))\n\n\n### Dependencies\n\n* The following workspace dependencies were updated\n  * dependencies\n    * accesskit bumped from 0.25.0 to 0.25.1\n    * accesskit_consumer bumped from 0.39.0 to 0.39.1"
+}

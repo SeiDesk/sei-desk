@@ -1,0 +1,54 @@
+{
+  "UTC": "2026-10-17T07:33:11.7999068Z",
+  "Head": "d14d4bede2096d4bea2561de22977d181376b640",
+  "Branch": "main",
+  "PreTaskStatus": [
+    "?? docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+    "?? docs/implementation/STAGE-2H-REAL-IME-REPORT.md",
+    "?? docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+    "?? docs/implementation/STAGE-2J-NONEDITABLE-UI-FEASIBILITY.md",
+    "?? docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+    "?? docs/implementation/evidence-stage2g/",
+    "?? docs/implementation/evidence-stage2h/",
+    "?? docs/implementation/evidence-stage2i/",
+    "?? docs/implementation/evidence-stage2j/",
+    "?? experiments/iced-ime-observer/"
+  ],
+  "SelectedRepositoryConfiguration": {
+    "core.bare": {
+      "Configured": true,
+      "Value": "false"
+    },
+    "core.autocrlf": {
+      "Configured": true,
+      "Value": "true"
+    },
+    "core.ignorecase": {
+      "Configured": true,
+      "Value": "true"
+    },
+    "core.longpaths": {
+      "Configured": false,
+      "Value": null
+    },
+    "branch.main.remote": {
+      "Configured": true,
+      "Value": "origin"
+    },
+    "branch.main.merge": {
+      "Configured": true,
+      "Value": "refs/heads/main"
+    },
+    "origin": "https://github.com/seidesk/sei-desk"
+  },
+  "RecentCommits": [
+    "d14d4be Add headless consumer lifecycle acceptance and accessibility decision reports",
+    "e11af2c Add Stage 3A headless application catalog and launch service",
+    "c595184 Close Stage 2D accessibility validation with scoped acceptance"
+  ],
+  "RootManifestSHA256": "6EE119158EE10DE48482CC738686A4B94ACF78406BE69A26D79AB53D36A2A6EA",
+  "RootLockSHA256": "AAE2E6C33BBE4D5A3572DEED174D79AC49ECCB97953E78F115C5FD015E919537",
+  "SpikeManifestSHA256": "1B17F8EA307C574BF40C84A8CDBB0267016528D4A9E8CA088E37BA9C83E9C812",
+  "SpikeLockSHA256": "DD0C3375503DE0F56DF2CD3F860201D2BFA789D38C342033093139DA03DF760B",
+  "ExcludedConfiguration": "Identity/email, credential helpers, authentication tokens and unrelated global settings not collected"
+}

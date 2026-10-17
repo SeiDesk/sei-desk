@@ -1,0 +1,41 @@
+{
+  "CapturedAtUtc": "2026-10-17T07:09:54.2405001Z",
+  "Baseline": "d14d4bede2096d4bea2561de22977d181376b640",
+  "Branch": "main",
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "OSArchitecture": "X64",
+  "WorkingTree": [
+    "?? docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+    "?? docs/implementation/evidence-stage2g/",
+    "?? docs/implementation/evidence-stage2h/",
+    "?? experiments/iced-ime-observer/"
+  ],
+  "ObserverIdentities": [
+    {
+      "Path": "experiments/iced-ime-observer/src/main.rs",
+      "SHA256": "65C0F18F9933AB15009FD47F53EB6C93021721313688E1754AFEC9CAF6EB492E"
+    },
+    {
+      "Path": "experiments/iced-ime-observer/src/observe.rs",
+      "SHA256": "3863B3625D990AA4221F21BC5B604A335B7A9C317E1C040CF016C4E2A4A384EB"
+    },
+    {
+      "Path": "experiments/iced-ime-observer/Build.ps1",
+      "SHA256": "10C28E91972486CC28A0A55B17CC721290B01E2E514F6E59774AFEEC5CB96709"
+    },
+    {
+      "Path": "experiments/iced-ime-observer/Run.ps1",
+      "SHA256": "E89A5F1883159969D528CD31E7F92B54731DD546B46106E30C981D15C42DE5ED"
+    },
+    {
+      "Path": "experiments/iced-ime-observer/target/iced-ime-observer.exe",
+      "SHA256": "FBFD9C5F93767E2C45A886A553DF0DC243FF2FABD4675167499B04C7F67B1481"
+    }
+  ],
+  "ExpectedStage2GBinary": "FBFD9C5F93767E2C45A886A553DF0DC243FF2FABD4675167499B04C7F67B1481",
+  "OperatorConfirmedLanguage": null,
+  "OperatorConfirmedInputMethod": null,
+  "HumanSessionReadiness": "Awaiting operator response; not inferred from machine configuration or prior null preedit",
+  "RuntimeStarted": false,
+  "ConfigurationChanged": false
+}

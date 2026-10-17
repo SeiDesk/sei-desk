@@ -1,0 +1,660 @@
+[
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 0,
+      "elapsed_micros": 512653,
+      "input": "A",
+      "model_epoch": 0,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_update",
+      "event": "Window(Opened { position: Some(Point { x: 156.0, y: 156.0 }), size: Size { width: 740.0, height: 520.0 } })",
+      "document_value": "",
+      "value_lag_possible": true,
+      "focused": false,
+      "anchor_graphemes": 0,
+      "active_graphemes": 0,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        0,
+        0
+      ],
+      "active_utf8_utf16": [
+        0,
+        0
+      ],
+      "widget_bounds": [
+        22,
+        193.8,
+        696,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        203.8,
+        676,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        740,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": false
+      },
+      "attribution": "NO_IME_OUTPUT"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 1,
+      "elapsed_micros": 512872,
+      "input": "B",
+      "model_epoch": 0,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_update",
+      "event": "Window(Opened { position: Some(Point { x: 156.0, y: 156.0 }), size: Size { width: 740.0, height: 520.0 } })",
+      "document_value": "",
+      "value_lag_possible": true,
+      "focused": false,
+      "anchor_graphemes": 0,
+      "active_graphemes": 0,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        0,
+        0
+      ],
+      "active_utf8_utf16": [
+        0,
+        0
+      ],
+      "widget_bounds": [
+        22,
+        279.40002,
+        696,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        289.40002,
+        676,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        740,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": false
+      },
+      "attribution": "NO_IME_OUTPUT"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 806,
+      "elapsed_micros": 173681900,
+      "input": "A",
+      "model_epoch": 11,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested(Instant { t: 4611687240.157489703s }))",
+      "document_value": "abaé😀é👩‍💻c",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 1,
+      "active_graphemes": 4,
+      "direction": "forward",
+      "anchor_utf8_utf16": [
+        1,
+        1
+      ],
+      "active_utf8_utf16": [
+        5,
+        4
+      ],
+      "widget_bounds": [
+        22,
+        193.8,
+        696,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        203.8,
+        676,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        740,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          40,
+          203.8,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 812,
+      "elapsed_micros": 184538006,
+      "input": "A",
+      "model_epoch": 12,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested(Instant { t: 4611687251.013644603s }))",
+      "document_value": "abaé😀é👩‍💻c",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 4,
+      "active_graphemes": 1,
+      "direction": "reverse",
+      "anchor_utf8_utf16": [
+        5,
+        4
+      ],
+      "active_utf8_utf16": [
+        1,
+        1
+      ],
+      "widget_bounds": [
+        22,
+        193.8,
+        696,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        203.8,
+        676,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        740,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          40,
+          203.8,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 820,
+      "elapsed_micros": 191851277,
+      "input": "A",
+      "model_epoch": 12,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested(Instant { t: 4611687258.326855303s }))",
+      "document_value": "abaé😀é👩‍💻c",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 4,
+      "active_graphemes": 4,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        5,
+        4
+      ],
+      "active_utf8_utf16": [
+        5,
+        4
+      ],
+      "widget_bounds": [
+        22,
+        193.8,
+        696,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        203.8,
+        676,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        740,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          66,
+          203.8,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 1596,
+      "elapsed_micros": 254838646,
+      "input": "A",
+      "model_epoch": 20,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested(Instant { t: 4611687321.314266003s }))",
+      "document_value": "abax😀",
+      "value_lag_possible": false,
+      "focused": false,
+      "anchor_graphemes": 5,
+      "active_graphemes": 5,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        8,
+        6
+      ],
+      "active_utf8_utf16": [
+        8,
+        6
+      ],
+      "widget_bounds": [
+        70,
+        332.8,
+        250,
+        40.8
+      ],
+      "text_child_bounds": [
+        80,
+        342.8,
+        230,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": false
+      },
+      "attribution": "NO_IME_OUTPUT"
+    }
+  },
+  {
+    "Run": "run-01",
+    "Observation": {
+      "kind": "observation",
+      "seq": 1597,
+      "elapsed_micros": 254838731,
+      "input": "B",
+      "model_epoch": 20,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested(Instant { t: 4611687321.314266003s }))",
+      "document_value": "",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 0,
+      "active_graphemes": 0,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        0,
+        0
+      ],
+      "active_utf8_utf16": [
+        0,
+        0
+      ],
+      "widget_bounds": [
+        70,
+        418.39996,
+        250,
+        31.600014
+      ],
+      "text_child_bounds": [
+        80,
+        428.39996,
+        230,
+        11.600014
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          80,
+          428.39996,
+          1,
+          11.600014
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-02",
+    "Observation": {
+      "kind": "observation",
+      "seq": 32,
+      "elapsed_micros": 26452860,
+      "input": "A",
+      "model_epoch": 7,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested)",
+      "document_value": "0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é ",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 280,
+      "active_graphemes": 280,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        400,
+        320
+      ],
+      "active_utf8_utf16": [
+        400,
+        320
+      ],
+      "widget_bounds": [
+        22,
+        235.4,
+        346,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        245.4,
+        326,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          352.28125,
+          245.4,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-02",
+    "Observation": {
+      "kind": "observation",
+      "seq": 38,
+      "elapsed_micros": 32777110,
+      "input": "A",
+      "model_epoch": 7,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested)",
+      "document_value": "0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é ",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 0,
+      "active_graphemes": 0,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        0,
+        0
+      ],
+      "active_utf8_utf16": [
+        0,
+        0
+      ],
+      "widget_bounds": [
+        22,
+        235.4,
+        346,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        245.4,
+        326,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          32,
+          245.4,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-02",
+    "Observation": {
+      "kind": "observation",
+      "seq": 44,
+      "elapsed_micros": 50252456,
+      "input": "A",
+      "model_epoch": 8,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested)",
+      "document_value": "0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é ",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 4,
+      "active_graphemes": 1,
+      "direction": "reverse",
+      "anchor_utf8_utf16": [
+        4,
+        4
+      ],
+      "active_utf8_utf16": [
+        1,
+        1
+      ],
+      "widget_bounds": [
+        22,
+        235.4,
+        346,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        245.4,
+        326,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          40,
+          245.4,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  },
+  {
+    "Run": "run-02",
+    "Observation": {
+      "kind": "observation",
+      "seq": 50,
+      "elapsed_micros": 57361132,
+      "input": "A",
+      "model_epoch": 8,
+      "accepted_model_epoch": true,
+      "layout_generation": "UNAVAILABLE",
+      "coordinate_space": "iced logical window layout; screen origin UNAVAILABLE",
+      "phase": "after_child_redraw",
+      "event": "Window(RedrawRequested)",
+      "document_value": "0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é 0123456789é😀é ",
+      "value_lag_possible": false,
+      "focused": true,
+      "anchor_graphemes": 1,
+      "active_graphemes": 1,
+      "direction": "collapsed",
+      "anchor_utf8_utf16": [
+        1,
+        1
+      ],
+      "active_utf8_utf16": [
+        1,
+        1
+      ],
+      "widget_bounds": [
+        22,
+        235.4,
+        346,
+        40.8
+      ],
+      "text_child_bounds": [
+        32,
+        245.4,
+        326,
+        20.8
+      ],
+      "viewport": [
+        0,
+        0,
+        390,
+        520
+      ],
+      "ime_before": {
+        "enabled": false
+      },
+      "ime_after": {
+        "enabled": true,
+        "cursor": [
+          40,
+          245.4,
+          1,
+          20.8
+        ],
+        "purpose": "Normal",
+        "preedit": null
+      },
+      "attribution": "CHILD_ENABLED"
+    }
+  }
+]

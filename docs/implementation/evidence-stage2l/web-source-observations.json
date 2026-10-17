@@ -1,0 +1,47 @@
+{
+  "RecordedAtUtc": "2026-10-17T07:58:27.4758675Z",
+  "TimestampPrecision": "Web tool did not expose precise HTTP retrieval timestamps; actual requests occurred within session bounds below. Do not treat recording time as exact request time.",
+  "RetrievalWindowUtc": {
+    "NotAfter": "2026-10-17T07:58:27.4758675Z",
+    "NotBefore": "2026-10-17T07:51:02.8448295Z"
+  },
+  "Observations": [
+    {
+      "ID": "W01",
+      "URL": "https://github.com/AccessKit/accesskit/pull/816",
+      "Success": false,
+      "Result": "Web tool failed: Cache miss. Page not retried. Separate official API endpoint R816 succeeded; distinct first attempt, not a successful page fetch."
+    },
+    {
+      "ID": "W02",
+      "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nn-uiautomationcore-iscrollprovider",
+      "Success": true,
+      "Result": "Official SDK interface lists axis scrollability, percentages/view sizes and Scroll/SetScrollPercent; not evidence AccessKit implements them."
+    },
+    {
+      "ID": "W03",
+      "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-setscrollpercent",
+      "Success": true,
+      "Result": "Official SDK describes percentage parameters and UIA_ScrollPatternNoScroll for an axis; no AccessKit implementation inferred."
+    },
+    {
+      "ID": "W04",
+      "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-get_horizontalscrollpercent",
+      "Success": false,
+      "Result": "Web tool URL not accessible. Not retried; this page did not establish sentinel/value semantics."
+    },
+    {
+      "ID": "W05",
+      "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-get_horizontalviewsize",
+      "Success": false,
+      "Result": "Web tool URL not accessible. Not retried; this page did not establish view-size/axis semantics."
+    },
+    {
+      "ID": "W06",
+      "URL": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nf-uiautomationcore-iscrollprovider-scroll",
+      "Success": true,
+      "Result": "Official SDK defines horizontal/vertical ScrollAmount arguments and HRESULT success/failure; missing provider still has no such method."
+    }
+  ],
+  "FullRawWebResponsesRetained": false
+}

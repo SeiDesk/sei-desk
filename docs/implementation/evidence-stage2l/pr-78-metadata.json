@@ -1,0 +1,13 @@
+{
+  "Number": 78,
+  "PageURL": "https://github.com/AccessKit/accesskit/pull/78",
+  "Title": "Generate node name from `labelled_by` relationship",
+  "State": "closed",
+  "Draft": false,
+  "Merged": true,
+  "MergedAt": "2021-12-17T20:45:55Z",
+  "UpdatedAt": "2021-12-17T20:45:56Z",
+  "HeadSHA": "bf8886c1b4529605bfe729325b77d8e369fa4bb5",
+  "BaseSHA": "d61be0aa1a72055931070fa3aaece3e50aa63ad4",
+  "Classification": "Merged upstream change; release inclusion must be proved separately"
+}

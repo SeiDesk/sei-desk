@@ -1,0 +1,13 @@
+{
+  "Number": 816,
+  "PageURL": "https://github.com/AccessKit/accesskit/pull/816",
+  "Title": "feat(windows): expose a localized switch type and ScrollPattern",
+  "State": "open",
+  "Draft": false,
+  "Merged": false,
+  "MergedAt": null,
+  "UpdatedAt": "2026-10-07T12:34:11Z",
+  "HeadSHA": "29f2ec503e98f1afcbbd1a26d11a1986b5198d5e",
+  "BaseSHA": "466e24e252103f4d82bd6fbab98141b551e46e0c",
+  "Classification": "Open/unmerged proposal; not stable release or source qualification"
+}

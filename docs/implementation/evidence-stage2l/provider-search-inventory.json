@@ -1,0 +1,189 @@
+{
+  "UTC": "2026-10-17T07:55:54.4070050Z",
+  "Purpose": "Search is inventory/supporting evidence, not sole basis; reviewed interface declarations, property macro/call site/fallback, full registration list and ScrollItem method",
+  "Package": "accesskit_windows 0.35.1",
+  "Terms": [
+    "UIA_LabeledByPropertyId",
+    "labelled_by",
+    "IScrollProvider",
+    "UIA_ScrollPatternId",
+    "HorizontalScrollPercent",
+    "VerticalScrollPercent",
+    "HorizontalViewSize",
+    "VerticalViewSize",
+    "SetScrollPercent",
+    "IScrollItemProvider",
+    "UIA_ScrollItemPatternId",
+    "ScrollIntoView"
+  ],
+  "Files": [
+    {
+      "Path": "src/adapter.rs",
+      "SHA256": "F4342311058A86CB67AA7526BCE5F874DDDF11C9295C160591B46781387A6376",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/adapter.rs",
+      "LineCount": 673,
+      "Matches": []
+    },
+    {
+      "Path": "src/context.rs",
+      "SHA256": "C03DF25BDEC7F70C0B2FD90EA5308D9DC27032BEC73005AC57712D33F12E6A73",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/context.rs",
+      "LineCount": 98,
+      "Matches": []
+    },
+    {
+      "Path": "src/filters.rs",
+      "SHA256": "744374B547065B153123C80028F129F5C6BB53052660205E1A2F231C3E169F64",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/filters.rs",
+      "LineCount": 8,
+      "Matches": []
+    },
+    {
+      "Path": "src/lib.rs",
+      "SHA256": "8A6F20ED5354C9834D88A59091C764F65AA31359F81C57386FE06E9D806E9396",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/lib.rs",
+      "LineCount": 22,
+      "Matches": []
+    },
+    {
+      "Path": "src/node.rs",
+      "SHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+      "LineCount": 1539,
+      "Matches": [
+        {
+          "Term": "ScrollIntoView",
+          "Line": 645,
+          "Text": "self.node.supports_action(Action::ScrollIntoView, &filter)"
+        },
+        {
+          "Term": "IScrollItemProvider",
+          "Line": 798,
+          "Text": "IScrollItemProvider,"
+        },
+        {
+          "Term": "IScrollItemProvider",
+          "Line": 1370,
+          "Text": "(UIA_ScrollItemPatternId, IScrollItemProvider, IScrollItemProvider_Impl, is_scroll_item_pattern_supported, (), ("
+        },
+        {
+          "Term": "UIA_ScrollItemPatternId",
+          "Line": 1370,
+          "Text": "(UIA_ScrollItemPatternId, IScrollItemProvider, IScrollItemProvider_Impl, is_scroll_item_pattern_supported, (), ("
+        },
+        {
+          "Term": "ScrollIntoView",
+          "Line": 1371,
+          "Text": "fn ScrollIntoView(&self) -> Result<()> {"
+        },
+        {
+          "Term": "ScrollIntoView",
+          "Line": 1374,
+          "Text": "action: Action::ScrollIntoView,"
+        }
+      ]
+    },
+    {
+      "Path": "src/subclass.rs",
+      "SHA256": "69BB742D5451F2CFF1C2110E77782948CB751AAAD3302C5B1453EBF8B3D20A9E",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/subclass.rs",
+      "LineCount": 204,
+      "Matches": []
+    },
+    {
+      "Path": "src/tests/mod.rs",
+      "SHA256": "DE33703D001A741529E6248C5165A5F3EFFA1115D1EF2DB6F115ADCC45CA5D04",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/tests/mod.rs",
+      "LineCount": 337,
+      "Matches": []
+    },
+    {
+      "Path": "src/tests/simple.rs",
+      "SHA256": "828C3C036BEBB9113CB289DD033D6163345C8E746015F4B15FC80FDFC2B5479F",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/tests/simple.rs",
+      "LineCount": 198,
+      "Matches": []
+    },
+    {
+      "Path": "src/tests/subclassed.rs",
+      "SHA256": "065DA83E1DB3E53CCBADE3EFF8BBBB4891D23085A3A4AC308C513DE24D8DF80D",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/tests/subclassed.rs",
+      "LineCount": 177,
+      "Matches": []
+    },
+    {
+      "Path": "src/text.rs",
+      "SHA256": "7F2493B559F0B04884E201D897981A3CCE47B2C571863D37FFDDB1BB695E5C55",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/text.rs",
+      "LineCount": 652,
+      "Matches": [
+        {
+          "Term": "ScrollIntoView",
+          "Line": 616,
+          "Text": "fn ScrollIntoView(&self, align_to_top: BOOL) -> Result<()> {"
+        },
+        {
+          "Term": "ScrollIntoView",
+          "Line": 628,
+          "Text": "action: Action::ScrollIntoView,"
+        }
+      ]
+    },
+    {
+      "Path": "src/util.rs",
+      "SHA256": "9A8EDA748E568EA480D7BC5D406D868F4CA0FD245ED18557707D219D43DDCD9A",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/util.rs",
+      "LineCount": 536,
+      "Matches": []
+    },
+    {
+      "Path": "src/window_handle.rs",
+      "SHA256": "DEC1D78C81784A18C50F066E89D57D0FE02A7C9199A11E47A0833F8B9113D8C2",
+      "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/window_handle.rs",
+      "LineCount": 32,
+      "Matches": []
+    }
+  ],
+  "RegisteredPatternInterfaces": [
+    {
+      "Pattern": "TogglePatternId",
+      "Interface": "IToggleProvider"
+    },
+    {
+      "Pattern": "InvokePatternId",
+      "Interface": "IInvokeProvider"
+    },
+    {
+      "Pattern": "ValuePatternId",
+      "Interface": "IValueProvider"
+    },
+    {
+      "Pattern": "RangeValuePatternId",
+      "Interface": "IRangeValueProvider"
+    },
+    {
+      "Pattern": "ScrollItemPatternId",
+      "Interface": "IScrollItemProvider"
+    },
+    {
+      "Pattern": "SelectionItemPatternId",
+      "Interface": "ISelectionItemProvider"
+    },
+    {
+      "Pattern": "SelectionPatternId",
+      "Interface": "ISelectionProvider"
+    },
+    {
+      "Pattern": "TextPatternId",
+      "Interface": "ITextProvider"
+    },
+    {
+      "Pattern": "ExpandCollapsePatternId",
+      "Interface": "IExpandCollapseProvider"
+    },
+    {
+      "Pattern": "WindowPatternId",
+      "Interface": "IWindowProvider"
+    }
+  ]
+}

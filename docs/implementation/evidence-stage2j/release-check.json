@@ -1,0 +1,28 @@
+[
+  {
+    "URL": "https://api.github.com/repos/iced-rs/iced/releases/tags/0.14.0",
+    "PageURL": "https://github.com/iced-rs/iced/releases/tag/0.14.0",
+    "UTC": "2026-10-17T07:25:38.8324833Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "2094986B6C53310491D489D143BD7B8D473C5D12CD930CE4FCCF3A0A89DEFA5D",
+    "Tag": "0.14.0",
+    "Draft": false,
+    "Prerelease": false,
+    "PublishedAt": "2025-12-07T20:53:44Z",
+    "ReleaseNotesUtf8SHA256": "45C4C86F4B59A1B03749221BCE51FB12B93F0D0AA165171FCB8E7B890F8E1AA6",
+    "Interpretation": "Official released notes inspected as context; no missing API inferred present from notes"
+  },
+  {
+    "URL": "https://api.github.com/repos/AccessKit/accesskit/releases/tags/accesskit_windows-v0.35.1",
+    "PageURL": "https://github.com/AccessKit/accesskit/releases/tag/accesskit_windows-v0.35.1",
+    "UTC": "2026-10-17T07:25:39.2604328Z",
+    "Success": true,
+    "ResponseUtf8SHA256": "5BC0E6524924786B62B900CDCD3DBFE3FC7E776BDD4E50E96AC2247D8267C39E",
+    "Tag": "accesskit_windows-v0.35.1",
+    "Draft": false,
+    "Prerelease": false,
+    "PublishedAt": "2026-09-25T19:28:25Z",
+    "ReleaseNotesUtf8SHA256": "A69D6425E87CA55E1A304E4E64D57EADC76549EB662AAF961F6F7A3B0FF5B114",
+    "Interpretation": "Official released notes inspected as context; no missing API inferred present from notes"
+  }
+]

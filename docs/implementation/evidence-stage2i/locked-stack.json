@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "accesskit",
+    "Version": "0.25.1",
+    "Checksum": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932"
+  },
+  {
+    "Name": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Checksum": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344"
+  },
+  {
+    "Name": "accesskit_windows",
+    "Version": "0.35.1",
+    "Checksum": "ce63f35d6bdcf59f26b76b3379063f738e6412cef46999cc772d46aa3de35adb"
+  },
+  {
+    "Name": "iced",
+    "Version": "0.14.0",
+    "Checksum": "000e01026c93ba643f8357a3db3ada0e6555265a377f6f9291c472f6dd701fb3"
+  },
+  {
+    "Name": "iced_core",
+    "Version": "0.14.0",
+    "Checksum": "91ab1937d699403e7e69252ae743a902bcee9f4ab2052cc4c9a46fcf34729d85"
+  },
+  {
+    "Name": "iced_widget",
+    "Version": "0.14.2",
+    "Checksum": "b1596afa0d3109c2618e8bc12bae6c11d3064df8f95c42dfce570397dbe957ab"
+  },
+  {
+    "Name": "iced_winit",
+    "Version": "0.14.1",
+    "Checksum": "7589888c8e951899cc688247a69933bb7a0511f0b4b2e122ac3fcd5dacb37f72"
+  },
+  {
+    "Name": "windows",
+    "Version": "0.62.2",
+    "Checksum": "527fadee13e0c05939a6a05d5bd6eec6cd2e3dbd648b9f8e447c6518133d8580"
+  },
+  {
+    "Name": "windows-sys",
+    "Version": "0.52.0",
+    "Checksum": "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d"
+  },
+  {
+    "Name": "windows-sys",
+    "Version": "0.59.0",
+    "Checksum": "1e38bc4d79ed67fd075bcc251a1c39b32a1776bbe92e5bef1f0bf1f8c531853b"
+  },
+  {
+    "Name": "windows-sys",
+    "Version": "0.61.2",
+    "Checksum": "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc"
+  },
+  {
+    "Name": "winit",
+    "Version": "0.30.13",
+    "Checksum": "a6755fa58a9f8350bd1e472d4c3fcc25f824ec358933bba33306d0b63df5978d"
+  }
+]

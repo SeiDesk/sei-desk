@@ -1,0 +1,8 @@
+{
+  "UTC": "2026-10-17T05:25:29.2916761Z",
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "BinarySHA256": "CA3F9F4B1562DEE8FF18C96C3890582A05316F8C47C257B105EDB8D6D13BD8A4",
+  "Pid": 10768,
+  "BoundSeconds": 600,
+  "InputMethod": "Record actual driver separately; no synthetic IME events"
+}

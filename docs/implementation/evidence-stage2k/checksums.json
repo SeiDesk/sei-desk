@@ -1,0 +1,62 @@
+[
+  {
+    "Path": "docs/implementation/evidence-stage2k/README.md",
+    "SHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2K-NONEDITABLE-QUALIFICATION-PLAN.md",
+    "SHA256": "1AF3693BB94E3B8286398C43203CBC81A31C19E3512C2D23D04385D6F71DD7A0"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2K-OWNER-DECISIONS.md",
+    "SHA256": "37D6523F476F15EC49F69D2533F82C2C0A80242EA380F10A3F79D9EE2F44BBC1"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\baseline.json",
+    "SHA256": "48E0602C9553B6532208358EAF3657A45EB97079E274529584EF1145DF7A21CA"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\decision-provenance.json",
+    "SHA256": "80F1F0CE10E3B046206D73259B562EF719E43DF5286DE2C775B4EBAEDCECD38A"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\headless-source-identity-check.json",
+    "SHA256": "000D052664E98C7932759F0B4287D1C1966D63A169FEBE71BF1BE3BA636140C8"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\ignored-binary-identity-check.json",
+    "SHA256": "37D6BAC24CA6DA9137F2C3F142048D19005717C18F61F30EB522017486AB9DD8"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\owner-decision-record.json",
+    "SHA256": "5A189C5D1F30DE82F2308E7B5FD2E029F48906534C2AB4E06C701A67FA8D27D3"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\preservation-before.json",
+    "SHA256": "F95746EFB8E7283B33E1DF96EBD246F8CE45E448C2DB0F46D28D0190DB7CDB71"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\qualification-cases.json",
+    "SHA256": "A39BAAC980915CF776C3EA6F889D352C054BF1733DF2F5259D984FB928A594FF"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\README.md",
+    "SHA256": "36959DA3049D2393C2C0CF8945A664F19DC86E885457966B88F668F5838CB362"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\review-inputs.json",
+    "SHA256": "33D30496BDADC46C2F76658A4D9CAF5BFE73B94B46312B69D0DF28EC66105175"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\stage2j-integrity-check.json",
+    "SHA256": "71BF668F740151C06AB64CC618D1FBD6E66BA8A4B7E00DC579A23C7B6CEB0A43"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\traceability-validation.json",
+    "SHA256": "F64BF2605093F44BE500664416FFAFA06B5248BB55D7448D9991BE82269DCA52"
+  },
+  {
+    "Path": "docs\\implementation\\evidence-stage2k\\traceability.json",
+    "SHA256": "8C0AB0E05250DA8ECEB52C22FEF39C41E43A802E619C92EA854C0E055246D4C2"
+  }
+]

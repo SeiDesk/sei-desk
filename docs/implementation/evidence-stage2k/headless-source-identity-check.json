@@ -1,0 +1,163 @@
+[
+  {
+    "Path": "Cargo.lock",
+    "HistoricalSHA256": "AAE2E6C33BBE4D5A3572DEED174D79AC49ECCB97953E78F115C5FD015E919537",
+    "CurrentSHA256": "AAE2E6C33BBE4D5A3572DEED174D79AC49ECCB97953E78F115C5FD015E919537",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "Cargo.toml",
+    "HistoricalSHA256": "6EE119158EE10DE48482CC738686A4B94ACF78406BE69A26D79AB53D36A2A6EA",
+    "CurrentSHA256": "6EE119158EE10DE48482CC738686A4B94ACF78406BE69A26D79AB53D36A2A6EA",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\Cargo.toml",
+    "HistoricalSHA256": "8482B1A5EF76960013C656944DDDA735B5C3CC4D85C51B3B81151B7C1CC712F9",
+    "CurrentSHA256": "8482B1A5EF76960013C656944DDDA735B5C3CC4D85C51B3B81151B7C1CC712F9",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\examples\\catalog_probe.rs",
+    "HistoricalSHA256": "694C7718058A4B7906206EC65E78631BE5F1BDD73507B66D6509E2F2A54ED100",
+    "CurrentSHA256": "694C7718058A4B7906206EC65E78631BE5F1BDD73507B66D6509E2F2A54ED100",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\examples\\consumer_probe.rs",
+    "HistoricalSHA256": "61B88455AFB897458B4075E2ACE967B03167DDE974883DB3C0F6C227A8DEE96D",
+    "CurrentSHA256": "61B88455AFB897458B4075E2ACE967B03167DDE974883DB3C0F6C227A8DEE96D",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\examples\\launch_fixture.rs",
+    "HistoricalSHA256": "94D0B169900D22539FCBE7EB62CF398EFDCFB20979902A96AA0BE94AA4D87106",
+    "CurrentSHA256": "94D0B169900D22539FCBE7EB62CF398EFDCFB20979902A96AA0BE94AA4D87106",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\catalog.rs",
+    "HistoricalSHA256": "4B983A97F3F2B7E889C79F54B089CD09C141E2108945935A68E269D51C2D629F",
+    "CurrentSHA256": "4B983A97F3F2B7E889C79F54B089CD09C141E2108945935A68E269D51C2D629F",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\consumer.rs",
+    "HistoricalSHA256": "32D32DD4DD1F26298FCB543909922BDEFBEBDD9A81762DF4417CC057B588F87C",
+    "CurrentSHA256": "32D32DD4DD1F26298FCB543909922BDEFBEBDD9A81762DF4417CC057B588F87C",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\consumer\\tests.rs",
+    "HistoricalSHA256": "37963469158DDE541340EFB545489F8B54482B9D096C8BB92B6A9408C32AC1CC",
+    "CurrentSHA256": "37963469158DDE541340EFB545489F8B54482B9D096C8BB92B6A9408C32AC1CC",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\consumer\\tests\\acceptance.rs",
+    "HistoricalSHA256": "F1BAEC905AE280E098C5234083DA1C1FDDDAB2F407FB8221B4EBD9DEEE96AA31",
+    "CurrentSHA256": "F1BAEC905AE280E098C5234083DA1C1FDDDAB2F407FB8221B4EBD9DEEE96AA31",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\launch.rs",
+    "HistoricalSHA256": "BAD0D42B02AAB479171638AEDDE076326F0B14C184AA5EE60EC544F76D7BC78F",
+    "CurrentSHA256": "BAD0D42B02AAB479171638AEDDE076326F0B14C184AA5EE60EC544F76D7BC78F",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\lib.rs",
+    "HistoricalSHA256": "FB195DDF2A813E47F7D4D9A1B5BFEFCC9C039997B2EAA1D60AA3B750BD64CE55",
+    "CurrentSHA256": "FB195DDF2A813E47F7D4D9A1B5BFEFCC9C039997B2EAA1D60AA3B750BD64CE55",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\native.rs",
+    "HistoricalSHA256": "FDFAEEDEE191310AB52C776E3FD1EFB03C5C38891CA262D1CE1C3F13ECE989F1",
+    "CurrentSHA256": "FDFAEEDEE191310AB52C776E3FD1EFB03C5C38891CA262D1CE1C3F13ECE989F1",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\src\\tests.rs",
+    "HistoricalSHA256": "B06A64B2CA6AD43E9CCC03B355F640E007AAE6C2C4798F38818792E879890D99",
+    "CurrentSHA256": "B06A64B2CA6AD43E9CCC03B355F640E007AAE6C2C4798F38818792E879890D99",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\tests\\consumer_windows.rs",
+    "HistoricalSHA256": "1BB8921A29ABDEE1EAE0D521CF68AA8D609069CC5120CE79A700558389A8BE57",
+    "CurrentSHA256": "1BB8921A29ABDEE1EAE0D521CF68AA8D609069CC5120CE79A700558389A8BE57",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-apps\\tests\\windows_launch.rs",
+    "HistoricalSHA256": "707D8A62FC171C8E65195892B325FA334EABBFE4882CF0CE61C7F768F41D641D",
+    "CurrentSHA256": "707D8A62FC171C8E65195892B325FA334EABBFE4882CF0CE61C7F768F41D641D",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-desk\\Cargo.toml",
+    "HistoricalSHA256": "DB25FFC96E9A9187DE913E9F2C81283789AFF704D90012C73EEBFF9D423CB67F",
+    "CurrentSHA256": "DB25FFC96E9A9187DE913E9F2C81283789AFF704D90012C73EEBFF9D423CB67F",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-desk\\src\\main.rs",
+    "HistoricalSHA256": "814F8311AE599CA30BCDBA33321587AF5DFEA28C8BE039D2CAFFB902B20BA40F",
+    "CurrentSHA256": "814F8311AE599CA30BCDBA33321587AF5DFEA28C8BE039D2CAFFB902B20BA40F",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-desk\\src\\model.rs",
+    "HistoricalSHA256": "87DCE3926505BB94D2BAF16B83D9EE57426E34EA3B29CA600F4127A455D40345",
+    "CurrentSHA256": "87DCE3926505BB94D2BAF16B83D9EE57426E34EA3B29CA600F4127A455D40345",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-desk\\src\\view.rs",
+    "HistoricalSHA256": "4F8F16EF0983C5A650F7954AC07163309DA86A08FCCCADB2CA24947AEC0D991A",
+    "CurrentSHA256": "4F8F16EF0983C5A650F7954AC07163309DA86A08FCCCADB2CA24947AEC0D991A",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-windows\\Cargo.toml",
+    "HistoricalSHA256": "30ED06AD7F1763BD58126BB2E6CAE97179A7C9D8256C28CCF0C659F01E89170B",
+    "CurrentSHA256": "30ED06AD7F1763BD58126BB2E6CAE97179A7C9D8256C28CCF0C659F01E89170B",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-windows\\examples\\stage2a_probe.rs",
+    "HistoricalSHA256": "7A350E5C10B7ED83DCF340794780182D6E05EDF1086F5269026FCEDE76004AB4",
+    "CurrentSHA256": "7A350E5C10B7ED83DCF340794780182D6E05EDF1086F5269026FCEDE76004AB4",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  },
+  {
+    "Path": "crates\\sei-windows\\src\\lib.rs",
+    "HistoricalSHA256": "73C17B7A8CA8A1F6DD2A2F00F8A132C5947F2CF3933A746214284B113517D489",
+    "CurrentSHA256": "73C17B7A8CA8A1F6DD2A2F00F8A132C5947F2CF3933A746214284B113517D489",
+    "Matches": true,
+    "Interpretation": "Source identity only; acceptance tests not rerun in Stage 2K"
+  }
+]

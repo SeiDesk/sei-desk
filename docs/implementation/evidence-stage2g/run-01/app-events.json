@@ -1,0 +1,118 @@
+[
+  {
+    "epoch": 1,
+    "event": "Open(Id(1))"
+  },
+  {
+    "epoch": 2,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 3,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 4,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 5,
+    "event": "Edit(0, \"\")"
+  },
+  {
+    "epoch": 6,
+    "event": "Key(F6)"
+  },
+  {
+    "epoch": 7,
+    "event": "Edit(0, \"aaé😀e\\u{301}👩\\u{200d}💻\")"
+  },
+  {
+    "epoch": 8,
+    "event": "Key(F5)"
+  },
+  {
+    "epoch": 9,
+    "event": "Edit(0, \"abaé😀e\\u{301}👩\\u{200d}💻\")"
+  },
+  {
+    "epoch": 10,
+    "event": "Edit(0, \"abaé😀e\\u{301}👩\\u{200d}💻c\")"
+  },
+  {
+    "epoch": 11,
+    "event": "Key(F3)"
+  },
+  {
+    "epoch": 12,
+    "event": "Key(F4)"
+  },
+  {
+    "epoch": 13,
+    "event": "Edit(0, \"abax😀e\\u{301}👩\\u{200d}💻c\")"
+  },
+  {
+    "epoch": 14,
+    "event": "Edit(0, \"abax😀e\\u{301}👩\\u{200d}💻\")"
+  },
+  {
+    "epoch": 15,
+    "event": "Edit(0, \"abax😀e\\u{301}\")"
+  },
+  {
+    "epoch": 16,
+    "event": "Edit(0, \"abax😀\")"
+  },
+  {
+    "epoch": 17,
+    "event": "Key(F7)"
+  },
+  {
+    "epoch": 18,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 19,
+    "event": "Key(F9)"
+  },
+  {
+    "epoch": 20,
+    "event": "Key(F2)"
+  },
+  {
+    "epoch": 21,
+    "event": "Edit(1, \"z\")"
+  },
+  {
+    "epoch": 22,
+    "event": "Key(F8)"
+  },
+  {
+    "epoch": 23,
+    "event": "Mode(Hidden)"
+  },
+  {
+    "epoch": 24,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 25,
+    "event": "Show"
+  },
+  {
+    "epoch": 26,
+    "event": "Mode(Windowed)"
+  },
+  {
+    "epoch": 27,
+    "event": "Geometry"
+  },
+  {
+    "epoch": 28,
+    "event": "Key(F11)"
+  },
+  {
+    "epoch": 29,
+    "event": "Key(F10)"
+  }
+]

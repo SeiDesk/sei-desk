@@ -1,0 +1,652 @@
+accesskit-0.25.1/src/lib.rs
+701 : }
+702 : 
+703 : pub type NodeIdContent = u64;
+704 : 
+705 : /// The stable identity of a [`Node`], unique within the node's tree.
+706 : ///
+707 : /// Each tree (root or subtree) has its own independent ID space. The same
+708 : /// `NodeId` value can exist in different trees without conflict. When working
+709 : /// with multiple trees, the combination of `NodeId` and [`TreeId`] uniquely
+710 : /// identifies a node.
+711 : #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+712 : #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+713 : #[cfg_attr(feature = "schemars", derive(JsonSchema))]
+714 : #[repr(transparent)]
+715 : pub struct NodeId(pub NodeIdContent);
+716 : 
+717 : impl From<NodeIdContent> for NodeId {
+accesskit-0.25.1/src/lib.rs
+2053 :     (FlowTo, flow_to, set_flow_to, push_flow_to, clear_flow_to),
+2054 :     /// The nodes that label this node. ARIA equivalent: [`aria-labelledby`].
+2055 :     ///
+2056 :     /// [`aria-labelledby`]: https://www.w3.org/TR/wai-aria-1.2/#aria-labelledby
+2057 :     (LabelledBy, labelled_by, set_labelled_by, push_labelled_by, clear_labelled_by),
+2058 :     /// Nodes owned by this node that are not already its descendants in the
+2059 :     /// tree. This property is unnecessary for direct children or other
+accesskit-0.25.1/src/lib.rs
+315 :     /// Scroll down by the specified unit.
+316 :     ScrollDown,
+317 :     /// Scroll left by the specified unit.
+318 :     ScrollLeft,
+319 :     /// Scroll right by the specified unit.
+320 :     ScrollRight,
+321 :     /// Scroll up by the specified unit.
+322 :     ScrollUp,
+323 : 
+324 :     /// Scroll any scrollable containers to make the target node visible.
+325 :     /// Optionally set [`ActionRequest::data`] to [`ActionData::ScrollHint`].
+326 :     ScrollIntoView,
+327 : 
+328 :     /// Scroll the given object to a specified point in the tree's container
+329 :     /// (e.g. window). Requires [`ActionRequest::data`] to be set to
+330 :     /// [`ActionData::ScrollToPoint`].
+331 :     ScrollToPoint,
+332 : 
+333 :     /// Requires [`ActionRequest::data`] to be set to [`ActionData::SetScrollOffset`].
+334 :     SetScrollOffset,
+335 : 
+336 :     /// Requires [`ActionRequest::data`] to be set to [`ActionData::SetTextSelection`].
+337 :     SetTextSelection,
+338 : 
+accesskit-0.25.1/src/lib.rs
+2207 : f64_property_methods! {
+2208 :     /// The current horizontal scroll position of this scrollable container.
+2209 :     (ScrollX, scroll_x, set_scroll_x, clear_scroll_x),
+2210 :     /// The minimum horizontal scroll position of this scrollable container.
+2211 :     (ScrollXMin, scroll_x_min, set_scroll_x_min, clear_scroll_x_min),
+2212 :     /// The maximum horizontal scroll position of this scrollable container.
+2213 :     (ScrollXMax, scroll_x_max, set_scroll_x_max, clear_scroll_x_max),
+2214 :     /// The current vertical scroll position of this scrollable container.
+2215 :     (ScrollY, scroll_y, set_scroll_y, clear_scroll_y),
+2216 :     /// The minimum vertical scroll position of this scrollable container.
+2217 :     (ScrollYMin, scroll_y_min, set_scroll_y_min, clear_scroll_y_min),
+2218 :     /// The maximum vertical scroll position of this scrollable container.
+2219 :     (ScrollYMax, scroll_y_max, set_scroll_y_max, clear_scroll_y_max),
+2220 :     /// The current numeric value of this range widget. ARIA equivalent:
+accesskit-0.25.1/src/lib.rs
+3208 : pub struct TreeUpdate {
+3209 :     /// Zero or more new or updated nodes. Order doesn't matter.
+3210 :     ///
+3211 :     /// Each node in this list will overwrite any existing node with the same ID.
+3212 :     /// This means that when updating a node, fields that are unchanged
+3213 :     /// from the previous version must still be set to the same values
+3214 :     /// as before.
+3215 :     ///
+3216 :     /// It is an error for any node in this list to not be either the root
+3217 :     /// or a child of another node. For nodes other than the root, the parent
+3218 :     /// must be either an unchanged node already in the tree, or another node
+3219 :     /// in this list.
+3220 :     ///
+3221 :     /// To add a child to the tree, the list must include both the child
+3222 :     /// and an updated version of the parent with the child's ID added to
+3223 :     /// [`Node::children`].
+3224 :     ///
+3225 :     /// To remove a child and all of its descendants, this list must include
+3226 :     /// an updated version of the parent node with the child's ID removed
+3227 :     /// from [`Node::children`]. Neither the child nor any of its descendants
+3228 :     /// may be included in this list.
+3229 :     pub nodes: Vec<(NodeId, Node)>,
+3230 : 
+3231 :     /// Rarely updated information about the tree as a whole. This may be omitted
+3232 :     /// if it has not changed since the previous update, but providing the same
+accesskit_consumer-0.39.1/src/node.rs
+510 :     pub fn scroll_x(&self) -> Option<f64> {
+511 :         self.data().scroll_x()
+512 :     }
+513 : 
+514 :     pub fn scroll_x_min(&self) -> Option<f64> {
+515 :         self.data().scroll_x_min()
+516 :     }
+517 : 
+518 :     pub fn scroll_x_max(&self) -> Option<f64> {
+519 :         self.data().scroll_x_max()
+520 :     }
+521 : 
+522 :     pub fn scroll_y(&self) -> Option<f64> {
+523 :         self.data().scroll_y()
+524 :     }
+525 : 
+526 :     pub fn scroll_y_min(&self) -> Option<f64> {
+527 :         self.data().scroll_y_min()
+528 :     }
+529 : 
+530 :     pub fn scroll_y_max(&self) -> Option<f64> {
+531 :         self.data().scroll_y_max()
+532 :     }
+accesskit_consumer-0.39.1/src/node.rs
+719 :     pub fn labelled_by(&self) -> impl DoubleEndedIterator<Item = NodeRef<'a>> + use<'a> {
+720 :         let explicit = &self.state.data.labelled_by();
+721 :         if explicit.is_empty()
+722 :             && matches!(
+723 :                 self.role(),
+724 :                 Role::Button
+725 :                     | Role::CheckBox
+726 :                     | Role::DefaultButton
+727 :                     | Role::Link
+728 :                     | Role::MenuItem
+729 :                     | Role::MenuItemCheckBox
+730 :                     | Role::MenuItemRadio
+731 :                     | Role::RadioButton
+732 :             )
+733 :         {
+734 :             LabelledBy::FromDescendants(FilteredChildren::new(*self, &descendant_label_filter))
+735 :         } else {
+736 :             LabelledBy::Explicit {
+737 :                 ids: explicit.iter(),
+738 :                 tree_state: self.tree_state,
+739 :                 node_id: self.id,
+740 :             }
+741 :         }
+accesskit_consumer-0.39.1/src/node.rs
+775 :     pub fn write_label<W: fmt::Write>(&self, mut writer: W) -> Result<bool, fmt::Error> {
+776 :         if self.write_label_direct(&mut writer)? {
+777 :             Ok(true)
+778 :         } else {
+779 :             let mut wrote_one = false;
+780 :             for node in self.labelled_by() {
+781 :                 let writer = SpacePrefixingWriter {
+782 :                     inner: &mut writer,
+783 :                     need_prefix: wrote_one,
+784 :                 };
+785 :                 let wrote_this_time = if node.label_comes_from_value() {
+786 :                     node.write_value(writer)
+787 :                 } else {
+788 :                     node.write_label_direct(writer)
+789 :                 }?;
+790 :                 wrote_one = wrote_one || wrote_this_time;
+791 :             }
+792 :             Ok(wrote_one)
+793 :         }
+794 :     }
+795 : 
+796 :     pub fn description(&self) -> Option<String> {
+797 :         self.data()
+accesskit_consumer-0.39.1/src/node.rs
+938 :     pub fn is_container_with_selectable_children(&self) -> bool {
+939 :         matches!(
+940 :             self.role(),
+941 :             Role::ComboBox
+942 :                 | Role::EditableComboBox
+943 :                 | Role::Grid
+944 :                 | Role::ListBox
+945 :                 | Role::ListGrid
+946 :                 | Role::Menu
+947 :                 | Role::MenuBar
+948 :                 | Role::MenuListPopup
+949 :                 | Role::RadioGroup
+950 :                 | Role::TabList
+951 :                 | Role::Toolbar
+952 :                 | Role::Tree
+953 :                 | Role::TreeGrid
+954 :         )
+955 :     }
+956 : 
+957 :     pub fn controls(&self) -> impl DoubleEndedIterator<Item = NodeRef<'a>> + use<'a> {
+accesskit_consumer-0.39.1/src/iterators.rs
+537 : pub(crate) enum LabelledBy<'a, Filter: Fn(&NodeRef) -> FilterResult> {
+538 :     FromDescendants(FilteredChildren<'a, Filter>),
+539 :     Explicit {
+540 :         ids: core::slice::Iter<'a, NodeId>,
+541 :         tree_state: &'a TreeState,
+542 :         node_id: FullNodeId,
+543 :     },
+544 : }
+545 : 
+546 : impl<'a, Filter: Fn(&NodeRef) -> FilterResult> Iterator for LabelledBy<'a, Filter> {
+547 :     type Item = NodeRef<'a>;
+548 : 
+549 :     fn next(&mut self) -> Option<Self::Item> {
+550 :         match self {
+551 :             Self::FromDescendants(iter) => iter.next(),
+552 :             Self::Explicit {
+553 :                 ids,
+554 :                 tree_state,
+555 :                 node_id,
+556 :             } => ids
+557 :                 .next()
+558 :                 .map(|id| tree_state.node_by_id(node_id.with_same_tree(*id)).unwrap()),
+559 :         }
+560 :     }
+561 : 
+562 :     fn size_hint(&self) -> (usize, Option<usize>) {
+563 :         match self {
+564 :             Self::FromDescendants(iter) => iter.size_hint(),
+565 :             Self::Explicit { ids, .. } => ids.size_hint(),
+566 :         }
+567 :     }
+568 : }
+569 : 
+570 : impl<Filter: Fn(&NodeRef) -> FilterResult> DoubleEndedIterator for LabelledBy<'_, Filter> {
+571 :     fn next_back(&mut self) -> Option<Self::Item> {
+572 :         match self {
+573 :             Self::FromDescendants(iter) => iter.next_back(),
+574 :             Self::Explicit {
+575 :                 ids,
+576 :                 tree_state,
+577 :                 node_id,
+578 :             } => ids
+579 :                 .next_back()
+580 :                 .map(|id| tree_state.node_by_id(node_id.with_same_tree(*id)).unwrap()),
+581 :         }
+582 :     }
+583 : }
+accesskit_consumer-0.39.1/src/tree.rs
+270 :                 }
+271 :                 if node_state.data != node_data {
+272 :                     if node_data.tree_id().is_some() && !node_data.children().is_empty() {
+273 :                         panic!(
+274 :                             "Node {:?} has both tree_id and children. \
+275 :                              A graft node's only child comes from its subtree.",
+276 :                             node_id.to_components().0
+277 :                         );
+278 :                     }
+279 :                     let old_tree_id = node_state.data.tree_id();
+280 :                     let new_tree_id = node_data.tree_id();
+281 :                     if old_tree_id != new_tree_id {
+282 :                         if let Some(old_subtree_id) = old_tree_id {
+283 :                             grafts_to_remove.insert(old_subtree_id);
+284 :                         }
+285 :                         if let Some(new_subtree_id) = new_tree_id {
+286 :                             record_graft(&mut pending_grafts, new_subtree_id, node_id);
+287 :                         }
+288 :                     }
+289 :                     node_state.data = node_data;
+290 :                     if let Some(changes) = &mut changes {
+291 :                         changes.updated_node_ids.insert(node_id);
+292 :                     }
+293 :                 }
+accesskit_consumer-0.39.1/src/tree.rs
+353 :         if !unreachable.is_empty() {
+354 :             fn traverse_unreachable(
+355 :                 nodes: &mut HashMap<FullNodeId, NodeState>,
+356 :                 grafts_to_remove: &mut HashSet<TreeId>,
+357 :                 changes: &mut Option<&mut InternalChanges>,
+358 :                 seen_child_ids: &HashSet<FullNodeId>,
+359 :                 new_tree_root: Option<FullNodeId>,
+360 :                 root: FullNodeId,
+361 :             ) {
+362 :                 let mut stack = vec![root];
+363 :                 while let Some(id) = stack.pop() {
+364 :                     if let Some(changes) = changes {
+365 :                         changes.removed_node_ids.insert(id);
+366 :                     }
+367 :                     let node = nodes.remove(&id).unwrap();
+368 :                     if let Some(subtree_id) = node.data.tree_id() {
+369 :                         grafts_to_remove.insert(subtree_id);
+370 :                     }
+371 :                     let (_, tree_index) = id.to_components();
+372 :                     for child_id in node.data.children().iter() {
+373 :                         let child_node_id = FullNodeId::new(*child_id, tree_index);
+374 :                         if !seen_child_ids.contains(&child_node_id)
+375 :                             && new_tree_root != Some(child_node_id)
+376 :                         {
+377 :                             stack.push(child_node_id);
+378 :                         }
+379 :                     }
+380 :                 }
+381 :             }
+accesskit_windows-0.35.1/src/node.rs
+404 :     pub(crate) fn name(&mut self) -> Option<WideString<'_>> {
+405 :         let mut result = WideString::new(self.string_buffer);
+406 :         if self.node.label_comes_from_value() {
+407 :             self.node.write_value(&mut result)
+408 :         } else {
+409 :             self.node.write_label(&mut result)
+410 :         }
+411 :         .unwrap()
+412 :         .then_some(result)
+413 :     }
+414 : 
+accesskit_windows-0.35.1/src/node.rs
+786 :         new_value,
+787 :     });
+788 : }
+789 : 
+790 : #[implement(
+791 :     IRawElementProviderSimple,
+792 :     IRawElementProviderFragment,
+793 :     IRawElementProviderFragmentRoot,
+794 :     IToggleProvider,
+795 :     IInvokeProvider,
+796 :     IValueProvider,
+797 :     IRangeValueProvider,
+798 :     IScrollItemProvider,
+799 :     ISelectionItemProvider,
+800 :     ISelectionProvider,
+801 :     ITextProvider,
+802 :     IExpandCollapseProvider,
+803 :     IWindowProvider
+804 : )]
+805 : pub(crate) struct PlatformNode {
+806 :     pub(crate) context: Weak<Context>,
+807 :     pub(crate) node_id: Option<FullNodeId>,
+808 : }
+809 : 
+810 : impl PlatformNode {
+accesskit_windows-0.35.1/src/node.rs
+847 :     fn node<'a>(&self, tree: &'a Tree) -> Result<NodeRef<'a>> {
+848 :         let state = tree.state();
+849 :         if let Some(id) = self.node_id {
+850 :             if let Some(node) = state.node_by_id(id) {
+851 :                 Ok(node)
+852 :             } else {
+853 :                 Err(element_not_available())
+854 :             }
+855 :         } else {
+856 :             Ok(state.root())
+857 :         }
+858 :     }
+859 : 
+860 :     fn node_with_location<'a>(&self, tree: &'a Tree) -> Result<(NodeRef<'a>, NodeId, TreeId)> {
+861 :         let node = self.node(tree)?;
+862 :         let (local_id, tree_id) = tree
+863 :             .state()
+864 :             .locate_node(node.id())
+865 :             .ok_or_else(element_not_available)?;
+866 :         Ok((node, local_id, tree_id))
+867 :     }
+868 : 
+869 :     fn resolve_with_context<F, T>(&self, f: F) -> Result<T>
+870 :     where
+871 :         for<'a> F: FnOnce(NodeRef<'a>, &Arc<Context>) -> Result<T>,
+872 :     {
+873 :         self.with_tree_and_context(|tree, context| {
+874 :             let node = self.node(tree)?;
+875 :             f(node, context)
+876 :         })
+877 :     }
+878 : 
+879 :     fn resolve_with_tree_state_and_context<F, T>(&self, f: F) -> Result<T>
+880 :     where
+881 :         for<'a> F: FnOnce(NodeRef<'a>, &TreeState, &Arc<Context>) -> Result<T>,
+882 :     {
+883 :         self.with_tree_and_context(|tree, context| {
+884 :             let node = self.node(tree)?;
+885 :             f(node, tree.state(), context)
+886 :         })
+887 :     }
+888 : 
+889 :     fn resolve<F, T>(&self, f: F) -> Result<T>
+890 :     where
+891 :         for<'a> F: FnOnce(NodeRef<'a>) -> Result<T>,
+892 :     {
+893 :         self.resolve_with_context(|node, _| f(node))
+894 :     }
+895 : 
+accesskit_windows-0.35.1/src/node.rs
+1013 :     fn GetPatternProvider(&self, pattern_id: UIA_PATTERN_ID) -> Result<IUnknown> {
+1014 :         self.pattern_provider(pattern_id)
+1015 :     }
+1016 : 
+1017 :     fn GetPropertyValue(&self, property_id: UIA_PROPERTY_ID) -> Result<VARIANT> {
+1018 :         self.resolve_with_tree_state_and_context(|node, state, context| {
+1019 :             let mut buffer = StringBuffer::acquire();
+1020 :             let mut wrapper = NodeWrapper {
+1021 :                 node: &node,
+1022 :                 string_buffer: &mut buffer,
+1023 :             };
+1024 :             let mut result = wrapper.get_property_value(property_id);
+1025 :             if result.is_empty() {
+1026 :                 if node.is_root() {
+1027 :                     match property_id {
+1028 :                         UIA_NamePropertyId => {
+1029 :                             result = window_title(context.hwnd, &mut buffer).into();
+1030 :                         }
+1031 :                         UIA_NativeWindowHandlePropertyId => {
+1032 :                             result = (context.hwnd.0.0 as i32).into();
+1033 :                         }
+1034 :                         _ => (),
+1035 :                     }
+1036 :                 }
+1037 :                 match property_id {
+1038 :                     UIA_FrameworkIdPropertyId => {
+1039 :                         result = StrWrapper::new(state.toolkit_name(), &mut buffer).into()
+1040 :                     }
+1041 :                     UIA_ProviderDescriptionPropertyId => {
+1042 :                         result = toolkit_description(state, &mut buffer).into()
+1043 :                     }
+1044 :                     UIA_ControllerForPropertyId => {
+1045 :                         let controlled: Vec<IUnknown> = node
+1046 :                             .controls()
+1047 :                             .filter(|controlled| filter(controlled) == FilterResult::Include)
+1048 :                             .map(|controlled| context.get_or_create_platform_node(controlled.id()))
+1049 :                             .map(|result| result.into_interface::<IRawElementProviderSimple>())
+1050 :                             .filter_map(|controlled| controlled.cast::<IUnknown>().ok())
+1051 :                             .collect();
+1052 :                         result = controlled.into();
+1053 :                     }
+1054 :                     _ => (),
+1055 :                 }
+1056 :             }
+1057 :             Ok(result.into())
+1058 :         })
+1059 :     }
+1060 : 
+1061 :     fn HostRawElementProvider(&self) -> Result<IRawElementProviderSimple> {
+1062 :         self.with_tree_state_and_context(|state, context| {
+1063 :             if self.is_root(state) {
+1064 :                 unsafe { UiaHostProviderFromHwnd(context.hwnd.0) }
+1065 :             } else {
+1066 :                 Err(Error::empty())
+1067 :             }
+1068 :         })
+1069 :     }
+accesskit_windows-0.35.1/src/node.rs
+1183 : macro_rules! properties {
+1184 :     ($(($id:ident, $m:ident)),+) => {
+1185 :         impl NodeWrapper<'_> {
+1186 :             fn get_property_value(&mut self, property_id: UIA_PROPERTY_ID) -> Variant {
+1187 :                 match property_id {
+1188 :                     $($id => {
+1189 :                         self.$m().into()
+1190 :                     })*
+1191 :                     _ => Variant::empty()
+1192 :                 }
+1193 :             }
+1194 :             fn enqueue_simple_property_changes(
+1195 :                 &mut self,
+1196 :                 queue: &mut Vec<QueuedEvent>,
+1197 :                 context: &Arc<Context>,
+1198 :                 element: &IRawElementProviderSimple,
+1199 :                 old: &mut NodeWrapper,
+1200 :             ) {
+1201 :                 $({
+1202 :                     let old_value = old.$m();
+1203 :                     let new_value = self.$m();
+1204 :                     if old_value != new_value {
+1205 :                         enqueue_property_change(
+1206 :                             queue,
+1207 :                             element,
+1208 :                             $id,
+1209 :                             old_value.into(),
+1210 :                             new_value.into(),
+1211 :                         );
+1212 :                     }
+1213 :                 })*
+1214 : 
+1215 :                 let mut old_controls = old.node.controls().filter(|controlled| filter(controlled) == FilterResult::Include);
+1216 :                 let mut new_controls = self.node.controls().filter(|controlled| filter(controlled) == FilterResult::Include);
+1217 :                 let mut are_equal = true;
+1218 :                 let mut controls: Vec<IUnknown> = Vec::new();
+1219 :                 loop {
+1220 :                     let old_controlled = old_controls.next();
+1221 :                     let new_controlled = new_controls.next();
+1222 :                     match (old_controlled, new_controlled) {
+1223 :                         (Some(a), Some(b)) => {
+1224 :                             are_equal = are_equal && a.id() == b.id();
+1225 :                             controls.push(context.get_or_create_platform_node(b.id()).into_interface::<IRawElementProviderSimple>().into());
+1226 :                         }
+1227 :                         (None, None) => break,
+1228 :                         _ => are_equal = false,
+1229 :                     }
+1230 :                 }
+1231 :                 if !are_equal {
+1232 :                     enqueue_property_change(
+1233 :                         queue,
+1234 :                         &element,
+1235 :                         UIA_ControllerForPropertyId,
+1236 :                         Variant::empty(),
+1237 :                         controls.into(),
+1238 :                     );
+1239 :                 }
+1240 :             }
+1241 :         }
+1242 :     };
+accesskit_windows-0.35.1/src/node.rs
+1245 : macro_rules! patterns {
+1246 :     ($(($pattern_id:ident, $provider_interface:ident, $provider_interface_impl:ident, $is_supported:ident, (
+1247 :         $(($property_id:ident, $com_getter:ident, $getter:ident, $com_type:ident)),*
+1248 :     ), (
+1249 :         $($extra_trait_method:item),*
+1250 :     ))),+) => {
+1251 :         impl PlatformNode_Impl {
+1252 :             fn pattern_provider(&self, pattern_id: UIA_PATTERN_ID) -> Result<IUnknown> {
+1253 :                 self.resolve(|node| {
+1254 :                     let mut buffer = StringBuffer::acquire();
+1255 :                     let wrapper = NodeWrapper { node: &node, string_buffer: &mut buffer };
+1256 :                     match pattern_id {
+1257 :                         $($pattern_id if wrapper.$is_supported() => {
+1258 :                             let intermediate: $provider_interface = self.to_interface();
+1259 :                             return intermediate.cast();
+1260 :                         })*
+1261 :                         _ => (),
+1262 :                     }
+1263 :                     Err(Error::empty())
+1264 :                 })
+1265 :             }
+1266 :         }
+1267 :         impl NodeWrapper<'_> {
+1268 :             fn enqueue_pattern_property_changes(
+1269 :                 &mut self,
+1270 :                 queue: &mut Vec<QueuedEvent>,
+accesskit_windows-0.35.1/src/node.rs
+1306 : properties! {
+1307 :     (UIA_ControlTypePropertyId, control_type),
+1308 :     (UIA_LocalizedControlTypePropertyId, localized_control_type),
+1309 :     (UIA_AriaRolePropertyId, aria_role),
+1310 :     (UIA_NamePropertyId, name),
+1311 :     (UIA_FullDescriptionPropertyId, description),
+1312 :     (UIA_CulturePropertyId, culture),
+1313 :     (UIA_HelpTextPropertyId, placeholder),
+1314 :     (UIA_IsContentElementPropertyId, is_content_element),
+1315 :     (UIA_IsControlElementPropertyId, is_content_element),
+1316 :     (UIA_IsEnabledPropertyId, is_enabled),
+1317 :     (UIA_IsKeyboardFocusablePropertyId, is_focusable),
+1318 :     (UIA_HasKeyboardFocusPropertyId, is_focused),
+1319 :     (UIA_LiveSettingPropertyId, live_setting),
+1320 :     (UIA_AutomationIdPropertyId, automation_id),
+1321 :     (UIA_ClassNamePropertyId, class_name),
+1322 :     (UIA_OrientationPropertyId, orientation),
+1323 :     (UIA_IsRequiredForFormPropertyId, is_required),
+1324 :     (UIA_IsPasswordPropertyId, is_password),
+1325 :     (UIA_LevelPropertyId, level),
+1326 :     (UIA_PositionInSetPropertyId, position_in_set),
+1327 :     (UIA_SizeOfSetPropertyId, size_of_set),
+1328 :     (UIA_AriaPropertiesPropertyId, aria_properties),
+1329 :     (UIA_IsDialogPropertyId, is_dialog)
+1330 : }
+1331 : 
+1332 : patterns! {
+1333 :     (UIA_TogglePatternId, IToggleProvider, IToggleProvider_Impl, is_toggle_pattern_supported, (
+accesskit_windows-0.35.1/src/node.rs
+1370 :     (UIA_ScrollItemPatternId, IScrollItemProvider, IScrollItemProvider_Impl, is_scroll_item_pattern_supported, (), (
+1371 :         fn ScrollIntoView(&self) -> Result<()> {
+1372 :             self.do_complex_action(|_node, target_node, target_tree| {
+1373 :                 Ok(Some(ActionRequest {
+1374 :                     action: Action::ScrollIntoView,
+1375 :                     target_tree,
+1376 :                     target_node,
+1377 :                     data: None,
+1378 :                 }))
+1379 :             })
+1380 :         }
+1381 :     )),
+accesskit_windows-0.35.1/src/adapter.rs
+295 :         let platform_node = self.context.get_or_create_platform_node(new_node.id());
+296 :         let element: IRawElementProviderSimple = platform_node.into_interface();
+297 :         let mut old_buffer = StringBuffer::acquire();
+298 :         let mut old_wrapper = NodeWrapper {
+299 :             node: old_node,
+300 :             string_buffer: &mut old_buffer,
+301 :         };
+302 :         let mut new_buffer = StringBuffer::acquire();
+303 :         let mut new_wrapper = NodeWrapper {
+304 :             node: new_node,
+305 :             string_buffer: &mut new_buffer,
+306 :         };
+307 :         new_wrapper.enqueue_property_changes(
+308 :             &mut self.queue,
+309 :             self.context,
+310 :             &element,
+311 :             &mut old_wrapper,
+312 :         );
+313 :         let new_name = new_wrapper.name();
+314 :         if new_name.is_some()
+315 :             && new_node.live() != Live::Off
+accesskit_windows-0.35.1/src/adapter.rs
+347 :     fn node_removed(&mut self, node: &NodeRef) {
+348 :         self.insert_text_change_if_needed(node);
+349 :         self.context.remove_platform_node(node.id());
+350 :         if filter(node) != FilterResult::Include {
+351 :             return;
+352 :         }
+accesskit_windows-0.35.1/src/context.rs
+80 :     pub(crate) fn get_or_create_platform_node(
+81 :         self: &Arc<Self>,
+82 :         id: FullNodeId,
+83 :     ) -> ComObject<PlatformNode> {
+84 :         let mut platform_nodes = self.platform_nodes.lock().unwrap();
+85 :         if let Some(result) = platform_nodes.get(&id) {
+86 :             return result.clone();
+87 :         }
+88 : 
+89 :         let result = PlatformNode::new(self, id);
+90 :         platform_nodes.insert(id, result.clone());
+91 :         result
+92 :     }
+93 : 
+94 :     pub(crate) fn remove_platform_node(&self, id: FullNodeId) {
+95 :         let mut platform_nodes = self.platform_nodes.lock().unwrap();
+96 :         platform_nodes.remove(&id);
+97 :     }
+accesskit_windows-0.35.1/CHANGELOG.md
+41 : ## [0.35.1](https://github.com/AccessKit/accesskit/compare/accesskit_windows-v0.35.0...accesskit_windows-v0.35.1) (2026-09-25)
+42 : 
+43 : 
+44 : ### Bug Fixes
+45 : 
+46 : * Update minimum supported Rust version to 1.87 ([#808](https://github.com/AccessKit/accesskit/issues/808)) ([08c6ada](https://github.com/AccessKit/accesskit/commit/08c6ada3594ab12f57844c25d6a16dc8955ff640))
+47 : 
+48 : 
+49 : ### Dependencies
+50 : 
+51 : * The following workspace dependencies were updated
+52 :   * dependencies
+53 :     * accesskit bumped from 0.25.0 to 0.25.1
+54 :     * accesskit_consumer bumped from 0.39.0 to 0.39.1
+55 : 
+56 : ## [0.35.0](https://github.com/AccessKit/accesskit/compare/accesskit_windows-v0.34.0...accesskit_windows-v0.35.0) (2026-08-29)
+57 : 
+58 : 
+59 : ### Features
+60 : 
+61 : * Add html_id node property ([#776](https://github.com/AccessKit/accesskit/issues/776)) ([5332ac0](https://github.com/AccessKit/accesskit/commit/5332ac0927b7fb78eff6b8b68c21ef4c801aae7c))
+62 : 
+63 : 
+64 : ### Bug Fixes
+65 : 
+66 : * Fix imports in Windows tests ([#769](https://github.com/AccessKit/accesskit/issues/769)) ([edbd0ff](https://github.com/AccessKit/accesskit/commit/edbd0ff9a18c3df836a3cee42aac02f9e82fcf8b))
+67 : 
+68 : 
+69 : ### Dependencies
+70 : 
+accesskit_windows-0.35.1/src/util.rs
+360 : pub(crate) fn element_not_available() -> Error {
+361 :     HRESULT(UIA_E_ELEMENTNOTAVAILABLE as _).into()
+362 : }
+426 : pub(crate) fn upgrade<T>(weak: &Weak<T>) -> Result<Arc<T>> {
+427 :     match weak.upgrade() {
+428 :         Some(strong) => Ok(strong),
+429 :         _ => Err(element_not_available()),
+430 :     }

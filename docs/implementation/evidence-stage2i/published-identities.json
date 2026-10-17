@@ -1,0 +1,68 @@
+[
+  {
+    "Package": "iced-0.14.0",
+    "VCS": {
+      "git": {
+        "sha1": "3997291f318a8bc06fa522f5579836fb3feb94df"
+      },
+      "path_in_vcs": ""
+    },
+    "License": "MIT",
+    "RustVersion": "1.88"
+  },
+  {
+    "Package": "iced_core-0.14.0",
+    "VCS": {
+      "git": {
+        "sha1": "3997291f318a8bc06fa522f5579836fb3feb94df"
+      },
+      "path_in_vcs": "core"
+    },
+    "License": "MIT",
+    "RustVersion": ""
+  },
+  {
+    "Package": "iced_widget-0.14.2",
+    "VCS": {
+      "git": {
+        "sha1": "54abf81d13fec06d4d9ac754b03ce2c3313e8a1f"
+      },
+      "path_in_vcs": "widget"
+    },
+    "License": "MIT",
+    "RustVersion": ""
+  },
+  {
+    "Package": "accesskit-0.25.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "accesskit"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87"
+  },
+  {
+    "Package": "accesskit_consumer-0.39.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "accesskit_consumer"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87"
+  },
+  {
+    "Package": "accesskit_windows-0.35.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "adapters/windows"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87"
+  }
+]

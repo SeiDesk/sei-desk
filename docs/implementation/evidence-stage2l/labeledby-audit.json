@@ -1,0 +1,219 @@
+{
+  "UTC": "2026-10-17T07:57:13.1413187Z",
+  "Requirement": "Stage 2K R02 / Q01: real UIA LabeledBy reference to actual visible associated list label",
+  "Classification": "Stable published semantic/consumer support, missing Windows property path",
+  "StableCandidateIdentified": false,
+  "NativeRuntimeExecuted": false,
+  "Path": [
+    {
+      "Step": "Identity and relationship",
+      "Finding": "NodeId and TreeUpdate keyed nodes; set_labelled_by/push/clear store explicit NodeIds. Author must supply actual visible label node and stable identity in same semantic tree.",
+      "Source": [
+        {
+          "Package": "accesskit",
+          "Version": "0.25.1",
+          "Path": "src/lib.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 701,
+          "LastLine": 717,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit/src/lib.rs",
+          "SourceSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+          "ArchiveMemberSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+        },
+        {
+          "Package": "accesskit",
+          "Version": "0.25.1",
+          "Path": "src/lib.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 2053,
+          "LastLine": 2059,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit/src/lib.rs",
+          "SourceSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+          "ArchiveMemberSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+        },
+        {
+          "Package": "accesskit",
+          "Version": "0.25.1",
+          "Path": "src/lib.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 3208,
+          "LastLine": 3232,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit/src/lib.rs",
+          "SourceSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+          "ArchiveMemberSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+        }
+      ]
+    },
+    {
+      "Step": "Consumer resolution and names",
+      "Finding": "Explicit LabelledBy iterator resolves IDs in same tree; NodeRef.labelled_by preserves references; write_label may derive text from label nodes. A derived Name string is not a UIA element relationship.",
+      "Source": [
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 719,
+          "LastLine": 741,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/node.rs",
+          "SourceSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2",
+          "ArchiveMemberSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2"
+        },
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 775,
+          "LastLine": 797,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/node.rs",
+          "SourceSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2",
+          "ArchiveMemberSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2"
+        },
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/iterators.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 537,
+          "LastLine": 583,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/iterators.rs",
+          "SourceSHA256": "454DE6CCB571E7BD831C721B8BA4EB76DBEFBE97043ABFC727B917C2BCC28A1A",
+          "ArchiveMemberSHA256": "454DE6CCB571E7BD831C721B8BA4EB76DBEFBE97043ABFC727B917C2BCC28A1A"
+        }
+      ]
+    },
+    {
+      "Step": "Updates and removal",
+      "Finding": "Tree update replaces changed node data and tracks updates/removes unreachable nodes. Explicit iterator unwrap requires extant label targets; no dangling-reference repair was established in the examined update/removal path. Author must remove/update relationships when label removed. Potential panic is source inference only, not executed regression.",
+      "Source": [
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/tree.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 270,
+          "LastLine": 293,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/tree.rs",
+          "SourceSHA256": "8B600CFB981DB3C41D88619DB30A93293D8FA8FCA6DD37853B4B3E746129F0C5",
+          "ArchiveMemberSHA256": "8B600CFB981DB3C41D88619DB30A93293D8FA8FCA6DD37853B4B3E746129F0C5"
+        },
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/tree.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 353,
+          "LastLine": 381,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/tree.rs",
+          "SourceSHA256": "8B600CFB981DB3C41D88619DB30A93293D8FA8FCA6DD37853B4B3E746129F0C5",
+          "ArchiveMemberSHA256": "8B600CFB981DB3C41D88619DB30A93293D8FA8FCA6DD37853B4B3E746129F0C5"
+        },
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/iterators.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 546,
+          "LastLine": 567,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/iterators.rs",
+          "SourceSHA256": "454DE6CCB571E7BD831C721B8BA4EB76DBEFBE97043ABFC727B917C2BCC28A1A",
+          "ArchiveMemberSHA256": "454DE6CCB571E7BD831C721B8BA4EB76DBEFBE97043ABFC727B917C2BCC28A1A"
+        }
+      ]
+    },
+    {
+      "Step": "Windows property dispatch",
+      "Finding": "NodeWrapper.name derives a string. properties macro defaults to empty Variant. Full property list lacks UIA_LabeledByPropertyId; GetPropertyValue fallback only handles root/native/toolkit/ControllerFor special cases. Nonroot HostRawElementProvider is empty. No authored label IRawElementProviderSimple target is produced for list.",
+      "Source": [
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 404,
+          "LastLine": 414,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1017,
+          "LastLine": 1072,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1183,
+          "LastLine": 1242,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1306,
+          "LastLine": 1330,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        }
+      ]
+    },
+    {
+      "Step": "Generic retained-node lifecycle",
+      "Finding": "Context caches platform nodes by ID and removes cache entry when node removed; retained objects resolve current tree and fail element-not-available if ID missing/context gone. ID reuse is not ruled out by this provider; author must prevent stale identity aliasing. This generic behavior cannot validate a missing label property or relationship event.",
+      "Source": [
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/context.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 80,
+          "LastLine": 97,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/context.rs",
+          "SourceSHA256": "C03DF25BDEC7F70C0B2FD90EA5308D9DC27032BEC73005AC57712D33F12E6A73",
+          "ArchiveMemberSHA256": "C03DF25BDEC7F70C0B2FD90EA5308D9DC27032BEC73005AC57712D33F12E6A73"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/adapter.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 347,
+          "LastLine": 352,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/adapter.rs",
+          "SourceSHA256": "F4342311058A86CB67AA7526BCE5F874DDDF11C9295C160591B46781387A6376",
+          "ArchiveMemberSHA256": "F4342311058A86CB67AA7526BCE5F874DDDF11C9295C160591B46781387A6376"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 847,
+          "LastLine": 895,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        }
+      ]
+    }
+  ],
+  "HistoricalEvidence": "docs/implementation/evidence-stage2e/pattern-observation/observations.json: input LabeledBy=false; historical Edit query, not a new catalog query",
+  "RelatedMetadata": "PR 78 merged naming work; actual published consumer source confirms text derivation only. No claim this PR supplies Windows LabeledBy mapping.",
+  "Missing": "Property-to-target mapping and relationship update/removal native qualification",
+  "Resume": "Exact supported stable provider mapping and lifecycle/source proof, O01-O07 unchanged, owner-approved isolated Q01 native test; no label removal/renaming/proxy"
+}

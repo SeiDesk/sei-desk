@@ -1,0 +1,34 @@
+[
+  {
+    "Path": "docs/implementation/evidence-stage2m/baseline.json",
+    "SHA256": "E45E1ED67D6E161D33828B1B387F3F7061327AE4EFA366B9B79F3B65B5F0C660"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/decision-traceability.json",
+    "SHA256": "F233BA3027C2488685095183EB7F41C045E0D288B3A2D777825DD259B380BFA2"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/owner-input-template.json",
+    "SHA256": "F98AF0E29F1D8636CEA801F6F6E9C2AD9C41096A3699D23737797BBCEEBF1381"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/owner-state-check.json",
+    "SHA256": "7B88DDF4D2962D1D16F5D8282E2BB79E17F2CE9944F70BA55A7EC66586FD6C89"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/preservation-before.json",
+    "SHA256": "95D4265AECB49A4B0AFB5D909FE3593303E9588C21345A7688C34864DF0BF606"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/prior-integrity-check.json",
+    "SHA256": "0E3E2943B168E0168B8A8E38141383661602E7CC8E455D3F373EA6671139C8D8"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2m/README.md",
+    "SHA256": "28DEE1A856E0E8FFB8D538C435FF510566E9D6E893C942256113FE4B7D04C195"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2M-OWNER-DECISION-PACKAGE.md",
+    "SHA256": "01D8AE4F3E39BFA8BBA4ADE9452F4E7E68AC07840FE98ED282237CD830A5A6B5"
+  }
+]

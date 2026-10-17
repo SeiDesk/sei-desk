@@ -1,0 +1,14 @@
+{
+  "UTC": "2026-10-17T07:12:51.7579885Z",
+  "Head": "d14d4bede2096d4bea2561de22977d181376b640",
+  "Branch": "main",
+  "PreStageStatus": [
+    "?? docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+    "?? docs/implementation/STAGE-2H-REAL-IME-REPORT.md",
+    "?? docs/implementation/evidence-stage2g/",
+    "?? docs/implementation/evidence-stage2h/",
+    "?? experiments/iced-ime-observer/"
+  ],
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "Architecture": "X64"
+}

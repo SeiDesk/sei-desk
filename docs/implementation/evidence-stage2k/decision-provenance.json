@@ -1,0 +1,25 @@
+{
+  "UTC": "2026-10-17T07:34:40.2031029Z",
+  "KnownRecordedDecisions": [
+    {
+      "Decision": "Option A upstream-first selected",
+      "Source": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+      "Scope": "Architecture holding strategy only"
+    },
+    {
+      "Decision": "Approve that limited deferral",
+      "Source": "docs/implementation/evidence-stage2d/manual-attestation.json",
+      "Scope": "Programmatic text-range APIs deferred for headless work only"
+    }
+  ],
+  "RatificationSearchScope": [
+    "STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+    "STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+    "STAGE-2J-NONEDITABLE-UI-FEASIBILITY.md",
+    "evidence-stage2d/manual-attestation.json",
+    "evidence-stage2h/operator-readiness.json"
+  ],
+  "Result": "No actual ratification of the seven Stage 2K owner questions found in these inspected records; no approval inferred from task title, local account, Git remote, historical test attestation or headless PASS",
+  "OwnerApprovalDate": null,
+  "RuntimeAuthorization": false
+}

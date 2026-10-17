@@ -1,0 +1,121 @@
+[
+  {
+    "Value": "",
+    "ObservationSeq": 6,
+    "Anchor": 0,
+    "Active": 0,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        32,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "aaé😀é👩‍💻",
+    "ObservationSeq": 600,
+    "Anchor": 1,
+    "Active": 1,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        40,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "abaé😀é👩‍💻",
+    "ObservationSeq": 730,
+    "Anchor": 2,
+    "Active": 2,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        49,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "abaé😀é👩‍💻c",
+    "ObservationSeq": 774,
+    "Anchor": 8,
+    "Active": 8,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        125,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "abax😀é👩‍💻c",
+    "ObservationSeq": 878,
+    "Anchor": 4,
+    "Active": 4,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        65,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "abax😀é",
+    "ObservationSeq": 1430,
+    "Anchor": 6,
+    "Active": 6,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        95,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  },
+  {
+    "Value": "abax😀",
+    "ObservationSeq": 1482,
+    "Anchor": 5,
+    "Active": 5,
+    "Ime": {
+      "enabled": true,
+      "cursor": [
+        87,
+        203.8,
+        1,
+        20.8
+      ],
+      "purpose": "Normal",
+      "preedit": null
+    }
+  }
+]

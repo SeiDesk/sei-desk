@@ -1,0 +1,34 @@
+[
+  {
+    "Path": "experiments/iced-ime-observer/src/main.rs",
+    "SHA256": "65C0F18F9933AB15009FD47F53EB6C93021721313688E1754AFEC9CAF6EB492E"
+  },
+  {
+    "Path": "experiments/iced-ime-observer/src/observe.rs",
+    "SHA256": "3863B3625D990AA4221F21BC5B604A335B7A9C317E1C040CF016C4E2A4A384EB"
+  },
+  {
+    "Path": "experiments/iced-ime-observer/Build.ps1",
+    "SHA256": "10C28E91972486CC28A0A55B17CC721290B01E2E514F6E59774AFEEC5CB96709"
+  },
+  {
+    "Path": "experiments/iced-ime-observer/Run.ps1",
+    "SHA256": "E89A5F1883159969D528CD31E7F92B54731DD546B46106E30C981D15C42DE5ED"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/Cargo.toml",
+    "SHA256": "1B17F8EA307C574BF40C84A8CDBB0267016528D4A9E8CA088E37BA9C83E9C812"
+  },
+  {
+    "Path": "experiments/accesskit-iced-spike/Cargo.lock",
+    "SHA256": "DD0C3375503DE0F56DF2CD3F860201D2BFA789D38C342033093139DA03DF760B"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2g/run-01/main.rs.txt",
+    "SHA256": "68D41887716131878581F5B8845FCA50027FB3767E7246AEE7F8F5FB8A518F0D"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2g/run-01/observe.rs.txt",
+    "SHA256": "CA0A9A76FCD73FD621BBCC8BD6B5C9AF182DAE2C5AB3E8D35D055EAC046BCB98"
+  }
+]

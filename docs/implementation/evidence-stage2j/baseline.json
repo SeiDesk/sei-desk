@@ -1,0 +1,17 @@
+{
+  "UTC": "2026-10-17T07:23:05.0105756Z",
+  "Head": "d14d4bede2096d4bea2561de22977d181376b640",
+  "Branch": "main",
+  "PreTaskStatus": [
+    "?? docs/implementation/STAGE-2G-IME-OBSERVATION-REPORT.md",
+    "?? docs/implementation/STAGE-2H-REAL-IME-REPORT.md",
+    "?? docs/implementation/STAGE-2I-ACCESSIBILITY-ARCHITECTURE-DECISION.md",
+    "?? docs/implementation/evidence-stage2g/",
+    "?? docs/implementation/evidence-stage2h/",
+    "?? docs/implementation/evidence-stage2i/",
+    "?? experiments/iced-ime-observer/"
+  ],
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "TimeZoneForPolicy": "Asia/Calcutta",
+  "Scope": "Research/documentation only; no runtime/build tests"
+}

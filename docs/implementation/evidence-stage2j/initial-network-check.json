@@ -1,0 +1,14 @@
+[
+  {
+    "URL": "https://crates.io/api/v1/crates/iced",
+    "UTC": "2026-10-17T07:23:38.1159717Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "URL": "https://api.github.com/repos/iced-rs/iced/pulls/3111",
+    "UTC": "2026-10-17T07:23:38.1266006Z",
+    "Success": false,
+    "Error": "No such host is known. (api.github.com:443)"
+  }
+]

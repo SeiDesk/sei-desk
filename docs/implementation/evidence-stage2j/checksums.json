@@ -1,0 +1,62 @@
+[
+  {
+    "Path": "docs/implementation/evidence-stage2j/additional-archive-source-check.json",
+    "SHA256": "EB93D928FB5065EB54DA6F267ED5953AA34B9546C21F98E649BC42DF4E3D9E45"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/additional-source-identities.json",
+    "SHA256": "02B26A4A5A0C1045BC05E604A213016FA9F0896427F741EE07AF46A50C909682"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/archive-registry-check.json",
+    "SHA256": "07931081F0B0A341EF2A0A75DF2F2D1CFA1105E103CF55A45C8519524308C297"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/baseline.json",
+    "SHA256": "42191CD6E3E3AAEDF2BC4E51C591C234AEAC0271FF1B46AB6158F2197C0FE501"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/initial-network-check.json",
+    "SHA256": "D07FD4BAEA49EC710F40C572583F010A37A7271EC29E24B8E5FC7AD180DE86E6"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/list-source-excerpts.txt",
+    "SHA256": "AF49853E7B5D13E49C74DFC4A2D91B43EC07CDE7056E66FE160EAB46F97D8FA7"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/preservation-before.json",
+    "SHA256": "20EBFA69ADB5DD2B93171AF5145DE59C61B1E73AC222C28FF218B01DAD2F77D4"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/README.md",
+    "SHA256": "70A6FA42CEBF6E471018E524654B352D11830745B0C152A6A7CBE244DB85B7AC"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/release-check.json",
+    "SHA256": "B3F023358BD79D6EE74B248414C6D268A6008AF9580DF974BB3AB0770EC2DAFD"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/research-notes.md",
+    "SHA256": "11E891BF65A798DB8B53EEEB4C4F96C96A455DE83A102C416806FCFDEB75F972"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/review-00-metadata.json",
+    "SHA256": "5AC6EDA0B7E5F833CCC8EC303A22A55AB9205A96F9B214F5F0B55690CD497883"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/scroll-provider-search.json",
+    "SHA256": "2231D8DA2A921447AE5FDA30BFEF6EA32031D2D9FF1C7811236B3E18C343DCBB"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2j/source-recheck.json",
+    "SHA256": "E6541E173FF7440054467A0F1334C6C203A3868981B382CE6A77BDD0CF0CC2B5"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2J-NONEDITABLE-UI-FEASIBILITY.md",
+    "SHA256": "79342BA6E6822F1DE9C91EC23E697A5A98C61671EF620A47F4C875945DFCE1CF"
+  },
+  {
+    "Path": "docs/implementation/STAGE-2J-UPSTREAM-REVIEW-POLICY.md",
+    "SHA256": "86EF34A12B66ED6D11149FA4AF525CF1B90CC1FD848E32C32EF1B7A9A84FDC33"
+  }
+]

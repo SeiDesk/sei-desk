@@ -1,0 +1,37 @@
+[
+  {
+    "Package": "iced",
+    "URL": "https://crates.io/api/v1/crates/iced",
+    "RetrievedAtUtc": "2026-10-17T07:12:58.5719474Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "Package": "iced_widget",
+    "URL": "https://crates.io/api/v1/crates/iced_widget",
+    "RetrievedAtUtc": "2026-10-17T07:12:58.5827862Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "Package": "accesskit",
+    "URL": "https://crates.io/api/v1/crates/accesskit",
+    "RetrievedAtUtc": "2026-10-17T07:12:58.5867014Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "Package": "accesskit_windows",
+    "URL": "https://crates.io/api/v1/crates/accesskit_windows",
+    "RetrievedAtUtc": "2026-10-17T07:12:58.5894571Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "Package": "accesskit_consumer",
+    "URL": "https://crates.io/api/v1/crates/accesskit_consumer",
+    "RetrievedAtUtc": "2026-10-17T07:12:58.5922776Z",
+    "Success": false,
+    "Error": "No such host is known. (crates.io:443)"
+  }
+]

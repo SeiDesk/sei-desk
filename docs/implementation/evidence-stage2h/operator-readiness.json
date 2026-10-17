@@ -1,0 +1,10 @@
+{
+  "RecordedAtUtc": "2026-10-17T07:11:15.6686984Z",
+  "Provenance": "Direct human reply to Stage 2H readiness question in this conversation; timestamp is recording time, not a claimed input-event time",
+  "Question": "Is a composition-capable IME already installed and available, and can you operate it now without changing Windows settings? Please name the language and input method.",
+  "Answer": "No suitable IME or operator is available",
+  "Language": null,
+  "InputMethod": null,
+  "RuntimeAttempted": false,
+  "ConfigurationChanged": false
+}

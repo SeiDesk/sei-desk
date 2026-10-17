@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "stage": "2K",
+  "status": "PROPOSED; NO EXPERIMENT AUTHORIZED",
+  "cases": [
+    {
+      "id": "Q00",
+      "phase": "PREFLIGHT",
+      "setup": "Owner record, exact dependency/source identities, operator/host availability and approved limits are supplied.",
+      "action": "Review approvals and published source; verify LabeledBy and container ScrollPattern are supported before any window is started.",
+      "expected": "Written scope/budget approval and defensible public provider support; otherwise NO-GO. No GUI starts while known gaps remain.",
+      "evidence": "Signed/attributed decision reference; source/version/checksum audit; named host/operator and numeric budget profile.",
+      "blocking_condition": "Missing approval, label/scroll support, named operator, supported host profile or approved bounds.",
+      "requirements": [
+        "R02",
+        "R11",
+        "R16",
+        "R20",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q01",
+      "phase": "A",
+      "setup": "Fixed empty, one-row and multirow catalogs in an approved isolated owned window with visible title, purpose and associated list label.",
+      "action": "Separate native UIA client discovers the exact PID/HWND in raw/control views and reads roles, names, label target, selection container and count/positions.",
+      "expected": "One reachable List/ListItem hierarchy, truthful names/states, correct visible LabeledBy, single-selection settings, checked positions/count and no editable controls.",
+      "evidence": "Raw/control JSON, pattern/property queries, window/source/binary identities and layout provenance.",
+      "blocking_condition": "Missing/duplicate/misrelated nodes, label absent, incorrect counts/roles, misleading enabled state or unexpected editable pattern.",
+      "requirements": [
+        "R01",
+        "R02",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q02",
+      "phase": "A",
+      "setup": "At least three fixed rows; selection and keyboard focus recorded independently.",
+      "action": "Native UIA focuses the list/another button, Selects rows, then reads Focus and Selection independently.",
+      "expected": "At most one selected row; focus and selection do not falsely follow each other. SelectionContainer/GetSelection agree; single-select Add/Remove behavior has an explicit correct contract.",
+      "evidence": "Native property/pattern results and correlated UI-thread state trace.",
+      "blocking_condition": "Focus confused with selection, multiple selected rows, incorrect deselection or contradictory container state.",
+      "requirements": [
+        "R03",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q03",
+      "phase": "A",
+      "setup": "No process-creation backend enabled; launch-intent boundary and exact owned-process inventory instrumented.",
+      "action": "Use native UIA Select/AddToSelection/RemoveFromSelection/Focus, pointer row selection and separately labelled physical arrow navigation.",
+      "expected": "Exactly zero launch intents, service dispatches and fixture launches. Row Click selects only; unchanged Select is idempotent; no row Invoke launches.",
+      "evidence": "Native action trace, bounded intent/service counters, source call-path review, operator record and owned-process observations; no universal OS-execution proof claimed.",
+      "blocking_condition": "Any selection/focus action queues or starts launch, or dispatch cannot be observed reliably.",
+      "requirements": [
+        "R03",
+        "R11",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q04",
+      "phase": "A",
+      "setup": "Empty/no-selection, selected, busy, closed and invalid-entry states; Launch records intents only in A.",
+      "action": "Query/invoke Launch and Refresh through real UIA while disabled/stale; attempt two simultaneous explicit requests.",
+      "expected": "Enabled state truthful. Disabled/stale requests rejected explicitly; accepted Invoke produces at most one bounded intent. Busy rejects redundancy, never silently succeeds or auto-retries.",
+      "evidence": "UIA exceptions/results, command/operation IDs, model/status logs and zero process creation in A.",
+      "blocking_condition": "Silent loss/success, accidental duplicate intent or disabled action accepted.",
+      "requirements": [
+        "R01",
+        "R09",
+        "R11",
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q05",
+      "phase": "A",
+      "setup": "Controlled fixed-data backend, selected entry in a current snapshot.",
+      "action": "Request one successful refresh and attempt a redundant refresh; observe pending/running/succeeded and replacement.",
+      "expected": "One refresh lane; redundant request Busy. Successful refresh ALWAYS clears selection even for same identity; Launch disabled until explicit new selection. No launch.",
+      "evidence": "Native UIA observations plus gate-controlled backend/consumer logs; injected data clearly labelled.",
+      "blocking_condition": "Selection silently retained/reselected, redundant scans, missing terminal status or auto-launch.",
+      "requirements": [
+        "R09",
+        "R11",
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q06",
+      "phase": "A",
+      "setup": "Controlled delivery gates for old/current fixed snapshots and layout/focus replies.",
+      "action": "Release newest allowed replies, then deliver an older snapshot/layout/focus response and duplicate completion.",
+      "expected": "Old/duplicate reply cannot replace current tree/snapshot/focus or corrupt one terminal outcome; checked IDs never wrap into acceptance.",
+      "evidence": "Real native UIA queries after deterministic injected boundary reorder; state-test evidence labelled injection, not native discovery proof.",
+      "blocking_condition": "Stale state published, contradictory outcome, identifier reuse or only timing sleeps used to establish order.",
+      "requirements": [
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q07",
+      "phase": "A",
+      "setup": "Usable snapshot/selection exists; controlled refresh failure, cancellation and partial-source issues.",
+      "action": "Refresh using each controlled outcome and inspect catalog/status/selection.",
+      "expected": "Failure/cancellation retains last usable snapshot and selection. Partial success publishes entries/issues, clears selection as new generation and announces truthful partial result.",
+      "evidence": "Native tree/events, controlled backend outcome record and generation/selection logs.",
+      "blocking_condition": "Total failure presented as empty success, lost usable state or unannounced exclusions.",
+      "requirements": [
+        "R09",
+        "R10",
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q08",
+      "phase": "A",
+      "setup": "Selected and focused row removed by successful replacement; native client retains old row/action objects.",
+      "action": "Publish replacement then act on retained removed objects; repeat with empty replacement.",
+      "expected": "Removed identity unavailable/cannot target replacement. Clear selection; logical focus fallback to list or Refresh when empty, with explicit stable announcement.",
+      "evidence": "Retained-pattern exception/HRESULT trace, raw/control trees and human focus observation.",
+      "blocking_condition": "Stale action reaches new entry, focus falls off window or unknown target launched.",
+      "requirements": [
+        "R03",
+        "R09",
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q09",
+      "phase": "B_ONLY",
+      "setup": "Separately approved harmless fixture and exact operation-ID ledger; controlled refresh/launch overlap.",
+      "action": "Dispatch explicit fixture launch, change selection/refresh, and also replace generation before another pending launch dispatch.",
+      "expected": "Pending stale launch fails without creation; already dispatched success/PID stays tied to original request, not retargeted or hidden by refresh. At most one creation per accepted request.",
+      "evidence": "Native UIA command trace, real fixture PID/marker and worker/consumer operation logs.",
+      "blocking_condition": "Retargeting, hidden acceptance, duplicate retry or source-only/mock claim of process behavior.",
+      "requirements": [
+        "R11",
+        "R13",
+        "R18"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q10",
+      "phase": "B_ONLY",
+      "setup": "Owned approved fixture can signal creation and await explicit release; cancellation targeted by ID.",
+      "action": "Cancel pending request before creation, then separately request cancellation after fixture creation; repeat stale-ID cancellation.",
+      "expected": "Pre-dispatch cancel creates zero processes. Accepted process is not killed/called cancelled; stale cancellation does not cancel newer work. No claim OS call is preempted.",
+      "evidence": "Actual fixture handshake/PID/exit records plus consumer state/cancel responses.",
+      "blocking_condition": "False termination/cancellation claim, wrong-ID effect or UI thread blocked on worker/child.",
+      "requirements": [
+        "R11",
+        "R13",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q11",
+      "phase": "A",
+      "setup": "Owner-approved finite queue capacities C, total request limit and acknowledgement/rejection policy documented.",
+      "action": "Native clients issue a finite 2C+1 burst through controlled UI-thread processing gates, including removal/close.",
+      "expected": "Every request has a truthful accepted/rejected disposition; accepted actions applied at most once. Capacity not exceeded, no callback waits for UI reply and no silent successful drop.",
+      "evidence": "Native outcomes, queue occupancy/high-water/correlation traces and GUI-thread dispatch timing.",
+      "blocking_condition": "Unknown capacity, silent dropped success, unbounded queue, blocking callback or deadlock.",
+      "requirements": [
+        "R11",
+        "R12",
+        "R13",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q12",
+      "phase": "A",
+      "setup": "Native event listener attached before any transition; human Narrator operator present.",
+      "action": "Run loading/completion/empty/failure, repeat unchanged state, then create a new error occurrence.",
+      "expected": "One intended live notification per new occurrence; none for unchanged state. Other structure/name events separately identified. Focus stable; human confirms useful nonduplicated feedback.",
+      "evidence": "Native event IDs/source node/timestamps with model occurrence IDs; separate actual speech observations.",
+      "blocking_condition": "Events cannot be captured, feedback missing/duplicated, focus moved unexpectedly or speech inferred from source/UIA.",
+      "requirements": [
+        "R09",
+        "R10",
+        "R18",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q13",
+      "phase": "A",
+      "setup": "Error/dismiss action visible and focused; retained native action object cached.",
+      "action": "Dismiss, inspect removal/focus, invoke old action, then recreate an error.",
+      "expected": "Error/action removed; retained object unavailable and never affects later occurrence; focus moves to specified existing list/action target only when disappearing focus requires it.",
+      "evidence": "Native tree/event/exception trace and human focus report.",
+      "blocking_condition": "Old action affects new occurrence, stale nodes persist or dismissal steals external focus.",
+      "requirements": [
+        "R03",
+        "R09",
+        "R10",
+        "R13"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q14",
+      "phase": "A",
+      "setup": "Named human uses physical keyboard on actual owned window; populated, empty, busy and error states.",
+      "action": "Traverse Tab/Shift+Tab, use Up/Down/Home/End, activate separate Launch intent/Refresh/Close with Enter/Space and press Escape.",
+      "expected": "Predictable visible/UIA focus order; disabled actions skipped; rows select without launch; Escape closes only this window. No editable/type-ahead input introduced.",
+      "evidence": "Per-step physical-input checklist and native focus/event trace; synthetic actions separately identified.",
+      "blocking_condition": "No human evidence, trapped/lost focus, hidden editable behavior or selection triggers launch.",
+      "requirements": [
+        "R03",
+        "R18",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q15",
+      "phase": "A",
+      "setup": "Narrator started/operated by human under approved existing configuration.",
+      "action": "Navigate title/purpose/list/rows/actions; select, refresh, inspect empty/error/status and dismiss.",
+      "expected": "Human can identify/operate controls, hear names/roles/selected state/position/count/enabled/status/errors meaningfully; no unexplained missing/duplicate feedback.",
+      "evidence": "Per-step heard speech recorded verbatim where available or explicitly labelled operator paraphrase; source/binary/AT identities.",
+      "blocking_condition": "No operator/speech observation, missing essential information/action or historical attestation reused.",
+      "requirements": [
+        "R01",
+        "R09",
+        "R10",
+        "R18",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q16",
+      "phase": "A",
+      "setup": "Consenting operator controls a separate ordinary application and returns; prior target valid/closed/replaced cases.",
+      "action": "Switch away during refresh/error and dismissal; return, close and test restoration denied or target gone.",
+      "expected": "Zero unsolicited foreground theft; do not restore over a newly selected app. Valid safe restoration only; denial/stale target handled honestly.",
+      "evidence": "Human chronology plus owned/prior-consented-window focus/activation trace, no unrelated personal data.",
+      "blocking_condition": "Focus stolen, denial called success or target validity not checked.",
+      "requirements": [
+        "R04",
+        "R13",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q17",
+      "phase": "A",
+      "setup": "Scrollable fixed catalog larger than viewport; actual container ScrollPattern and item ScrollItem verified.",
+      "action": "Native UIA Scroll/SetScrollPercent and ScrollIntoView; physical keyboard navigate offscreen rows.",
+      "expected": "Container/item scrolling both work, selected row reachable, offscreen flags/hit points/bounds truthful, no clipped focus/actions and no TextRange inference.",
+      "evidence": "Native supported-pattern/method/property trace, real row layout/window rectangles and separate visual/human checks.",
+      "blocking_condition": "Missing container ScrollPattern even if ScrollItem works, unreachable row, hidden truncation or silent pagination substitution.",
+      "requirements": [
+        "R01",
+        "R16",
+        "R18",
+        "R19"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q18",
+      "phase": "A",
+      "setup": "Host already in approved high-contrast profile; current policy/palette recorded without changing approved designs.",
+      "action": "Inspect/read/select list and controls, loading/error and disabled states; compare computed/rendered focus/contrast.",
+      "expected": "Readable actual surfaces/labels; focus distinct from selection without color-only meaning and matching UIA state. Defined composited contrast target satisfied.",
+      "evidence": "Display/config identity, native state and human observations; measured contrast with method/background, screenshots supplementary.",
+      "blocking_condition": "Required profile unavailable, unreadable focus/text or contrast target unspecified/failing.",
+      "requirements": [
+        "R03",
+        "R14",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q19",
+      "phase": "A",
+      "setup": "Approved reduced-motion existing host profiles and reactivation procedure; no unapproved setting changes.",
+      "action": "Open/refresh/dismiss in each profile, reactivate/query preference and inspect any transitions.",
+      "expected": "Actual policy tracks approved preference; candidate adds no essential animation or polling; no unsolicited motion. Local checkbox history not reused.",
+      "evidence": "Native preference/model timestamps and human motion observations.",
+      "blocking_condition": "Cannot exercise profile/reactivation, unwanted animation or only source/local preference used as runtime proof.",
+      "requirements": [
+        "R15",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q20",
+      "phase": "A",
+      "setup": "Approved DPI profiles covering representative nondefault entry test; existing design recommends 100/125/150/175/200 percent for release.",
+      "action": "Move/resize owned window and read actual UIA rows/actions at each available approved scale.",
+      "expected": "Bounds/hit targets/focus agree with real layout and native client origin under documented physical-pixel rounding tolerance; no clipped actions.",
+      "evidence": "DPI/client/window rectangles, native UIA bounds/actions and layout generation correlation; screenshots supplemental.",
+      "blocking_condition": "Required scale missing, stale/misaligned bounds or unspecified conversion/tolerance.",
+      "requirements": [
+        "R13",
+        "R16",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q21",
+      "phase": "A_RELEASE",
+      "setup": "Approved mixed-scale two-monitor setup with negative virtual coordinates; no configuration changes implicitly approved.",
+      "action": "Move owned window across displays; test approved reconnect/primary/work-area changes only with separate configuration permission.",
+      "expected": "Coordinate signs/scales correct, selection/focus persist safely, stale replies rejected, window stays reachable and no shell reservation exists.",
+      "evidence": "Monitor bounds/DPI/config record, native UIA geometry/event trace and operator chronology.",
+      "blocking_condition": "Required configuration unavailable, forced unapproved setting change, unreachable window or stale screen geometry.",
+      "requirements": [
+        "R04",
+        "R13",
+        "R16",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q22",
+      "phase": "A",
+      "setup": "Fixed nonpersonal names include accent, surrogate-pair character, combining sequence, ZWJ emoji, RTL and long clusters.",
+      "action": "Read full UIA names/Narrator; select/scroll/narrow window and compare identity/name/visible presentation.",
+      "expected": "Truthful complete semantic name and stable identity; visual ellipsis never hides accessible content. Direction/selection remains list state, not invented editable-text geometry.",
+      "evidence": "Fixture bytes/Unicode identity, native names/bounds/selection trace and human reading.",
+      "blocking_condition": "Wrong encoding, inaccessible truncation, mismatched row or fabricated range claims.",
+      "requirements": [
+        "R01",
+        "R12",
+        "R18",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q23",
+      "phase": "A",
+      "setup": "Owner-approved byte/count/payload limits N and long/malformed metadata corpus, no actual discovery or applications.",
+      "action": "Submit at N and N+1, NUL/invalid-source metadata, overlarge issue/status payload and unknown/stale IDs.",
+      "expected": "Checked normalization/rejection with truthful status; no panic, unbounded allocation, silent success, misleading names or launch of invalid entry.",
+      "evidence": "Fixture hashes/length units, native status/actions and bounded-state/counter records; source policy separate.",
+      "blocking_condition": "Undefined limits, silent truncation/rejection, encoding corruption or resource bound exceeded.",
+      "requirements": [
+        "R09",
+        "R11",
+        "R12",
+        "R18",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q24",
+      "phase": "A",
+      "setup": "Same host/build/data profile, approved numeric CPU/memory/response/queue limits; sampler observes only owned process.",
+      "action": "Measure three 60-second settled idle intervals, hidden and AT-attached separately, plus finite refresh/selection burst and UI responsiveness.",
+      "expected": "Record CPU-time/wall interval, working set/private memory/handles, queue peaks and response latency; compare approved limits. No guarantee inferred from zero counter delta.",
+      "evidence": "OS/build/toolchain/data/AT identity, exact sampling method/duration/raw counters and p95/max latency; test sampler distinct from app work.",
+      "blocking_condition": "Numeric budgets/profile absent, GUI stalls, excess wakeups/queues, unavailable measurement or copied historical baseline.",
+      "requirements": [
+        "R11",
+        "R13",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q25",
+      "phase": "A",
+      "setup": "Controlled fake backend blocks on explicit gate; process/worker ownership instrumented and GUI remains observed.",
+      "action": "Begin refresh then dismiss/close while worker blocked; release gate and observe final cleanup.",
+      "expected": "GUI handles dismissal without calling wait/drain_ready/join/shutdown/Drop on GUI thread. No late publication; workers joined off-thread after release. No claimed preemption/bounded OS shutdown.",
+      "evidence": "Native focus/window/action trace, deterministic gate/thread/owner logs and process exit. Fake blocking explicitly labelled.",
+      "blocking_condition": "GUI stalls, detached/leaked worker, late publication, false immediate cleanup or gate unavailable.",
+      "requirements": [
+        "R04",
+        "R11",
+        "R13",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q26",
+      "phase": "A",
+      "setup": "Exact provider owner/HWND, retained native elements and finite repeat count approved.",
+      "action": "Hide/show/reactivate, remove rows, close normally, then query retained elements and repeat approved open/close cycles.",
+      "expected": "No stale element remains actionable; no late tree publication; native/provider ownership ends and owned process exits. No claims about abort or uninterruptible calls.",
+      "evidence": "Native exception/HRESULT, attach/detach/thread logs, PID/exit/handle observations and before/after inventories.",
+      "blocking_condition": "Stale action accepted, hidden owned process left, race/deadlock or cleanup inferred from window absence only.",
+      "requirements": [
+        "R09",
+        "R13",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q27",
+      "phase": "B_ONLY",
+      "setup": "Separate explicit fixture permission, exact harmless executable hash/path/argv/cwd and cleanup protocol approved.",
+      "action": "Native UIA invokes separate Launch; repeat/replay same request ID, then issue a new explicit approved request.",
+      "expected": "At most one real fixture creation per accepted request; success normal case one PID, disabled/rejected zero. Receipt means creation only, not ready/foreground. No automatic retry after uncertain outcome.",
+      "evidence": "Real fixture PID/handshake/argv/cwd/normal-exit record; operation IDs and native Invoke trace; owned-child cleanup.",
+      "blocking_condition": "Wrong executable, duplicate creation, unknown acceptance retried, arbitrary installed app launch, shell parsing or elevation.",
+      "requirements": [
+        "R09",
+        "R11",
+        "R13",
+        "R18",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q28",
+      "phase": "B_ONLY",
+      "setup": "Approved owned fixture can be missing/stale/locked; documented service subset retained.",
+      "action": "Explicitly launch controlled failing targets, then invoke explicit retry only after new user action.",
+      "expected": "Structured truthful error and accessible feedback; no unexpected process, shell fallback, privilege retry or automatic relaunch. Selection retained on launch failure unless refresh replaced it.",
+      "evidence": "Actual native service errors/codes, absence/identity of fixture child, UIA event and human speech evidence.",
+      "blocking_condition": "Failure called success, auto retry/elevation, discarded request outcome or mocked error claimed native failure.",
+      "requirements": [
+        "R09",
+        "R10",
+        "R11",
+        "R13",
+        "R18",
+        "R20"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    },
+    {
+      "id": "Q29",
+      "phase": "A_RELEASE",
+      "setup": "Owner approves exact Windows build/keyboard/language/display/AT matrix, resource budgets and finite lifetime/repetition cap.",
+      "action": "Repeat applicable A cases on each declared configuration and finite session cycles; keep blocked and failed results visible.",
+      "expected": "All mandatory supported rows pass with no unaccounted processes/providers/workers or resource drift above approved threshold; unsupported profiles explicitly excluded.",
+      "evidence": "Per-profile case results, versions/configs, raw counters/actions/manual speech and integrity manifest.",
+      "blocking_condition": "Any mandatory unrun/failing case, missing support decision, concealed failure or unverifiable cleanup.",
+      "requirements": [
+        "R03",
+        "R14",
+        "R15",
+        "R16",
+        "R18",
+        "R20",
+        "R21"
+      ],
+      "execution_status": "NOT RUN",
+      "stage2k_execution_permitted": false
+    }
+  ]
+}

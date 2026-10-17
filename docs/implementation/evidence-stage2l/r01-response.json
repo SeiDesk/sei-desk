@@ -1,0 +1,25 @@
+{
+  "Package": "accesskit",
+  "MaxStableVersion": "0.25.1",
+  "NewestVersion": "0.25.1",
+  "Versions": [
+    {
+      "num": "0.25.1",
+      "yanked": false,
+      "created_at": "2026-09-25T19:40:54.207184Z",
+      "checksum": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932"
+    },
+    {
+      "num": "0.25.0",
+      "yanked": false,
+      "created_at": "2026-08-29T09:18:11.07223Z",
+      "checksum": "438a7081a65b95c668db56591a4fef9bc5dad275f448bd6223fc6949d823db38"
+    },
+    {
+      "num": "0.24.1",
+      "yanked": false,
+      "created_at": "2026-06-12T13:23:59.640896Z",
+      "checksum": "d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+accesskit_windows-0.35.1/src/node.rs
+640 :     fn is_required(&self) -> bool {
+641 :         self.node.is_required()
+642 :     }
+643 : 
+644 :     fn is_scroll_item_pattern_supported(&self) -> bool {
+645 :         self.node.supports_action(Action::ScrollIntoView, &filter)
+646 :     }
+647 : 
+648 :     pub(crate) fn is_selection_item_pattern_supported(&self) -> bool {
+649 :         match self.node.role() {
+650 :             // TODO: tables (#29)
+651 :             // https://www.w3.org/TR/core-aam-1.1/#mapping_state-property_table
+652 :             // SelectionItem.IsSelected is exposed when aria-checked is True or
+653 :             // False, for 'radio' and 'menuitemradio' roles.
+654 :             Role::RadioButton | Role::MenuItemRadio => {
+655 :                 matches!(self.node.toggled(), Some(Toggled::True | Toggled::False))
+656 :             }
+657 :             // https://www.w3.org/TR/wai-aria-1.1/#aria-selected
+658 :             // SelectionItem.IsSelected is exposed when aria-select is True or False.
+659 :             Role::ListBoxOption
+660 :             | Role::ListItem
+661 :             | Role::MenuListOption
+662 :             | Role::Tab
+663 :             | Role::TreeItem => self.node.is_selected().is_some(),
+664 :             Role::GridCell => true,
+665 :             _ => false,
+666 :         }
+667 :     }
+668 : 
+669 :     pub(crate) fn is_selected(&self) -> bool {
+670 :         match self.node.role() {
+671 :             // https://www.w3.org/TR/core-aam-1.1/#mapping_state-property_table
+672 :             // SelectionItem.IsSelected is set according to the True or False
+673 :             // value of aria-checked for 'radio' and 'menuitemradio' roles.
+674 :             Role::RadioButton | Role::MenuItemRadio => self.node.toggled() == Some(Toggled::True),
+675 :             // https://www.w3.org/TR/wai-aria-1.1/#aria-selected
+676 :             // SelectionItem.IsSelected is set according to the True or False
+677 :             // value of aria-selected.
+678 :             _ => self.node.is_selected().unwrap_or(false),
+679 :         }
+680 :     }
+681 : 
+682 :     fn position_in_set(&self) -> Option<i32> {
+683 :         self.node
+684 :             .position_in_set()
+685 :             .and_then(|p| p.try_into().ok())
+686 :             .map(|p: i32| p + 1)
+687 :     }
+688 : 
+689 :     fn size_of_set(&self) -> Option<i32> {
+690 :         self.node
+691 :             .size_of_set_from_container(&filter)
+692 :             .and_then(|s| s.try_into().ok())
+693 :     }
+694 : 
+695 :     fn level(&self) -> Option<i32> {
+696 :         self.node
+697 :             .level()
+698 :             .and_then(|level| level.checked_add(1))
+699 :             .and_then(|level| level.try_into().ok())
+700 :     }
+701 : 
+702 :     fn is_selection_pattern_supported(&self) -> bool {
+703 :         self.node.is_container_with_selectable_children()
+704 :     }
+705 : 
+706 :     fn is_multiselectable(&self) -> bool {
+707 :         self.node.is_multiselectable()
+708 :     }
+709 : 
+710 :     fn is_text_pattern_supported(&self) -> bool {
+accesskit_windows-0.35.1/src/node.rs
+980 :     fn set_selected(&self, selected: bool) -> Result<()> {
+981 :         self.do_complex_action(|node, target_node, target_tree| {
+982 :             if node.is_disabled() {
+983 :                 return Err(element_not_enabled());
+984 :             }
+985 :             let mut buffer = StringBuffer::acquire();
+986 :             let wrapper = NodeWrapper {
+987 :                 node: &node,
+988 :                 string_buffer: &mut buffer,
+989 :             };
+990 :             if selected == wrapper.is_selected() {
+991 :                 return Ok(None);
+992 :             }
+993 :             Ok(Some(ActionRequest {
+994 :                 action: Action::Click,
+995 :                 target_tree,
+996 :                 target_node,
+997 :                 data: None,
+998 :             }))
+999 :         })
+1000 :     }
+1001 : 
+1002 :     fn is_root(&self, state: &TreeState) -> bool {
+1003 :         self.node_id.is_some_and(|id| id == state.root_id())
+1004 :     }
+accesskit_windows-0.35.1/src/node.rs
+1367 :             })
+1368 :         }
+1369 :     )),
+1370 :     (UIA_ScrollItemPatternId, IScrollItemProvider, IScrollItemProvider_Impl, is_scroll_item_pattern_supported, (), (
+1371 :         fn ScrollIntoView(&self) -> Result<()> {
+1372 :             self.do_complex_action(|_node, target_node, target_tree| {
+1373 :                 Ok(Some(ActionRequest {
+1374 :                     action: Action::ScrollIntoView,
+1375 :                     target_tree,
+1376 :                     target_node,
+1377 :                     data: None,
+1378 :                 }))
+1379 :             })
+1380 :         }
+1381 :     )),
+1382 :     (UIA_SelectionItemPatternId, ISelectionItemProvider, ISelectionItemProvider_Impl, is_selection_item_pattern_supported, (), (
+1383 :         fn IsSelected(&self) -> Result<BOOL> {
+1384 :             self.resolve(|node| {
+1385 :                 let mut buffer = StringBuffer::acquire();
+1386 :                 let wrapper = NodeWrapper {
+1387 :                     node: &node,
+1388 :                     string_buffer: &mut buffer,
+1389 :                 };
+1390 :                 Ok(wrapper.is_selected().into())
+1391 :             })
+1392 :         },
+1393 : 
+1394 :         fn Select(&self) -> Result<()> {
+1395 :             self.set_selected(true)
+1396 :         },
+1397 : 
+1398 :         fn AddToSelection(&self) -> Result<()> {
+1399 :             self.set_selected(true)
+1400 :         },
+1401 : 
+1402 :         fn RemoveFromSelection(&self) -> Result<()> {
+1403 :             self.set_selected(false)
+1404 :         },
+1405 : 
+1406 :         fn SelectionContainer(&self) -> Result<IRawElementProviderSimple> {
+1407 :             self.resolve_with_context(|node, context| {
+1408 :                 if let Some(container) = node.selection_container(&filter) {
+1409 :                     Ok(context.get_or_create_platform_node(container.id()).into_interface())
+1410 :                 } else {
+1411 :                     Err(E_FAIL.into())
+1412 :                 }
+1413 :             })
+1414 :         }
+1415 :     )),
+1416 :     (UIA_SelectionPatternId, ISelectionProvider, ISelectionProvider_Impl, is_selection_pattern_supported, (
+1417 :         (UIA_SelectionCanSelectMultiplePropertyId, CanSelectMultiple, is_multiselectable, BOOL),
+1418 :         (UIA_SelectionIsSelectionRequiredPropertyId, IsSelectionRequired, is_required, BOOL)
+1419 :     ), (
+1420 :         fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1421 :             self.resolve_with_context(|node, context| {
+1422 :                 let selection: Vec<_> = node
+1423 :                     .items(&filter)
+1424 :                     .filter(|item| item.is_selected() == Some(true))
+1425 :                     .map(|item| context.get_or_create_platform_node(item.id()).into_interface::<IRawElementProviderSimple>())
+1426 :                     .filter_map(|item| item.cast::<IUnknown>().ok())
+1427 :                     .collect();
+1428 :                 Ok(safe_array_from_com_slice(&selection))
+1429 :             })
+1430 :         }
+accesskit_consumer-0.39.1/src/node.rs
+938 :     pub fn is_container_with_selectable_children(&self) -> bool {
+939 :         matches!(
+940 :             self.role(),
+941 :             Role::ComboBox
+942 :                 | Role::EditableComboBox
+943 :                 | Role::Grid
+944 :                 | Role::ListBox
+945 :                 | Role::ListGrid
+946 :                 | Role::Menu
+947 :                 | Role::MenuBar
+948 :                 | Role::MenuListPopup
+949 :                 | Role::RadioGroup
+950 :                 | Role::TabList
+951 :                 | Role::Toolbar
+952 :                 | Role::Tree
+953 :                 | Role::TreeGrid
+954 :         )
+955 :     }
+956 : 
+957 :     pub fn controls(&self) -> impl DoubleEndedIterator<Item = NodeRef<'a>> + use<'a> {
+958 :         let state = self.tree_state;
+accesskit_windows-0.35.1/CHANGELOG.md
+1 : # Changelog
+2 : 
+3 : * The following workspace dependencies were updated
+4 :   * dependencies
+5 :     * accesskit bumped from 0.8.0 to 0.8.1
+6 :     * accesskit_consumer bumped from 0.9.1 to 0.10.0
+7 : 
+8 : * The following workspace dependencies were updated
+9 :   * dependencies
+10 :     * accesskit_consumer bumped from 0.11.0 to 0.12.0
+11 : 
+12 : * The following workspace dependencies were updated
+13 :   * dependencies
+14 :     * accesskit_consumer bumped from 0.12.0 to 0.12.1
+15 : 
+16 : * The following workspace dependencies were updated
+17 :   * dependencies
+18 :     * accesskit bumped from 0.10.1 to 0.11.0
+19 :     * accesskit_consumer bumped from 0.14.1 to 0.14.2
+20 : 
+21 : * The following workspace dependencies were updated
+22 :   * dependencies

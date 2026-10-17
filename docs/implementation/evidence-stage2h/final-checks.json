@@ -1,0 +1,18 @@
+{
+  "CheckedAtUtc": "2026-10-17T07:11:16.2520666Z",
+  "Baseline": "d14d4bede2096d4bea2561de22977d181376b640",
+  "FilesCompared": 544,
+  "ChangedOrMissing": [],
+  "JsonParsed": [
+    "operator-readiness.json",
+    "preservation-before.json",
+    "readiness-machine.json"
+  ],
+  "MissingDocumentLinks": [],
+  "TrailingWhitespace": [],
+  "GitDiffCheckExitCode": 0,
+  "ObserverProcessesAtFinalCheck": [],
+  "Stage2HProcessLaunched": false,
+  "ProcessExitCode": null,
+  "Verdict": "UNVERIFIED — no suitable real-IME session was available; no configuration changes made."
+}

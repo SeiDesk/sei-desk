@@ -1,0 +1,41 @@
+[
+  {
+    "Package": "accesskit",
+    "Version": "0.25.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "accesskit"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87",
+    "MetadataURL": "https://crates.io/api/v1/crates/accesskit"
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "accesskit_consumer"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87",
+    "MetadataURL": "https://crates.io/api/v1/crates/accesskit_consumer"
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "VCS": {
+      "git": {
+        "sha1": "ce8164ba92995cfa86005b6259115e08c8244253"
+      },
+      "path_in_vcs": "adapters/windows"
+    },
+    "License": "MIT OR Apache-2.0",
+    "RustVersion": "1.87",
+    "MetadataURL": "https://crates.io/api/v1/crates/accesskit_windows"
+  }
+]

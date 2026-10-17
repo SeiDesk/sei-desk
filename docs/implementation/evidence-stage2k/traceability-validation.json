@@ -1,0 +1,10 @@
+{
+  "UTC": "2026-10-17T07:45:04.3007516Z",
+  "Requirements": 22,
+  "UniqueRequirements": 22,
+  "ProposedCases": 30,
+  "UnresolvedOwnerDecisions": 7,
+  "EvidencePathsVerified": 15,
+  "Problems": [],
+  "Scope": "Planning JSON validation only; no proposed case executed"
+}

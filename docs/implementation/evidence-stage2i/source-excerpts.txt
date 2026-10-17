@@ -1,0 +1,343 @@
+iced_widget-0.14.2/src/text_input.rs
+393 :     fn input_method<'b>(
+394 :         &self,
+395 :         state: &'b State<Renderer::Paragraph>,
+396 :         layout: Layout<'_>,
+397 :         value: &Value,
+398 :     ) -> InputMethod<&'b str> {
+399 :         let Some(Focus {
+400 :             is_window_focused: true,
+401 :             ..
+402 :         }) = &state.is_focused
+403 :         else {
+404 :             return InputMethod::Disabled;
+405 :         };
+406 : 
+407 :         let secure_value = self.is_secure.then(|| value.secure());
+408 :         let value = secure_value.as_ref().unwrap_or(value);
+409 : 
+410 :         let text_bounds = layout.children().next().unwrap().bounds();
+411 : 
+412 :         let caret_index = match state.cursor.state(value) {
+413 :             cursor::State::Index(position) => position,
+414 :             cursor::State::Selection { start, end } => start.min(end),
+415 :         };
+416 : 
+417 :         let text = state.value.raw();
+418 :         let (cursor_x, scroll_offset) =
+419 :             measure_cursor_and_scroll_offset(text, text_bounds, caret_index);
+420 : 
+421 :         let alignment_offset = alignment_offset(
+422 :             text_bounds.width,
+423 :             text.min_width(),
+424 :             self.alignment,
+425 :         );
+426 : 
+427 :         let x = (text_bounds.x + cursor_x).floor() - scroll_offset
+428 :             + alignment_offset;
+429 : 
+430 :         InputMethod::Enabled {
+431 :             cursor: Rectangle::new(
+432 :                 Point::new(x, text_bounds.y),
+433 :                 Size::new(1.0, text_bounds.height),
+434 :             ),
+435 :             purpose: if self.is_secure {
+436 :                 input_method::Purpose::Secure
+437 :             } else {
+438 :                 input_method::Purpose::Normal
+439 :             },
+440 :             preedit: state.preedit.as_ref().map(input_method::Preedit::as_ref),
+441 :         }
+442 :     }
+443 : 
+444 :     /// Draws the [`TextInput`] with the given [`Renderer`], overriding its
+iced_widget-0.14.2/src/text_input.rs
+1461 : pub struct State<P: text::Paragraph> {
+1462 :     value: paragraph::Plain<P>,
+1463 :     placeholder: paragraph::Plain<P>,
+1464 :     icon: paragraph::Plain<P>,
+1465 :     is_focused: Option<Focus>,
+1466 :     is_dragging: Option<Drag>,
+1467 :     is_pasting: Option<Value>,
+1468 :     preedit: Option<input_method::Preedit>,
+1469 :     last_click: Option<mouse::Click>,
+1470 :     cursor: Cursor,
+1471 :     keyboard_modifiers: keyboard::Modifiers,
+1472 :     // TODO: Add stateful horizontal scrolling offset
+1473 : }
+1474 : 
+1475 : fn state<Renderer: text::Renderer>(
+1476 :     tree: &mut Tree,
+1477 : ) -> &mut State<Renderer::Paragraph> {
+1478 :     tree.state.downcast_mut::<State<Renderer::Paragraph>>()
+1479 : }
+1480 : 
+1481 : #[derive(Debug, Clone)]
+1482 : struct Focus {
+1483 :     updated_at: Instant,
+1484 :     now: Instant,
+1485 :     is_window_focused: bool,
+1486 : }
+1487 : 
+1488 : #[derive(Debug, Clone)]
+1489 : enum Drag {
+1490 :     Select,
+1491 :     SelectWords { anchor: usize },
+1492 : }
+1493 : 
+1494 : impl<P: text::Paragraph> State<P> {
+1495 :     /// Creates a new [`State`], representing an unfocused [`TextInput`].
+1496 :     pub fn new() -> Self {
+1497 :         Self::default()
+1498 :     }
+1499 : 
+1500 :     /// Returns whether the [`TextInput`] is currently focused or not.
+1501 :     pub fn is_focused(&self) -> bool {
+1502 :         self.is_focused.is_some()
+1503 :     }
+1504 : 
+1505 :     /// Returns the [`Cursor`] of the [`TextInput`].
+1506 :     pub fn cursor(&self) -> Cursor {
+1507 :         self.cursor
+1508 :     }
+1509 : 
+1510 :     /// Focuses the [`TextInput`].
+iced_core-0.14.0/src/shell.rs
+195 : 
+196 : 
+197 : 
+198 : 
+199 : 
+200 : 
+201 : 
+202 : 
+203 : 
+204 : 
+205 : 
+206 : 
+207 : 
+208 : 
+209 : 
+210 : 
+211 : 
+212 : 
+213 : 
+214 : 
+215 : 
+216 : 
+217 : 
+218 : 
+219 : 
+220 : 
+221 : 
+222 : 
+223 : 
+224 : 
+225 : 
+226 : 
+227 : 
+228 : 
+229 : 
+230 : 
+231 : 
+232 : 
+233 : 
+234 : 
+235 : 
+236 : 
+237 : 
+238 : 
+239 : 
+240 : 
+241 : 
+242 : 
+243 : 
+244 : 
+245 : 
+246 : 
+247 : 
+248 : 
+249 : 
+250 : 
+251 : 
+252 : 
+253 : 
+254 : 
+255 : 
+accesskit_windows-0.35.1/src/node.rs
+1017 :     fn GetPropertyValue(&self, property_id: UIA_PROPERTY_ID) -> Result<VARIANT> {
+1018 :         self.resolve_with_tree_state_and_context(|node, state, context| {
+1019 :             let mut buffer = StringBuffer::acquire();
+1020 :             let mut wrapper = NodeWrapper {
+1021 :                 node: &node,
+1022 :                 string_buffer: &mut buffer,
+1023 :             };
+1024 :             let mut result = wrapper.get_property_value(property_id);
+1025 :             if result.is_empty() {
+1026 :                 if node.is_root() {
+1027 :                     match property_id {
+1028 :                         UIA_NamePropertyId => {
+1029 :                             result = window_title(context.hwnd, &mut buffer).into();
+1030 :                         }
+1031 :                         UIA_NativeWindowHandlePropertyId => {
+1032 :                             result = (context.hwnd.0.0 as i32).into();
+1033 :                         }
+1034 :                         _ => (),
+1035 :                     }
+1036 :                 }
+1037 :                 match property_id {
+1038 :                     UIA_FrameworkIdPropertyId => {
+1039 :                         result = StrWrapper::new(state.toolkit_name(), &mut buffer).into()
+1040 :                     }
+1041 :                     UIA_ProviderDescriptionPropertyId => {
+1042 :                         result = toolkit_description(state, &mut buffer).into()
+1043 :                     }
+1044 :                     UIA_ControllerForPropertyId => {
+1045 :                         let controlled: Vec<IUnknown> = node
+1046 :                             .controls()
+1047 :                             .filter(|controlled| filter(controlled) == FilterResult::Include)
+1048 :                             .map(|controlled| context.get_or_create_platform_node(controlled.id()))
+1049 :                             .map(|result| result.into_interface::<IRawElementProviderSimple>())
+1050 :                             .filter_map(|controlled| controlled.cast::<IUnknown>().ok())
+1051 :                             .collect();
+1052 :                         result = controlled.into();
+1053 :                     }
+1054 :                     _ => (),
+1055 :                 }
+1056 :             }
+1057 :             Ok(result.into())
+1058 :         })
+1059 :     }
+1060 : 
+1061 :     fn HostRawElementProvider(&self) -> Result<IRawElementProviderSimple> {
+1062 :         self.with_tree_state_and_context(|state, context| {
+1063 :             if self.is_root(state) {
+accesskit_windows-0.35.1/src/node.rs
+1300 :             })*
+1301 :             $($extra_trait_method)*
+1302 :         })*
+1303 :     };
+1304 : }
+1305 : 
+1306 : properties! {
+1307 :     (UIA_ControlTypePropertyId, control_type),
+1308 :     (UIA_LocalizedControlTypePropertyId, localized_control_type),
+1309 :     (UIA_AriaRolePropertyId, aria_role),
+1310 :     (UIA_NamePropertyId, name),
+1311 :     (UIA_FullDescriptionPropertyId, description),
+1312 :     (UIA_CulturePropertyId, culture),
+1313 :     (UIA_HelpTextPropertyId, placeholder),
+1314 :     (UIA_IsContentElementPropertyId, is_content_element),
+1315 :     (UIA_IsControlElementPropertyId, is_content_element),
+1316 :     (UIA_IsEnabledPropertyId, is_enabled),
+1317 :     (UIA_IsKeyboardFocusablePropertyId, is_focusable),
+1318 :     (UIA_HasKeyboardFocusPropertyId, is_focused),
+1319 :     (UIA_LiveSettingPropertyId, live_setting),
+1320 :     (UIA_AutomationIdPropertyId, automation_id),
+1321 :     (UIA_ClassNamePropertyId, class_name),
+1322 :     (UIA_OrientationPropertyId, orientation),
+1323 :     (UIA_IsRequiredForFormPropertyId, is_required),
+1324 :     (UIA_IsPasswordPropertyId, is_password),
+1325 :     (UIA_LevelPropertyId, level),
+1326 :     (UIA_PositionInSetPropertyId, position_in_set),
+1327 :     (UIA_SizeOfSetPropertyId, size_of_set),
+1328 :     (UIA_AriaPropertiesPropertyId, aria_properties),
+1329 :     (UIA_IsDialogPropertyId, is_dialog)
+1330 : }
+1331 : 
+1332 : patterns! {
+1333 :     (UIA_TogglePatternId, IToggleProvider, IToggleProvider_Impl, is_toggle_pattern_supported, (
+1334 :         (UIA_ToggleToggleStatePropertyId, ToggleState, toggle_state, ToggleState)
+1335 :     ), (
+1336 :         fn Toggle(&self) -> Result<()> {
+1337 :             self.click()
+1338 :         }
+1339 :     )),
+1340 :     (UIA_InvokePatternId, IInvokeProvider, IInvokeProvider_Impl, is_invoke_pattern_supported, (), (
+1341 :         fn Invoke(&self) -> Result<()> {
+1342 :             self.click()
+1343 :         }
+1344 :     )),
+1345 :     (UIA_ValuePatternId, IValueProvider, IValueProvider_Impl, is_value_pattern_supported, (
+1346 :         (UIA_ValueValuePropertyId, Value, value, BSTR),
+1347 :         (UIA_ValueIsReadOnlyPropertyId, IsReadOnly, is_read_only, BOOL)
+accesskit_windows-0.35.1/src/node.rs
+1432 :     (UIA_TextPatternId, ITextProvider, ITextProvider_Impl, is_text_pattern_supported, (), (
+1433 :         fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1434 :             self.resolve_for_text_pattern(|node| {
+1435 :                 if let Some(range) = node.text_selection() {
+1436 :                     let platform_range: ITextRangeProvider = PlatformTextRange::new(&self.context, range).into();
+1437 :                     let iunknown: IUnknown = platform_range.cast()?;
+1438 :                     Ok(safe_array_from_com_slice(&[iunknown]))
+1439 :                 } else {
+1440 :                     Ok(std::ptr::null_mut())
+1441 :                 }
+1442 :             })
+1443 :         },
+1444 : 
+1445 :         fn GetVisibleRanges(&self) -> Result<*mut SAFEARRAY> {
+1446 :             // TBD: Do we need this? The Quorum GUI toolkit, which is our
+1447 :             // current point of comparison for text functionality,
+1448 :             // doesn't implement it.
+1449 :             Ok(std::ptr::null_mut())
+1450 :         },
+1451 : 
+1452 :         fn RangeFromChild(&self, _child: Ref<IRawElementProviderSimple>) -> Result<ITextRangeProvider> {
+1453 :             // We don't support embedded objects in text.
+1454 :             Err(not_implemented())
+1455 :         },
+1456 : 
+1457 :         fn RangeFromPoint(&self, point: &UiaPoint) -> Result<ITextRangeProvider> {
+1458 :             self.resolve_with_context_for_text_pattern(|node, context| {
+1459 :                 let client_top_left = context.client_top_left();
+1460 :                 let point = Point::new(point.x - client_top_left.x, point.y - client_top_left.y);
+1461 :                 let point = node.transform().inverse() * point;
+1462 :                 let pos = node.text_position_at_point(point);
+1463 :                 let range = pos.to_degenerate_range();
+1464 :                 Ok(PlatformTextRange::new(&self.context, range).into())
+1465 :             })
+1466 :         },
+1467 : 
+1468 :         fn DocumentRange(&self) -> Result<ITextRangeProvider> {
+1469 :             self.resolve_for_text_pattern(|node| {
+1470 :                 let range = node.document_range();
+1471 :                 Ok(PlatformTextRange::new(&self.context, range).into())
+1472 :             })
+1473 :         },
+1474 : 
+1475 :         fn SupportedTextSelection(&self) -> Result<SupportedTextSelection> {
+1476 :             self.resolve_for_text_pattern(|node| {
+1477 :                 if node.has_text_selection() {
+1478 :                     Ok(SupportedTextSelection_Single)
+1479 :                 } else {
+1480 :                     Ok(SupportedTextSelection_None)
+1481 :                 }
+1482 :             })
+1483 :         }
+1484 :     )),
+1485 :     (UIA_ExpandCollapsePatternId, IExpandCollapseProvider, IExpandCollapseProvider_Impl, is_expand_collapse_pattern_supported, (
+1486 :         (UIA_ExpandCollapseExpandCollapseStatePropertyId, ExpandCollapseState, expand_collapse_state, ExpandCollapseState)
+1487 :     ), (
+1488 :         fn Expand(&self) -> Result<()> {
+iced_core-0.14.0/src/shell.rs additional relevant lines
+98 :     /// __Important__: This request will only be honored by the
+99 :     /// [`Shell`] only during a [`window::Event::RedrawRequested`].
+100 :     pub fn request_input_method<T: AsRef<str>>(
+101 :         &mut self,
+102 :         ime: &InputMethod<T>,
+103 :     ) {
+104 :         self.input_method.merge(ime);
+105 :     }
+106 : 
+107 :     /// Returns the current [`InputMethod`] strategy.
+108 :     #[must_use]
+109 :     pub fn input_method(&self) -> &InputMethod {
+110 :         &self.input_method
+111 :     }
+112 : 
+113 :     /// Returns the current [`InputMethod`] strategy.
+114 :     #[must_use]
+115 :     pub fn input_method_mut(&mut self) -> &mut InputMethod {
+116 :         &mut self.input_method
+117 :     }
+118 : 

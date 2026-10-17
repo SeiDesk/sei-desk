@@ -1,0 +1,29 @@
+{
+  "CheckedAtUtc": "2026-10-17T10:15:38.0068150Z",
+  "OwnerRecord": "docs/implementation/evidence-stage2k/owner-decision-record.json",
+  "OriginalOwnerRecordSHA256": "5A189C5D1F30DE82F2308E7B5FD2E029F48906534C2AB4E06C701A67FA8D27D3",
+  "CurrentOwnerRecordSHA256": "5A189C5D1F30DE82F2308E7B5FD2E029F48906534C2AB4E06C701A67FA8D27D3",
+  "ObservedOwnerSchemaVersion": 1,
+  "RequiredDecisionFields": [
+    "id",
+    "subject",
+    "recommendation",
+    "required_record",
+    "status",
+    "decision",
+    "approved_by",
+    "approved_at",
+    "authority_reference"
+  ],
+  "OriginalDecisions": 7,
+  "TracedDecisions": 7,
+  "UnresolvedDecisions": 7,
+  "AssignedRoles": 0,
+  "BlankOwnerTemplateFields": 9,
+  "ExactQuestionsAndRequiredRecordsMatch": true,
+  "EvidencePathsChecked": 16,
+  "Problems": [],
+  "Experiment": "NO-GO",
+  "ProductionAccessibility": "BLOCKED",
+  "HistoricalRuntimeAcceptanceRerun": false
+}

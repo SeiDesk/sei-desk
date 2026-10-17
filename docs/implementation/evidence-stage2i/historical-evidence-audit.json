@@ -1,0 +1,57 @@
+[
+  {
+    "Path": "docs/implementation/evidence-stage2c/run-07-final/run.json",
+    "EvidenceClass": "Historical runtime capture inspected, not rerun",
+    "SHA256": "B789042B9BF9E518326018161B985C4AA51CC7D3AC4690D718C8D9E8E13E86FC",
+    "UTC": "2026-10-14T11:49:22.2181663Z",
+    "BinarySHA256": "4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5",
+    "Checks": 29,
+    "PassingChecks": 29,
+    "NarratorMetadata": "Not run",
+    "PhysicalKeyboardMetadata": "Not run"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2c-acceptance/uia-01/run.json",
+    "EvidenceClass": "Historical runtime capture inspected, not rerun",
+    "SHA256": "4CE8244FD80EE5283E43D2208D785EAC61F3CA56D59D1830A246DCB2E1B90641",
+    "UTC": "2026-10-15T06:22:30.5946471Z",
+    "BinarySHA256": "4F4265B39FBB47A16B280D622A62899E94C2B3EF9D99261DF8E793ECD9B15CE5",
+    "Checks": 29,
+    "PassingChecks": 29,
+    "NarratorMetadata": "Not run",
+    "PhysicalKeyboardMetadata": "Not run"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2d/uia-01/run.json",
+    "EvidenceClass": "Historical runtime capture inspected, not rerun",
+    "SHA256": "187F4F0C975D65E72DF5E51EE8AF02A412F43D45B00CE62A90D10DF9009502FA",
+    "UTC": "2026-10-15T06:43:08.6725301Z",
+    "BinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Checks": 29,
+    "PassingChecks": 29,
+    "NarratorMetadata": "Not run",
+    "PhysicalKeyboardMetadata": "Not run"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2d/uia-02-final/run.json",
+    "EvidenceClass": "Historical runtime capture inspected, not rerun",
+    "SHA256": "670B6FD74D64FE7FE2BAAF4F563F1AE0F75BBC968768A8E0FD8294D9C7FB1174",
+    "UTC": "2026-10-15T06:51:15.3079308Z",
+    "BinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Checks": 29,
+    "PassingChecks": 29,
+    "NarratorMetadata": "Not run",
+    "PhysicalKeyboardMetadata": "Not run"
+  },
+  {
+    "Path": "docs/implementation/evidence-stage2e/uia-baseline/run.json",
+    "EvidenceClass": "Historical runtime capture inspected, not rerun",
+    "SHA256": "81D4495122D77D90C0B13342161B9BAF2DAEA365362CDFCB2F5FAB3F224500ED",
+    "UTC": "2026-10-15T10:07:16.2862251Z",
+    "BinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Checks": 29,
+    "PassingChecks": 29,
+    "NarratorMetadata": "Not run",
+    "PhysicalKeyboardMetadata": "Not run"
+  }
+]

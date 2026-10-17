@@ -1,0 +1,170 @@
+{
+  "UTC": "2026-10-17T07:57:13.1901854Z",
+  "Requirement": "Stage 2K R19 / Q17: container UIA ScrollPattern, separate from item ScrollItem",
+  "Classification": "Stable published semantic fields/actions and ScrollItem exist; no stable Windows container implementation",
+  "StableCandidateIdentified": false,
+  "NativeRuntimeExecuted": false,
+  "Path": [
+    {
+      "Step": "Semantic offsets and actions",
+      "Finding": "ScrollX/Y current/min/max f64 fields and scroll directional/point/offset actions exist; they are not authored UIA percentages/view sizes or a Windows COM interface.",
+      "Source": [
+        {
+          "Package": "accesskit",
+          "Version": "0.25.1",
+          "Path": "src/lib.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 315,
+          "LastLine": 338,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit/src/lib.rs",
+          "SourceSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+          "ArchiveMemberSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+        },
+        {
+          "Package": "accesskit",
+          "Version": "0.25.1",
+          "Path": "src/lib.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 2207,
+          "LastLine": 2220,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit/src/lib.rs",
+          "SourceSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+          "ArchiveMemberSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+        }
+      ]
+    },
+    {
+      "Step": "Consumer and roles",
+      "Finding": "NodeRef returns optional scroll metadata. ListBox is a selectable container; Windows ListBox/ListBoxOption role mapping and selection do not imply scrolling support. Role ScrollView maps Pane, ScrollBar maps ScrollBar, neither supplies container methods.",
+      "Source": [
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 510,
+          "LastLine": 532,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/node.rs",
+          "SourceSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2",
+          "ArchiveMemberSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2"
+        },
+        {
+          "Package": "accesskit_consumer",
+          "Version": "0.39.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 938,
+          "LastLine": 957,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/accesskit_consumer/src/node.rs",
+          "SourceSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2",
+          "ArchiveMemberSHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2"
+        }
+      ]
+    },
+    {
+      "Step": "COM implementation and dispatcher",
+      "Finding": "Reviewed PlatformNode COM interface declarations, pattern macro dispatch/default and all ten registered pattern families. IScrollProvider is absent; no UIA_ScrollPatternId registration or Scroll/SetScrollPercent implementation. Search across 12 Windows Rust files corroborates manual dispatch review, not sole evidence.",
+      "Source": [
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 786,
+          "LastLine": 810,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1245,
+          "LastLine": 1270,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1332,
+          "LastLine": 1530,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        }
+      ]
+    },
+    {
+      "Step": "Item-level path",
+      "Finding": "ScrollItem predicate checks Action::ScrollIntoView, and its method sends that action. It has no container percentage/view-size/axis contract and cannot substitute.",
+      "Source": [
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 644,
+          "LastLine": 646,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        },
+        {
+          "Package": "accesskit_windows",
+          "Version": "0.35.1",
+          "Path": "src/node.rs",
+          "Revision": "ce8164ba92995cfa86005b6259115e08c8244253",
+          "FirstLine": 1370,
+          "LastLine": 1381,
+          "SourceURL": "https://github.com/AccessKit/accesskit/blob/ce8164ba92995cfa86005b6259115e08c8244253/adapters/windows/src/node.rs",
+          "SourceSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+          "ArchiveMemberSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+        }
+      ]
+    }
+  ],
+  "RequiredBehavior": [
+    {
+      "Member": "HorizontallyScrollable / VerticallyScrollable",
+      "StableProvider": "Not implemented; axis availability behavior not established"
+    },
+    {
+      "Member": "HorizontalScrollPercent / VerticalScrollPercent",
+      "StableProvider": "Not implemented; no offset-to-percentage mapping or unsupported-axis behavior proved"
+    },
+    {
+      "Member": "HorizontalViewSize / VerticalViewSize",
+      "StableProvider": "Not implemented; no viewport/content percentage behavior proved"
+    },
+    {
+      "Member": "Scroll(horizontalAmount, verticalAmount)",
+      "StableProvider": "Not implemented; no directional/increment/error behavior proved"
+    },
+    {
+      "Member": "SetScrollPercent(horizontalPercent, verticalPercent)",
+      "StableProvider": "Not implemented; SDK sentinel/invalid/out-of-range/axis semantics cannot be inferred from semantic f64 fields"
+    },
+    {
+      "Member": "ScrollItem.ScrollIntoView",
+      "StableProvider": "Source supported conditional on semantic action; current catalog native behavior NOT RUN"
+    }
+  ],
+  "Proposal": {
+    "State": "open",
+    "Evidence": "pr-816-metadata.json",
+    "Merged": false,
+    "Classification": "Open/unmerged proposal; not inspected as a stable source candidate",
+    "Draft": false,
+    "Number": 816,
+    "HeadSHA": "29f2ec503e98f1afcbbd1a26d11a1986b5198d5e"
+  },
+  "SearchInventory": "provider-search-inventory.json",
+  "RuntimeStatus": "NOT RUN; no container-native query executed",
+  "Resume": "Published stable interface/registration/full-axis semantics and compatible artifact provenance, then explicit owner approval for native Q17; no ScrollItem or silent pagination workaround"
+}

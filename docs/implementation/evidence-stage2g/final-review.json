@@ -1,0 +1,31 @@
+{
+  "CheckedAtUtc": "2026-10-17T05:43:14.7613729Z",
+  "GitHead": "d14d4bede2096d4bea2561de22977d181376b640",
+  "TestedState": "Uncommitted Stage 2G additions only; build-05 and run-02 use current source",
+  "BaselineFilesCompared": 506,
+  "BaselineChangedOrMissing": [],
+  "SourceIdentityMismatches": [],
+  "PowerShellParserErrors": [],
+  "JsonRuns": [
+    {
+      "Run": "run-01",
+      "ValidJsonLines": 2079,
+      "Observations": 2048,
+      "StrictlyIncreasingSequence": true,
+      "Within2048Limit": true
+    },
+    {
+      "Run": "run-02",
+      "ValidJsonLines": 66,
+      "Observations": 56,
+      "StrictlyIncreasingSequence": true,
+      "Within2048Limit": true
+    }
+  ],
+  "MissingDocumentLinks": [],
+  "NewSourceDocumentTrailingWhitespace": [],
+  "RemainingOwnedProcesses": [],
+  "GitDiffCheckExitCode": 0,
+  "Committed": false,
+  "Pushed": false
+}

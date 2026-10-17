@@ -1,0 +1,41 @@
+rustfmt --edition 2024 --check X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\observe.rs
+exit=0
+rustc --edition=2024 X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs --extern iced=X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike\target\debug\deps\libiced-5752bf559ff9ed40.rlib -L dependency=X:\Project\SeiDesk\sei-desk\experiments\accesskit-iced-spike\target\debug\deps -L native=C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\windows_x86_64_msvc-0.52.6\lib -D warnings --test -o X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\target\observer-tests.exe
+error[E0425]: cannot find function `get_mode` in module `window`
+   --> X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs:75:48
+    |
+ 75 | ...                   .chain(window::get_mode(id).map(Message::Mode));
+    |                                      ^^^^^^^^
+    |
+   ::: C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\iced_runtime-0.14.0\src\window.rs:395:1
+    |
+395 | pub fn set_mode<T>(id: Id, mode: Mode) -> Task<T> {
+    | ------------------------------------------------- similarly named function `set_mode` defined here
+    |
+help: a function with a similar name exists
+    |
+ 75 -                                 .chain(window::get_mode(id).map(Message::Mode));
+ 75 +                                 .chain(window::set_mode(id).map(Message::Mode));
+    |
+
+error[E0425]: cannot find function `get_mode` in module `window`
+   --> X:\Project\SeiDesk\sei-desk\experiments\iced-ime-observer\src\main.rs:87:40
+    |
+ 87 |                         .chain(window::get_mode(id).map(Message::Mode));
+    |                                        ^^^^^^^^
+    |
+   ::: C:\Users\swani\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\iced_runtime-0.14.0\src\window.rs:395:1
+    |
+395 | pub fn set_mode<T>(id: Id, mode: Mode) -> Task<T> {
+    | ------------------------------------------------- similarly named function `set_mode` defined here
+    |
+help: a function with a similar name exists
+    |
+ 87 -                         .chain(window::get_mode(id).map(Message::Mode));
+ 87 +                         .chain(window::set_mode(id).map(Message::Mode));
+    |
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0425`.
+exit=1
