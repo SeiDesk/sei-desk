@@ -1494,6 +1494,7 @@ name = "sei-desk"
 version = "0.1.0"
 dependencies = [
  "iced",
+ "sei-apps",
  "sei-windows",
 ]
 

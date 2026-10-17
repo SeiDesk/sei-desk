@@ -89,7 +89,7 @@ $failed = $false
 try {
     $child = New-Object System.Diagnostics.Process
     $child.StartInfo.FileName = $binary
-    $child.StartInfo.Arguments = '--diagnostics'
+    $child.StartInfo.Arguments = '--validation --diagnostics'
     if ($ErrorFixture) { $child.StartInfo.Arguments += ' --error-fixture' }
     $child.StartInfo.UseShellExecute = $false
     $child.StartInfo.CreateNoWindow = $true

@@ -2,6 +2,9 @@
 //! hooks, services, HWND creation, system-setting writes or background threads.
 use std::fmt;
 
+pub mod metrics;
+pub mod network;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum MotionPreference {
     Reduce,
