@@ -1,0 +1,29 @@
+{
+  "DateUTC": "2026-10-15T10:09:27.1905361Z",
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "Rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "ProbeBinarySHA256": "E52B3FD56277E554C3C80134068953021FA3A2B5E0DC299E4545D1D006634889",
+  "SpikeBinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+  "Inputs": [
+    {
+      "Path": "experiments/accesskit-iced-spike/Cargo.toml",
+      "SHA256": "1B17F8EA307C574BF40C84A8CDBB0267016528D4A9E8CA088E37BA9C83E9C812"
+    },
+    {
+      "Path": "experiments/accesskit-iced-spike/Cargo.lock",
+      "SHA256": "DD0C3375503DE0F56DF2CD3F860201D2BFA789D38C342033093139DA03DF760B"
+    },
+    {
+      "Path": "docs/implementation/evidence-stage2e/public-api-probe.rs",
+      "SHA256": "CABFB287B0726E21B3D336A2AC3E9E7075E68387EC46CB58C375A1307BBC58DA"
+    },
+    {
+      "Path": "docs/implementation/evidence-stage2e/private-paragraph-probe.rs",
+      "SHA256": "67F5C010311A22723C3DBBDBCDD92A4EB8511182695D5BCB065CDE6B3EB12538"
+    },
+    {
+      "Path": "docs/implementation/evidence-stage2e/Inspect-TextPatterns.ps1",
+      "SHA256": "DBB3B48FA89BF5B9B312447750736AEA320845D991F13814B2C9701012DE8A04"
+    }
+  ]
+}

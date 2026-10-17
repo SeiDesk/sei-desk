@@ -1,0 +1,10 @@
+error[E0616]: field `value` of struct `iced::widget::text_input::State` is private
+ --> docs/implementation/evidence-stage2e/private-paragraph-probe.rs:5:19
+  |
+5 |     let _ = state.value.raw();
+  |                   ^^^^^ private field
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0616`.
+exit=1 (expected compile rejection)

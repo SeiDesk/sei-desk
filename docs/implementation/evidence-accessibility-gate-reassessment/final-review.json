@@ -1,0 +1,33 @@
+{
+  "DateUTC": "2026-10-15T10:01:20.4655126Z",
+  "Head": "e11af2cf6baea5c20e1edc7d48c603c6ab77397c",
+  "Branch": "main",
+  "BaselineFileCount": 423,
+  "ChangedBaselinePaths": [
+    {
+      "Path": "tools/Test-Stage3B.ps1",
+      "Result": "Changed"
+    }
+  ],
+  "UnexpectedChanges": [],
+  "PreviousRustDesignAndEvidencePreserved": true,
+  "MissingReportLinks": [],
+  "TrailingWhitespace": [],
+  "GitDiffCheckExit": 0,
+  "ScriptHashes": [
+    {
+      "Path": "tools/Test-Stage3B.ps1",
+      "SHA256": "8B08C69A89E0F1D2537668DE7DAF5D465B2B6202495B47E6B21CE5A38CB4CB47"
+    },
+    {
+      "Path": "tools/Invoke-OwnedProbe.ps1",
+      "SHA256": "75ACF2D7484D33A6CF067FEAC8B490F2978D8B69DD3AE77637A926B2F7E578F4"
+    },
+    {
+      "Path": "tools/Test-OwnedProbe.ps1",
+      "SHA256": "7C2BBB77B20C1DC65B444C8A448DA89DF7357A811DA3734487FF89047C3ED9F9"
+    }
+  ],
+  "RemainingNamedProbeProcesses": [],
+  "NoCommitOrPush": true
+}

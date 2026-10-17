@@ -1,5 +1,6 @@
 //! Headless, explicit-refresh application catalog. No iced or accessibility coupling.
 mod catalog;
+pub mod consumer;
 mod launch;
 #[cfg(windows)]
 mod native;
@@ -99,28 +100,29 @@ pub fn refresh_async(
 ) -> std::io::Result<JoinHandle<Result<Catalog, Error>>> {
     std::thread::Builder::new()
         .name("sei-catalog".into())
-        .spawn(move || {
-            cancel.check()?;
-            #[cfg(windows)]
-            {
-                let mut reader = native::Reader::new()?;
-                let (roots, initial_issues) = reader.roots();
-                let mut catalog = discover(
-                    &roots,
-                    &mut reader,
-                    Limits::default(),
-                    &cancel,
-                    progress.as_ref(),
-                )?;
-                catalog.issues.splice(0..0, initial_issues);
-                Ok(catalog)
-            }
-            #[cfg(not(windows))]
-            {
-                let _ = progress;
-                Err(Error::new(ErrorKind::Unsupported, "Windows catalog"))
-            }
-        })
+        .spawn(move || refresh(&cancel, progress.as_ref()))
+}
+
+/// Blocking native refresh for operation-owned worker threads. The async wrapper
+/// and consumer share this body so the consumer does not spawn nested workers.
+pub fn refresh(
+    cancel: &Cancellation,
+    progress: Option<&SyncSender<Progress>>,
+) -> Result<Catalog, Error> {
+    cancel.check()?;
+    #[cfg(windows)]
+    {
+        let mut reader = native::Reader::new()?;
+        let (roots, initial_issues) = reader.roots();
+        let mut catalog = discover(&roots, &mut reader, Limits::default(), cancel, progress)?;
+        catalog.issues.splice(0..0, initial_issues);
+        Ok(catalog)
+    }
+    #[cfg(not(windows))]
+    {
+        let _ = progress;
+        Err(Error::new(ErrorKind::Unsupported, "Windows catalog"))
+    }
 }
 
 /// Cancellation is checked before creation only. A successful spawn is never

@@ -1,0 +1,55 @@
+440:            preedit: state.preedit.as_ref().map(input_method::Preedit::as_ref),
+681:    fn operate(
+1461:pub struct State<P: text::Paragraph> {
+1462:    value: paragraph::Plain<P>,
+1468:    preedit: Option<input_method::Preedit>,
+1506:    pub fn cursor(&self) -> Cursor {
+1549:    pub fn select_range(&mut self, start: usize, end: usize) {
+1623:fn measure_cursor_and_scroll_offset(
+1799:fn alignment_offset(
+58:    fn hit_test(&self, point: Point) -> Option<Hit>;
+67:    fn span_bounds(&self, index: usize) -> Vec<Rectangle>;
+70:    fn grapheme_position(&self, line: usize, index: usize) -> Option<Point>;
+1420:        fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1432:    (UIA_TextPatternId, ITextProvider, ITextProvider_Impl, is_text_pattern_supported, (), (
+1433:        fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1445:        fn GetVisibleRanges(&self) -> Result<*mut SAFEARRAY> {
+1457:        fn RangeFromPoint(&self, point: &UiaPoint) -> Result<ITextRangeProvider> {
+1468:        fn DocumentRange(&self) -> Result<ITextRangeProvider> {
+1475:        fn SupportedTextSelection(&self) -> Result<SupportedTextSelection> {
+1478:                    Ok(SupportedTextSelection_Single)
+1480:                    Ok(SupportedTextSelection_None)
+494:    fn GetBoundingRectangles(&self) -> Result<*mut SAFEARRAY> {
+520:    fn GetText(&self, _max_length: i32) -> Result<BSTR> {
+598:                action: Action::SetTextSelection,
+601:                data: Some(ActionData::SetTextSelection(range.to_text_selection())),
+616:    fn ScrollIntoView(&self, align_to_top: BOOL) -> Result<()> {
+628:                action: Action::ScrollIntoView,
+Exact source-wide searches for UIA_LabeledBy, GetCaretRange, TextPattern2:
+No matches; assessed alongside property/interface dispatch source, not an alone proof of runtime support.
+393:    fn input_method<'b>(
+412:        let caret_index = match state.cursor.state(value) {
+414:            cursor::State::Selection { start, end } => start.min(end),
+419:            measure_cursor_and_scroll_offset(text, text_bounds, caret_index);
+440:            preedit: state.preedit.as_ref().map(input_method::Preedit::as_ref),
+540:                cursor::State::Selection { start, end } => {
+1330:            Event::Window(window::Event::RedrawRequested(now)) => {
+1353:                    shell.request_input_method(&self.input_method(
+1378:        if let Event::Window(window::Event::RedrawRequested(_now)) = event {
+1468:    preedit: Option<input_method::Preedit>,
+100:    pub fn request_input_method<T: AsRef<str>>(
+104:        self.input_method.merge(ime);
+109:    pub fn input_method(&self) -> &InputMethod {
+115:    pub fn input_method_mut(&mut self) -> &mut InputMethod {
+171:        self.input_method.merge(&other.input_method);
+8:pub enum InputMethod<T = String> {
+16:        cursor: Rectangle,
+24:        preedit: Option<Preedit<T>>,
+34:    pub selection: Option<Range<usize>>,
+93:    ///     cursor: Rectangle::new(Point::ORIGIN, Size::UNIT),
+95:    ///     preedit: Some(Preedit { content: "1".to_owned(), selection: None, text_size: None }),
+99:    ///     cursor: Rectangle::new(Point::ORIGIN, Size::UNIT),
+101:    ///     preedit: Some(Preedit { content: "2".to_owned(), selection: None, text_size: None }),
+112:    pub fn merge<T: AsRef<str>>(&mut self, other: &InputMethod<T>) {
+141:                preedit: preedit.as_ref().map(Preedit::to_owned),
+173:    /// The cursor range is byte-wise indexed.

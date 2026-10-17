@@ -1,0 +1,4 @@
+﻿refresh_ms=234.042 entries=78 visited=252 issues=83 truncated=false
+second_refresh_ms=183.581 entries_identical=true
+issue_kinds={"Invalid": 51, "Unsupported": 32}
+issue_operations={"absolute path": 46, "executable extension": 24, "shell/script host": 6, "special shortcut flags": 2, "working directory": 5}

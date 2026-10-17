@@ -1,0 +1,27 @@
+{
+  "DateUTC": "2026-10-15T09:27:57.0107168Z",
+  "BaselineFileCount": 363,
+  "ChangedBaselinePaths": [
+    {
+      "Path": "crates/sei-apps/src/consumer/tests.rs",
+      "Result": "Changed"
+    }
+  ],
+  "OnlyExpectedTestModuleDeclarationChanged": true,
+  "GitDiffCheckExitCode": 0,
+  "NewSourceAndDocumentTrailingWhitespace": [],
+  "LocalDocumentationLinks": [
+    {
+      "Document": "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+      "Target": "evidence-stage3b-acceptance/README.md",
+      "Exists": true
+    },
+    {
+      "Document": "docs/implementation/evidence-stage3b-acceptance/README.md",
+      "Target": "../STAGE-3B-ACCEPTANCE-REPORT.md",
+      "Exists": true
+    }
+  ],
+  "RemainingNamedProbeOrFixtureProcesses": [],
+  "RuntimeAndPriorEvidencePreserved": true
+}

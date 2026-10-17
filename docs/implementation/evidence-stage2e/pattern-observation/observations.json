@@ -1,0 +1,17 @@
+﻿{
+    "DateUTC":  "2026-10-15T10:08:22.3104378Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "BinarySHA256":  "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Pid":  17244,
+    "RootHWND":  7473432,
+    "InputName":  "Sample text",
+    "InputControlType":  "ControlType.Edit",
+    "ValuePatternAvailable":  true,
+    "TextPatternAvailable":  false,
+    "LabeledByAvailable":  false,
+    "AccessibleValue":  "",
+    "TextRangeGate":  "BLOCKED: no TextPattern on actual input",
+    "LabelRelationshipGate":  "FAIL: no LabeledBy relationship",
+    "PhysicalKeyboard":  "Not run",
+    "Narrator":  "Not run"
+}

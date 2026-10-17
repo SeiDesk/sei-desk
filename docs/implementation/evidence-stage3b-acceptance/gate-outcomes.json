@@ -1,0 +1,38 @@
+[
+  {
+    "Command": "cargo fmt --all --check",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo check --workspace --all-targets --locked --offline",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo test --workspace --locked --offline",
+    "ExitCode": 101
+  },
+  {
+    "Command": "cargo clippy --workspace --all-targets --locked --offline -- -D warnings",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo build --workspace --release --locked --offline",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo build -p sei-apps --release --examples --locked --offline",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo test -p sei-apps --lib --locked --offline -- --include-ignored",
+    "ExitCode": 101
+  },
+  {
+    "Command": "cargo test -p sei-apps --test consumer_windows --locked --offline -- --ignored",
+    "ExitCode": 0
+  },
+  {
+    "Command": "cargo test -p sei-apps --test windows_launch --locked --offline -- --ignored",
+    "ExitCode": 0
+  }
+]

@@ -1,0 +1,76 @@
+   Compiling sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-36122743768a19cb.exe)
+
+running 47 tests
+test consumer::tests::acceptance::shutdown_joins_exit_fallback_workers_without_publishing_after_disposal ... ok
+test consumer::tests::acceptance::failed_worker_join_disposes_nested_panicking_payloads_without_unwinding_owner ... ok
+test consumer::tests::acceptance::terminated_worker_with_panicking_payload_drop_must_report_failure ... ok
+test consumer::tests::acceptance::owner_wait_is_woken_by_failure_released_from_a_service_gate ... ok
+test consumer::tests::changing_selection_does_not_retarget_an_already_requested_launch ... ok
+test consumer::tests::drop_joins_completed_worker_instead_of_detaching_it ... ok
+test consumer::tests::cancellation_after_acceptance_cannot_hide_success ... ok
+test consumer::tests::acceptance::ordinary_launch_worker_panic_is_not_retried_and_keeps_selection ... ok
+test consumer::tests::acceptance::both_exit_fallbacks_fit_the_queue_during_shutdown_without_a_receiver_drain ... ok
+test consumer::tests::id_exhaustion_never_wraps_or_mutates_existing_snapshot ... ok
+test consumer::tests::idle_wait_and_bounded_drain_do_not_poll_or_create_workers ... ok
+test consumer::tests::acceptance::repeated_cancellation_and_dispatch_do_not_create_extra_workers ... ok
+test consumer::tests::catalog_replacement_rejects_pending_old_snapshot_launch_before_effects ... ok
+test consumer::tests::failed_refresh_keeps_snapshot_selection_and_partial_catalog_issues ... ok
+test consumer::tests::acceptance::published_acceptance_survives_later_panic_cancel_and_duplicate_result ... ok
+test consumer::tests::pending_cancellation_never_dispatches_a_service_call ... ok
+test consumer::tests::acceptance::exit_without_normal_publication_wakes_wait_on_return_and_unwind ... ok
+test consumer::tests::acceptance::shutdown_keeps_blocked_worker_handles_until_services_are_released ... ok
+test consumer::tests::refresh_requests_rejected_while_pending_running_or_cancel_requested ... ok
+test consumer::tests::ready_drain_handles_both_lanes_once_without_more_work ... ok
+test consumer::tests::launch_failure_retains_selection_and_maps_stale_target_error ... ok
+test consumer::tests::selection_is_explicit_and_never_launches_on_refresh_or_selection ... ok
+test consumer::tests::replayed_and_out_of_order_refresh_completions_cannot_replace_current_state ... ok
+test consumer::tests::acceptance::public_wait_wakes_on_payload_cleanup_panic_in_both_lanes ... ok
+test consumer::tests::service_panic_becomes_structured_failure_and_owner_remains_usable ... ok
+test consumer::tests::running_launch_cancelled_before_creation_is_distinct_from_accepted ... ok
+test tests::cancelled_refresh_does_not_read_or_launch ... ok
+test tests::launch_error_mapping_preserves_code ... ok
+test consumer::tests::shutdown_pending_work_never_starts_workers ... ok
+test consumer::tests::shutdown_joins_two_running_workers_and_does_not_publish_late_results ... ok
+test consumer::tests::stale_cancellation_id_cannot_cancel_a_new_operation ... ok
+test tests::identity_normalizes_path_case_and_preserves_argument_case ... ok
+test consumer::tests::refresh_and_launch_complete_in_either_order_without_status_conflicts ... ok
+test consumer::tests::successful_replacement_invalidates_selection_even_for_same_identity ... ok
+test tests::depth_and_file_size_limits_are_enforced ... ok
+test tests::missing_and_inaccessible_sources_are_explicit ... ok
+test tests::missing_target_and_invalid_request_are_structured_errors ... ok
+test tests::unsupported_shell_uri_packaged_and_network_targets_are_rejected ... ok
+test tests::progress_backpressure_never_blocks_refresh ... ok
+test tests::refresh_cancellation_during_reader_discards_partial_catalog ... ok
+test tests::malformed_stale_and_denied_entries_do_not_abort_refresh ... ok
+test tests::overflowing_directory_is_not_an_arbitrary_prefix ... ok
+test tests::user_source_wins_duplicate_independent_of_input_order ... ok
+test tests::normalized_identity_dedup_and_order_are_repeatable ... ok
+test native::tests::real_com_shortcut_read_and_malformed_rejection ... ok
+test native::tests::real_shortcut_arguments_launch_and_special_flags_rejection ... ok
+test native::tests::acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch ... ok
+
+test result: ok. 47 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running tests\consumer_windows.rs (target\debug\deps\consumer_windows-6176740b11b74d41.exe)
+
+running 1 test
+test real_windows_launch_requires_selection_and_reports_removed_target ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests\windows_launch.rs (target\debug\deps\windows_launch-97a94d8dfb85fa9f.exe)
+
+running 2 tests
+test real_createprocess_structured_arguments_and_cancellation ... ok
+test acceptance_stale_locked_target_and_default_working_directory ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+   Doc-tests sei_apps
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

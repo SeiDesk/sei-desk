@@ -1,0 +1,4 @@
+﻿    Checking sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.55s
+    Checking sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.59s

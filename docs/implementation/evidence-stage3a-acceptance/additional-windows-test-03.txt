@@ -1,0 +1,16 @@
+﻿    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-36122743768a19cb.exe)
+
+running 1 test
+acceptance Locked.lnk: Native "shortcut Load" Some(-2147024864)
+acceptance Malformed.lnk: Native "shortcut Load" Some(-2147467259)
+acceptance Stale.lnk: Missing "target metadata" Some(2)
+test native::tests::acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.30s
+
+     Running tests\windows_launch.rs (target\debug\deps\windows_launch-97a94d8dfb85fa9f.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s

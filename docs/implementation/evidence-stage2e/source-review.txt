@@ -1,0 +1,47 @@
+Authoritative cache matching locked dependencies, not latest upstream. Source hashes in inspected-source-hashes.json.
+440:            preedit: state.preedit.as_ref().map(input_method::Preedit::as_ref),
+1461:pub struct State<P: text::Paragraph> {
+1462:    value: paragraph::Plain<P>,
+1468:    preedit: Option<input_method::Preedit>,
+1506:    pub fn cursor(&self) -> Cursor {
+1549:    pub fn select_range(&mut self, start: usize, end: usize) {
+1623:fn measure_cursor_and_scroll_offset(
+1799:fn alignment_offset(
+19:        start: usize,
+21:        end: usize,
+35:    pub fn state(&self, value: &Value) -> State {
+54:    pub fn selection(&self, value: &Value) -> Option<(usize, usize)> {
+100:    pub(crate) fn select_range(&mut self, start: usize, end: usize) {
+1:use unicode_segmentation::UnicodeSegmentation;
+14:    pub fn new(string: &str) -> Self {
+15:        let graphemes = UnicodeSegmentation::graphemes(string, true)
+40:        UnicodeSegmentation::split_word_bound_indices(previous_string as &str)
+45:                    - UnicodeSegmentation::graphemes(previous_word, true)
+47:                    - UnicodeSegmentation::graphemes(
+61:        UnicodeSegmentation::split_word_bound_indices(next_string as &str)
+65:                    + UnicodeSegmentation::graphemes(next_word, true).count()
+66:                    + UnicodeSegmentation::graphemes(
+77:    pub fn select(&self, start: usize, end: usize) -> Self {
+86:    pub fn until(&self, index: usize) -> Self {
+97:            UnicodeSegmentation::graphemes(&self.to_string() as &str, true)
+11:    fn text(&self) -> &str;
+14:    fn move_cursor_to_front(&mut self);
+17:    fn move_cursor_to_end(&mut self);
+20:    fn move_cursor_to(&mut self, position: usize);
+25:    fn select_range(&mut self, start: usize, end: usize);
+30:pub fn move_cursor_to_front<T>(target: Id) -> impl Operation<T> {
+36:        fn text_input(
+58:    fn hit_test(&self, point: Point) -> Option<Hit>;
+67:    fn span_bounds(&self, index: usize) -> Vec<Rectangle>;
+70:    fn grapheme_position(&self, line: usize, index: usize) -> Option<Point>;
+1420:        fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1432:    (UIA_TextPatternId, ITextProvider, ITextProvider_Impl, is_text_pattern_supported, (), (
+1433:        fn GetSelection(&self) -> Result<*mut SAFEARRAY> {
+1445:        fn GetVisibleRanges(&self) -> Result<*mut SAFEARRAY> {
+1457:        fn RangeFromPoint(&self, point: &UiaPoint) -> Result<ITextRangeProvider> {
+1475:        fn SupportedTextSelection(&self) -> Result<SupportedTextSelection> {
+1478:                    Ok(SupportedTextSelection_Single)
+1480:                    Ok(SupportedTextSelection_None)
+494:    fn GetBoundingRectangles(&self) -> Result<*mut SAFEARRAY> {
+520:    fn GetText(&self, _max_length: i32) -> Result<BSTR> {
+598:                action: Action::SetTextSelection,

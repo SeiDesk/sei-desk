@@ -1,0 +1,14 @@
+{
+  "DateUTC": "2026-10-15T09:51:06.8628994Z",
+  "BaselineFileCount": 407,
+  "ChangedBaselinePaths": [],
+  "AllPriorFilesPreserved": true,
+  "MissingLocalReportLinks": [],
+  "TrailingWhitespace": [],
+  "GitDiffCheckExitCode": 0,
+  "RemainingNamedOwnedProcesses": [],
+  "Head": "e11af2cf6baea5c20e1edc7d48c603c6ab77397c",
+  "Branch": "main",
+  "ReviewChanges": "New report and evidence directory only; no runtime or test edits",
+  "NoCommitOrPush": true
+}

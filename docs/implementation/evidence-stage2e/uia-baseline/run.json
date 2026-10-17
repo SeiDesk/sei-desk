@@ -1,0 +1,171 @@
+﻿{
+    "UTC":  "2026-10-15T10:07:16.2862251Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "BinarySHA256":  "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "BuildMode":  "release",
+    "Narrator":  "Not run",
+    "PhysicalKeyboard":  "Not run",
+    "TextSelection":  "Not advertised",
+    "LiveAnnouncement":  "Not evaluated by this harness",
+    "Checks":  [
+                   {
+                       "Name":  "Correct PID/title/Window root discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Required names and roles discovered",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Sample text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Validate",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Prefer reduced motion",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Enabled/focusable: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Bounds inside actual client: Close",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Editable initially empty ValuePattern",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "ValuePattern.SetValue synchronized",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Nonempty validation has no error action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Value cleared",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "UIA focus request reaches real Validate focus",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Invoke Validate exposes error action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Error text exposed",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Error preserves initiating Validate focus",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Dismiss Invoke removes action",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Dismiss removes error text",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Retained removed Dismiss returns UIA_E_ELEMENTNOTAVAILABLE",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "TogglePattern updates checked state",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Toggle restores checked state",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Resize updates real input layout bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Restore size restores input bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Move updates screen-space bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Restore position restores bounds",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Close Invoke exits process",
+                       "Passed":  true
+                   },
+                   {
+                       "Name":  "Closed-window input returns UIA_E_ELEMENTNOTAVAILABLE",
+                       "Passed":  true
+                   }
+               ],
+    "PID":  17344,
+    "HWND":  2492542,
+    "UIALabeledBy":  "Not exposed by this provider",
+    "ValueScreenshot":  "Captured own client",
+    "ErrorScreenshot":  "Captured own client",
+    "StaleDismissException":  [
+                                  {
+                                      "Type":  "System.Management.Automation.MethodInvocationException",
+                                      "HResult":  -2146233087,
+                                      "Message":  "Exception calling \"Invoke\" with \"0\" argument(s): \"Could not open the process token\""
+                                  },
+                                  {
+                                      "Type":  "System.Windows.Automation.ElementNotAvailableException",
+                                      "HResult":  -2147220991,
+                                      "Message":  "Could not open the process token"
+                                  }
+                              ],
+    "ToggleScreenshot":  "Captured own client",
+    "ResizeScreenshot":  "Captured own client",
+    "IdleSeconds":  2.0098026,
+    "CPUSeconds":  0,
+    "SingleCoreCPUPercent":  0,
+    "WorkingSetBytes":  23683072,
+    "PrivateCommitBytes":  5386240,
+    "PeakWorkingSetBytes":  24424448,
+    "StaleClosedException":  [
+                                 {
+                                     "Type":  "System.Management.Automation.MethodInvocationException",
+                                     "HResult":  -2146233087,
+                                     "Message":  "Exception calling \"SetValue\" with \"1\" argument(s): \"Could not open the process token\""
+                                 },
+                                 {
+                                     "Type":  "System.Windows.Automation.ElementNotAvailableException",
+                                     "HResult":  -2147220991,
+                                     "Message":  "Could not open the process token"
+                                 }
+                             ],
+    "ExitCode":  0,
+    "ChildRemaining":  false,
+    "PreShowAttachmentConfirmed":  true,
+    "ProviderDetached":  true,
+    "UIAActionsPassed":  true,
+    "AccessibilityGate":  "Manual keyboard/Narrator acceptance is recorded separately"
+}

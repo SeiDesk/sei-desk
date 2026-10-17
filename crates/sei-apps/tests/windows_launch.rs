@@ -91,3 +91,97 @@ fn real_createprocess_structured_arguments_and_cancellation() {
     assert_eq!(error.kind, ErrorKind::Invalid);
     assert!(matches!(error.code, Some(193 | 216)));
 }
+
+#[test]
+#[ignore = "requires this workspace's built SEI_APPS_FIXTURE; test-owned copy only"]
+fn acceptance_stale_locked_target_and_default_working_directory() {
+    use std::os::windows::fs::OpenOptionsExt;
+    let fixture = PathBuf::from(std::env::var_os("SEI_APPS_FIXTURE").expect("fixture path"));
+    assert_eq!(fixture.file_name().unwrap(), "launch_fixture.exe");
+    let temp =
+        std::env::temp_dir().join(format!("sei-apps-acceptance-launch-{}", std::process::id()));
+    std::fs::create_dir(&temp).unwrap();
+    struct Cleanup(PathBuf);
+    impl Drop for Cleanup {
+        fn drop(&mut self) {
+            std::fs::remove_dir_all(&self.0).unwrap();
+        }
+    }
+    let _cleanup = Cleanup(temp.clone());
+    let owned = temp.join("Owned.exe");
+    std::fs::copy(fixture, &owned).unwrap();
+    let output = temp.join("received.txt");
+    let request = LaunchRequest::executable(
+        owned.clone(),
+        vec![output.clone().into_os_string(), "literal &|%PATH%".into()],
+        None,
+    )
+    .unwrap();
+    let mut receipt = launch_async(request.clone(), Cancellation::default())
+        .unwrap()
+        .join()
+        .unwrap()
+        .unwrap();
+    let deadline = Instant::now() + Duration::from_secs(10);
+    loop {
+        if let Some(status) = receipt.child.try_wait().unwrap() {
+            assert!(status.success());
+            break;
+        }
+        if Instant::now() >= deadline {
+            let _ = receipt.child.kill();
+            let _ = receipt.child.wait();
+            panic!("owned fixture timeout");
+        }
+        std::thread::sleep(Duration::from_millis(10));
+    }
+    let expected: Vec<OsString> = vec!["literal &|%PATH%".into()];
+    assert_eq!(
+        std::fs::read_to_string(&output).unwrap(),
+        format!("{expected:?}\n{temp:?}")
+    );
+    drop(receipt);
+    std::fs::remove_file(&output).unwrap();
+
+    let lock = std::fs::OpenOptions::new()
+        .read(true)
+        .share_mode(0)
+        .open(&owned)
+        .unwrap();
+    let error = match launch_async(request.clone(), Cancellation::default())
+        .unwrap()
+        .join()
+        .unwrap()
+    {
+        Err(error) => error,
+        Ok(mut unexpected) => {
+            let _ = unexpected.child.kill();
+            let _ = unexpected.child.wait();
+            panic!("exclusively locked fixture was unexpectedly launched");
+        }
+    };
+    println!(
+        "acceptance locked target: {:?} {:?} {:?}",
+        error.kind, error.operation, error.code
+    );
+    assert!(matches!(
+        error.kind,
+        ErrorKind::AccessDenied | ErrorKind::ProcessCreation
+    ));
+    assert!(error.code.is_some());
+    assert!(!output.exists());
+    drop(lock);
+    request.validate().unwrap();
+    std::fs::remove_file(owned).unwrap();
+    let error = launch_async(request, Cancellation::default())
+        .unwrap()
+        .join()
+        .unwrap()
+        .unwrap_err();
+    assert_eq!(error.kind, ErrorKind::Missing);
+    println!(
+        "acceptance stale target: {:?} {:?} {:?}",
+        error.kind, error.operation, error.code
+    );
+    assert!(!output.exists());
+}

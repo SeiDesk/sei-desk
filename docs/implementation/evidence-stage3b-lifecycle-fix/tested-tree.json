@@ -1,0 +1,129 @@
+{
+  "DateUTC": "2026-10-15T09:45:04.9233683Z",
+  "Head": "e11af2cf6baea5c20e1edc7d48c603c6ab77397c",
+  "Branch": "main",
+  "Status": [
+    " M crates/sei-apps/src/lib.rs",
+    " M crates/sei-apps/src/native.rs",
+    " M crates/sei-apps/tests/windows_launch.rs",
+    "?? crates/sei-apps/examples/consumer_probe.rs",
+    "?? crates/sei-apps/src/consumer.rs",
+    "?? crates/sei-apps/src/consumer/",
+    "?? crates/sei-apps/tests/consumer_windows.rs",
+    "?? docs/implementation/STAGE-3A-ACCEPTANCE-REPORT.md",
+    "?? docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+    "?? docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+    "?? docs/implementation/STAGE-3B-TEST-MATRIX.md",
+    "?? docs/implementation/evidence-stage3a-acceptance/",
+    "?? docs/implementation/evidence-stage3b-acceptance/",
+    "?? docs/implementation/evidence-stage3b-lifecycle-fix/",
+    "?? docs/implementation/evidence-stage3b/",
+    "?? tools/Test-Stage3B.ps1"
+  ],
+  "SourceHashes": [
+    {
+      "Path": "Cargo.lock",
+      "SHA256": "AAE2E6C33BBE4D5A3572DEED174D79AC49ECCB97953E78F115C5FD015E919537"
+    },
+    {
+      "Path": "Cargo.toml",
+      "SHA256": "6EE119158EE10DE48482CC738686A4B94ACF78406BE69A26D79AB53D36A2A6EA"
+    },
+    {
+      "Path": "crates\\sei-apps\\Cargo.toml",
+      "SHA256": "8482B1A5EF76960013C656944DDDA735B5C3CC4D85C51B3B81151B7C1CC712F9"
+    },
+    {
+      "Path": "crates\\sei-apps\\examples\\catalog_probe.rs",
+      "SHA256": "694C7718058A4B7906206EC65E78631BE5F1BDD73507B66D6509E2F2A54ED100"
+    },
+    {
+      "Path": "crates\\sei-apps\\examples\\consumer_probe.rs",
+      "SHA256": "61B88455AFB897458B4075E2ACE967B03167DDE974883DB3C0F6C227A8DEE96D"
+    },
+    {
+      "Path": "crates\\sei-apps\\examples\\launch_fixture.rs",
+      "SHA256": "94D0B169900D22539FCBE7EB62CF398EFDCFB20979902A96AA0BE94AA4D87106"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\catalog.rs",
+      "SHA256": "4B983A97F3F2B7E889C79F54B089CD09C141E2108945935A68E269D51C2D629F"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\consumer.rs",
+      "SHA256": "32D32DD4DD1F26298FCB543909922BDEFBEBDD9A81762DF4417CC057B588F87C"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\consumer\\tests.rs",
+      "SHA256": "37963469158DDE541340EFB545489F8B54482B9D096C8BB92B6A9408C32AC1CC"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\consumer\\tests\\acceptance.rs",
+      "SHA256": "F1BAEC905AE280E098C5234083DA1C1FDDDAB2F407FB8221B4EBD9DEEE96AA31"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\launch.rs",
+      "SHA256": "BAD0D42B02AAB479171638AEDDE076326F0B14C184AA5EE60EC544F76D7BC78F"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\lib.rs",
+      "SHA256": "FB195DDF2A813E47F7D4D9A1B5BFEFCC9C039997B2EAA1D60AA3B750BD64CE55"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\native.rs",
+      "SHA256": "FDFAEEDEE191310AB52C776E3FD1EFB03C5C38891CA262D1CE1C3F13ECE989F1"
+    },
+    {
+      "Path": "crates\\sei-apps\\src\\tests.rs",
+      "SHA256": "B06A64B2CA6AD43E9CCC03B355F640E007AAE6C2C4798F38818792E879890D99"
+    },
+    {
+      "Path": "crates\\sei-apps\\tests\\consumer_windows.rs",
+      "SHA256": "1BB8921A29ABDEE1EAE0D521CF68AA8D609069CC5120CE79A700558389A8BE57"
+    },
+    {
+      "Path": "crates\\sei-apps\\tests\\windows_launch.rs",
+      "SHA256": "707D8A62FC171C8E65195892B325FA334EABBFE4882CF0CE61C7F768F41D641D"
+    },
+    {
+      "Path": "crates\\sei-desk\\Cargo.toml",
+      "SHA256": "DB25FFC96E9A9187DE913E9F2C81283789AFF704D90012C73EEBFF9D423CB67F"
+    },
+    {
+      "Path": "crates\\sei-desk\\src\\main.rs",
+      "SHA256": "814F8311AE599CA30BCDBA33321587AF5DFEA28C8BE039D2CAFFB902B20BA40F"
+    },
+    {
+      "Path": "crates\\sei-desk\\src\\model.rs",
+      "SHA256": "87DCE3926505BB94D2BAF16B83D9EE57426E34EA3B29CA600F4127A455D40345"
+    },
+    {
+      "Path": "crates\\sei-desk\\src\\view.rs",
+      "SHA256": "4F8F16EF0983C5A650F7954AC07163309DA86A08FCCCADB2CA24947AEC0D991A"
+    },
+    {
+      "Path": "crates\\sei-windows\\Cargo.toml",
+      "SHA256": "30ED06AD7F1763BD58126BB2E6CAE97179A7C9D8256C28CCF0C659F01E89170B"
+    },
+    {
+      "Path": "crates\\sei-windows\\examples\\stage2a_probe.rs",
+      "SHA256": "7A350E5C10B7ED83DCF340794780182D6E05EDF1086F5269026FCEDE76004AB4"
+    },
+    {
+      "Path": "crates\\sei-windows\\src\\lib.rs",
+      "SHA256": "73C17B7A8CA8A1F6DD2A2F00F8A132C5947F2CF3933A746214284B113517D489"
+    },
+    {
+      "Path": "tools\\Test-Stage2A.ps1",
+      "SHA256": "F453A90DBAE617FAB8D8EB6C7FFB93CBBDDFF5A88E4FBFE6433C725C1FB95D8F"
+    },
+    {
+      "Path": "tools\\Test-Stage3A.ps1",
+      "SHA256": "754B29BB0448841C4CC3803383B978F088805FBF543D52E156AA14C1D3EDC5D6"
+    },
+    {
+      "Path": "tools\\Test-Stage3B.ps1",
+      "SHA256": "4E1DE43E7A9E084E38D79357FC110F49506A0F148BAD9F95311D5E01450FB621"
+    }
+  ]
+}

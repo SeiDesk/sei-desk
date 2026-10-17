@@ -1,0 +1,16 @@
+﻿{
+    "DateUTC":  "2026-10-15T08:55:59.3122343Z",
+    "OS":  "Microsoft Windows NT 10.0.26300.0",
+    "Build":  "release",
+    "Rust":  "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "ProbeSHA256":  "33CBA4C3C51721F6BB8BA7B23A8F005B63A772D2E922624969094AAB09FFE29D",
+    "FixtureSHA256":  "0B948C9104FA7B17275B1E5EC7EDEE6D179CE09DF620B9D3B9FE3C2AE9794B45",
+    "DurationSeconds":  2.5911595,
+    "SamplingMilliseconds":  50,
+    "IncludesTwoRefreshesAndTwoSecondIdleHold":  true,
+    "MaxSampledWorkingSetBytes":  19329024,
+    "MaxSampledPrivateCommitBytes":  3829760,
+    "LastSampledCPUSeconds":  0.390625,
+    "ExitCode":  0,
+    "ChildRemaining":  false
+}

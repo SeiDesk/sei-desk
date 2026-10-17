@@ -1,0 +1,39 @@
+﻿   Compiling sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.39s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-36122743768a19cb.exe)
+
+running 20 tests
+test consumer::tests::idle_wait_and_bounded_drain_do_not_poll_or_create_workers ... ok
+test consumer::tests::pending_cancellation_never_dispatches_a_service_call ... ok
+test consumer::tests::id_exhaustion_never_wraps_or_mutates_existing_snapshot ... ok
+test consumer::tests::refresh_requests_rejected_while_pending_running_or_cancel_requested ... ok
+test consumer::tests::selection_is_explicit_and_never_launches_on_refresh_or_selection ... ok
+test consumer::tests::drop_joins_completed_worker_instead_of_detaching_it ... ok
+test consumer::tests::cancellation_after_acceptance_cannot_hide_success ... ok
+test consumer::tests::changing_selection_does_not_retarget_an_already_requested_launch ... ok
+test consumer::tests::service_panic_becomes_structured_failure_and_owner_remains_usable ... ok
+test consumer::tests::replayed_and_out_of_order_refresh_completions_cannot_replace_current_state ... ok
+test consumer::tests::shutdown_pending_work_never_starts_workers ... ok
+test consumer::tests::launch_failure_retains_selection_and_maps_stale_target_error ... ok
+test consumer::tests::running_launch_cancelled_before_creation_is_distinct_from_accepted ... ok
+test consumer::tests::ready_drain_handles_both_lanes_once_without_more_work ... ok
+test consumer::tests::catalog_replacement_rejects_pending_old_snapshot_launch_before_effects ... ok
+test consumer::tests::shutdown_joins_two_running_workers_and_does_not_publish_late_results ... ok
+test consumer::tests::failed_refresh_keeps_snapshot_selection_and_partial_catalog_issues ... ok
+test consumer::tests::successful_replacement_invalidates_selection_even_for_same_identity ... ok
+test consumer::tests::stale_cancellation_id_cannot_cancel_a_new_operation ... ok
+test consumer::tests::refresh_and_launch_complete_in_either_order_without_status_conflicts ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+     Running tests\consumer_windows.rs (target\debug\deps\consumer_windows-6176740b11b74d41.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests\windows_launch.rs (target\debug\deps\windows_launch-97a94d8dfb85fa9f.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s

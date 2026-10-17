@@ -1,0 +1,14 @@
+cargo fmt --all --check
+exit=0
+cargo check --workspace --all-targets --locked --offline
+    Checking sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.57s
+exit=0
+cargo clippy --workspace --all-targets --locked --offline -- -D warnings
+    Checking sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.63s
+exit=0
+warning: in the working copy of 'crates/sei-apps/src/lib.rs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'crates/sei-apps/src/native.rs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'crates/sei-apps/tests/windows_launch.rs', LF will be replaced by CRLF the next time Git touches it
+git diff --check exit=0

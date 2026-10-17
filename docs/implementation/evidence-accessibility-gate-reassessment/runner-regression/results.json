@@ -1,0 +1,30 @@
+{
+  "DateUTC": "2026-10-15T09:54:49.3802927Z",
+  "OS": "Microsoft Windows NT 10.0.26300.0",
+  "Tests": [
+    {
+      "Case": "ObserverThrow",
+      "Status": "Passed",
+      "OwnedPid": 9964,
+      "ObserverFailurePropagated": true,
+      "NormalExitCode": null,
+      "ChildRemaining": false
+    },
+    {
+      "Case": "NormalRelease",
+      "Status": "Passed",
+      "OwnedPid": 22864,
+      "ObserverFailurePropagated": false,
+      "NormalExitCode": 0,
+      "ChildRemaining": false
+    },
+    {
+      "Case": "AfterExitThrow",
+      "Status": "Passed",
+      "OwnedPid": 10756,
+      "ObserverFailurePropagated": true,
+      "NormalExitCode": 0,
+      "ChildRemaining": false
+    }
+  ]
+}

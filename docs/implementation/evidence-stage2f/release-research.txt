@@ -1,0 +1,10 @@
+2026-10-15 research observations (not runtime tests)
+Opened official iced release and tag lists: 0.14.0 latest visible tagged app release, commit 3997291, dated 2025-12-07.
+Opened official AccessKit release list: accesskit 0.25.1, consumer 0.39.1, windows 0.35.1, winit 0.34.1 visible top component releases; Windows release 2026-09-25, ce8164b.
+Inspected release-tag iced 0.14.0 widget text_input page; exact published widget 0.14.2 and full provider source inspected in cache with .cargo_vcs_info metadata.
+Published commits: iced_widget 0.14.2 = 54abf81d13fec06d4d9ac754b03ce2c3313e8a1f; iced_core 0.14.0 = 3997291f318a8bc06fa522f5579836fb3feb94df; AccessKit 0.25.1/Windows 0.35.1 = ce8164ba92995cfa86005b6259115e08c8244253.
+No newer released fix was located. This is not an exhaustive current registry proof: crates.io API, sparse index and docs.rs endpoints unavailable via web tool; direct read-only crates.io request failed DNS. GitHub API and some commit URLs also unavailable.
+Repository main release manifest page was stale (0.35.0) relative to release page (0.35.1); not used as a latest-release authority. master Cargo.toml version.workspace is not proof of a published version.
+Search results about 0.15 milestones/development and unrelated versions are not release or API support evidence. No PR/issue was relied on for implementation availability.
+No new candidate crate was downloaded, resolved, compiled or executed. No tests, UIA, Narrator or physical input performed in this documentation task.
+Final registry recheck succeeded outside the restricted network environment. Official crates.io max_stable_version AND newest_version match the current pins for iced, iced_widget, accesskit and accesskit_windows. registry-recheck.json records corrected recent-version num fields and timestamps. This supersedes the initial registry-unavailable limitation above, without claiming builds/runtime tests.

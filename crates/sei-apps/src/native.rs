@@ -278,4 +278,147 @@ mod tests {
             assert_eq!(reader.read(&path).unwrap_err().kind, ErrorKind::Unsupported);
         }
     }
+
+    #[test]
+    #[ignore = "requires this workspace's built SEI_APPS_FIXTURE; enumeration must not launch it"]
+    fn acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch() {
+        use std::os::windows::fs::OpenOptionsExt;
+        let mut reader = Reader::new().unwrap();
+        let temp = crate::tests::Temp::new();
+        let fixture = PathBuf::from(std::env::var_os("SEI_APPS_FIXTURE").expect("fixture path"));
+        assert_eq!(fixture.file_name().unwrap(), "launch_fixture.exe");
+        let marker = temp.0.join("must-not-exist.txt");
+        let wide = |s: &str| s.encode_utf16().chain(Some(0)).collect::<Vec<u16>>();
+        // SAFETY: Thread-owned apartment and test-owned files; valid UTF-16
+        // inputs live through synchronous calls. Save creates fixtures only;
+        // no Resolve, ShellExecute, or process-creation call is used here.
+        unsafe {
+            let link: IShellLinkW =
+                CoCreateInstance(&ShellLink, None, CLSCTX_INPROC_SERVER).unwrap();
+            link.SetPath(PCWSTR(wide(fixture.to_str().unwrap()).as_ptr()))
+                .unwrap();
+            link.SetArguments(PCWSTR(wide(&format!("\"{}\"", marker.display())).as_ptr()))
+                .unwrap();
+            let persist: IPersistFile = link.cast().unwrap();
+            for name in ["Good.lnk", "Duplicate.lnk", "Locked.lnk"] {
+                persist
+                    .Save(
+                        PCWSTR(wide(temp.0.join(name).to_str().unwrap()).as_ptr()),
+                        true,
+                    )
+                    .unwrap();
+            }
+            let stale = temp.0.join("removed.exe");
+            std::fs::write(&stale, b"never executed").unwrap();
+            link.SetPath(PCWSTR(wide(stale.to_str().unwrap()).as_ptr()))
+                .unwrap();
+            persist
+                .Save(
+                    PCWSTR(wide(temp.0.join("Stale.lnk").to_str().unwrap()).as_ptr()),
+                    true,
+                )
+                .unwrap();
+            std::fs::remove_file(stale).unwrap();
+        }
+        std::fs::write(temp.0.join("Malformed.lnk"), b"not a shell link").unwrap();
+        // Share mode 0 makes the shortcut inaccessible to COM without any
+        // privilege/ACL change; dropping this handle restores normal access.
+        let locked = std::fs::OpenOptions::new()
+            .read(true)
+            .share_mode(0)
+            .open(temp.0.join("Locked.lnk"))
+            .unwrap();
+        let roots = [Root {
+            source: Source::UserStartMenu,
+            path: temp.0.clone(),
+        }];
+        let first = discover(
+            &roots,
+            &mut reader,
+            Limits::default(),
+            &Cancellation::default(),
+            None,
+        )
+        .unwrap();
+        assert_eq!(first.entries.len(), 1);
+        assert_eq!(first.issues.len(), 3);
+        for name in ["Locked.lnk", "Malformed.lnk", "Stale.lnk"] {
+            let issue = first
+                .issues
+                .iter()
+                .find(|i| i.path.file_name().unwrap() == name)
+                .unwrap();
+            println!(
+                "acceptance {name}: {:?} {:?} {:?}",
+                issue.error.kind, issue.error.operation, issue.error.code
+            );
+        }
+        assert_eq!(
+            first
+                .issues
+                .iter()
+                .find(|i| i.path.file_name().unwrap() == "Stale.lnk")
+                .unwrap()
+                .error
+                .kind,
+            ErrorKind::Missing
+        );
+        let second = discover(
+            &roots,
+            &mut reader,
+            Limits::default(),
+            &Cancellation::default(),
+            None,
+        )
+        .unwrap();
+        assert_eq!(first.entries, second.entries);
+        drop(locked);
+        std::fs::rename(temp.0.join("Duplicate.lnk"), temp.0.join("Renamed.lnk")).unwrap();
+        let renamed = discover(
+            &roots,
+            &mut reader,
+            Limits::default(),
+            &Cancellation::default(),
+            None,
+        )
+        .unwrap();
+        assert_eq!(first.entries[0].id, renamed.entries[0].id);
+        assert_ne!(
+            first.entries[0].display_name,
+            renamed.entries[0].display_name
+        );
+        // Cancellation is deterministic at a real COM read boundary. It cannot
+        // interrupt the COM call itself; it must stop before the next read.
+        struct CancelAfterRead<'a> {
+            reader: &'a mut Reader,
+            cancel: Cancellation,
+            reads: usize,
+        }
+        impl LinkReader for CancelAfterRead<'_> {
+            fn read(&mut self, path: &Path) -> Result<Shortcut, Error> {
+                self.reads += 1;
+                let result = self.reader.read(path);
+                self.cancel.cancel();
+                result
+            }
+        }
+        let cancel = Cancellation::default();
+        let mut cancelling = CancelAfterRead {
+            reader: &mut reader,
+            cancel: cancel.clone(),
+            reads: 0,
+        };
+        assert_eq!(
+            discover(&roots, &mut cancelling, Limits::default(), &cancel, None)
+                .unwrap_err()
+                .kind,
+            ErrorKind::Cancelled
+        );
+        assert_eq!(cancelling.reads, 1);
+        std::thread::sleep(std::time::Duration::from_millis(200));
+        assert!(
+            !marker.exists(),
+            "enumeration must never execute the fixture"
+        );
+    }
 }

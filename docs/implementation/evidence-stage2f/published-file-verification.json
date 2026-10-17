@@ -1,0 +1,68 @@
+[
+  {
+    "Source": "iced_widget-0.14.2/src/text_input.rs",
+    "ActualSHA256": "7CD64B0F79C6000F2985CC290642698A814BE5DCD7B7A56AE463B13FFE5C3B47",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_widget-0.14.2/src/text_input/cursor.rs",
+    "ActualSHA256": "EEB9241A25110583FD2E169DA47834AEB39FD55335EA3B77AA3D1E43016C28D8",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_widget-0.14.2/src/text_input/value.rs",
+    "ActualSHA256": "03FBA71D34F2C31DF15431AC7E22F854B655336F86EF854AE34CC1E0BFBCEFDD",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_core-0.14.0/src/widget/operation/text_input.rs",
+    "ActualSHA256": "F09888BDD53E327BE47C20EBAAC0BE9F6F80C2EDDE657CA67A9888FAB55B492F",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_core-0.14.0/src/text/paragraph.rs",
+    "ActualSHA256": "33F3F39BCF24E842151B1AFCA38FA02BB503324A325C9A846FDE77E625BB7BD0",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_core-0.14.0/src/input_method.rs",
+    "ActualSHA256": "CC687D96FB71146401C263FCEEDD42EC23BB4313CA746A9155B284EABEB0683E",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "accesskit_windows-0.35.1/src/node.rs",
+    "ActualSHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "accesskit_windows-0.35.1/src/text.rs",
+    "ActualSHA256": "7F2493B559F0B04884E201D897981A3CCE47B2C571863D37FFDDB1BB695E5C55",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "accesskit_consumer-0.39.1/src/text.rs",
+    "ActualSHA256": "FA7B185E22782AB9C84FE1BBC132F0D39A51B3664AD4AB332EBC69F2F98559E2",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "accesskit-0.25.1/src/lib.rs",
+    "ActualSHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  },
+  {
+    "Source": "iced_core-0.14.0/src/shell.rs",
+    "ActualSHA256": "17A412A075ADBB364F660E93428D739A13C4696A252C0B34889AFF432247C9E1",
+    "VerificationStatus": "Unavailable: extracted cache has no .cargo-checksum.json; initial optional verification command failed; not a file-hash mismatch",
+    "Matches": null
+  }
+]

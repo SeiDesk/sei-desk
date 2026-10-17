@@ -1,0 +1,55 @@
+﻿    Checking sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+error: this `if` statement can be collapsed
+   --> crates\sei-apps\src\consumer.rs:278:13
+    |
+278 | /             if let Some(intent) = &work.intent {
+279 | |                 if !self.snapshot.as_ref().is_some_and(|s| {
+280 | |                     s.generation == intent.selection.generation
+281 | |                         && s.catalog
+...   |
+293 | |             }
+    | |_____________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#collapsible_if
+    = note: `-D clippy::collapsible-if` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_if)]`
+help: collapse nested if block
+    |
+278 ~             if let Some(intent) = &work.intent
+279 ~                 && !self.snapshot.as_ref().is_some_and(|s| {
+280 |                     s.generation == intent.selection.generation
+...
+291 |                     continue;
+292 ~                 }
+    |
+
+error: unnecessary closure used to substitute value for `Result::Err`
+   --> crates\sei-apps\src\consumer.rs:308:38
+    |
+308 |                       let completion = catch_unwind(AssertUnwindSafe(|| {
+    |  ______________________________________^
+309 | |                         // A cancellation before dispatch reaches even injected
+310 | |                         // services without allowing a process-creation side effect.
+311 | |                         if cancel.is_cancelled() {
+...   |
+341 | |                     });
+    | |______________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#unnecessary_lazy_evaluations
+    = note: `-D clippy::unnecessary-lazy-evaluations` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::unnecessary_lazy_evaluations)]`
+help: use `unwrap_or` instead
+    |
+334 ~                     .unwrap_or(match operation {
+335 +                         Operation::Refresh => {
+336 +                             Completion::Refresh(id, Err(ConsumerError::WorkerPanicked))
+337 +                         }
+338 +                         Operation::Launch => {
+339 +                             Completion::Launch(id, Err(ConsumerError::WorkerPanicked))
+340 +                         }
+341 ~                     });
+    |
+
+error: could not compile `sei-apps` (lib) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `sei-apps` (lib test) due to 2 previous errors

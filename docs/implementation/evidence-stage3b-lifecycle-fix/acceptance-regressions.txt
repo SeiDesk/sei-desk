@@ -1,0 +1,59 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-36122743768a19cb.exe)
+
+running 9 tests
+
+thread '<unnamed>' (12204) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:276:13:
+exit without normal publication / after acceptance
+worker_join_panicked=true
+terminal_completion_present=true
+test consumer::tests::acceptance::terminated_worker_with_panicking_payload_drop_must_report_failure ... ok
+test consumer::tests::acceptance::failed_worker_join_disposes_nested_panicking_payloads_without_unwinding_owner ... ok
+test consumer::tests::acceptance::shutdown_joins_exit_fallback_workers_without_publishing_after_disposal ... ok
+test consumer::tests::acceptance::ordinary_launch_worker_panic_is_not_retried_and_keeps_selection ... ok
+test consumer::tests::acceptance::repeated_cancellation_and_dispatch_do_not_create_extra_workers ... ok
+test consumer::tests::acceptance::exit_without_normal_publication_wakes_wait_on_return_and_unwind ... ok
+test consumer::tests::acceptance::shutdown_keeps_blocked_worker_handles_until_services_are_released ... ok
+test consumer::tests::acceptance::published_acceptance_survives_later_panic_cancel_and_duplicate_result ... ok
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread '<unnamed>' (5476) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:342:9:
+Box<dyn Any>
+
+thread 'sei-consumer-refresh' (8992) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:15:13:
+Box<dyn Any>
+
+thread 'sei-consumer-launch' (18588) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:167:13:
+controlled launch worker panic
+
+thread 'sei-consumer-refresh' (5584) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:217:17:
+Box<dyn Any>
+
+thread 'sei-consumer-refresh' (5584) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:210:13:
+payload cleanup panic
+test consumer::tests::acceptance::public_wait_wakes_on_payload_cleanup_panic_in_both_lanes ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 36 filtered out; finished in 0.00s
+
+
+thread 'sei-consumer-refresh' (8992) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:9:13:
+controlled panic payload destructor
+
+thread '<unnamed>' (2664) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:327:13:
+Box<dyn Any>
+
+thread '<unnamed>' (2664) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:332:13:
+last finite cleanup panic
+
+thread '<unnamed>' (20900) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:276:13:
+exit without normal publication / after acceptance
+
+thread '<unnamed>' (8808) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:276:13:
+exit without normal publication / after acceptance
+
+thread 'sei-consumer-launch' (13120) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:222:13:
+Box<dyn Any>
+
+thread 'sei-consumer-launch' (13120) panicked at crates\sei-apps\src\consumer\tests\acceptance.rs:210:13:
+payload cleanup panic
+exit=0

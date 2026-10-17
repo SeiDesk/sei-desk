@@ -1,0 +1,33 @@
+{
+  "DateUTC": "2026-10-15T09:45:05.1050054Z",
+  "BaselineCount": 379,
+  "ChangedBaselinePaths": [
+    {
+      "Path": "crates/sei-apps/src/consumer.rs",
+      "Result": "Changed"
+    },
+    {
+      "Path": "crates/sei-apps/src/consumer/tests/acceptance.rs",
+      "Result": "Changed"
+    },
+    {
+      "Path": "docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md",
+      "Result": "Changed"
+    },
+    {
+      "Path": "docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md",
+      "Result": "Changed"
+    },
+    {
+      "Path": "docs/implementation/STAGE-3B-TEST-MATRIX.md",
+      "Result": "Changed"
+    }
+  ],
+  "UnexpectedChanges": [],
+  "PriorWorkAndEvidencePreserved": true,
+  "NewSourceAndDocumentTrailingWhitespace": [],
+  "MissingDocumentationLinks": [],
+  "GitDiffCheckExit": 0,
+  "RemainingNamedOwnedProcesses": [],
+  "NoCommitOrPush": true
+}

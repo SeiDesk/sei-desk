@@ -1,0 +1,1 @@
+Baseline captured after targeted runner edit; original runner hash taken from preserved patch-review baseline. New helper/test files excluded. Initial inspection command failed to parse before filesystem actions.

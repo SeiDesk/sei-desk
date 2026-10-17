@@ -1,0 +1,46 @@
+[
+  {
+    "RelativeRegistryPath": "iced_widget-0.14.2/src/text_input.rs",
+    "SHA256": "7CD64B0F79C6000F2985CC290642698A814BE5DCD7B7A56AE463B13FFE5C3B47"
+  },
+  {
+    "RelativeRegistryPath": "iced_widget-0.14.2/src/text_input/cursor.rs",
+    "SHA256": "EEB9241A25110583FD2E169DA47834AEB39FD55335EA3B77AA3D1E43016C28D8"
+  },
+  {
+    "RelativeRegistryPath": "iced_widget-0.14.2/src/text_input/value.rs",
+    "SHA256": "03FBA71D34F2C31DF15431AC7E22F854B655336F86EF854AE34CC1E0BFBCEFDD"
+  },
+  {
+    "RelativeRegistryPath": "iced_core-0.14.0/src/widget/operation/text_input.rs",
+    "SHA256": "F09888BDD53E327BE47C20EBAAC0BE9F6F80C2EDDE657CA67A9888FAB55B492F"
+  },
+  {
+    "RelativeRegistryPath": "iced_core-0.14.0/src/widget/tree.rs",
+    "SHA256": "C31E765FA64BE46BA93ADFE41F860CA446F731B3095D4A837C3A7FDC76387AD4"
+  },
+  {
+    "RelativeRegistryPath": "iced_core-0.14.0/src/text/paragraph.rs",
+    "SHA256": "33F3F39BCF24E842151B1AFCA38FA02BB503324A325C9A846FDE77E625BB7BD0"
+  },
+  {
+    "RelativeRegistryPath": "accesskit-0.25.1/src/lib.rs",
+    "SHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD"
+  },
+  {
+    "RelativeRegistryPath": "accesskit_consumer-0.39.1/src/text.rs",
+    "SHA256": "FA7B185E22782AB9C84FE1BBC132F0D39A51B3664AD4AB332EBC69F2F98559E2"
+  },
+  {
+    "RelativeRegistryPath": "accesskit_consumer-0.39.1/src/node.rs",
+    "SHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2"
+  },
+  {
+    "RelativeRegistryPath": "accesskit_windows-0.35.1/src/node.rs",
+    "SHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67"
+  },
+  {
+    "RelativeRegistryPath": "accesskit_windows-0.35.1/src/text.rs",
+    "SHA256": "7F2493B559F0B04884E201D897981A3CCE47B2C571863D37FFDDB1BB695E5C55"
+  }
+]

@@ -1,0 +1,5 @@
+consumer_inline_bytes=600
+refresh=1 generation=1 ms=219.175 entries=78 visited=252 issues=83 truncated=false
+refresh=2 generation=2 ms=163.995 entries=78 visited=252 issues=83 truncated=false
+entries_identical=true
+shutdown_closed=true

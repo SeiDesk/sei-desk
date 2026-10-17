@@ -1,0 +1,40 @@
+   Compiling sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `release` profile [optimized] target(s) in 2.26s
+     Running unittests src\lib.rs (target\release\deps\sei_apps-504a795256cde178.exe)
+
+running 31 tests
+test consumer::tests::acceptance::terminated_worker_with_panicking_payload_drop_must_report_failure ... ok
+test consumer::tests::acceptance::ordinary_launch_worker_panic_is_not_retried_and_keeps_selection ... ok
+test consumer::tests::drop_joins_completed_worker_instead_of_detaching_it ... ok
+test consumer::tests::acceptance::shutdown_joins_exit_fallback_workers_without_publishing_after_disposal ... ok
+test consumer::tests::acceptance::both_exit_fallbacks_fit_the_queue_during_shutdown_without_a_receiver_drain ... ok
+test consumer::tests::acceptance::published_acceptance_survives_later_panic_cancel_and_duplicate_result ... ok
+test consumer::tests::acceptance::failed_worker_join_disposes_nested_panicking_payloads_without_unwinding_owner ... ok
+test consumer::tests::acceptance::repeated_cancellation_and_dispatch_do_not_create_extra_workers ... ok
+test consumer::tests::acceptance::shutdown_keeps_blocked_worker_handles_until_services_are_released ... ok
+test consumer::tests::catalog_replacement_rejects_pending_old_snapshot_launch_before_effects ... ok
+test consumer::tests::acceptance::owner_wait_is_woken_by_failure_released_from_a_service_gate ... ok
+test consumer::tests::idle_wait_and_bounded_drain_do_not_poll_or_create_workers ... ok
+test consumer::tests::pending_cancellation_never_dispatches_a_service_call ... ok
+test consumer::tests::acceptance::exit_without_normal_publication_wakes_wait_on_return_and_unwind ... ok
+test consumer::tests::selection_is_explicit_and_never_launches_on_refresh_or_selection ... ok
+test consumer::tests::failed_refresh_keeps_snapshot_selection_and_partial_catalog_issues ... ok
+test consumer::tests::refresh_requests_rejected_while_pending_running_or_cancel_requested ... ok
+test consumer::tests::changing_selection_does_not_retarget_an_already_requested_launch ... ok
+test consumer::tests::cancellation_after_acceptance_cannot_hide_success ... ok
+test consumer::tests::ready_drain_handles_both_lanes_once_without_more_work ... ok
+test consumer::tests::id_exhaustion_never_wraps_or_mutates_existing_snapshot ... ok
+test consumer::tests::replayed_and_out_of_order_refresh_completions_cannot_replace_current_state ... ok
+test consumer::tests::acceptance::public_wait_wakes_on_payload_cleanup_panic_in_both_lanes ... ok
+test consumer::tests::service_panic_becomes_structured_failure_and_owner_remains_usable ... ok
+test consumer::tests::shutdown_joins_two_running_workers_and_does_not_publish_late_results ... ok
+test consumer::tests::shutdown_pending_work_never_starts_workers ... ok
+test consumer::tests::launch_failure_retains_selection_and_maps_stale_target_error ... ok
+test consumer::tests::running_launch_cancelled_before_creation_is_distinct_from_accepted ... ok
+test consumer::tests::stale_cancellation_id_cannot_cancel_a_new_operation ... ok
+test consumer::tests::successful_replacement_invalidates_selection_even_for_same_identity ... ok
+test consumer::tests::refresh_and_launch_complete_in_either_order_without_status_conflicts ... ok
+
+test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.01s
+
+exit=0

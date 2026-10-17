@@ -1,0 +1,317 @@
+diff --git a/crates/sei-apps/src/lib.rs b/crates/sei-apps/src/lib.rs
+index ab9be3c..ff17753 100644
+--- a/crates/sei-apps/src/lib.rs
++++ b/crates/sei-apps/src/lib.rs
+@@ -1,5 +1,6 @@
+ //! Headless, explicit-refresh application catalog. No iced or accessibility coupling.
+ mod catalog;
++pub mod consumer;
+ mod launch;
+ #[cfg(windows)]
+ mod native;
+@@ -99,28 +100,29 @@ pub fn refresh_async(
+ ) -> std::io::Result<JoinHandle<Result<Catalog, Error>>> {
+     std::thread::Builder::new()
+         .name("sei-catalog".into())
+-        .spawn(move || {
+-            cancel.check()?;
+-            #[cfg(windows)]
+-            {
+-                let mut reader = native::Reader::new()?;
+-                let (roots, initial_issues) = reader.roots();
+-                let mut catalog = discover(
+-                    &roots,
+-                    &mut reader,
+-                    Limits::default(),
+-                    &cancel,
+-                    progress.as_ref(),
+-                )?;
+-                catalog.issues.splice(0..0, initial_issues);
+-                Ok(catalog)
+-            }
+-            #[cfg(not(windows))]
+-            {
+-                let _ = progress;
+-                Err(Error::new(ErrorKind::Unsupported, "Windows catalog"))
+-            }
+-        })
++        .spawn(move || refresh(&cancel, progress.as_ref()))
++}
++
++/// Blocking native refresh for operation-owned worker threads. The async wrapper
++/// and consumer share this body so the consumer does not spawn nested workers.
++pub fn refresh(
++    cancel: &Cancellation,
++    progress: Option<&SyncSender<Progress>>,
++) -> Result<Catalog, Error> {
++    cancel.check()?;
++    #[cfg(windows)]
++    {
++        let mut reader = native::Reader::new()?;
++        let (roots, initial_issues) = reader.roots();
++        let mut catalog = discover(&roots, &mut reader, Limits::default(), cancel, progress)?;
++        catalog.issues.splice(0..0, initial_issues);
++        Ok(catalog)
++    }
++    #[cfg(not(windows))]
++    {
++        let _ = progress;
++        Err(Error::new(ErrorKind::Unsupported, "Windows catalog"))
++    }
+ }
+ 
+ /// Cancellation is checked before creation only. A successful spawn is never
+diff --git a/crates/sei-apps/src/native.rs b/crates/sei-apps/src/native.rs
+index f125771..05ce7df 100644
+--- a/crates/sei-apps/src/native.rs
++++ b/crates/sei-apps/src/native.rs
+@@ -278,4 +278,147 @@ mod tests {
+             assert_eq!(reader.read(&path).unwrap_err().kind, ErrorKind::Unsupported);
+         }
+     }
++
++    #[test]
++    #[ignore = "requires this workspace's built SEI_APPS_FIXTURE; enumeration must not launch it"]
++    fn acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch() {
++        use std::os::windows::fs::OpenOptionsExt;
++        let mut reader = Reader::new().unwrap();
++        let temp = crate::tests::Temp::new();
++        let fixture = PathBuf::from(std::env::var_os("SEI_APPS_FIXTURE").expect("fixture path"));
++        assert_eq!(fixture.file_name().unwrap(), "launch_fixture.exe");
++        let marker = temp.0.join("must-not-exist.txt");
++        let wide = |s: &str| s.encode_utf16().chain(Some(0)).collect::<Vec<u16>>();
++        // SAFETY: Thread-owned apartment and test-owned files; valid UTF-16
++        // inputs live through synchronous calls. Save creates fixtures only;
++        // no Resolve, ShellExecute, or process-creation call is used here.
++        unsafe {
++            let link: IShellLinkW =
++                CoCreateInstance(&ShellLink, None, CLSCTX_INPROC_SERVER).unwrap();
++            link.SetPath(PCWSTR(wide(fixture.to_str().unwrap()).as_ptr()))
++                .unwrap();
++            link.SetArguments(PCWSTR(wide(&format!("\"{}\"", marker.display())).as_ptr()))
++                .unwrap();
++            let persist: IPersistFile = link.cast().unwrap();
++            for name in ["Good.lnk", "Duplicate.lnk", "Locked.lnk"] {
++                persist
++                    .Save(
++                        PCWSTR(wide(temp.0.join(name).to_str().unwrap()).as_ptr()),
++                        true,
++                    )
++                    .unwrap();
++            }
++            let stale = temp.0.join("removed.exe");
++            std::fs::write(&stale, b"never executed").unwrap();
++            link.SetPath(PCWSTR(wide(stale.to_str().unwrap()).as_ptr()))
++                .unwrap();
++            persist
++                .Save(
++                    PCWSTR(wide(temp.0.join("Stale.lnk").to_str().unwrap()).as_ptr()),
++                    true,
++                )
++                .unwrap();
++            std::fs::remove_file(stale).unwrap();
++        }
++        std::fs::write(temp.0.join("Malformed.lnk"), b"not a shell link").unwrap();
++        // Share mode 0 makes the shortcut inaccessible to COM without any
++        // privilege/ACL change; dropping this handle restores normal access.
++        let locked = std::fs::OpenOptions::new()
++            .read(true)
++            .share_mode(0)
++            .open(temp.0.join("Locked.lnk"))
++            .unwrap();
++        let roots = [Root {
++            source: Source::UserStartMenu,
++            path: temp.0.clone(),
++        }];
++        let first = discover(
++            &roots,
++            &mut reader,
++            Limits::default(),
++            &Cancellation::default(),
++            None,
++        )
++        .unwrap();
++        assert_eq!(first.entries.len(), 1);
++        assert_eq!(first.issues.len(), 3);
++        for name in ["Locked.lnk", "Malformed.lnk", "Stale.lnk"] {
++            let issue = first
++                .issues
++                .iter()
++                .find(|i| i.path.file_name().unwrap() == name)
++                .unwrap();
++            println!(
++                "acceptance {name}: {:?} {:?} {:?}",
++                issue.error.kind, issue.error.operation, issue.error.code
++            );
++        }
++        assert_eq!(
++            first
++                .issues
++                .iter()
++                .find(|i| i.path.file_name().unwrap() == "Stale.lnk")
++                .unwrap()
++                .error
++                .kind,
++            ErrorKind::Missing
++        );
++        let second = discover(
++            &roots,
++            &mut reader,
++            Limits::default(),
++            &Cancellation::default(),
++            None,
++        )
++        .unwrap();
++        assert_eq!(first.entries, second.entries);
++        drop(locked);
++        std::fs::rename(temp.0.join("Duplicate.lnk"), temp.0.join("Renamed.lnk")).unwrap();
++        let renamed = discover(
++            &roots,
++            &mut reader,
++            Limits::default(),
++            &Cancellation::default(),
++            None,
++        )
++        .unwrap();
++        assert_eq!(first.entries[0].id, renamed.entries[0].id);
++        assert_ne!(
++            first.entries[0].display_name,
++            renamed.entries[0].display_name
++        );
++        // Cancellation is deterministic at a real COM read boundary. It cannot
++        // interrupt the COM call itself; it must stop before the next read.
++        struct CancelAfterRead<'a> {
++            reader: &'a mut Reader,
++            cancel: Cancellation,
++            reads: usize,
++        }
++        impl LinkReader for CancelAfterRead<'_> {
++            fn read(&mut self, path: &Path) -> Result<Shortcut, Error> {
++                self.reads += 1;
++                let result = self.reader.read(path);
++                self.cancel.cancel();
++                result
++            }
++        }
++        let cancel = Cancellation::default();
++        let mut cancelling = CancelAfterRead {
++            reader: &mut reader,
++            cancel: cancel.clone(),
++            reads: 0,
++        };
++        assert_eq!(
++            discover(&roots, &mut cancelling, Limits::default(), &cancel, None)
++                .unwrap_err()
++                .kind,
++            ErrorKind::Cancelled
++        );
++        assert_eq!(cancelling.reads, 1);
++        std::thread::sleep(std::time::Duration::from_millis(200));
++        assert!(
++            !marker.exists(),
++            "enumeration must never execute the fixture"
++        );
++    }
+ }
+diff --git a/crates/sei-apps/tests/windows_launch.rs b/crates/sei-apps/tests/windows_launch.rs
+index 4df7f01..ad83361 100644
+--- a/crates/sei-apps/tests/windows_launch.rs
++++ b/crates/sei-apps/tests/windows_launch.rs
+@@ -91,3 +91,97 @@ fn real_createprocess_structured_arguments_and_cancellation() {
+     assert_eq!(error.kind, ErrorKind::Invalid);
+     assert!(matches!(error.code, Some(193 | 216)));
+ }
++
++#[test]
++#[ignore = "requires this workspace's built SEI_APPS_FIXTURE; test-owned copy only"]
++fn acceptance_stale_locked_target_and_default_working_directory() {
++    use std::os::windows::fs::OpenOptionsExt;
++    let fixture = PathBuf::from(std::env::var_os("SEI_APPS_FIXTURE").expect("fixture path"));
++    assert_eq!(fixture.file_name().unwrap(), "launch_fixture.exe");
++    let temp =
++        std::env::temp_dir().join(format!("sei-apps-acceptance-launch-{}", std::process::id()));
++    std::fs::create_dir(&temp).unwrap();
++    struct Cleanup(PathBuf);
++    impl Drop for Cleanup {
++        fn drop(&mut self) {
++            std::fs::remove_dir_all(&self.0).unwrap();
++        }
++    }
++    let _cleanup = Cleanup(temp.clone());
++    let owned = temp.join("Owned.exe");
++    std::fs::copy(fixture, &owned).unwrap();
++    let output = temp.join("received.txt");
++    let request = LaunchRequest::executable(
++        owned.clone(),
++        vec![output.clone().into_os_string(), "literal &|%PATH%".into()],
++        None,
++    )
++    .unwrap();
++    let mut receipt = launch_async(request.clone(), Cancellation::default())
++        .unwrap()
++        .join()
++        .unwrap()
++        .unwrap();
++    let deadline = Instant::now() + Duration::from_secs(10);
++    loop {
++        if let Some(status) = receipt.child.try_wait().unwrap() {
++            assert!(status.success());
++            break;
++        }
++        if Instant::now() >= deadline {
++            let _ = receipt.child.kill();
++            let _ = receipt.child.wait();
++            panic!("owned fixture timeout");
++        }
++        std::thread::sleep(Duration::from_millis(10));
++    }
++    let expected: Vec<OsString> = vec!["literal &|%PATH%".into()];
++    assert_eq!(
++        std::fs::read_to_string(&output).unwrap(),
++        format!("{expected:?}\n{temp:?}")
++    );
++    drop(receipt);
++    std::fs::remove_file(&output).unwrap();
++
++    let lock = std::fs::OpenOptions::new()
++        .read(true)
++        .share_mode(0)
++        .open(&owned)
++        .unwrap();
++    let error = match launch_async(request.clone(), Cancellation::default())
++        .unwrap()
++        .join()
++        .unwrap()
++    {
++        Err(error) => error,
++        Ok(mut unexpected) => {
++            let _ = unexpected.child.kill();
++            let _ = unexpected.child.wait();
++            panic!("exclusively locked fixture was unexpectedly launched");
++        }
++    };
++    println!(
++        "acceptance locked target: {:?} {:?} {:?}",
++        error.kind, error.operation, error.code
++    );
++    assert!(matches!(
++        error.kind,
++        ErrorKind::AccessDenied | ErrorKind::ProcessCreation
++    ));
++    assert!(error.code.is_some());
++    assert!(!output.exists());
++    drop(lock);
++    request.validate().unwrap();
++    std::fs::remove_file(owned).unwrap();
++    let error = launch_async(request, Cancellation::default())
++        .unwrap()
++        .join()
++        .unwrap()
++        .unwrap_err();
++    assert_eq!(error.kind, ErrorKind::Missing);
++    println!(
++        "acceptance stale target: {:?} {:?} {:?}",
++        error.kind, error.operation, error.code
++    );
++    assert!(!output.exists());
++}

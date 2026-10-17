@@ -1,0 +1,23 @@
+ M crates/sei-apps/src/lib.rs
+ M crates/sei-apps/src/native.rs
+ M crates/sei-apps/tests/windows_launch.rs
+?? crates/sei-apps/examples/consumer_probe.rs
+?? crates/sei-apps/src/consumer.rs
+?? crates/sei-apps/src/consumer/
+?? crates/sei-apps/tests/consumer_windows.rs
+?? docs/implementation/ACCESSIBILITY-GATE-REASSESSMENT.md
+?? docs/implementation/STAGE-3A-ACCEPTANCE-REPORT.md
+?? docs/implementation/STAGE-3B-ACCEPTANCE-REPORT.md
+?? docs/implementation/STAGE-3B-CONSUMER-ARCHITECTURE.md
+?? docs/implementation/STAGE-3B-PATCH-REVIEW.md
+?? docs/implementation/STAGE-3B-TEST-MATRIX.md
+?? docs/implementation/evidence-accessibility-gate-reassessment/
+?? docs/implementation/evidence-stage2e/
+?? docs/implementation/evidence-stage3a-acceptance/
+?? docs/implementation/evidence-stage3b-acceptance/
+?? docs/implementation/evidence-stage3b-lifecycle-fix/
+?? docs/implementation/evidence-stage3b-patch-review/
+?? docs/implementation/evidence-stage3b/
+?? tools/Invoke-OwnedProbe.ps1
+?? tools/Test-OwnedProbe.ps1
+?? tools/Test-Stage3B.ps1

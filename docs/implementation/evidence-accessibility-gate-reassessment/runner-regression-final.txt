@@ -1,0 +1,9 @@
+
+Case           Status OwnedPid ObserverFailurePropagated NormalExitCode ChildRemaining
+----           ------ -------- ------------------------- -------------- --------------
+ObserverThrow  Passed     8296                      True                         False
+NormalRelease  Passed     9260                     False 0                       False
+AfterExitThrow Passed     8364                      True 0                       False
+
+
+exit=0

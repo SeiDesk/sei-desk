@@ -1,0 +1,24 @@
+[
+  {
+    "Run": "uia-01",
+    "UTC": "2026-10-15T06:43:08.6725301Z",
+    "BinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Checks": 29,
+    "Passed": 29,
+    "NarratorHarnessStatus": "Not run",
+    "PhysicalKeyboardHarnessStatus": "Not run",
+    "TextSelection": "Not advertised",
+    "LiveAnnouncement": "Not advertised"
+  },
+  {
+    "Run": "uia-02-final",
+    "UTC": "2026-10-15T06:51:15.3079308Z",
+    "BinarySHA256": "70307E37BB8F06E11FA09EA3DF07E1D164840EDCA5C2BF12E14B8BE6D719D83F",
+    "Checks": 29,
+    "Passed": 29,
+    "NarratorHarnessStatus": "Not run",
+    "PhysicalKeyboardHarnessStatus": "Not run",
+    "TextSelection": "Not advertised",
+    "LiveAnnouncement": "Not evaluated by this harness"
+  }
+]

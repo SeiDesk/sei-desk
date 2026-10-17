@@ -1,0 +1,22 @@
+﻿   Compiling sei-apps v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-apps)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.18s
+     Running unittests src\lib.rs (target\debug\deps\sei_apps-36122743768a19cb.exe)
+
+running 1 test
+acceptance Locked.lnk: Native "shortcut Load" Some(-2147024864)
+acceptance Malformed.lnk: Native "shortcut Load" Some(-2147467259)
+acceptance Stale.lnk: Missing "target metadata" Some(2)
+
+thread 'native::tests::acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch' (9760) panicked at crates\sei-apps\src\native.rs:376:83:
+called `Result::unwrap()` on an `Err` value: Os { code: 5, kind: PermissionDenied, message: "Access is denied." }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test native::tests::acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch ... FAILED
+
+failures:
+
+failures:
+    native::tests::acceptance_real_locked_stale_and_duplicate_shortcuts_never_launch
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.11s
+
+error: test failed, to rerun pass `-p sei-apps --lib`
