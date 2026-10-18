@@ -23,24 +23,88 @@ pub(crate) fn open(desktop: &mut Desktop, token: u64) -> window::Id {
     .unwrap();
     let _ = desktop.update(Message::Geometry(token, Ok(p)));
     let popup = desktop.popup.as_mut().unwrap();
-    popup.model.pinned_only = false;
-    popup.model.filter();
     popup.shown = true;
     popup.focused = true;
     popup.deadline = None;
     popup.id
 }
 #[test]
-fn changing_query_clears_obsolete_missing_selection_feedback() {
+fn launcher_opens_and_reopens_with_all_applications() {
+    let (_monitor, mut desktop) = setup();
+    desktop.manager.apps.pinned_only = true;
+    desktop.manager.apps.edit("béta".into());
+    let id = open(&mut desktop, 1);
+    let model = &desktop.popup.as_ref().unwrap().model;
+    assert!(!model.pinned_only);
+    assert_eq!(model.filtered.len(), 2);
+    assert_eq!(model.selected.as_deref(), Some("a"));
+    let _ = desktop.update(Message::Launcher(id, Action::Browse));
+    assert!(desktop.popup.as_ref().unwrap().model.pinned_only);
+    assert!(desktop.popup.as_ref().unwrap().model.filtered.is_empty());
+    let _ = desktop.update(Message::Launcher(id, Action::Dismiss));
+    let _ = desktop.update(Message::Event(
+        id,
+        Event::Window(window::Event::Closed),
+        iced::event::Status::Ignored,
+    ));
+    open(&mut desktop, 2);
+    let model = &desktop.popup.as_ref().unwrap().model;
+    assert!(!model.pinned_only);
+    assert_eq!(model.filtered.len(), 2);
+    assert_eq!(model.query, "");
+    assert!(desktop.manager.apps.pinned_only);
+    assert_eq!(desktop.manager.apps.query, "béta");
+}
+#[test]
+fn changing_query_clears_local_launch_delivery_error() {
     let (_monitor, mut desktop) = setup();
     let id = open(&mut desktop, 1);
-    let _ = desktop.update(Message::Launcher(id, Action::Query("no-such-app".into())));
+    let _ = desktop.update(Message::Launcher(id, Action::Query("alpha".into())));
     let _ = desktop.update(Message::Launcher(id, Action::Submit));
     assert!(desktop.popup.as_ref().unwrap().model.local_error.is_some());
-    let _ = desktop.update(Message::Launcher(id, Action::Query("alpha".into())));
+    let _ = desktop.update(Message::Launcher(id, Action::Query("béta".into())));
+    let model = &desktop.popup.as_ref().unwrap().model;
+    assert_eq!(model.selected.as_deref(), Some("b"));
+    assert!(model.local_error.is_none());
+}
+#[test]
+fn enter_without_results_preserves_empty_state_and_browse_recovery() {
+    let (_monitor, mut desktop) = setup();
+    desktop.manager.apps.edit("béta".into());
+    let manager_key = desktop.manager.apps.key();
+    let id = open(&mut desktop, 1);
+    {
+        let popup = desktop.popup.as_mut().unwrap();
+        popup.model.pinned_only = true;
+        popup.model.filter();
+        popup.focus = Focus::Search;
+    }
+    for _ in 0..2 {
+        let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    }
+    let popup = desktop.popup.as_ref().unwrap();
+    assert!(popup.model.filtered.is_empty());
+    assert!(popup.model.local_error.is_none());
+    assert!(popup.pending_launch.is_none());
+    assert_eq!(popup.focus, Focus::Search);
+    let _ = desktop.update(Message::Launcher(id, Action::Browse));
     let model = &desktop.popup.as_ref().unwrap().model;
     assert_eq!(model.selected.as_deref(), Some("a"));
     assert!(model.local_error.is_none());
+    let _ = desktop.update(Message::Launcher(id, Action::Query("no-such-app".into())));
+    let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    let popup = desktop.popup.as_ref().unwrap();
+    assert_eq!(popup.model.query, "no-such-app");
+    assert!(popup.model.filtered.is_empty());
+    assert!(popup.model.local_error.is_none());
+    assert!(popup.pending_launch.is_none());
+    let _ = desktop.update(Message::Launcher(id, Action::Query(String::new())));
+    assert_eq!(
+        desktop.popup.as_ref().unwrap().model.selected.as_deref(),
+        Some("a")
+    );
+    assert_eq!(desktop.manager.apps.query, "béta");
+    assert_eq!(desktop.manager.apps.key(), manager_key);
 }
 #[test]
 fn popup_query_navigation_and_close_do_not_change_the_manager() {

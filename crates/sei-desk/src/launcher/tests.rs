@@ -51,6 +51,38 @@ fn render_at(
 }
 
 #[test]
+fn keyboard_hint_does_not_offer_launch_when_results_are_empty() {
+    let monitor = crate::Monitor::start().unwrap();
+    let mut desktop = crate::desktop::Desktop::new(crate::App::boot(monitor.feed(), false));
+    desktop.manager.apps = applications::tests::loaded();
+    desktop.shared = desktop.manager.apps.frame.clone();
+    crate::desktop::tests::open(&mut desktop, 1);
+    let popup = desktop.popup.as_mut().unwrap();
+    assert!(keyboard_hint(popup).contains("Enter launches"));
+    popup.model.edit("no-such-application".into());
+    assert!(!keyboard_hint(popup).contains("Enter"));
+    assert!(!keyboard_hint(popup).contains("Up/Down"));
+    assert!(keyboard_hint(popup).contains("search"));
+    assert!(keyboard_hint(popup).contains("Esc"));
+    popup.model.edit(String::new());
+    assert!(keyboard_hint(popup).contains("Enter launches"));
+    popup.model.pinned_only = true;
+    popup.model.filter();
+    assert!(!keyboard_hint(popup).contains("Enter"));
+    popup.model = Model::default();
+    popup.model.mark_refresh(1);
+    assert!(!keyboard_hint(popup).contains("Enter"));
+    popup.model = applications::tests::loaded();
+    popup.launch_attempt = popup.model.key();
+    Arc::get_mut(&mut popup.model.frame).unwrap().launch = Status::Failed {
+        id: sei_apps::consumer::Consumer::new()
+            .request_refresh()
+            .unwrap(),
+        error: sei_apps::consumer::ConsumerError::StaleSelection,
+    };
+    assert!(keyboard_hint(popup).contains("Retry launch"));
+}
+#[test]
 fn long_title_does_not_paint_over_secondary_text_or_outside_its_column() {
     for selected in [false, true] {
         let short = render(

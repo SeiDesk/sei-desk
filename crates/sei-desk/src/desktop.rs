@@ -310,7 +310,7 @@ impl Desktop {
                 let mut model = applications::Model::default();
                 model.apply_frame(Arc::new(scoped(&self.shared, ticket)));
                 model.apply_pins(self.manager.apps.pins.clone());
-                model.pinned_only = true;
+                model.pinned_only = false;
                 model.filter();
                 self.popup = Some(Launcher {
                     id,
@@ -599,8 +599,6 @@ impl Desktop {
                     return Task::none();
                 }
                 let Some(key) = p.model.key() else {
-                    p.model.local_error =
-                        Some("Select a current application before launching.".into());
                     return Task::none();
                 };
                 match self

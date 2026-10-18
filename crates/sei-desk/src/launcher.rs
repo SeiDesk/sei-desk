@@ -196,6 +196,15 @@ fn result_title(name: &str, selected: bool) -> Element<'_, Message> {
     )
     .into()
 }
+fn keyboard_hint(launcher: &Launcher) -> &'static str {
+    if launcher.retry_key().is_some() {
+        "Tab to Retry launch · Esc closes"
+    } else if launcher.model.filtered.is_empty() {
+        "Edit search · Tab changes focus · Esc closes"
+    } else {
+        "Up/Down selects · Enter launches · Tab changes focus"
+    }
+}
 pub fn view(launcher: &Launcher, service_busy: bool) -> Element<'_, Message> {
     let id = launcher.id;
     let model = &launcher.model;
@@ -414,13 +423,7 @@ pub fn view(launcher: &Launcher, service_busy: bool) -> Element<'_, Message> {
             .spacing(8),
             text(feedback).size(13).color(SECONDARY),
             content,
-            text(if launcher.retry_key().is_some() {
-                "Tab to Retry launch · Esc closes"
-            } else {
-                "Up/Down selects · Enter launches · Tab changes focus"
-            })
-            .size(12)
-            .color(SECONDARY),
+            text(keyboard_hint(launcher)).size(12).color(SECONDARY),
         ]
         .spacing(12),
     )
