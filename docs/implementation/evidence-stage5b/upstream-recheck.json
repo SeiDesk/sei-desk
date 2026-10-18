@@ -1,0 +1,146 @@
+[
+  {
+    "id": "iced",
+    "url": "https://crates.io/api/v1/crates/iced",
+    "retrievedUtc": "2026-10-17T12:28:51.8026573Z",
+    "status": "retrieved",
+    "newest": "0.14.0",
+    "maxStable": "0.14.0",
+    "selected": {
+      "num": "0.14.0",
+      "checksum": "000e01026c93ba643f8357a3db3ada0e6555265a377f6f9291c472f6dd701fb3",
+      "yanked": false,
+      "license": "MIT",
+      "rust_version": "1.88",
+      "created_at": "2025-12-07T20:51:51.386769Z"
+    }
+  },
+  {
+    "id": "iced_widget",
+    "url": "https://crates.io/api/v1/crates/iced_widget",
+    "retrievedUtc": "2026-10-17T12:28:52.2237679Z",
+    "status": "retrieved",
+    "newest": "0.14.2",
+    "maxStable": "0.14.2",
+    "selected": {
+      "num": "0.14.2",
+      "checksum": "b1596afa0d3109c2618e8bc12bae6c11d3064df8f95c42dfce570397dbe957ab",
+      "yanked": false,
+      "license": "MIT",
+      "rust_version": null,
+      "created_at": "2025-12-11T04:58:04.240434Z"
+    }
+  },
+  {
+    "id": "accesskit",
+    "url": "https://crates.io/api/v1/crates/accesskit",
+    "retrievedUtc": "2026-10-17T12:28:52.4966758Z",
+    "status": "retrieved",
+    "newest": "0.25.1",
+    "maxStable": "0.25.1",
+    "selected": {
+      "num": "0.25.1",
+      "checksum": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932",
+      "yanked": false,
+      "license": "MIT OR Apache-2.0",
+      "rust_version": "1.87",
+      "created_at": "2026-09-25T19:40:54.207184Z"
+    }
+  },
+  {
+    "id": "accesskit_consumer",
+    "url": "https://crates.io/api/v1/crates/accesskit_consumer",
+    "retrievedUtc": "2026-10-17T12:28:52.7487146Z",
+    "status": "retrieved",
+    "newest": "0.39.1",
+    "maxStable": "0.39.1",
+    "selected": {
+      "num": "0.39.1",
+      "checksum": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344",
+      "yanked": false,
+      "license": "MIT OR Apache-2.0",
+      "rust_version": "1.87",
+      "created_at": "2026-09-25T19:40:56.422234Z"
+    }
+  },
+  {
+    "id": "accesskit_windows",
+    "url": "https://crates.io/api/v1/crates/accesskit_windows",
+    "retrievedUtc": "2026-10-17T12:28:53.0085919Z",
+    "status": "retrieved",
+    "newest": "0.35.1",
+    "maxStable": "0.35.1",
+    "selected": {
+      "num": "0.35.1",
+      "checksum": "ce63f35d6bdcf59f26b76b3379063f738e6412cef46999cc772d46aa3de35adb",
+      "yanked": false,
+      "license": "MIT OR Apache-2.0",
+      "rust_version": "1.87",
+      "created_at": "2026-09-25T19:41:00.899523Z"
+    }
+  },
+  {
+    "id": "accesskit_winit",
+    "url": "https://crates.io/api/v1/crates/accesskit_winit",
+    "retrievedUtc": "2026-10-17T12:28:54.0717219Z",
+    "status": "retrieved",
+    "newest": "0.34.1",
+    "maxStable": "0.34.1",
+    "selected": {
+      "num": "0.34.1",
+      "checksum": "ee96dd150375c05912d8a473f98c2fb155fb3234fac88292d396548a2460fa77",
+      "yanked": false,
+      "license": "Apache-2.0",
+      "rust_version": "1.87",
+      "created_at": "2026-09-25T19:41:07.313442Z"
+    }
+  },
+  {
+    "id": "iced-3111",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/3111",
+    "retrievedUtc": "2026-10-17T12:28:55.3116393Z",
+    "status": "retrieved",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "mergedAt": null,
+    "headSha": "2a693ddc9eddd71e0ca635f832301e4ab765b8ed",
+    "updatedAt": "2026-09-18T11:31:00Z"
+  },
+  {
+    "id": "iced-1849",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/1849",
+    "retrievedUtc": "2026-10-17T12:28:55.7889974Z",
+    "status": "retrieved",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "mergedAt": null,
+    "headSha": "bf0deae0f291698eef2dc1330131bd2984ba56aa",
+    "updatedAt": "2026-09-18T11:31:01Z"
+  },
+  {
+    "id": "iced-3281",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/3281",
+    "retrievedUtc": "2026-10-17T12:28:56.2332055Z",
+    "status": "retrieved",
+    "state": "closed",
+    "draft": false,
+    "merged": false,
+    "mergedAt": null,
+    "headSha": "1fcaca78f8ffd8d5a4790cd22e93cb56b46c8f8e",
+    "updatedAt": "2026-03-15T09:04:53Z"
+  },
+  {
+    "id": "accesskit-816",
+    "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/816",
+    "retrievedUtc": "2026-10-17T12:28:56.8253115Z",
+    "status": "retrieved",
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "mergedAt": null,
+    "headSha": "29f2ec503e98f1afcbbd1a26d11a1986b5198d5e",
+    "updatedAt": "2026-10-07T12:34:11Z"
+  }
+]

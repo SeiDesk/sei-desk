@@ -5,6 +5,7 @@ mod identity;
 pub mod preferences;
 pub mod reveal;
 pub mod runtime;
+pub mod search;
 pub use browser::{Grouping, Presentation, Sort};
 use sei_apps::consumer::{Accepted, RefreshSummary, Status};
 use std::sync::Arc;
@@ -71,7 +72,7 @@ impl Catalog {
         }
     }
 }
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Frame {
     pub revision: u64,
     pub ack: u64,
@@ -82,6 +83,10 @@ pub struct Frame {
     pub error: Option<sei_apps::consumer::ConsumerError>,
     pub stale: bool,
     pub cancel_pending: bool,
+    /// Zero denotes management requests; companion lifetimes use unique tokens.
+    pub launch_origin: u64,
+    pub refresh_origin: u64,
+    pub error_origin: u64,
 }
 impl Default for Frame {
     fn default() -> Self {
@@ -95,6 +100,9 @@ impl Default for Frame {
             error: None,
             stale: false,
             cancel_pending: false,
+            launch_origin: 0,
+            refresh_origin: 0,
+            error_origin: 0,
         }
     }
 }
@@ -415,4 +423,4 @@ impl Model {
     }
 }
 #[cfg(test)]
-mod tests;
+pub(crate) mod tests;

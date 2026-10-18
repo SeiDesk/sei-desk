@@ -1,0 +1,72 @@
+[
+  {
+    "id": "iced",
+    "url": "https://crates.io/api/v1/crates/iced",
+    "retrievedUtc": "2026-10-17T12:28:41.3815642Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "iced_widget",
+    "url": "https://crates.io/api/v1/crates/iced_widget",
+    "retrievedUtc": "2026-10-17T12:28:41.6321658Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "accesskit",
+    "url": "https://crates.io/api/v1/crates/accesskit",
+    "retrievedUtc": "2026-10-17T12:28:41.6364982Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "accesskit_consumer",
+    "url": "https://crates.io/api/v1/crates/accesskit_consumer",
+    "retrievedUtc": "2026-10-17T12:28:41.6395637Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "accesskit_windows",
+    "url": "https://crates.io/api/v1/crates/accesskit_windows",
+    "retrievedUtc": "2026-10-17T12:28:41.6425157Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "accesskit_winit",
+    "url": "https://crates.io/api/v1/crates/accesskit_winit",
+    "retrievedUtc": "2026-10-17T12:28:41.6456735Z",
+    "status": "unavailable",
+    "error": "No such host is known. (crates.io:443)"
+  },
+  {
+    "id": "iced-3111",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/3111",
+    "retrievedUtc": "2026-10-17T12:28:41.6484805Z",
+    "status": "unavailable",
+    "error": "No such host is known. (api.github.com:443)"
+  },
+  {
+    "id": "iced-1849",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/1849",
+    "retrievedUtc": "2026-10-17T12:28:41.6515186Z",
+    "status": "unavailable",
+    "error": "No such host is known. (api.github.com:443)"
+  },
+  {
+    "id": "iced-3281",
+    "url": "https://api.github.com/repos/iced-rs/iced/pulls/3281",
+    "retrievedUtc": "2026-10-17T12:28:41.6542917Z",
+    "status": "unavailable",
+    "error": "No such host is known. (api.github.com:443)"
+  },
+  {
+    "id": "accesskit-816",
+    "url": "https://api.github.com/repos/AccessKit/accesskit/pulls/816",
+    "retrievedUtc": "2026-10-17T12:28:41.6569652Z",
+    "status": "unavailable",
+    "error": "No such host is known. (api.github.com:443)"
+  }
+]

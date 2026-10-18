@@ -14,6 +14,16 @@ const LAVENDER: Color = iced::color!(0xCBC2DE);
 const PINK: Color = iced::color!(0xF3B8C8);
 const FOCUS: Color = iced::color!(0x44638A);
 const EDGE: Color = iced::color!(0xB7C6DA);
+const CONTROL_RADIUS: f32 = 8.0;
+const PANEL_PADDING: u16 = 16;
+const METRIC_HEIGHT: u32 = 184;
+
+fn strong<'a>(value: impl Into<String>, size: u32) -> iced::widget::Text<'a> {
+    text(value.into()).size(size).font(iced::Font {
+        weight: iced::font::Weight::Semibold,
+        ..iced::Font::DEFAULT
+    })
+}
 
 pub fn theme(_: &App) -> Theme {
     Theme::custom(
@@ -66,7 +76,7 @@ fn nav(app: &App, page: Page, label: &str) -> Element<'static, Message> {
             border: Border {
                 color: if focused { FOCUS } else { Color::TRANSPARENT },
                 width: 2.0,
-                radius: 8.0.into(),
+                radius: CONTROL_RADIUS.into(),
             },
             ..Default::default()
         })
@@ -140,7 +150,7 @@ fn card(metric: Metric) -> Element<'static, Message> {
     container(
         column![
             row![
-                container(Space::new().width(7).height(18)).style(move |_| container::Style {
+                container(Space::new().width(8).height(8)).style(move |_| container::Style {
                     background: Some(metric.tint.into()),
                     border: Border {
                         radius: 3.0.into(),
@@ -148,19 +158,20 @@ fn card(metric: Metric) -> Element<'static, Message> {
                     },
                     ..Default::default()
                 }),
-                text(metric.title).size(16)
+                strong(metric.title, 14)
             ]
-            .spacing(9),
-            text(metric.value).size(27),
+            .align_y(iced::Alignment::Center)
+            .spacing(8),
+            strong(metric.value, 24),
             note(metric.detail),
             Space::new().height(Length::Fill),
             bar,
             note(metric.caption),
         ]
-        .spacing(10),
+        .spacing(8),
     )
-    .padding(18)
-    .height(205)
+    .padding(PANEL_PADDING)
+    .height(METRIC_HEIGHT)
     .width(Length::Fill)
     .style(|_| surface(PANEL))
     .into()
@@ -203,13 +214,25 @@ fn network_card(app: &App) -> Element<'static, Message> {
         .unwrap_or_else(|| "—".into());
     container(
         column![
-            text("Network").size(16),
+            row![
+                container(Space::new().width(8).height(8)).style(|_| container::Style {
+                    background: Some(MINT.into()),
+                    border: Border {
+                        radius: 3.0.into(),
+                        ..Default::default()
+                    },
+                    ..Default::default()
+                }),
+                strong("Network", 14)
+            ]
+            .spacing(8)
+            .align_y(iced::Alignment::Center),
             row![
                 text("Receive")
                     .size(13)
                     .color(traffic_chart::RECEIVE)
                     .width(76),
-                text(rx).size(22)
+                strong(rx, 24)
             ]
             .spacing(4),
             row![
@@ -217,15 +240,15 @@ fn network_card(app: &App) -> Element<'static, Message> {
                     .size(13)
                     .color(traffic_chart::TRANSMIT)
                     .width(76),
-                text(tx).size(22)
+                strong(tx, 24)
             ]
             .spacing(4),
             note(network_state(app)),
         ]
-        .spacing(10),
+        .spacing(8),
     )
-    .padding(18)
-    .height(205)
+    .padding(PANEL_PADDING)
+    .height(METRIC_HEIGHT)
     .width(Length::Fill)
     .style(|_| surface(PANEL))
     .into()
@@ -242,13 +265,13 @@ fn network_history(app: &App) -> Element<'_, Message> {
         traffic_chart::chart(&app.traffic, app.now)
     };
     container(column![
-        text("Traffic history").size(17),
+        strong("Traffic history", 18),
         row![text("Receive · blue").size(13).color(traffic_chart::RECEIVE), text("Transmit · lavender").size(13).color(traffic_chart::TRANSMIT)].spacing(20),
         note(format!("Scale 0–{} · {} measured intervals", traffic::format_rate(app.traffic.peak()), app.traffic.len())),
         plot,
         row![note("60 s ago"), Space::new().width(Length::Fill), note("Now")],
         note("Last 60 s · time-spaced bars · gaps are unmeasured. Ethernet + Wi-Fi hardware only; traffic does not establish internet connectivity."),
-    ].spacing(8)).padding(18).width(Length::Fill).style(|_| surface(PANEL)).into()
+    ].spacing(8)).padding(PANEL_PADDING).width(Length::Fill).style(|_| surface(PANEL)).into()
 }
 fn overview(app: &App) -> Element<'_, Message> {
     let paused = app.paused();
@@ -289,14 +312,14 @@ fn overview(app: &App) -> Element<'_, Message> {
     let network = network_card(app);
     let cards: Element<'static, Message> = if app.width >= 1180.0 {
         row![card(cpu), card(memory), card(disk), network]
-            .spacing(14)
+            .spacing(12)
             .into()
     } else {
         column![
-            row![card(cpu), card(memory)].spacing(14),
-            row![card(disk), network].spacing(14)
+            row![card(cpu), card(memory)].spacing(12),
+            row![card(disk), network].spacing(12)
         ]
-        .spacing(14)
+        .spacing(12)
         .into()
     };
     let battery = match snapshot.map(|s| &s.battery) {
@@ -339,13 +362,13 @@ fn overview(app: &App) -> Element<'_, Message> {
         )
     };
     column![
-        text("Overview").size(30), note("Your system, at a glance"),
+        strong("Overview", 24), note("Your system, at a glance"),
         container(text(status).size(14)).padding([10, 14]).width(Length::Fill).style(move |_| surface(if paused { PINK } else { CANVAS })),
         cards,
         network_history(app),
-        container(column![text("Power").size(17), text(battery).size(16), note("Status reported by Windows")].spacing(7)).padding(18).width(Length::Fill).style(|_| surface(PANEL)),
+        container(column![strong("Power", 18), text(battery).size(16), note("Status reported by Windows")].spacing(8)).padding(PANEL_PADDING).width(Length::Fill).style(|_| surface(PANEL)),
         note("Read-only monitoring. Capacity readings are instantaneous; CPU uses counter differences. No temperature or hardware-health assessment."),
-    ].spacing(14).into()
+    ].spacing(12).into()
 }
 fn app_button<'a>(
     label: impl Into<String>,
@@ -353,6 +376,7 @@ fn app_button<'a>(
     focused: bool,
 ) -> Element<'a, Message> {
     use super::applications::{Action, Focus};
+    let primary = matches!(action, Some(Action::Launch));
     let id = match &action {
         Some(Action::Filter) => Focus::Filter.id(),
         Some(Action::Presentation) => Focus::Presentation.id(),
@@ -372,10 +396,14 @@ fn app_button<'a>(
                 background: Some(
                     if status == button::Status::Disabled {
                         PANEL
+                    } else if status == button::Status::Pressed {
+                        EDGE
                     } else if status == button::Status::Hovered {
                         CANVAS
-                    } else {
+                    } else if primary {
                         MINT
+                    } else {
+                        PANEL
                     }
                     .into(),
                 ),
@@ -387,7 +415,7 @@ fn app_button<'a>(
                 border: Border {
                     color: if focused { FOCUS } else { EDGE },
                     width: if focused { 2.0 } else { 1.0 },
-                    radius: 8.0.into(),
+                    radius: CONTROL_RADIUS.into(),
                 },
                 ..Default::default()
             }),
@@ -407,6 +435,14 @@ fn result_button(
         column![
             text(name)
                 .size(14)
+                .font(iced::Font {
+                    weight: if selected {
+                        iced::font::Weight::Semibold
+                    } else {
+                        iced::font::Weight::Normal
+                    },
+                    ..iced::Font::DEFAULT
+                })
                 .wrapping(iced::widget::text::Wrapping::Glyph),
             note(caption)
         ]
@@ -429,7 +465,7 @@ fn result_button(
         ),
         text_color: SLATE,
         border: Border {
-            color: if selected && focused {
+            color: if selected {
                 FOCUS
             } else if grid {
                 EDGE
@@ -437,7 +473,7 @@ fn result_button(
                 Color::TRANSPARENT
             },
             width: if selected && focused { 2.0 } else { 1.0 },
-            radius: 8.0.into(),
+            radius: CONTROL_RADIUS.into(),
         },
         ..Default::default()
     })
@@ -473,28 +509,35 @@ fn applications(app: &App) -> Element<'_, Message> {
             })
             .unwrap_or_else(|| "Catalog unavailable. Choose Refresh to retry.".into()),
     };
-    let search = text_input("Search names and executable filenames", &model.query)
-        .id("applications-search")
-        .on_input(|query| Message::AppAction(Action::Query(query)))
-        .on_submit(Message::AppAction(Action::Submit))
-        .padding(11)
-        .size(15)
-        .style(|_, status| text_input::Style {
-            background: Color::WHITE.into(),
-            border: Border {
-                color: if matches!(status, text_input::Status::Focused { .. }) {
-                    FOCUS
+    let search = super::applications::search::guarded(
+        text_input("Search names and executable filenames", &model.query)
+            .id("applications-search")
+            .on_input(|query| Message::AppAction(Action::Query(query)))
+            .on_submit(Message::AppAction(Action::Submit))
+            .padding(12)
+            .size(15)
+            .style(|_, status| text_input::Style {
+                background: if matches!(status, text_input::Status::Focused { .. }) {
+                    CANVAS
                 } else {
-                    EDGE
+                    PANEL
+                }
+                .into(),
+                border: Border {
+                    color: if matches!(status, text_input::Status::Focused { .. }) {
+                        FOCUS
+                    } else {
+                        EDGE
+                    },
+                    width: 2.0,
+                    radius: CONTROL_RADIUS.into(),
                 },
-                width: 2.0,
-                radius: 8.0.into(),
-            },
-            icon: SECONDARY,
-            placeholder: SECONDARY,
-            value: SLATE,
-            selection: MINT,
-        });
+                icon: SECONDARY,
+                placeholder: SECONDARY,
+                value: SLATE,
+                selection: MINT,
+            }),
+    );
     let mut controls = row![
         app_button(
             "Refresh",
@@ -779,7 +822,7 @@ fn applications(app: &App) -> Element<'_, Message> {
         "Favorites are read-only. Resolve the configuration message above and restart."
     }));
     let content = column![
-        text("Applications").size(30),
+        strong("Applications", 24),
         note("Supported Start menu applications"),
         column![text("Search applications").size(14), search].spacing(6),
         browsing,
@@ -806,6 +849,26 @@ pub fn content(app: &App) -> Element<'_, Message> {
             Space::new().height(18),
             nav(app, Page::Overview, "Overview"),
             nav(app, Page::Applications, "Applications"),
+            button(text("Open launcher · Ctrl+L").size(13))
+                .padding([10, 8])
+                .on_press(Message::OpenLauncher)
+                .style(|_, status| button::Style {
+                    background: Some(
+                        if status == button::Status::Hovered {
+                            CANVAS
+                        } else {
+                            PANEL
+                        }
+                        .into()
+                    ),
+                    text_color: SLATE,
+                    border: Border {
+                        color: EDGE,
+                        width: 1.0,
+                        radius: CONTROL_RADIUS.into()
+                    },
+                    ..Default::default()
+                }),
             Space::new().height(Length::Fill),
             note("Tab to navigate"),
             note("Enter to open"),

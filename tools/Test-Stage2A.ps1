@@ -6,11 +6,14 @@ param(
     [string]$OutputDirectory = 'docs/implementation/evidence-stage2a',
     [string]$ProbePath = 'target/release/examples/stage2a_probe.exe',
     [ValidateRange(1, 120)][int]$IdleSeconds = 30,
+    [switch]$Dashboard,
     [switch]$Keyboard,
     [switch]$ErrorFixture
 )
 $ErrorActionPreference = 'Stop'
 if ($Keyboard -and $ErrorFixture) { throw 'Keyboard sequence and seeded error fixture must be separate runs.' }
+if ($Dashboard -and ($Keyboard -or $ErrorFixture)) { throw 'Dashboard observation does not use the validation keyboard/error fixtures.' }
+$expectedWindowTitle = if ($Dashboard) { '^Sei-Desk$' } else { '^Sei-Desk . Stage 2A validation$' }
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 Add-Type -AssemblyName System.Drawing
@@ -50,6 +53,7 @@ function Test-OwnFocus {
 function Save-OwnWindow {
     param([System.Windows.Automation.AutomationElement]$Root, [int]$TargetId, [string]$Path)
     # Never capture another foreground app or a whole desktop screenshot.
+    if ($Dashboard) { return 'Not captured: the existing native capture probe is validation-title-only; dashboard captures are separate.' }
     if (!(Test-OwnFocus $TargetId)) { return 'Not captured: target no longer owns keyboard focus' }
     if (!(Test-Path -LiteralPath $ProbePath)) { return 'Not captured: build the native test example first' }
     $boundsText = & $ProbePath $TargetId $Root.Current.NativeWindowHandle bounds 2>$null
@@ -80,6 +84,7 @@ $result = [ordered]@{
     BuildMode = 'release (verify supplied binary path)'; Renderer = 'tiny-skia'
     RequestedIdleSeconds = $IdleSeconds; KeyboardRequested = [bool]$Keyboard
     ErrorFixture = [bool]$ErrorFixture
+    Dashboard = [bool]$Dashboard
     UIAQuery = 'Not run'; KeyboardDelivery = 'Not run'; Close = 'Not run'
     # These scripts cannot certify a screen reader from window/child enumeration.
     ScreenReaderSpeech = 'Not run'; Conformance = 'Not established'
@@ -89,7 +94,7 @@ $failed = $false
 try {
     $child = New-Object System.Diagnostics.Process
     $child.StartInfo.FileName = $binary
-    $child.StartInfo.Arguments = '--validation --diagnostics'
+    $child.StartInfo.Arguments = if ($Dashboard) { '--diagnostics' } else { '--validation --diagnostics' }
     if ($ErrorFixture) { $child.StartInfo.Arguments += ' --error-fixture' }
     $child.StartInfo.UseShellExecute = $false
     $child.StartInfo.CreateNoWindow = $true
@@ -107,7 +112,7 @@ try {
         $condition = New-Object System.Windows.Automation.PropertyCondition ([System.Windows.Automation.AutomationElement]::ProcessIdProperty), $child.Id
         $windows = [System.Windows.Automation.AutomationElement]::RootElement.FindAll([System.Windows.Automation.TreeScope]::Children, $condition)
         foreach ($candidate in $windows) {
-            if ($candidate.Current.ControlType -eq [System.Windows.Automation.ControlType]::Window -and $candidate.Current.Name -match '^Sei-Desk . Stage 2A validation$') {
+            if ($candidate.Current.ControlType -eq [System.Windows.Automation.ControlType]::Window -and $candidate.Current.Name -match $expectedWindowTitle) {
                 $root = $candidate
                 break
             }
@@ -115,11 +120,12 @@ try {
         if ($null -ne $root) { break }
         Start-Sleep -Milliseconds 100
     } while ($ready.Elapsed.TotalSeconds -lt 15)
-    if ($null -eq $root) { throw 'No titled validation window for the exact child PID within 15 seconds' }
+    if ($null -eq $root) { throw 'No expected titled window for the exact child PID within 15 seconds' }
     $windowHandle = [IntPtr]$root.Current.NativeWindowHandle
     $result.ValidationHandleSource = 'Exact child PID + UIA Window type + title; checked against iced diagnostic after exit'
+    if ($Dashboard) { $result.ValidationHandleSource = 'Dashboard: exact owned child PID + UIA Window type + title; no iced HWND diagnostic in this mode' }
     Start-Sleep -Milliseconds 500
-    if ($root.Current.ProcessId -ne $child.Id -or $root.Current.Name -notmatch '^Sei-Desk . Stage 2A validation$') {
+    if ($root.Current.ProcessId -ne $child.Id -or $root.Current.Name -notmatch $expectedWindowTitle) {
         throw "Incorrect UIA root: '$($root.Current.Name)' / $($root.Current.ClassName)"
     }
     $raw = @(Get-OwnTree $root ([System.Windows.Automation.TreeWalker]::RawViewWalker))
@@ -130,6 +136,7 @@ try {
     $result.UIAClientEditCount = @($control | Where-Object { $_.Type -eq 'ControlType.Edit' }).Count
     $result.UIAClientCheckboxCount = @($control | Where-Object { $_.Type -eq 'ControlType.CheckBox' }).Count
     $result.UIAValidateButtonCount = @($control | Where-Object { $_.Type -eq 'ControlType.Button' -and $_.Name -eq 'Validate' }).Count
+    $result.UIADashboardNavigationCount = @($control | Where-Object { $_.Type -eq 'ControlType.Button' -and $_.Name -match 'Overview|Applications' }).Count
 
     if ($Keyboard) {
         if (!(Test-Path -LiteralPath $ProbePath) -or !(Test-OwnFocus $child.Id)) {
@@ -218,9 +225,13 @@ try {
         $child.Dispose()
     }
     $trace = Get-Content (Join-Path $output 'app-stderr.txt') -Raw -ErrorAction SilentlyContinue
-    if ($null -ne $windowHandle) {
+    if ($null -ne $windowHandle -and !$Dashboard) {
         $result.IcedHandleConfirmed = $trace -match ("(?m)^validation_hwnd=" + $windowHandle.ToInt64() + '\r?$')
         if (!$result.IcedHandleConfirmed) { $failed = $true; $result.HandleFailure = 'Selected root did not match the iced-owned diagnostic HWND' }
+    }
+    if ($Dashboard) {
+        $result.DashboardWorkersJoined = $trace -match '(?m)^dashboard_workers_joined\r?$'
+        if (!$result.DashboardWorkersJoined) { $failed = $true }
     }
     if ($result.KeyboardDelivery -like 'Native sequence dispatched*') {
         $result.KeyboardStateTraceObserved = $trace -match 'focus=Validate feedback=Empty' -and $trace -match 'focus=Motion.*local_reduce=true' -and $trace -match 'focus=Validate feedback=Valid'

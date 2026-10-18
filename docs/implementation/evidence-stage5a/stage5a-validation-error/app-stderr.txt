@@ -1,0 +1,6 @@
+﻿fixture_error=true
+window_opened renderer=tiny-skia
+validation_hwnd=3932322
+state focus=Validate feedback=Empty closing=true local_reduce=false
+graceful_exit restoration=Skipped
+

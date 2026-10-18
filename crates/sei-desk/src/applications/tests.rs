@@ -23,7 +23,7 @@ fn frame(revision: u64, generation: u64, entries: Vec<Entry>) -> Arc<Frame> {
         ..Default::default()
     })
 }
-fn loaded() -> Model {
+pub(crate) fn loaded() -> Model {
     let mut model = Model::default();
     model.apply_frame(frame(
         1,

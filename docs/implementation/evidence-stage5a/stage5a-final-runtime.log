@@ -1,0 +1,103 @@
+dashboard_sample cpu=None memory=Ok(Capacity { total: 25534783488, available: 5080150016 }) disk=Ok(Capacity { total: 262428160000, available: 24817287168 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Baseline("Collecting the first counter interval") interfaces=1 history=0
+dashboard_sample cpu=Some(8.910387) memory=Ok(Capacity { total: 25534783488, available: 5078224896 }) disk=Ok(Capacity { total: 262428160000, available: 24818253824 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 3051.3134107143624, transmit: 11024.807611723385 }) interfaces=1 history=0
+dashboard_sample cpu=Some(4.741584) memory=Ok(Capacity { total: 25534783488, available: 5091319808 }) disk=Ok(Capacity { total: 262428160000, available: 24818270208 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 4950.792924341062, transmit: 3271.875893896617 }) interfaces=1 history=1
+dashboard_sample cpu=Some(6.967804) memory=Ok(Capacity { total: 25534783488, available: 5083189248 }) disk=Ok(Capacity { total: 262428160000, available: 24818114560 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 6543.965122213913, transmit: 2828.733078994574 }) interfaces=1 history=2
+dashboard_sample cpu=Some(4.948162) memory=Ok(Capacity { total: 25534783488, available: 5110050816 }) disk=Ok(Capacity { total: 262428160000, available: 24818114560 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 8076.23689393941, transmit: 8067.293660221113 }) interfaces=1 history=3
+dashboard_sample cpu=Some(9.90364) memory=Ok(Capacity { total: 25534783488, available: 5082034176 }) disk=Ok(Capacity { total: 262428160000, available: 24818114560 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 28879.953639354884, transmit: 2915.1885449396145 }) interfaces=1 history=4
+dashboard_sample cpu=Some(9.404388) memory=Ok(Capacity { total: 25534783488, available: 5105840128 }) disk=Ok(Capacity { total: 262428160000, available: 24818044928 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 35941.729181775314, transmit: 296894.7526937969 }) interfaces=1 history=5
+dashboard_sample cpu=Some(5.680705) memory=Ok(Capacity { total: 25534783488, available: 5111021568 }) disk=Ok(Capacity { total: 262428160000, available: 24818036736 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 60297.67382913706, transmit: 12042.869541983267 }) interfaces=1 history=6
+dashboard_sample cpu=Some(3.3367038) memory=Ok(Capacity { total: 25534783488, available: 5121794048 }) disk=Ok(Capacity { total: 262428160000, available: 24817643520 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 7873.754369421067, transmit: 7153.6151511319395 }) interfaces=1 history=7
+dashboard_sample cpu=Some(4.619692) memory=Ok(Capacity { total: 25534783488, available: 5129617408 }) disk=Ok(Capacity { total: 262428160000, available: 24817577984 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 49438.32782654773, transmit: 148964.1222356718 }) interfaces=1 history=8
+dashboard_sample cpu=Some(4.995197) memory=Ok(Capacity { total: 25534783488, available: 5124128768 }) disk=Ok(Capacity { total: 262428160000, available: 24817577984 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 30004.96970847912, transmit: 175362.84324087529 }) interfaces=1 history=9
+dashboard_sample cpu=Some(4.315841) memory=Ok(Capacity { total: 25534783488, available: 5126397952 }) disk=Ok(Capacity { total: 262428160000, available: 24817577984 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 34118.91065914657, transmit: 7427.78202986567 }) interfaces=1 history=10
+dashboard_sample cpu=Some(4.674699) memory=Ok(Capacity { total: 25534783488, available: 5134168064 }) disk=Ok(Capacity { total: 262428160000, available: 24817364992 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 6938.067097122882, transmit: 1770.859978793491 }) interfaces=1 history=11
+applications_frame revision=1 refresh=Running { id: OperationId(1), cancellation_requested: false } launch=Idle entries=0
+applications_frame revision=2 refresh=Running { id: OperationId(1), cancellation_requested: false } launch=Idle entries=0
+dashboard_sample cpu=Some(5.306719) memory=Ok(Capacity { total: 25534783488, available: 5113540608 }) disk=Ok(Capacity { total: 262428160000, available: 24817160192 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 25301.87242626101, transmit: 144235.52228215156 }) interfaces=1 history=12
+applications_frame revision=3 refresh=Succeeded { id: OperationId(1), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(9.004502) memory=Ok(Capacity { total: 25534783488, available: 5126029312 }) disk=Ok(Capacity { total: 262428160000, available: 24816390144 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 15898.121677035506, transmit: 104011.61692962935 }) interfaces=1 history=13
+dashboard_sample cpu=Some(6.852552) memory=Ok(Capacity { total: 25534783488, available: 5096996864 }) disk=Ok(Capacity { total: 262428160000, available: 24816263168 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 10393.145374717322, transmit: 4187.674202724184 }) interfaces=1 history=14
+dashboard_sample cpu=Some(23.693045) memory=Ok(Capacity { total: 25534783488, available: 4852228096 }) disk=Ok(Capacity { total: 262428160000, available: 24816263168 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 10660.140270386557, transmit: 10187.978126232227 }) interfaces=1 history=15
+dashboard_sample cpu=Some(23.652258) memory=Ok(Capacity { total: 25534783488, available: 4926095360 }) disk=Ok(Capacity { total: 262428160000, available: 24816263168 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 3063.019274770213, transmit: 17423.995326449465 }) interfaces=1 history=16
+dashboard_sample cpu=Some(18.395304) memory=Ok(Capacity { total: 25534783488, available: 4961886208 }) disk=Ok(Capacity { total: 262428160000, available: 24816009216 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 384.07340966388637, transmit: 10706.1087250391 }) interfaces=1 history=17
+dashboard_sample cpu=Some(7.29927) memory=Ok(Capacity { total: 25534783488, available: 5096951808 }) disk=Ok(Capacity { total: 262428160000, available: 24815992832 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 27335.138116396083, transmit: 58394.045229704316 }) interfaces=1 history=18
+dashboard_sample cpu=Some(5.452775) memory=Ok(Capacity { total: 25534783488, available: 5107576832 }) disk=Ok(Capacity { total: 262428160000, available: 24815992832 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 6487.882049277291, transmit: 1187.5920265410364 }) interfaces=1 history=19
+applications_frame revision=4 refresh=Succeeded { id: OperationId(1), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(9.747818) memory=Ok(Capacity { total: 25534783488, available: 5104840704 }) disk=Ok(Capacity { total: 262428160000, available: 24815992832 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 24172.808773840934, transmit: 198247.89826500916 }) interfaces=1 history=20
+dashboard_sample cpu=Some(5.974535) memory=Ok(Capacity { total: 25534783488, available: 5128400896 }) disk=Ok(Capacity { total: 262428160000, available: 24815992832 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 33101.422063561826, transmit: 2786.024729893632 }) interfaces=1 history=21
+applications_frame revision=5 refresh=Succeeded { id: OperationId(1), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(6.159069) memory=Ok(Capacity { total: 25534783488, available: 5115379712 }) disk=Ok(Capacity { total: 262428160000, available: 24814624768 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 50918.28503662353, transmit: 195770.06934284794 }) interfaces=1 history=22
+dashboard_sample cpu=Some(4.3309) memory=Ok(Capacity { total: 25534783488, available: 5147742208 }) disk=Ok(Capacity { total: 262428160000, available: 24814690304 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 9507.95948766031, transmit: 4138.981369556331 }) interfaces=1 history=23
+applications_frame revision=6 refresh=Succeeded { id: OperationId(1), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(6.562956) memory=Ok(Capacity { total: 25534783488, available: 5177774080 }) disk=Ok(Capacity { total: 262428160000, available: 24814624768 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 49906.82681270414, transmit: 190628.44208086666 }) interfaces=1 history=24
+dashboard_sample cpu=Some(3.799318) memory=Ok(Capacity { total: 25534783488, available: 5184446464 }) disk=Ok(Capacity { total: 262428160000, available: 24814624768 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 6677.742856062388, transmit: 3471.328710682263 }) interfaces=1 history=25
+dashboard_sample cpu=Some(4.322487) memory=Ok(Capacity { total: 25534783488, available: 5172285440 }) disk=Ok(Capacity { total: 262428160000, available: 24814624768 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 50726.79326710684, transmit: 143424.44593439737 }) interfaces=1 history=26
+dashboard_sample cpu=Some(5.05345) memory=Ok(Capacity { total: 25534783488, available: 5179314176 }) disk=Ok(Capacity { total: 262428160000, available: 24814100480 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 18524.037279724445, transmit: 309744.2331730094 }) interfaces=1 history=27
+applications_frame revision=7 refresh=Succeeded { id: OperationId(1), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(5.7294173) memory=Ok(Capacity { total: 25534783488, available: 5161078784 }) disk=Ok(Capacity { total: 262428160000, available: 24812843008 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 55494.49663197103, transmit: 205676.94962907635 }) interfaces=1 history=28
+dashboard_sample cpu=Some(7.0593963) memory=Ok(Capacity { total: 25534783488, available: 5154631680 }) disk=Ok(Capacity { total: 262428160000, available: 24812843008 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 9814.009878015371, transmit: 3125.237132150421 }) interfaces=1 history=29
+dashboard_sample cpu=Some(10.014514) memory=Ok(Capacity { total: 25534783488, available: 5093027840 }) disk=Ok(Capacity { total: 262428160000, available: 24812843008 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 19765.893097629436, transmit: 82487.82764105487 }) interfaces=1 history=30
+dashboard_sample cpu=Some(3.5592394) memory=Ok(Capacity { total: 25534783488, available: 5095878656 }) disk=Ok(Capacity { total: 262428160000, available: 24812843008 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 7537.109418677338, transmit: 1848.2926751279722 }) interfaces=1 history=30
+applications_frame revision=8 refresh=Running { id: OperationId(2), cancellation_requested: false } launch=Idle entries=78
+applications_frame revision=9 refresh=Running { id: OperationId(2), cancellation_requested: false } launch=Idle entries=78
+applications_frame revision=10 refresh=Succeeded { id: OperationId(2), value: RefreshSummary { entries: 78, issues: 83, truncated: false } } launch=Idle entries=78
+dashboard_sample cpu=Some(5.804878) memory=Ok(Capacity { total: 25534783488, available: 5093371904 }) disk=Ok(Capacity { total: 262428160000, available: 24811388928 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 27063.44767494988, transmit: 282279.03273512115 }) interfaces=1 history=30
+dashboard_sample cpu=Some(4.164625) memory=Ok(Capacity { total: 25534783488, available: 5080395776 }) disk=Ok(Capacity { total: 262428160000, available: 24811388928 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 13852.477647940237, transmit: 6851.944818288789 }) interfaces=1 history=30
+dashboard_sample cpu=Some(16.277939) memory=Ok(Capacity { total: 25534783488, available: 5091065856 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 35526.86224368698, transmit: 60050.99480632388 }) interfaces=1 history=30
+dashboard_sample cpu=Some(6.435885) memory=Ok(Capacity { total: 25534783488, available: 5090213888 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 5014.066563566221, transmit: 9703.004196307462 }) interfaces=1 history=30
+dashboard_sample cpu=Some(7.6630177) memory=Ok(Capacity { total: 25534783488, available: 5060296704 }) disk=Ok(Capacity { total: 262428160000, available: 24809922560 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 21921.69271967504, transmit: 5607.65527695868 }) interfaces=1 history=30
+dashboard_sample cpu=Some(8.007909) memory=Ok(Capacity { total: 25534783488, available: 5094412288 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 32754.705877284483, transmit: 204738.70171831094 }) interfaces=1 history=30
+dashboard_sample cpu=Some(4.1503906) memory=Ok(Capacity { total: 25534783488, available: 5099298816 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 5705.20383925252, transmit: 3552.428302911557 }) interfaces=1 history=30
+dashboard_sample cpu=Some(4.0963855) memory=Ok(Capacity { total: 25534783488, available: 5109538816 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 9336.98069678022, transmit: 1865.5027338035723 }) interfaces=1 history=30
+dashboard_sample cpu=Some(4.146577) memory=Ok(Capacity { total: 25534783488, available: 5093330944 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 23453.720745876653, transmit: 5788.095439129972 }) interfaces=1 history=30
+dashboard_sample cpu=Some(3.776361) memory=Ok(Capacity { total: 25534783488, available: 5091418112 }) disk=Ok(Capacity { total: 262428160000, available: 24809926656 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 8230.75192554482, transmit: 32272.426150413958 }) interfaces=1 history=30
+dashboard_sample cpu=Some(14.145864) memory=Ok(Capacity { total: 25534783488, available: 5064376320 }) disk=Ok(Capacity { total: 262428160000, available: 24809844736 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 16693.38681735679, transmit: 218556.22549700574 }) interfaces=1 history=30
+dashboard_sample cpu=Some(8.373436) memory=Ok(Capacity { total: 25534783488, available: 5081894912 }) disk=Ok(Capacity { total: 262428160000, available: 24809844736 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 31330.28276232545, transmit: 9480.846255117918 }) interfaces=1 history=30
+dashboard_sample cpu=Some(5.227162) memory=Ok(Capacity { total: 25534783488, available: 5083811840 }) disk=Ok(Capacity { total: 262428160000, available: 24809844736 }) battery=Ok(Present { percent: Some(76), charging: false, ac: Some(true) })
+network_sample status=Live(Rates { receive: 7371.0363205767735, transmit: 1305.0588554583912 }) interfaces=1 history=30
+dashboard_workers_joined

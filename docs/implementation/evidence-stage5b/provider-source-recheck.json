@@ -1,0 +1,163 @@
+[
+  {
+    "Package": "accesskit",
+    "Version": "0.25.1",
+    "Path": ".cargo_vcs_info.json",
+    "SHA256": "23C48895B7C1B08BECE340B5C6FDAEF1AC0C37E9F4AED082FB884AD00BBD93B7",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit",
+    "Version": "0.25.1",
+    "Path": "Cargo.toml",
+    "SHA256": "4622B7E8E02906E376AC9F4EB5D954237D35477ED760476CC0F97188A56DA1A5",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit",
+    "Version": "0.25.1",
+    "Path": "src/lib.rs",
+    "SHA256": "F77ED125614C6E735141BDC5FE8551CFC8DBC2D16FFCCF4D52880C2C2BDFEFFD",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Path": ".cargo_vcs_info.json",
+    "SHA256": "185B93C89E1B1F25233AF955AD0D8EB7DD35A65444B1E650FEAC2A8D9B4E8268",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Path": "Cargo.toml",
+    "SHA256": "732661AAE7ADF7A550986DF2A1C39796B0CC00A9BA47D0912909836C3D2EAD27",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Path": "src/iterators.rs",
+    "SHA256": "454DE6CCB571E7BD831C721B8BA4EB76DBEFBE97043ABFC727B917C2BCC28A1A",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Path": "src/node.rs",
+    "SHA256": "79686E8C6867CFF462DD7920BBA8774DC01163829F1CFB75D46AF07CBF2EC6A2",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "Path": "src/tree.rs",
+    "SHA256": "8B600CFB981DB3C41D88619DB30A93293D8FA8FCA6DD37853B4B3E746129F0C5",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": ".cargo_vcs_info.json",
+    "SHA256": "907209C630130BD8CC6225FACFAC28E5E95F2A4CA8E36B933922C5E060EECD96",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "CHANGELOG.md",
+    "SHA256": "E7A626296C906A1D075E5D80AA8CB0973347A0DC727E81B48896251903AAB816",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "Cargo.toml",
+    "SHA256": "C054F68241F033DAF9BD5086D44CE310D672D94A234C23C5AE2566A8796059F4",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/adapter.rs",
+    "SHA256": "F4342311058A86CB67AA7526BCE5F874DDDF11C9295C160591B46781387A6376",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/context.rs",
+    "SHA256": "C03DF25BDEC7F70C0B2FD90EA5308D9DC27032BEC73005AC57712D33F12E6A73",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/filters.rs",
+    "SHA256": "744374B547065B153123C80028F129F5C6BB53052660205E1A2F231C3E169F64",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/lib.rs",
+    "SHA256": "8A6F20ED5354C9834D88A59091C764F65AA31359F81C57386FE06E9D806E9396",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/node.rs",
+    "SHA256": "160FF7058EDFCB84B8651D4F0111E8839CD1E63C2F08BB309EF65C9E028EFB67",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/subclass.rs",
+    "SHA256": "69BB742D5451F2CFF1C2110E77782948CB751AAAD3302C5B1453EBF8B3D20A9E",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/tests/mod.rs",
+    "SHA256": "DE33703D001A741529E6248C5165A5F3EFFA1115D1EF2DB6F115ADCC45CA5D04",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/tests/simple.rs",
+    "SHA256": "828C3C036BEBB9113CB289DD033D6163345C8E746015F4B15FC80FDFC2B5479F",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/tests/subclassed.rs",
+    "SHA256": "065DA83E1DB3E53CCBADE3EFF8BBBB4891D23085A3A4AC308C513DE24D8DF80D",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/text.rs",
+    "SHA256": "7F2493B559F0B04884E201D897981A3CCE47B2C571863D37FFDDB1BB695E5C55",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/util.rs",
+    "SHA256": "9A8EDA748E568EA480D7BC5D406D868F4CA0FD245ED18557707D219D43DDCD9A",
+    "MatchesRecorded": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "Path": "src/window_handle.rs",
+    "SHA256": "DEC1D78C81784A18C50F066E89D57D0FE02A7C9199A11E47A0833F8B9113D8C2",
+    "MatchesRecorded": true
+  }
+]

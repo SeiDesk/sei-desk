@@ -48,6 +48,20 @@ impl<Message> Widget<Message, Theme, iced::Renderer> for Chart<'_> {
         let positions = positions(self.history, self.now);
         renderer.with_layer(clip, |renderer| {
             let bottom = bounds.y + bounds.height - 1.0;
+            // A quiet half-scale guide separates the plot from its surrounding
+            // panel without changing the measured scale or sample geometry.
+            renderer.fill_quad(
+                renderer::Quad {
+                    bounds: Rectangle {
+                        x: bounds.x,
+                        y: bounds.y + (bounds.height - 2.0) / 2.0,
+                        width: bounds.width,
+                        height: 1.0,
+                    },
+                    ..Default::default()
+                },
+                iced::color!(0xD2DCE9),
+            );
             renderer.fill_quad(
                 renderer::Quad {
                     bounds: Rectangle {

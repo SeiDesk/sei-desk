@@ -274,6 +274,156 @@ fn command_capacity_is_bounded_and_latest_mailbox_is_one_slot() {
 }
 
 #[test]
+fn companion_origin_survives_completion_and_busy_rejection_does_not_retag_it() {
+    let service = Arc::new(TestService::default());
+    let owner = Owner::with_service(service.clone()).unwrap();
+    let handle = owner.handle();
+    let frame = load(&handle);
+    service.block_launch.store(true, Ordering::Release);
+    let seq = handle
+        .send_for(11, Command::Launch(Some(key(&frame, "a"))))
+        .unwrap();
+    wait(&handle, |f| f.ack >= seq && busy(&f.launch));
+    let rejected = handle
+        .send_for(12, Command::Launch(Some(key(&frame, "b"))))
+        .unwrap();
+    let frame = wait(&handle, |f| f.ack >= rejected && f.error.is_some());
+    assert_eq!(frame.launch_origin, 11);
+    assert_eq!(frame.error_origin, 12);
+    service.block_launch.store(false, Ordering::Release);
+    let completed = wait(&handle, |f| matches!(f.launch, Status::Succeeded { .. }));
+    assert_eq!(completed.launch_origin, 11);
+    assert_eq!(service.launched.lock().unwrap().len(), 1);
+}
+
+#[test]
+fn companion_failed_launch_requires_explicit_identity_checked_retry() {
+    use crate::desktop::{Desktop, Message};
+    use crate::launcher::{Action, Focus};
+    let service = Arc::new(TestService::default());
+    let owner = Owner::with_service(service.clone()).unwrap();
+    let handle = owner.handle();
+    let frame = load(&handle);
+    let monitor = crate::Monitor::start().unwrap();
+    let mut app = crate::App::boot(monitor.feed(), false);
+    app.apps_handle = Some(handle.clone());
+    let mut desktop = Desktop::new(app);
+    desktop.manager_id = Some(iced::window::Id::unique());
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(frame)));
+    let id = crate::desktop::tests::open(&mut desktop, 11);
+    service.launch_fail.store(true, Ordering::Release);
+    let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    let failed = wait(&handle, |f| matches!(f.launch, Status::Failed { .. }));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(failed)));
+    let retry = desktop.popup.as_ref().unwrap().retry_key().unwrap();
+    let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    desktop.popup.as_mut().unwrap().focus = Focus::Results;
+    let _ = desktop.update(Message::Launcher(id, Action::Activate));
+    assert!(desktop.popup.as_ref().unwrap().pending_launch.is_none());
+    assert_eq!(service.launched.lock().unwrap().len(), 1);
+    let _ = desktop.update(Message::Launcher(id, Action::Traverse(false)));
+    assert_eq!(desktop.popup.as_ref().unwrap().focus, Focus::Retry);
+    let _ = desktop.update(Message::Launcher(id, Action::Move(1)));
+    assert_eq!(desktop.popup.as_ref().unwrap().focus, Focus::Results);
+    assert!(desktop.popup.as_ref().unwrap().retry_key().is_none());
+    let _ = desktop.update(Message::Launcher(id, Action::Query("b".into())));
+    let _ = desktop.update(Message::Launcher(id, Action::Retry(retry.clone())));
+    assert!(desktop.popup.as_ref().unwrap().pending_launch.is_none());
+    assert_eq!(
+        desktop.popup.as_ref().unwrap().model.selected.as_deref(),
+        Some("b")
+    );
+    let _ = desktop.update(Message::Launcher(id, Action::Query("a".into())));
+    service.launch_fail.store(false, Ordering::Release);
+    desktop.popup.as_mut().unwrap().focus = Focus::Retry;
+    let _ = desktop.update(Message::Launcher(id, Action::Activate));
+    let _ = desktop.update(Message::Launcher(id, Action::Retry(retry)));
+    let succeeded = wait(&handle, |f| matches!(f.launch, Status::Succeeded { .. }));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(succeeded)));
+    assert_eq!(service.launched.lock().unwrap().len(), 2);
+    assert!(desktop.popup.is_none());
+    assert_eq!(desktop.manager.apps.query, "");
+}
+#[test]
+fn closing_companion_during_launch_never_resends_or_dismisses_its_replacement() {
+    use crate::desktop::{Desktop, Message};
+    use crate::launcher::Action;
+    let service = Arc::new(TestService::default());
+    let owner = Owner::with_service(service.clone()).unwrap();
+    let handle = owner.handle();
+    let frame = load(&handle);
+    let monitor = crate::Monitor::start().unwrap();
+    let mut app = crate::App::boot(monitor.feed(), false);
+    app.apps_handle = Some(handle.clone());
+    let mut desktop = Desktop::new(app);
+    desktop.manager_id = Some(iced::window::Id::unique());
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(frame)));
+    let id = crate::desktop::tests::open(&mut desktop, 11);
+    service.block_launch.store(true, Ordering::Release);
+    let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    let _ = desktop.update(Message::Launcher(id, Action::Submit));
+    let pending = wait(&handle, |f| busy(&f.launch));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(pending)));
+    let _ = desktop.update(Message::Launcher(id, Action::Dismiss));
+    let _ = desktop.update(Message::Event(
+        id,
+        iced::Event::Window(iced::window::Event::Closed),
+        iced::event::Status::Ignored,
+    ));
+    let next = crate::desktop::tests::open(&mut desktop, 12);
+    let _ = desktop.update(Message::Launcher(next, Action::Query("b".into())));
+    service.block_launch.store(false, Ordering::Release);
+    let completed = wait(&handle, |f| matches!(f.launch, Status::Succeeded { .. }));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(completed)));
+    assert_eq!(service.launched.lock().unwrap().len(), 1);
+    assert_eq!(desktop.popup.as_ref().unwrap().id, next);
+    assert_eq!(desktop.popup.as_ref().unwrap().model.query, "b");
+    assert!(desktop.popup.as_ref().unwrap().pending_launch.is_none());
+    assert!(matches!(desktop.manager.apps.frame.launch, Status::Idle));
+}
+
+#[test]
+fn failed_refresh_from_closed_companion_does_not_surface_in_replacement() {
+    use crate::desktop::{Desktop, Message};
+    use crate::launcher::Action;
+    let service = Arc::new(TestService::default());
+    let owner = Owner::with_service(service.clone()).unwrap();
+    let handle = owner.handle();
+    let frame = load(&handle);
+    let monitor = crate::Monitor::start().unwrap();
+    let mut app = crate::App::boot(monitor.feed(), false);
+    app.apps_handle = Some(handle.clone());
+    let mut desktop = Desktop::new(app);
+    desktop.manager_id = Some(iced::window::Id::unique());
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(frame)));
+    let id = crate::desktop::tests::open(&mut desktop, 11);
+    service.block_refresh.store(true, Ordering::Release);
+    service.refresh_fail.store(true, Ordering::Release);
+    let _ = desktop.update(Message::Launcher(id, Action::Refresh));
+    let pending = wait(&handle, |f| busy(&f.refresh));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(pending)));
+    let _ = desktop.update(Message::Launcher(id, Action::Dismiss));
+    let _ = desktop.update(Message::Event(
+        id,
+        iced::Event::Window(iced::window::Event::Closed),
+        iced::event::Status::Ignored,
+    ));
+    let next = crate::desktop::tests::open(&mut desktop, 12);
+    service.block_refresh.store(false, Ordering::Release);
+    let failed = wait(&handle, |f| matches!(f.refresh, Status::Failed { .. }));
+    let _ = desktop.update(Message::Manager(crate::Message::Applications(failed)));
+    assert_eq!(desktop.popup.as_ref().unwrap().id, next);
+    assert!(matches!(
+        desktop.popup.as_ref().unwrap().model.frame.refresh,
+        Status::Idle
+    ));
+    assert!(!matches!(
+        desktop.manager.apps.frame.refresh,
+        Status::Failed { .. }
+    ));
+}
+
+#[test]
 fn empty_refresh_and_two_simultaneous_lanes_publish_without_ui_drain() {
     let service = Arc::new(TestService::default());
     let owner = Owner::with_service(service.clone()).unwrap();

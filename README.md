@@ -1,5 +1,7 @@
 # Sei-Desk
 
+Stage 5A fixes bounded invalid-pin recovery and selection visibility after search clearing or catalog replacement. See the [stabilization acceptance report](docs/implementation/STAGE-5A-STABILIZATION-ACCEPTANCE.md) for tests, runtime evidence and unresolved production accessibility blockers. No release accessibility acceptance is implied.
+
 Stage 4D adds persistent pinned favorites, sorting, grouping and list/text-grid presentations to Applications. Search, refresh and explicit launches still use the existing Start menu catalog and Consumer services. The native Rust + iced dashboard retains CPU, physical memory, system-drive capacity, battery, local time, live receive/transmit rates and bounded traffic history. The existing [design package](docs/design/README.md) remains the visual reference. See the [Stage 4D acceptance report](docs/implementation/STAGE-4D-LAUNCHER-USABILITY-ACCEPTANCE.md) for persistence and usability checks, [Stage 4C](docs/implementation/STAGE-4C-APPLICATIONS-ACCEPTANCE.md) for launch integration, [Stage 4B](docs/implementation/STAGE-4B-NETWORK-MONITORING-ACCEPTANCE.md) for network policy, and [Stage 4A](docs/implementation/STAGE-4A-DASHBOARD-ACCEPTANCE.md) for the dashboard baseline. Earlier validation code, services, experiments and evidence are preserved; production accessibility remains gated.
 
 ## Build and run

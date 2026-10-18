@@ -1,0 +1,10 @@
+Window: "Sei-Desk", App: sei-desk.exe.
+	0 window Sei-Desk Secondary Actions: Raise
+		1 title bar (settable, string) Value: Sei-Desk
+			2 menu bar System ID: MenuBar
+				7 menu item System
+			4 button Minimize
+			5 button Maximize
+			6 button Close
+
+The focused UI element is 0 window Sei-Desk Secondary Actions: Raise.

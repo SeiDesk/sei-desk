@@ -2,6 +2,7 @@
 //! hooks, services, HWND creation, system-setting writes or background threads.
 use std::fmt;
 
+pub mod launcher;
 pub mod metrics;
 pub mod network;
 

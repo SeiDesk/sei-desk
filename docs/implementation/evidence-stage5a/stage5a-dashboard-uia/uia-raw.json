@@ -1,0 +1,16 @@
+﻿[
+    {
+        "Depth":  0,
+        "Name":  "Sei-Desk",
+        "Type":  "ControlType.Window",
+        "Class":  "Window Class",
+        "AutomationId":  "",
+        "KeyboardFocusable":  false,
+        "HasKeyboardFocus":  true,
+        "Enabled":  true,
+        "Patterns":  [
+                         "WindowPatternIdentifiers.Pattern",
+                         "TransformPatternIdentifiers.Pattern"
+                     ]
+    }
+]

@@ -212,8 +212,14 @@ impl Drop for Temporary {
     }
 }
 fn backup(path: &Path, bytes: &[u8]) -> Result<PathBuf, String> {
+    // Fixed slots bound new recovery files across process lifetimes. Reuse an
+    // identical complete copy so repeated starts with unchanged invalid data
+    // neither grow the directory nor exhaust recovery capacity.
     for index in 0..32 {
-        let candidate = path.with_extension(format!("invalid-{}-{index}", std::process::id()));
+        let candidate = path.with_extension(format!("invalid-{index}"));
+        if matches!(read(&candidate), Ok(Some(existing)) if existing == bytes) {
+            return Ok(candidate);
+        }
         match OpenOptions::new()
             .write(true)
             .create_new(true)

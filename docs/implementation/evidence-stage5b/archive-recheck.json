@@ -1,0 +1,37 @@
+[
+  {
+    "Package": "iced",
+    "Version": "0.14.0",
+    "CachedArchiveSHA256": "000E01026C93BA643F8357A3DB3ADA0E6555265A377F6F9291C472F6DD701FB3",
+    "RegistrySHA256": "000e01026c93ba643f8357a3db3ada0e6555265a377f6f9291c472f6dd701fb3",
+    "Matches": true
+  },
+  {
+    "Package": "iced_widget",
+    "Version": "0.14.2",
+    "CachedArchiveSHA256": "B1596AFA0D3109C2618E8BC12BAE6C11D3064DF8F95C42DFCE570397DBE957AB",
+    "RegistrySHA256": "b1596afa0d3109c2618e8bc12bae6c11d3064df8f95c42dfce570397dbe957ab",
+    "Matches": true
+  },
+  {
+    "Package": "accesskit",
+    "Version": "0.25.1",
+    "CachedArchiveSHA256": "AD442F58EE04714AAA0BA0A2768C1EA1935B29507BB22DDECE8CBBC76DB02932",
+    "RegistrySHA256": "ad442f58ee04714aaa0ba0a2768c1ea1935b29507bb22ddece8cbbc76db02932",
+    "Matches": true
+  },
+  {
+    "Package": "accesskit_consumer",
+    "Version": "0.39.1",
+    "CachedArchiveSHA256": "8A45E2BB300BEA6D5F33A82C3E051C3DDC6F41C209750F68A0ACBE991A284344",
+    "RegistrySHA256": "8a45e2bb300bea6d5f33a82c3e051c3ddc6f41c209750f68a0acbe991a284344",
+    "Matches": true
+  },
+  {
+    "Package": "accesskit_windows",
+    "Version": "0.35.1",
+    "CachedArchiveSHA256": "CE63F35D6BDCF59F26B76B3379063F738E6412CEF46999CC772D46AA3DE35ADB",
+    "RegistrySHA256": "ce63f35d6bdcf59f26b76b3379063f738e6412cef46999cc772d46aa3de35adb",
+    "Matches": true
+  }
+]

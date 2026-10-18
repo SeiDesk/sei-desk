@@ -1,12 +1,14 @@
 //! First runnable dashboard; the accepted validation harness remains available.
 mod applications;
+mod desktop;
+mod launcher;
 mod monitor;
 mod traffic;
 mod traffic_chart;
 mod validation;
 mod view;
 
-use iced::{Element, Event, Subscription, Task, keyboard, window};
+use iced::{Event, Subscription, Task, keyboard, window};
 use monitor::{Feed, Monitor, Update};
 use sei_windows::metrics::{Battery, Capacity, Snapshot};
 use std::{process::ExitCode, time::Instant};
@@ -32,6 +34,7 @@ enum Message {
     Scroll(f32),
     Resized(f32),
     Close,
+    OpenLauncher,
 }
 struct App {
     apps: applications::Model,
@@ -78,6 +81,7 @@ impl App {
     }
     fn update(&mut self, message: Message) -> Task<Message> {
         match message {
+            Message::OpenLauncher => (), // Routed by the desktop window owner.
             Message::Reveal { generation, offset } => {
                 if self.page == Page::Applications && generation == self.focus_generation {
                     return iced::widget::operation::scroll_to(
@@ -110,7 +114,13 @@ impl App {
                         frame.catalog.as_ref().map_or(0, |c| c.entries.len())
                     );
                 }
+                let generation = self.apps.frame.catalog.as_ref().map(|c| c.generation);
                 self.apps.apply_frame(frame);
+                if self.page == Page::Applications
+                    && generation != self.apps.frame.catalog.as_ref().map(|c| c.generation)
+                {
+                    return self.results_scroll();
+                }
             }
             Message::AppAction(action) => return self.apps_action(action),
             Message::Composition(active) => self.composing = active,
@@ -262,9 +272,6 @@ impl App {
         }
         Task::none()
     }
-    fn view(&self) -> Element<'_, Message> {
-        view::content(self)
-    }
     fn focus_task(&self) -> Task<Message> {
         let focus = iced::widget::operation::focus(
             if self.page == Page::Applications
@@ -399,6 +406,8 @@ impl App {
                 self.apps.edit(query);
                 self.apps.focus = Some(Focus::Search);
                 self.send_apps(Command::Select(self.apps.key()));
+                // Preserve the editor's caret while revealing the retained identity.
+                return self.results_scroll();
             }
             Action::Move(direction) => {
                 self.apps.move_selection(direction);
@@ -464,20 +473,27 @@ impl App {
                 }
                 self.apps.focus = Some(Focus::Search);
                 self.send_apps(Command::Select(self.apps.key()));
-                return self.focus_task();
+                return Task::batch([self.focus_task(), self.results_scroll()]);
             }
         }
         Task::none()
+    }
+    fn results_scroll(&self) -> Task<Message> {
+        iced::widget::operation::scroll_to(
+            "applications-results",
+            iced::widget::operation::AbsoluteOffset {
+                x: None,
+                y: Some(self.apps.offset(self.width)),
+            },
+        )
     }
     fn paused(&self) -> bool {
         self.sampled_at
             .is_some_and(|at| self.now.saturating_duration_since(at).as_secs() >= 5)
     }
     fn subscription(&self) -> Subscription<Message> {
-        let mut subscriptions = vec![
-            Subscription::run_with(self.feed.clone(), monitor::stream).map(Message::Monitor),
-            iced::event::listen_with(local_event),
-        ];
+        let mut subscriptions =
+            vec![Subscription::run_with(self.feed.clone(), monitor::stream).map(Message::Monitor)];
         if let Some(handle) = &self.apps_handle {
             subscriptions.push(
                 Subscription::run_with(handle.feed(), applications::runtime::stream)
@@ -571,7 +587,9 @@ fn main() -> ExitCode {
         }
     };
     let feed = monitor.feed();
-    let result = iced::application(
+    // iced's multi-window API; the manager is opened immediately and closing
+    // it explicitly exits. No background/resident lifetime is introduced.
+    let result = iced::daemon(
         move || {
             let mut app = App::boot(feed.clone(), diagnostics);
             app.apps_handle = apps_handle.clone();
@@ -586,23 +604,29 @@ fn main() -> ExitCode {
                 ));
             }
             app.apps.local_error = apps_error.clone();
-            app
+            let (id, open) = window::open(window::Settings {
+                size: iced::Size::new(1100.0, 740.0),
+                min_size: Some(iced::Size::new(760.0, 520.0)),
+                position: window::Position::Centered,
+                exit_on_close_request: false,
+                ..Default::default()
+            });
+            let mut desktop = desktop::Desktop::new(app);
+            desktop.manager_id = Some(id);
+            desktop.startup_deadline = Some(Instant::now() + std::time::Duration::from_secs(3));
+            (
+                desktop,
+                open.map(|_| desktop::Message::ManagerWindowCreated),
+            )
         },
-        App::update,
-        App::view,
+        desktop::Desktop::update,
+        desktop::Desktop::view,
     )
-    .title("Sei-Desk")
+    .title(desktop::Desktop::title)
     .executor::<validation::OneWorker>()
-    .subscription(App::subscription)
-    .theme(view::theme)
+    .subscription(desktop::Desktop::subscription)
+    .theme(desktop::Desktop::theme)
     .default_font(iced::Font::with_name("Segoe UI"))
-    .window(window::Settings {
-        size: iced::Size::new(1100.0, 740.0),
-        min_size: Some(iced::Size::new(760.0, 520.0)),
-        position: window::Position::Centered,
-        exit_on_close_request: false,
-        ..Default::default()
-    })
     .run();
     // The event loop has returned: stop/wake and join outside the UI thread.
     drop(monitor);
@@ -623,6 +647,91 @@ fn main() -> ExitCode {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn actual_search_widget_respects_modified_and_repeated_enter() {
+        use iced::advanced::{Layout, Shell, layout, mouse, widget::Tree};
+        use iced::keyboard::{Key, Location, Modifiers, key};
+        let monitor = Monitor::start().unwrap();
+        let mut app = App::boot(monitor.feed(), false);
+        app.page = Page::Applications;
+        app.apps.focus = Some(applications::Focus::Search);
+        app.apps.query = "cm".into();
+        let renderer = iced::Renderer::new(iced::Font::DEFAULT, iced::Pixels(16.0));
+        let viewport = iced::Rectangle::with_size(iced::Size::new(1100.0, 740.0));
+        let mut actual = Vec::new();
+        for (modifiers, repeat) in [
+            (Modifiers::empty(), false),
+            (Modifiers::CTRL, false),
+            (Modifiers::ALT, false),
+            (Modifiers::LOGO, false),
+            (Modifiers::empty(), true),
+        ] {
+            let mut element = view::content(&app);
+            let mut tree = Tree::new(element.as_widget());
+            let node = element.as_widget_mut().layout(
+                &mut tree,
+                &renderer,
+                &layout::Limits::new(iced::Size::ZERO, viewport.size()),
+            );
+            let layout = Layout::new(&node);
+            element.as_widget_mut().operate(
+                &mut tree,
+                layout,
+                &renderer,
+                &mut iced::advanced::widget::operation::focusable::focus::<()>(
+                    "applications-search".into(),
+                ),
+            );
+            let mut messages = Vec::new();
+            let mut shell = Shell::new(&mut messages);
+            let mut clipboard = iced::advanced::clipboard::Null;
+            element.as_widget_mut().update(
+                &mut tree,
+                &Event::Keyboard(keyboard::Event::ModifiersChanged(modifiers)),
+                layout,
+                mouse::Cursor::Unavailable,
+                &renderer,
+                &mut clipboard,
+                &mut shell,
+                &viewport,
+            );
+            let event = Event::Keyboard(keyboard::Event::KeyPressed {
+                key: Key::Named(key::Named::Enter),
+                modified_key: Key::Named(key::Named::Enter),
+                physical_key: key::Physical::Unidentified(key::NativeCode::Unidentified),
+                location: Location::Standard,
+                modifiers,
+                text: None,
+                repeat,
+            });
+            element.as_widget_mut().update(
+                &mut tree,
+                &event,
+                layout,
+                mouse::Cursor::Unavailable,
+                &renderer,
+                &mut clipboard,
+                &mut shell,
+                &viewport,
+            );
+            let global = local_event(event, shell.event_status(), window::Id::unique());
+            if let Some(message) = global {
+                messages.push(message);
+            }
+            actual.push(
+                messages
+                    .iter()
+                    .filter(|message| {
+                        matches!(
+                            message,
+                            Message::Activate | Message::AppAction(applications::Action::Submit)
+                        )
+                    })
+                    .count(),
+            );
+        }
+        assert_eq!(actual, [1, 0, 0, 0, 0]);
+    }
     #[test]
     fn search_focus_results_cannot_override_a_new_control_focus() {
         let monitor = Monitor::start().unwrap();

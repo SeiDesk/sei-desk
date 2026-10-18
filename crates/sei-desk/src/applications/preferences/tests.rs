@@ -116,6 +116,57 @@ fn invalid_v1_is_backed_up_before_a_new_valid_save() {
     assert_eq!(fs::read(backup).unwrap(), bad);
 }
 #[test]
+fn repeated_invalid_startup_reuses_the_same_recoverable_copy() {
+    let dir = Dir::new();
+    let invalid = b"sei-desk-pins-v1\nincomplete";
+    fs::write(dir.file(), invalid).unwrap();
+    for _ in 0..40 {
+        let (store, pins, error) = Store::load(dir.file());
+        assert!(
+            store.writable,
+            "identical invalid data already has a recovery copy: {error:?}"
+        );
+        assert!(pins.is_empty());
+        assert!(error.unwrap().contains("Recovery copy"));
+    }
+    let files: Vec<_> = fs::read_dir(&dir.0)
+        .unwrap()
+        .map(|e| e.unwrap().path())
+        .collect();
+    assert_eq!(
+        files.len(),
+        2,
+        "only the original and one identical recovery copy"
+    );
+    assert!(files.iter().all(|path| fs::read(path).unwrap() == invalid));
+}
+#[test]
+fn distinct_recovery_copies_have_a_lifetime_bound_without_overwrite() {
+    let dir = Dir::new();
+    for index in 0..32 {
+        fs::write(dir.file(), format!("sei-desk-pins-v1\nincomplete-{index}")).unwrap();
+        let (store, _, _) = Store::load(dir.file());
+        assert!(store.writable);
+    }
+    let before: std::collections::BTreeMap<_, _> = fs::read_dir(&dir.0)
+        .unwrap()
+        .map(|e| e.unwrap().path())
+        .filter(|p| *p != dir.file())
+        .map(|p| {
+            let bytes = fs::read(&p).unwrap();
+            (p, bytes)
+        })
+        .collect();
+    fs::write(dir.file(), b"sei-desk-pins-v1\nnew-broken-content").unwrap();
+    let (store, _, error) = Store::load(dir.file());
+    assert!(!store.writable);
+    assert!(error.unwrap().contains("Original preserved"));
+    assert_eq!(fs::read_dir(&dir.0).unwrap().count(), 33);
+    for (path, bytes) in before {
+        assert_eq!(fs::read(path).unwrap(), bytes);
+    }
+}
+#[test]
 fn future_version_oversize_and_unreadable_config_are_preserved_read_only() {
     for content in [
         b"sei-desk-pins-v2\nfuture".to_vec(),

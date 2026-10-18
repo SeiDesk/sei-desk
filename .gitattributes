@@ -1,0 +1,3 @@
+# Preserve archived evidence bytes so recorded SHA-256 hashes remain valid.
+docs/implementation/evidence-stage5a/** -text
+docs/implementation/evidence-stage5b/** -text

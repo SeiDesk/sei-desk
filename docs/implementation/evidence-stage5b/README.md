@@ -1,0 +1,16 @@
+# Stage 5B decision evidence
+
+Collected 2026-10-17. [Decision package](../STAGE-5B-ACCESSIBILITY-ARCHITECTURE-DECISION.md). These are research/documentation/integrity checks, not new runtime accessibility or conformance evidence.
+
+- `upstream-recheck.json`: read-only official crates.io and GitHub REST responses, reduced to selected public metadata, exact URLs and UTC retrieval times. Newest/max-stable, selected checksum/yank/license/MSRV and PR state/draft/merged/head SHA are retained. No full response body, source adoption or transitive compatibility build is claimed.
+- `upstream-recheck-restricted.json`: initial restricted-network failures, preserved separately; successful normal-network requests did not install dependencies or elevate Windows GUI input.
+- `provider-source-recheck.json`: SHA256 comparison of all 23 cached published source members in the historical Stage 2L inventory. All match. Identity continuity with that prior source/archive audit, not a new native provider test.
+- `archive-recheck.json`: five existing cached package archive hashes compared with current official registry checksums. All match; nothing downloaded/extracted/installed. The candidate `accesskit_winit` was metadata-only, not cache/install/build-qualified.
+- `review-inputs.json`: hashes of the Stage 5A report and relevant Stage 2 accessibility/decision records used for this package.
+- `owner-input-template.json`: blank response using Stage 2M's field format. Each actual B01–B07 decision needs a separate attributable response; all values are null. Permitted enums and options are not consent.
+- `final-checks.json`: actual baseline preservation, unchanged Stage 5A fix hashes/manifests/locks, format/whitespace/link/JSON checks and final Git identity/scope.
+- `files-sha256.json`: evidence hashes, excluding the checksum index itself.
+
+Official documentation also consulted: [iced draft #3111](https://github.com/iced-rs/iced/pull/3111), [Edit requirements](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-supporteditcontroltype), [ITextProvider2](https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nn-uiautomationcore-itextprovider2), [IScrollProvider](https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcore/nn-uiautomationcore-iscrollprovider), [Microsoft standard-control/provider overview](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-providersoverview) and [SubclassingAdapter documentation](https://docs.rs/accesskit_windows/latest/accesskit_windows/struct.SubclassingAdapter.html). Versioned docs, some PR pages and web API opens failed; successful official REST retrieval is identified in its own ledger. The latest docs page identified Windows adapter 0.35.1; source conclusions rely on exact cached audited bytes, not an assumed mutable documentation version.
+
+Production runtime facts remain attributed to [Stage 5A evidence](../evidence-stage5a/README.md). Historical bridge UIA/human testimony is linked from the Stage 2 records and was not recopied as a production pass. Current Narrator/physical keyboard/real IME remain NOT RUN. No owner approval, scheduled review, prototype, dependency change, commit or push resulted from Stage 5B.

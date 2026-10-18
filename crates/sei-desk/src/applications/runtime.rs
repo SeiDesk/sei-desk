@@ -26,6 +26,7 @@ pub enum Command {
 struct Envelope {
     seq: u64,
     command: Command,
+    origin: u64,
 }
 #[derive(Default)]
 struct Latest {
@@ -82,6 +83,9 @@ impl Handle {
         self.feed.clone()
     }
     pub fn send(&self, command: Command) -> Result<u64, String> {
+        self.send_for(0, command)
+    }
+    pub fn send_for(&self, origin: u64, command: Command) -> Result<u64, String> {
         if self.stop.closed.load(Ordering::Acquire) {
             return Err("Applications is shutting down".into());
         }
@@ -92,7 +96,11 @@ impl Handle {
         self.sender
             .lock()
             .expect("command sender poisoned")
-            .try_send(Envelope { seq: next, command })
+            .try_send(Envelope {
+                seq: next,
+                command,
+                origin,
+            })
             .map_err(|_| "Applications is busy. Try again.".to_string())?;
         *seq = next;
         Ok(next)
@@ -202,6 +210,9 @@ impl Owner {
             let mut catalog: Option<Arc<Catalog>> = None;
             let mut revision = 0u64; let mut ack = 0u64;
             let mut launch_name = None;
+            let mut launch_origin = 0;
+            let mut refresh_origin = 0;
+            let mut error_origin = 0;
             let mut cancel_pending: Option<sei_apps::consumer::OperationId> = None;
             let mut error = None;
             let mut stale = false;
@@ -234,9 +245,10 @@ impl Owner {
                     Event::Command(Some(envelope)) => {
                         if envelope.seq <= ack { continue; }
                         error = None; stale = false;
+                        error_origin = envelope.origin;
                         ack = envelope.seq;
                         let result = match envelope.command {
-                            Command::Refresh => consumer.request_refresh().map(|_| ()),
+                            Command::Refresh => consumer.request_refresh().map(|_| {refresh_origin=envelope.origin;}),
                             Command::Cancel => {
                                 if let Status::Running { id, .. } = consumer.refresh_status() {
                                     let id = *id; cancel_pending = Some(id);
@@ -251,7 +263,7 @@ impl Owner {
                                 if busy(consumer.launch_status()) { Err(ConsumerError::Busy(Operation::Launch)) }
                                 else { select(&mut consumer, key.as_ref()).and_then(|()| {
                                     let name = consumer.snapshot().and_then(|s| s.catalog.entries.iter().find(|e| Some(&e.id) == key.as_ref().map(|k| &k.id))).map(|e| e.display_name.clone());
-                                    consumer.request_launch().map(|_| { launch_name = name; })
+                                    consumer.request_launch().map(|_| { launch_name = name; launch_origin = envelope.origin; })
                                 }) }
                             }
                         };
@@ -268,7 +280,7 @@ impl Owner {
                 }
                 let Some(next) = revision.checked_add(1) else { break; }; revision = next;
                 feed.0.publish(Frame { revision, ack, catalog: catalog.clone(), refresh: consumer.refresh_status().clone(),
-                    launch: consumer.launch_status().clone(), launch_name: launch_name.clone(), error: error.clone(), stale, cancel_pending: cancel_pending.is_some() });
+                    launch: consumer.launch_status().clone(), launch_name: launch_name.clone(), error: error.clone(), stale, cancel_pending: cancel_pending.is_some(), launch_origin, refresh_origin, error_origin });
             }
             consumer.begin_shutdown(); consumer.shutdown();
             feed.0.closed.store(true, Ordering::Release); feed.0.waker.wake();

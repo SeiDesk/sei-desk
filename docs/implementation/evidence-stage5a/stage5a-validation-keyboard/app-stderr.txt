@@ -1,0 +1,23 @@
+﻿window_opened renderer=tiny-skia
+window_active=true
+validation_hwnd=2492438
+state focus=Validate feedback=Idle closing=false local_reduce=false
+state focus=Validate feedback=Empty closing=false local_reduce=false
+state focus=Validate feedback=Idle closing=false local_reduce=false
+state focus=Motion feedback=Idle closing=false local_reduce=false
+state focus=Motion feedback=Idle closing=false local_reduce=true
+state focus=Validate feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Input feedback=Idle closing=false local_reduce=true
+state focus=Validate feedback=Idle closing=false local_reduce=true
+state focus=Validate feedback=Valid closing=false local_reduce=true
+window_active=false
+state focus=Validate feedback=Valid closing=true local_reduce=true
+graceful_exit restoration=Skipped
+

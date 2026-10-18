@@ -1,0 +1,22 @@
+   Compiling sei-desk v0.1.0 (X:\Project\SeiDesk\sei-desk\crates\sei-desk)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.92s
+     Running unittests src\main.rs (target\debug\deps\sei_desk-2644357836814f9b.exe)
+
+running 1 test
+test applications::preferences::tests::repeated_invalid_startup_reuses_the_same_recoverable_copy ... FAILED
+
+failures:
+
+---- applications::preferences::tests::repeated_invalid_startup_reuses_the_same_recoverable_copy stdout ----
+
+thread 'applications::preferences::tests::repeated_invalid_startup_reuses_the_same_recoverable_copy' (15896) panicked at crates\sei-desk\src\applications\preferences\tests.rs:125:9:
+identical invalid data already has a recovery copy: Some("Pins file is incomplete. Recovery-copy slots are occupied; original retained. Original preserved.")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    applications::preferences::tests::repeated_invalid_startup_reuses_the_same_recoverable_copy
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 57 filtered out; finished in 0.12s
+
+error: test failed, to rerun pass `-p sei-desk --bin sei-desk`

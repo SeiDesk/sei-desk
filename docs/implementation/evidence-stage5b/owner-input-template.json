@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "instructions": "Blank Stage 5B preparation template only. Supply a separate attributable owner response for each B01-B07 decision; values remain null and no consent is recorded. Prior O01-O07 records remain unchanged. No automatic actions follow a response.",
+  "allowed_decision_values": [
+    "APPROVE",
+    "REJECT",
+    "DEFER"
+  ],
+  "owner_input": {
+    "decision_id": null,
+    "decision": null,
+    "rationale": null,
+    "scope_and_constraints": null,
+    "authorized_person_or_role": null,
+    "approval_date": null,
+    "required_evidence": null,
+    "review_date_if_applicable": null,
+    "authority_or_delegation_reference": null
+  }
+}
